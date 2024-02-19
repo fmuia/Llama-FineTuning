@@ -1,0 +1,297 @@
+\documentclass[final,3p,times]{elsarticle}
+
+\journal{Physics Reports}
+
+%\pdfoutput=1
+
+%added packages
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{bbold}
+\usepackage{mathtools}
+\usepackage{slashed}
+\usepackage{multicol}
+\usepackage{blkarray}
+\usepackage{enumerate}
+%\usepackage{caption}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{comment}
+\usepackage{booktabs}
+\usepackage{subfig}
+\usepackage{nccmath} 
+\usepackage{etoolbox}
+\usepackage{hyperref} % For hyperlinks in the PDF
+\usepackage{array}
+\usepackage{url} 
+\usepackage{array}
+\usepackage{epsfig,multicol,bbm}
+\usepackage{colortbl}
+\usepackage{color}
+\usepackage{tcolorbox}
+\usepackage{xcolor}
+\usepackage{empheq}
+\newcommand*\widefbox[1]{\fbox{\hspace{2em}#1\hspace{2em}}}
+\usepackage{placeins}
+
+\newcommand{\comments}[1]{}
+\newcommand{\ba}{\begin{align}}
+\newcommand{\ea}{\end{align}}
+\newcommand{\V}{\mathcal{V}}
+\newcommand{\vo}{\mathcal{V}}
+\newcommand{\noi}{\noindent}
+\newcommand{\Kahler}{\ensuremath{\text{K}\ddot{\text{a}}\text{hler}\,}}
+\def\flux{{\scriptscriptstyle {\rm flux}}}
+\newcommand{\mc}{\mathcal}
+\def\KK{{\scriptscriptstyle \rm KK}}
+
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\bea{\begin{eqnarray}}
+\def\eea{\end{eqnarray}}
+\def\nn{\nonumber}
+\def\ni{\noindent}
+\def\bi{\begin{itemize}}
+\def\ei{\end{itemize}}
+\def\ben{\begin{enumerate}}
+\def\een{\end{enumerate}}
+\def\eg{{\it e.g.~}}
+\def\etal{{\it et al.~}}
+\def\ie{{\it i.e.~}}
+\def\Mp{M_{\rm Pl}}
+\def\half{\frac{1}{2}}
+\def\lp{\left(}
+\def\rp{\right)}
+\def\lb{\left[}
+\def\rb{\right]}
+\def\la{\langle}
+\def\ra{\rangle}
+\def\cN{\mathcal{N}}
+\def\cR{\mathcal{R}}
+\def\cC{\mathcal{C}}
+\def\cP{\mathcal{P}}
+\def\red{\textcolor{red}}
+\usepackage{colortbl}
+\definecolor{green2}{cmyk}{0, 1, 0.5, 0}
+\definecolor{lightgreen}{cmyk}{0.2, 0, 0.2, 0.2}
+\definecolor{lightgray}{cmyk}{0.1,0.2,0,0.1}
+\definecolor{lightgray2}{cmyk}{0.4,0.4,0,0.8}
+\definecolor{black}{cmyk}{1.0,1.0,1.0,1.0}
+\usepackage[makeroom]{cancel}
+\usepackage{booktabs} % Horizontal rules in tables
+\usepackage{float} % Required for tables and figures in the multi-column environment - they need to 
+                   % be placed in specific locations with the [H] (e.g. \begin{table}[H])
+\usepackage{graphicx} 
+\usepackage{epstopdf} 
+\usepackage{paralist} % Used for the compactitem environment which makes bullet points with less 
+                      %space between them
+\usepackage[framemethod=TikZ]{mdframed}
+
+
+\makeatletter
+\patchcmd{\upbracefill}{\m@th}{\scriptstyle\m@th}{}{}
+\patchcmd{\upbracefill}{$\braceld$}{$\scriptstyle\braceld$}{}{}
+\patchcmd{\upbracefill}{\bracelu}{\bracelu\mkern-1mu}{}{}
+\patchcmd{\upbracefill}{\hfill\braceru}{\hfill\mkern-1mu\braceru}{}{}
+\makeatother
+
+\newenvironment{subfigure}[2][c]{\begin{minipage}[#1]{#2}}{\end{minipage}}
+\newcommand{\subcaption}[2]{\\[1ex]{\small (#1) #2}}
+\newcommand{\Vcenter}[1]{\ensuremath{\vcenter{\hbox{#1}}}\xspace}
+
+
+\bibliographystyle{elsarticle-num} 
+
+
+\begin{document}
+
+
+\begin{frontmatter}
+
+
+\title{{\bf String Cosmology: from the Early Universe to Today}}
+
+\author[bol,infn]{\small Michele Cicoli}
+\ead{michele.cicoli@unibo.it}
+
+\author[ox]{\small Joseph P. Conlon }
+\ead{joseph.conlon@physics.ox.ac.uk}
+
+\author[alla]{\small Anshuman Maharana}
+\ead{anshumanmaharana@hri.res.in}
+
+\author[liv]{\small Susha Parameswaran}
+\ead{Susha.Parameswaran@liverpool.ac.uk}
+
+\author[cam]{\small Fernando Quevedo}
+\ead{F.Quevedo@damtp.cam.ac.uk}
+
+
+\author[swan]{\small Ivonne Zavala\corref{corriz}}
+\cortext[corriz]{Corresponding author}
+\ead{e.i.zavalacarrasco@swansea.ac.uk}
+
+
+\address[bol]{%
+        Dipartimento di Fisica e Astronomia, Universit\`a di Bologna, via Irnerio 46, 40126 Bologna, Italy.%
+}
+
+\address[infn]{INFN, Sezione di Bologna, viale Berti Pichat 6/2, 40127 Bologna, Italy.}
+
+
+\address[ox]{%y
+        Rudolf Peierls Centre for Theoretical Physics, Beecroft Building, Clarendon Laboratory, University of Oxford, Parks Road, OX1 3PU, UK
+        }
+
+\address[alla]{%y
+        Harish Chandra Research Institute, A CI of Homi Bhabha National Institute, Chattnag Road, Jhunsi, Allahabad - 211019, India
+}
+
+
+\address[liv]{%y
+        Department of Mathematical Sciences, University of Liverpool, Liverpool L69 7ZL
+}
+
+
+\address[cam]{%y
+        DAMTP, University of Cambridge, Wilberforce Road, Cambridge, CB3 0WA, UK
+}
+
+
+\address[swan]{%y
+        Department of Physics, Swansea University, Swansea, SA2 8PP, UK
+}
+
+    
+
+
+
+\begin{abstract}
+We review applications of string theory to cosmology, from primordial times to the present-day accelerated expansion. Starting with a brief overview of cosmology and string compactifications, we discuss in detail moduli stabilisation, inflation in string theory, the impact of string theory on post-inflationary dynamics (reheating, moduli domination, kination), dark energy (the cosmological constant from a string landscape and models of quintessence) and various alternative scenarios (string/brane gases, the pre big-bang scenario, rolling tachyons, ekpyrotic/cyclic cosmologies, bubbles of nothing, S-brane and holographic cosmologies). The state of the art in string constructions is described in each topic and, where relevant, connections to swampland conjectures are made. The possibilities for novel particles and excitations (axions, moduli, cosmic strings, branes, solitons, oscillons and boson stars) are emphasised. Implications for the physics of the CMB,  gravitational waves, dark matter and dark radiation  are discussed along with potential observational signatures.
+\end{abstract}
+
+\begin{keyword}
+%% keywords here, in the form: keyword \sep keyword
+%% at most six, american spelling
+Early universe cosmology
+\sep
+String Theory
+\sep
+Inflation
+\sep 
+Dark Energy
+%% PACS codes here, in the form: \PACS code \sep code
+%\PACS
+%     % 
+%% MSC codes here, in the form: \MSC code \sep code
+%% or \MSC[2008] code \sep code (2000 is the default)
+
+\end{keyword}
+
+\end{frontmatter}
+
+
+\tableofcontents
+
+
+\clearpage
+
+
+
+%\input{Sections/Conventions}
+
+\input{Sections/IntroductionV2}
+
+\input{Sections/CosmoOverviewV2}
+
+\input{Sections/ModuliFQV2}
+
+\input{Sections/InflationNewV2}
+
+\input{Sections/PostinflationNewV2}
+
+\input{Sections/DarkEnergyNewV2}
+
+
+\input{Sections/AlternativesNewV2}
+
+\input{Sections/OutlookV2}
+
+
+\appendix
+
+
+
+\addcontentsline{toc}{section}{References}
+%may need this
+%\bibliographystyle{utphys}
+\bibliography{refsIZV2}
+
+
+\end{document}
+
+\endinput
+
+
+
+\underbrace{\nu_e + n}_{\rm before} 
+\underbrace{6x - 4x}_{2x}
+
+
+
+% corchetes con ejemplos:
+\begin{displaymath}
+y = \left\{ \begin{array}{ll}
+a & \textrm{if $d>c$}\\
+b+x & \textrm{in the morning}\\
+l & \textrm{all day long}
+\end{array} \right.
+\end{displaymath}
+
+
+%Colored box:
+%colback= background colour 
+% manual colorbox:https://osl.ugr.es/CTAN/macros/latex/contrib/tcolorbox/tcolorbox.pdf
+\begin{tcolorbox}[colback=white, title=My heading line]
+\begin{enumerate}
+    \item Cambiar notacion
+    \end{enumerate}
+\end{tcolorbox}
+
+\overset{\chi}{\longrightarrow}
+
+%SUBEQUATIONS:
+\begin{subequations}
+ \begin{align}
+     S_{\rm EH} &= \frac{1}{2\kappa^2}\,\int\,\d^4 x\,\sqrt{-g}\,R, \\
+     S_{\phi} &= -\int\,\d^4 x\,\sqrt{-g}\left[\frac{b}{2} (\partial\phi)^2+ M^4 C^2(\phi)\,\sqrt{1+\frac{D(\phi)}{C(\phi)}\,\left(\partial \phi\right)^2} + V(\phi)\right], \label{eq:Sphi}\\
+     S_m &= - \int\,\d^4 x\,\sqrt{-\tilde{g}}\,{\mathcal L}_M (\tilde{g}_{\mu\nu}),
+ \end{align}
+\end{subequations}
+
+%SPLIT EQUATION
+\begin{equation}
+\begin{split}
+a&= b \\
+c &= d \\
+&= f \,,
+\end{split}
+\end{equation}
+
+% BOXED SUBEQS:
+\begin{subequations}
+\begin{empheq}[box=\widefbox]{align}
+ &a \,, \\
+&b\,.
+\end{empheq}
+\end{subequations}
+
+\stackrel{ ... }{=}
+
+\be\label{eq:mcCB}
+\setlength\fboxsep{0.25cm}
+\setlength\fboxrule{0.4pt}
+\boxed{
+m_C\sim 2E_A}\,,
+\ee
+
+%%
