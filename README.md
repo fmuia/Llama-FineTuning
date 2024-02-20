@@ -10,12 +10,19 @@ This repository is structured to facilitate easy access to the various component
 
 ```
 Llama-FineTuning/
+|
 ├── DatasetCreation.ipynb # Jupyter notebook for the creation of the string phenomenology dataset
+|
 ├── Llama-FineTuning.ipynb # Jupyter notebook for fine-tuning the Llama model
+|
 ├── Datasets/ # Directory containing the compiled datasets used for fine-tuning
+|
 ├── Files/ # Directory containing the papers on which the training is based
+|
 ├── aux/ # Auxiliary directory with utility functions used in notebooks
+|
 ├── LICENSE # The license file for the project
+|
 └── README.md # The README file for the project, providing an overview and instructions
 ```
 
@@ -40,12 +47,8 @@ Feel free to navigate through the directories to find the specific components yo
 
 ## Dataset Creation
 
-## Dataset Creation
-
 The dataset for fine-tuning the Llama model is constructed from a series of influential papers in the field of string phenomenology. Each paper was carefully segmented into chunks, which were then processed through OpenAI's ChatGPT 3.5 Turbo. This state-of-the-art language model was utilized to generate technical-level questions based on the content of each paper segment, ensuring a rich, contextually relevant dataset aimed at enhancing the Llama model's capabilities in the domain of string phenomenology.
 
-
-### Papers Included
 
 ## Papers Included in the Dataset
 
