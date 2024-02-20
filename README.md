@@ -8,7 +8,7 @@ This repository is dedicated to creating a specialized dataset around the field 
 
 This repository is structured to facilitate easy access to the various components of the dataset creation and model fine-tuning process. Below is an overview of the top-level structure:
 
-'''
+```
 Llama-FineTuning/
 ├── DatasetCreation.ipynb # Jupyter notebook for the creation of the string phenomenology dataset
 ├── Llama-FineTuning.ipynb # Jupyter notebook for fine-tuning the Llama model
@@ -17,7 +17,7 @@ Llama-FineTuning/
 ├── aux/ # Auxiliary directory with utility functions used in notebooks
 ├── LICENSE # The license file for the project
 └── README.md # The README file for the project, providing an overview and instructions
-'''
+```
 
 ### Detailed Description of Components
 
