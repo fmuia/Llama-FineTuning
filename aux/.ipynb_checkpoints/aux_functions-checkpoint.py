@@ -6,42 +6,50 @@ import pandas as pd
 import openai
 
 # Function to extract the LaTeX content between \begin{document} and \end{document}
-def extract_latex_content(file_path):
-    """Extract content from LaTeX source file between \begin{document} and \end{document}."""
+#def extract_latex_content(file_path):
+#    """Extract content from LaTeX source file between \begin{document} and \end{document}."""
+#    content = []
+#    copy = False
+#    with open(file_path, 'r') as file:
+#        for line in file:
+#            if '\\begin{document}' in line:
+#                copy = True
+#                continue  # Skip this line
+#            elif '\\end{document}' in line:
+#                copy = False
+#                continue  # Skip this line
+#            if copy:
+#                content.append(line)
+#    return ''.join(content)
+
+def extract_latex_content(file_path, start_command, end_command):
+    """Extract content from LaTeX source file between start_command and end_command."""
     content = []
     copy = False
     with open(file_path, 'r') as file:
         for line in file:
-            if '\\begin{document}' in line:
+            if start_command in line:
                 copy = True
-                continue  # Skip this line
-            elif '\\end{document}' in line:
+                continue  # Skip the start command line
+            elif end_command in line:
                 copy = False
-                continue  # Skip this line
+                continue  # Skip the end command line
             if copy:
                 content.append(line)
     return ''.join(content)
 
-def replace_latex_commands(latex_content):
+def replace_latex_commands(latex_content, replacements, brace_commands):
     # Replace specific LaTeX commands with direct character replacements
-    replacements = {
-        r'\\d': 'd',
-        r'\\G': 'G',
-        r'\\O': 'O',
-        r'\\C': 'C',
-        r'\\V': 'V',
-        r'\\L': 'L',
-        r'\\R': 'R',
-        r'\\S': 'S',
-    }
+    replacements = replacements
     
     # Apply direct replacements
     for command, replacement in replacements.items():
         latex_content = re.sub(command, replacement, latex_content)
     
     # Replace commands with content inside curly braces, preserving the content
-    brace_commands = [r'\\emph', r'\\footnote']
+    brace_commands = brace_commands
     for command in brace_commands:
+        latex_content = re.sub(r'\{' + command + r'\s*(.*?)\}', r'\1', latex_content)
         latex_content = re.sub(command + r'\{(.*?)\}', r'\1', latex_content)
     
     return latex_content
