@@ -27,16 +27,6 @@ Llama-FineTuning/
 
 - **Datasets/**: A folder that includes the datasets prepared for the model training. It is the output from `DatasetCreation.ipynb`.
 
-- **Files/**: This folder holds the original papers and supporting documents that form the
-
-### Detailed Description of Components
-
-- **DatasetCreation.ipynb**: This notebook contains all the code and documentation used to create the dataset from selected papers. It includes data extraction, preprocessing, and compilation steps.
-
-- **Llama-FineTuning.ipynb**: This notebook will be used to fine-tune the Llama model. It will contain the training algorithms, evaluation methods, and fine-tuning procedures.
-
-- **Datasets/**: A folder that includes the datasets prepared for the model training. It is the output from `DatasetCreation.ipynb`.
-
 - **Files/**: This folder holds the original papers and supporting documents that form the basis of the dataset. These are the primary sources for data extraction.
 
 - **aux/**: The auxiliary folder includes additional scripts and functions that support the main notebooks. This is to keep utility functions organized and separate from the main codebase.
@@ -50,14 +40,24 @@ Feel free to navigate through the directories to find the specific components yo
 
 ## Dataset Creation
 
-The dataset is a collection of influential papers in string phenomenology, meticulously selected to represent the field comprehensively. This dataset will serve as a foundational element for training the LLM, providing it with rich, domain-specific knowledge.
+## Dataset Creation
+
+The dataset for fine-tuning the Llama model is constructed from a series of influential papers in the field of string phenomenology. Each paper was carefully segmented into chunks, which were then processed through OpenAI's ChatGPT 3.5 Turbo. This state-of-the-art language model was utilized to generate technical-level questions based on the content of each paper segment, ensuring a rich, contextually relevant dataset aimed at enhancing the Llama model's capabilities in the domain of string phenomenology.
+
 
 ### Papers Included
 
-The following is a list of papers included in the dataset:
-- [Paper 1 Title](link-to-paper)
-- [Paper 2 Title](link-to-paper)
-- ... (Add more as needed)
+## Papers Included in the Dataset
+
+The dataset has been created from the following papers:
+
+- ['Physics of String Flux Compactifications' by F. Denef, M. R. Douglas, S. Kachru](https://inspirehep.net/literature/741903)
+- ['String cosmology: From the early universe to today' by M. Cicoli, J. P. Conlon, A. Maharana, S. Parameswaran, F. Quevedo, I. Zavala](https://inspirehep.net/literature/2640110)
+- ['Moduli Stabilization in String Theory' by L. McAllister, F. Quevedo](https://inspirehep.net/literature/2715847)
+- ['Naturalness, String Landscape and Multiverse: A Modern Introduction with Exercises' by A. Hebecker](https://inspirehep.net/literature/1854305)
+- ['The Swampland: Introduction and Review' by E. Palti](https://inspirehep.net/literature/1725205)
+
+We plan to include many more papers in the field.
 
 ## Model Fine-tuning
 
@@ -72,15 +72,11 @@ Using the dataset, the fine-tuning process aims to integrate the detailed insigh
 
 ### Features to Add
 
-- Enhanced data preprocessing for optimal model ingestion
-- Expanded dataset with additional papers and resources
-- Automated update system to include new research findings
-
-### Planned Implementations
-
-- Advanced fine-tuning methodologies
-- Evaluation metrics tailored to the domain
-- Interactive interface for model queries
+- Enhanced data preprocessing for optimal model ingestion. For instance at the moment many questions refer to the text of the paper, which we want to avoid.
+- Expanded dataset with additional papers and resources.
+- Reatin the references (includng e.g. the arXiv number in the dataset, whenever that's necessary)
+- Fine-tune a Llama model using the Dataset created.
+- Implement a RAG system that is able to properly identify relevant papers in the field and discuss their findings.
 
 ## Collaboration and Feedback
 
@@ -94,10 +90,7 @@ We invite researchers, enthusiasts, and developers to contribute to this project
 
 ### Feedback
 
-Your feedback is crucial to refining the model and dataset. Please share your thoughts, constructive criticism, or reports of any issues you encounter.
+Please share your thoughts, constructive criticism, or reports of any issues you encounter.
 
----
-
-Together, we can push the boundaries of AI's understanding of string phenomenology and create a tool that genuinely augments our research capabilities in this fascinating field.
 
 
