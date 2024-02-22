@@ -98,8 +98,6 @@ Please share your thoughts, constructive criticism, or reports of any issues you
 
 ## HuggingFace info
 
-=======
->>>>>>> e4238ee227fd26fe479f1af8ec0f9d1611029cb9
 ---
 title: StringPheno
 emoji: 👁
