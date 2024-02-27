@@ -1,0 +1,167 @@
+
+\section{Full equations of motion \label{app:fulleom}}
+
+\noindent In this Appendix we report the full computation of the linearized equations of motion for the gauge fields and metric perturbations, including the non-dynamical metric degrees of freedom that were discarded in Sec.~\ref{sec:linearized} of the main text, labeled lapse $N$ and shift $N^i$ in the ADM formalism~\cite{Arnowitt:1962hi}. We found some minor discrepancies with respect to the results in \cite{Adshead:2013nka} that however do not affect their results.
+
+We start from the expressions for the action and the metric reported in Sec.~\ref{sec:linearized}. The metric in matrix form is
+\begin{equation}
+g_{\mu \nu} =
+\begin{pmatrix}
+-N^2 + h_{ij} N^i N^j & h_{ji} N^i \\
+h_{ij} N^j & h_{ij}
+\end{pmatrix}\,,
+\end{equation}
+and it can be easily established that the components of the inverse matrix are
+\begin{equation}
+g^{00} = - \frac{1}{N^2} \quad g^{0i} = \frac{N^i}{N^2} \quad g^{ij} = h^{ij} - \frac{N^i N^j}{N^2} \,.
+\end{equation}
+Moreover, it is useful to notice that $\sqrt{-g} = N \sqrt{h}$,\footnote{The four-dimensional metric is always denoted by the letter $g$, while the three-dimensional metric is denoted by $h$. $h_{ij}/h^{ij}$ is used in order to raise/lower indices in the three-dimensional space.} where $h = \text{det} \left(h_{ij}\right)$ and $h^{ij} = \left(h_{ij}\right)^{-1}$. Using these definitions, the Einstein-Hilbert term takes the standard form derived in the original paper on the ADM formalism~\cite{Arnowitt:1962hi}
+\begin{equation}
+\label{eq:FullEH}
+\mathcal{L}_{\text{EH}} = \sqrt{h} \left[N R^{(3)} + \frac{1}{N} \left(E^{ij} E_{ij} - E^2\right) \right]\,,
+\end{equation}
+where $R^{(3)}$ is the spatial curvature (computed using $h_{ij}$), while\footnote{The covariant derivative $\nabla$ is computed using $h_{ij}$.}
+\begin{equation}
+E_{ij} = \frac{1}{2} \left(h'_{ij} - \nabla_i N_j - \nabla_j N_i\right) \,, \quad E = E^i_i\,.
+\end{equation}
+
+\noindent Expressing the Lagrangian in terms of its individual contributions as in Eq.~\eqref{eq:action}, we obtain for the contribution ${\cal L}_\phi$,
+\begin{equation}
+\mathcal{L}_{\phi} = \sqrt{h} \, \left[\frac{1}{2 N} \left(\phi' - N^i \partial_i \phi\right)^2 - \frac{N}{2} h^{ij} \partial_i \phi \partial_j \phi - N V(\phi)\right]\,,
+\end{equation}
+while, after using some simple algebra, we split the Yang--Mills Lagrangian as follows
+\begin{align}
+\mathcal{L}_{\text{YM}} & = \frac{\sqrt{h}}{2 N} \left[h^{ij} \left(F^a_{0i} F^a_{0j} + 2 F^a_{0i} F^a_{jl} N^l + F^a_{ik} F^a_{jl} N^k N^l\right)\right] - \frac{\sqrt{h} N}{4} h^{ij} h^{kl} F^a_{ik} F^a_{jl}  \nonumber \\
+& \equiv \mathcal{L}_{\text{YM},1} + \mathcal{L}_{\text{YM},2} + \mathcal{L}_{\text{YM},3} + \mathcal{L}_{\text{YM},4} \,.
+\label{eq:LagrangianYMF}
+\end{align}
+
+Expanding each of the four terms in Eq.~\eqref{eq:LagrangianYMF} we get:
+\begin{align}
+\mathcal{L}_{\text{YM},1} & = \frac{\sqrt{h}}{2 N} h^{ij} F^a_{0i} F^a_{0j} = \nonumber \\
+& = \frac{\sqrt{h}}{2 N} h^{ij} \left[\partial_0 A^a_i \partial_0 A^a_j + \partial_i A^a_0 \partial_j A^a_0 - \partial_0 A^a_i \partial_j A^a_0  - \partial_0 A^a_j \partial_i A^a_0 + \right.\nonumber \\
+& + e \varepsilon^{abc} \left(\partial_0 A^a_i A^b_0 A^c_j - \partial_i A^a_0 A^b_0 A^c_j + \partial_0 A^a_j A^b_0 A^c_i - \partial_j A^a_0 A^b_0 A^c_i\right) \nonumber \\
+& \left.+ e^2 \left(A^b_0 A^b_0 A^c_i A^c_j - A^b_0 A^b_j A^c_0 A^c_i\right)\right] \,,
+\end{align}
+\begin{align}
+\mathcal{L}_{\text{YM},2} & = \frac{\sqrt{h}}{N} h^{ij} F^a_{0i} F^a_{jl} N^l = \nonumber \\
+& = \frac{\sqrt{h}}{N} h^{ij} \left[\partial_0 A^a_i \partial_j A^a_l - \partial_0 A^a_i \partial_l A^a_j - \partial_i A^a_0 \partial_j A^a_l + \partial_i A^a_0 \partial_l A^a_j +\right. \nonumber \\
+& + e \varepsilon^{abc} \left(\partial_0 A^a_i A^b_j A^c_l - \partial_i A^a_0 A^b_j A^c_l + \partial_j A^a_l A^b_0 A^c_i - \partial_l A^a_j A^b_0 A^c_i\right) + \nonumber \\
+& \left. + e^2 \left(A^b_0 A^b_j A^c_i A^c_l - A^b_0 A^b_l A^c_i A^c_j\right)\right] N^l \,,
+\end{align}
+
+\begin{align}
+\mathcal{L}_{\text{YM},3} & = \frac{\sqrt{h}}{2 N} h^{ij} F^a_{ik} F^a_{jl} N^k N^l = \nonumber \\
+& = \frac{\sqrt{h}}{N} h^{ij} \left[\partial_i A^a_k \partial_j A^a_l - \partial_i A^a_k \partial_l A^a_j - \partial_k A^a_i \partial_j A^a_l + \partial_k A^a_i \partial_l A^a_j +\right. \nonumber \\
+& + e \varepsilon^{abc} \left(\partial_i A^a_k A^b_j A^c_l - \partial_k A^a_i A^b_j A^c_l + \partial_j A^a_l A^b_i A^c_k - \partial_l A^a_j A^b_i A^c_k\right) + \nonumber \\
+& \left. + e^2 \left(A^b_i A^b_j A^c_k A^c_l - A^b_i A^b_l A^c_k A^c_j\right)\right] N^k N^l \,,
+\end{align}
+
+\begin{align}
+\mathcal{L}_{\text{YM},4} & = - \frac{\sqrt{h}}{4 N} h^{ij} h^{kl} F^a_{ik} F^a_{jl} = \nonumber \\
+& = - \frac{\sqrt{h} N}{4} h^{ij} h^{kl} \left[\partial_i A^a_k \partial_j A^a_l - \partial_i A^a_k \partial_l A^a_j - \partial_k A^a_i \partial_j A^a_l + \partial_k A^a_i \partial_l A^a_j +\right. \nonumber \\
+& + e \varepsilon^{abc} \left(\partial_i A^a_k A^b_j A^c_l - \partial_k A^a_i A^b_j A^c_l + \partial_j A^a_l A^b_i A^c_k - \partial_l A^a_j A^b_i A^c_k\right) + \nonumber \\
+& \left. + e^2 \left(A^b_i A^b_j A^c_k A^c_l - A^b_i A^b_l A^c_k A^c_j\right)\right]\,.
+\end{align}
+
+The Chern-Simons term is
+\begin{align}
+\mathcal{L}_{\text{CS}} & = - \frac{\alpha}{8 \Lambda} \phi F^a_{\mu \nu} F^{a}_{\rho \sigma} \varepsilon^{\mu \nu \rho \lambda} = -\frac{\alpha}{2 \Lambda} \phi \left[2 \varepsilon^{0ijk} \partial_0 A^a_i \partial_j A^a_k - \right. \nonumber \\
+& \left. - 2 \varepsilon^{0ijk} \partial_i A^a_0 \partial_j A^a_k  + e f^{abc} \varepsilon^{0ijk} \left(\partial_0 A^a_i A^b_j A^c_k - \partial_i A^a_0 A^b_j A^c_k + 2 \partial_i A^a_j A^b_0 A^c_k\right)  \right]\,.
+\end{align}
+
+Given the expressions for each term of the action, we can compute the expansion at  the quadratic order in the field fluctuations. We expand the three-dimensional metric to second order as follows:
+\begin{equation}
+h_{ij} = a^2 \left(\delta_{ij} + \gamma_{ij} + \frac{\gamma_{ik} \gamma_{kj}}{2} \right) \,,
+\end{equation}
+where $\gamma_{ij}$ is a transverse and traceless quantum fluctuation: $\gamma_{ii} = \partial_i \gamma_{ij} = 0$.\footnote{Notice that spatial indices are raised and lowered by $h_{ij}/h^{ij}$, while gauge indices are raised and lowered with just a $\delta_{ij}$. Everytime we write a gauge field fluctuation with two lowered indices we imply that the first one is the gauge index.} We also notice that, using the standard expression $\delta g = g g^{ij} \delta g_{ij}$, where $g = \text{det}(g)$ the determinant $h = \text{det}(h_{ij})$ can be expanded as
+\begin{equation}
+\frac{h}{a^2} = \text{det} \left(e^{\text{Tr} \left[\ln (h_{ij}/a^2)\right]}\right) = \text{det} \left(e^{\text{Tr} \left[ \gamma_{ij} + \frac{\gamma_{ik}\gamma_{kj}}{2} - \frac{\gamma_{ik}\gamma_{kj}}{2} \right]}\right) = 1 \,.
+\end{equation}
+We also notice that in spatially flat gauge the Christoffel symbols vanish ${\Gamma^i}_{jk} = 0$ and then $\nabla_i = \partial_i$. Finally we expand the lapse and shift around the FRW background\footnote{{Formally, lapse and shift have to be expanded up to second order. It turns out that the second order can be eliminated using the background equations of motion (see~\cite{Adshead:2013nka}), and does not affect the subsequent results.}}
+\begin{equation}
+N = a \left(1+ \delta N\right) \,, \qquad N^i \equiv \delta N^i\,.
+\end{equation}
+
+We proceed with the computation of the quadratic action and we report the results term by term to make it easier tracking back the various terms. We start from the Einstein-Hilbert component
+\begin{align}
+S_{\rm EH} & = \int \textrm {d}^4 x \, \frac{a^2}{2} \left[  \frac{ \gamma_{ij} \partial_l \partial_l \gamma_{ij} }{4} - 6 \mathcal{H}^2 + \frac{\gamma^\prime_{ij} \gamma^\prime_{ij}}{4}  + \right. \nonumber \\ 
+& \left. + \frac{4 \mathcal{H}}{a^2} (1 - \delta N) \partial_{i} N_{i} + 6 \mathcal{H}^2 \delta N (1- \delta N) - \left( \frac{\partial_{i} N_{i}}{a^2} \right)^2 + \frac{\partial_{(i} N_{j)} \partial_{(i} N_{j)}}{a^4} \right] \,,
+\end{align}
+where the contribution from the three-dimensional curvature $R^{(3)}$ is just the first term $a^2/8 \, \gamma_{ij} \partial_l \partial_l \gamma_{ij}$. Concerning the scalar field, the second-order action takes the form:
+\begin{align}
+\delta^2 S_\phi & = \int \textrm{d}^4 x \, \left[\frac{a^2}{2} \left( \left(\delta \phi'\right)^2 - \partial_i \delta \phi \partial_i \delta \phi - a^2 V'' \left(\delta \phi \right)^2 \right) - \right. \nonumber \\
+& \left.- \frac{a^2}{2} \left(\frac{2}{a^2} \langle \phi' \rangle N_i \partial_i \delta \phi + 2 \langle \phi' \rangle\delta N \delta \phi' + \langle \phi' \rangle^2 \left(\delta N\right)^2 - 2 a^2 V' \delta \phi \delta N\right)\right]\,.
+\end{align}
+
+Finally, we report the various contributions to the Yang--Mills $\delta^2 \mathcal{S}_{\rm YM}$ and Chern-Simon $\delta^2 S_{\text{CS}}$ quadratic actions
+\begin{align}
+\delta^2 \mathcal{S}_{\text{YM},1}  = \int \textrm{d}^4 x\, & \left[\frac{1}{4} \left(f'\right)^2 \gamma^{jk} \gamma^{kj} - f' \gamma^{aj} \partial_0 \delta A^{(a}_{j)} - \right. \nonumber \\
+& -\frac{1}{2} \delta A^a_i \partial_0\partial_0 \delta A^a_i  - \frac{1}{2} \delta A^a_0 \partial_i \partial_i  \delta A^a_0 +  \delta A^a_0 \partial_0 \partial_i \delta A^a_i + \nonumber \\
+& + e \varepsilon^{abi}  f \partial_0 \delta A^a_i \delta A^b_0 + e \varepsilon^{jbc} f' \delta A^b_0 \delta A^c_j - e \varepsilon^{abi}  f \partial_i \delta A^a_0 \delta A^b_0 + e^2 f^2 \delta A^b_0 \delta A^b_0 \nonumber \\
+& \left.+ \frac{3}{2} \left(f'\right)^2 \delta N^2 - f' \partial_0 \delta A^i_i \delta N + f' \partial_j \delta A^j_0 \delta N \right] \,,
+\end{align}
+\begin{align}
+\delta^2 \mathcal{S}_{\text{YM},2} & = \int \textrm{d}^4 x \, \frac{1}{a^2} \left[f' \partial_a \delta A^a_l N_l -  f' \partial_l \delta A^a_a N_l + \right. \nonumber \\
+& \left. + e f^2 \varepsilon_{ail} \partial_0 \delta A^a_i N_l + e f f' \varepsilon_{ibl} \delta A^b_i N_l - e \varepsilon_{ail} f^2 \partial_i \delta A^a_0 N_l - 2 e^2 f^3 \delta A^l_0 N_l \right] \,, \\
+\delta^2 \mathcal{S}_{\text{YM},3} & = \int d^4 x\, e^2 f^4 N^k N^k \,,
+\end{align}
+\begin{align}
+\delta^2 \mathcal{S}_{\text{YM},4} & =  \int \textrm{d}^4 x \, \left[-\frac{3}{4} e^2 f^4 \delta N^2 -\frac{e^2 f^4}{4} \gamma^{jk} \gamma^{kj} -\right. \nonumber \\
+& - e f^2 \varepsilon^{abc} \gamma^{ij} \left( \delta^b_{(i} \partial_{j)} \delta A^a_{c} - \delta^b_{(i} \partial_{c} \delta A^a_{j)} \right) + e^2 f^3 \gamma^{bi} \delta A^{(b}_{i)} - \nonumber \\
+& - e f^2 \varepsilon^{abc}  \partial_{[b} \delta A^a_{c]} \delta N - 2 e^2 f^3 \delta^b_i \delta A^b_i \delta N + \nonumber \\
+& + \frac{1}{2} \delta A^a_j \partial_i \partial_i \delta A^a_j + \frac{1}{2} (\partial_i \delta A^a_i)^2 - e^2 f^2 \left( \delta A^a_a \delta A^b_b + \frac{1}{2} \delta A^b_i \delta A^b_i - \frac{1}{2} \delta A^b_i \delta A^i_b \right) - \nonumber \\
+& \left. - e f \varepsilon^{abc} \left( \delta^b_i \partial_i \delta A^a_k \delta A^c_k + \delta^c_k \partial_i \delta A^a_k \delta A^b_i \right) \right] \,,
+\end{align}
+\begin{align}
+\delta^2 \mathcal{S}_{\rm CS} & = \int \textrm{d}^4 x \, \left[-\frac{\alpha}{2 \Lambda} \langle \phi \rangle \left(2 \varepsilon^{0ijk} \partial_0 \delta A^a_i \partial_j \delta A^a_k- 2 \varepsilon^{0ijk} \partial_i \delta A^a_0 \partial_j \delta A^a_k+ \right.\right. \nonumber \\
+& + 2 e f \partial_0 \delta A^a_a \delta A^k_k - 2ef \partial_0 \delta A^c_k \delta A^k_c+ e f' \delta A^b_b \delta A^c_c - e f' \delta A^b_j \delta A^j_b - \nonumber \\
+& \left. - 2 e f \partial_i \delta A^i_0 \delta A^b_b + 2 e f \partial_i \delta A^j_0 \delta A^i_j + 2 e f \partial_i \delta A^i_j \delta A^j_0 - 2 e f \partial_i \delta A^j_j \delta A^i_0 \right) - \nonumber \\
+& - \frac{\alpha}{2 \Lambda} \delta \phi \left(2 f' \varepsilon^{0ijk} \delta^a_i \partial_j \delta A^a_k + 4 e f f' \delta A^b_b + 2 e f^2 \partial_0 \delta A^a_a- 2 e f^2 \partial_i \delta A^i_0\right)\Big] \,.
+\end{align}
+
+From these expressions we can infer the full equations of motion and the constraints, which we report below.
+
+\noindent - \textit{Gauss' law:}
+\begin{align}
+- \frac{f'}{a^2} \partial_j \gamma_{gj} - f' \partial_g \delta N - \partial_i \partial_i \delta A_{g0} + \partial_0 \partial_i \delta A_{gi}
++ e \varepsilon_{agi} f \partial_0 \delta A_{ai} + e \varepsilon_{jgc} f' \delta A_{cj} &+ \nonumber \\
++ 2 e f \varepsilon_{gbi} \partial_i \delta A_{b0} + 2 e^2 f^2 \delta A_{g0} 
++ \frac{e f^2}{a^2} \varepsilon_{gil} \partial_i N_l - \frac{2 e^2 f^3}{a^2} N_g  - \frac{\alpha e f^2}{\Lambda} \partial_g \delta \phi  &= 0 \,. 
+\end{align}
+
+\noindent - $\delta N$-\textit{constraint:}
+\begin{align}
+- 6 a^2 \mathcal{H}^2 \delta N - 2 \mathcal{H} \partial_i N_i - a^2 \langle\phi'\rangle \delta\phi' + a^2 \langle\phi'\rangle^2 \delta N - a^4 V' \delta \phi & + \nonumber \\
+ + 3 \left(f'\right)^2 \delta N - f' \partial_0 \delta A^i_i + f' \partial_j \delta A^j_0 - \frac{3}{2} e^2 f^4 \delta N- e f^2 \varepsilon^{aik} \partial_{[i} \delta A^a_{k]} - 2 e^2 f^3 \delta A^i_i & = 0 \, . 
+\end{align}
+
+
+\noindent - $N_l$-\textit{constraint:}
+\begin{align}
+2 \mathcal{H} \partial_l \delta N + \frac{1}{2 a^2} \left[ \partial_l \partial_i N_i - \partial_i \partial_i N_l \right] -\langle\phi'\rangle \partial_i \delta \phi  + \frac{ 2 e^2 f^4  N_l } {a^4} & + \nonumber \\
++ \frac{1}{a^2} \left[  f' \left( \partial_i \delta A^i_{l} -  \partial_l \delta A^i_{i} \right) + e f^2 \varepsilon_{lai} \partial_0 \delta A^a_{i} - e f f' \varepsilon_{lbi} \delta A^b_{i} - e f^2  \varepsilon_{lai} \partial_i \delta A^a_{0} - 2 e^2 f^3 \delta A_{l0}  \right] & = 0 \,.
+\end{align}
+
+\noindent - \textit{Gauge field equation of motion}:
+\begin{align}
+& -\partial_0 \partial_0 \delta A^a_i - 2 e \varepsilon^{abi} f' \delta A^b_0 + \partial_l \partial_l \delta A^a_i - \partial_i \partial_j \delta A^a_j - \nonumber \\
+& - e^2 f^2 (2 \delta^a_i \delta A^b_b  +  \delta A^a_i -\delta A^i_a  ) + 2 e f \varepsilon^{abc} \partial_b \delta A^c_i + e f \varepsilon^{abc} \partial_i \delta A^b_c + e f \varepsilon^{abi} \partial_l \delta A^b_l + \nonumber \\
+& + \langle \phi^\prime \rangle  \frac{\alpha}{\Lambda}  \left( \varepsilon^{ijk}  \partial_j \delta A^a_k +  \delta^a_i e f \delta A^b_b - ef \delta A^i_a \right)  + \frac{\alpha}{\Lambda} \left[  f^\prime \varepsilon^{aji}\partial_j \delta \phi  + e f^2 \delta^a_i \delta \phi^\prime  \right] + \nonumber \\
+& + f^{\prime \prime} \gamma^{a}_i + f^{\prime} \gamma^{a \ \prime}_i + e f^2  \varepsilon^{ajk} \partial_k \gamma_{ij} + e^2 f^3 \gamma^a_{i} + \nonumber \\ 
+& - f^{\prime } \partial_i  N^a +  f^{\prime } \delta^a_i \partial_l  N^l - e \varepsilon^{ail} (3 f f^{\prime} N^l + f^2 N^{l \, \prime} ) + \nonumber \\
+& + \delta^a_i (f^{\prime \prime} \delta N + f^{\prime } \delta N^\prime ) + e f^2 \varepsilon^{abi} \partial_b \delta N - 2 e^2 f^3 \delta^a_i \delta N \,  = 0 . 
+\end{align}
+
+\noindent - \textit{Inflaton equation of motion:}
+\begin{align}
+\Box \delta \phi - 2 a' a^{-3} \delta \phi' + a^{-2} \partial_0( \langle \phi' \rangle \delta N) +  2 \frac{H}{a} \langle \phi' \rangle \delta N  + \frac{\langle \phi' \rangle}{a^4} \partial_i N_i - V_{,\phi \phi} \delta \phi - V_{, \phi} \delta N & - \nonumber \\
+- \frac{\alpha}{2 \Lambda a^4} \left[ 2 f' \varepsilon^{ijk} \partial_j \delta A^i_k + 4 e f f' \delta A^b_b + 2 e f^2 \partial_0 \delta A^a_a - 2 e f^2 \partial_i \delta A^i_0 \right] & = 0 \, ,
+\end{align}
+where the $\Box$-operator is expressed in co-moving coordinates.
+
+\noindent - \textit{Gravitational wave equation of motion:}
+\begin{align}
+&\frac{a}{4}\left[(a \gamma_{ij})'' + \left(-\partial_l\partial_l - \frac{a''}{a} \right) (a \gamma_{ij})\right] = \nonumber \\
+&+ \frac{1}{2 a}( f^{\prime \ 2}- e^2 f^4 ) (a \gamma_{ij} ) -  f^\prime \partial_0 \delta A^{(i}_{j)}  + f^\prime \partial_{(i} \delta A^{j)}_0 - 2e f^2 \varepsilon^{a(ic}  \partial_{[j)} \delta A^a_{c]}  + e^2  f^3  \delta A^{(i}_{j)}  \, . 
+\end{align}

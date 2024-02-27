@@ -1,0 +1,517 @@
+
+
+\section{Linearized equations of motion \label{sec:linearized}}
+
+We now turn to the inhomogeneous equations of motion, adding perturbations to the homogeneous quantities discussed in the previous section.  This includes the perturbations of the gauge field, the inflaton and the metric. We start by deriving the linearized equations of motions for all relevant degrees of freedom in Sec.~\ref{sec:setup}, reproducing the results first obtained in Refs.~\cite{Dimastrogiovanni:2012ew,Adshead:2013qp}. The helicity basis, introduced in Sec.~\ref{GaugeAndBasis}, proves to be convenient to identify the physical degrees of freedom and simplify the system of equations. This becomes is particularly evident in Sec.~\ref{sec:eom_gauge_fields} which discusses the resulting equations of motion for the pure Yang--Mills sector. We can immediately identify the single enhanced mode and even give an exact analytical expression for the mode function in the limit of constant $\xi$. Finally, Sec.~\ref{sec:AllFluc} includes also the inflaton and metric tensor fluctuations. {Limitations of the linearized treatment of the perturbations are pointed out in Sec.~\ref{sec:AllFluc}. They primarily affect the helicity 0 sector and we will return to this point in more detail in Sec.~\ref{subsec:powerspectra}.} The results obtained in Secs.~\ref{sec:setup}, \ref{GaugeAndBasis} and \ref{sec:AllFluc} are in agreement with the findings of Refs.~\cite{Dimastrogiovanni:2012ew,Adshead:2013nka,Adshead:2013qp,Namba:2013kia}. Any differences in the results can be traced back to the different parameter regime for the background gauge field evolution, see discussion below Eq.~\eqref{eq:phibackground2}. In addition, we here provide analytical results for the simplified system of Sec.~\ref{sec:eom_gauge_fields}, setting the stage for semi-analytical estimates of the scalar and tensor power spectrum.  Throughout Sec.~\ref{sec:eom_gauge_fields} and \ref{sec:AllFluc}, the parameter $\xi$ is taken to be constant. Its evolution will be considered in Sec.~\ref{sec:example}.
+
+
+
+\subsection{Setup for the linearized analysis \label{sec:setup}}
+
+In this section we will derive the system of first-order differential equations for all gauge degrees of freedom and the inflaton fluctuations, assuming a homogeneous and isotropic gauge field background, for further details see App.~\ref{app:fulleom}.
+
+The starting point is the action reported in Eq.~\eqref{eq:action}. We work in the ADM formalism~\cite{Arnowitt:1962hi}, i.e.\ we write the metric as
+\begin{equation}
+\textrm{d} s^2 = - N^2 \textrm{d} \tau^2 + h_{ij} \left(\textrm{d} x^i + N^i \textrm{d} \tau\right) \, \left(\textrm{d} x^j + N^j \textrm{d} \tau\right) \,.
+\end{equation}
+We decompose
+\begin{equation}
+h_{ij} = a^2 \left[\left(1+A\right) \delta_{ij} + \partial_i \partial_j B + \partial_{(i} C_{j)} + \gamma_{ij}\right] \,,
+\end{equation}
+where $\partial_i C_{i}=0$ and $\gamma_{ij}$ is transverse-traceless, i.e.\ $\gamma_{ii} = \partial_i \gamma_{ij} = 0$. There are four degrees of freedom arising from coordinate reparameterization: two scalar and two vector. In the scalar sector, we impose \textit{spatially flat gauge} which sets
+\begin{equation}
+A = B = 0 \,.
+\end{equation}
+In the vector sector, {we choose the gauge in such a way that} $C_i = 0$ (see Eq.~(A.115) of \cite{Baumann:2009ds}), which implies
+\begin{equation}
+h_{ij} = a^2 \left(\delta_{ij} + \gamma_{ij}\right) \,.
+\end{equation}
+As we numerically checked that the lapse ($N$) and shift ($N^i$) contributions to the subsequent equations do not affect the results, we discard them in this section\footnote{Hence, we take $N = a$ and $N^i = 0$.} for pedagogical reasons, and we refer to Appendix \ref{app:fulleom} for the complete expressions. 
+{Note that the discarded vector $N^i$ contains two physical (but non-radiative) degrees of freedom from the metric.}\\
+
+We expand the gauge fields and the inflaton field as (see also Eqs.~\eqref{eq:background_plus_linear} and \eqref{eq:ansatz-A})
+\begin{align}
+ A^a_i(\tau, \vec x) & = f(\tau) \, \delta^a_i + \delta A^a_i(\tau, \vec x) \,, \\
+ \phi(\tau,x) &  = \langle\phi(\tau)\rangle + \delta \phi (\tau,x) \,,
+\end{align}
+where $\delta^a_i$ is the Kronecker delta function, $f(\tau) \, \delta^a_i$ and $\langle\phi(\tau)\rangle$ comprise the homogeneous background, while $\delta A^a_i(\tau, \vec x)$ and $\delta \phi(\tau,x)$ denote the quantum fluctuations around the homogeneous background. In order to infer the equations of motion which are linear in the fluctuations, we need to expand the Lagrangian up to quadratic order in all the field fluctuations. To make the computation easy to follow, we split it and the results into various terms arising from $\mathcal{S}_i = \int \textrm{d}^4 x \, \sqrt{-g} \, \mathcal{L}_i$, following Eq.~\eqref{eq:action}. The quadratic terms take the following form:
+\begin{align}
+ \delta^2 \mathcal{S}_\phi  = & \int \textrm{d}^4 x\, \left[\frac{a^2}{2} \left(\left(\delta \phi'\right)^2  - \left(\partial_i \delta \phi \right)^2 - a^2 V_{,\phi\phi} \left(\delta \phi\right)^2 \right)\right]\,, \\
+\delta^2 \mathcal{S}_{\rm YM}  = & \int \textrm{d}^4x \, \left[- \frac{1}{2} \delta A^a_0 \partial_i \partial_i  \delta A^a_0 + \delta A^a_0 \partial_0 \left(\partial_i \delta A^a_i - e f \varepsilon^{abi} \delta A^b_i \right) + \right. \nonumber \\
+& + \delta A^a_0 \left(2 e f' \varepsilon^{abi} \delta A^b_i + e f \varepsilon^{abi} \left(\partial_i\delta A^b_0\right) + e^2 f^2 \delta A^a_0\right) - \nonumber \\
+& - \frac{1}{2}  \delta A^a_i  \left(\delta A^a_i\right)'' + \frac{1}{2} \delta A^a_j \left(\partial_i \partial_i \delta A^a_j\right) + \frac{1}{2} (\partial_i \delta A^a_i)^2 - \nonumber \\
+& - e^2 f^2 \left(\left(\delta A^a_a\right)^2 + \frac{1}{2} \left(\delta A^b_i\right)^2 - \frac{1}{2} \delta A^b_i \delta A^i_b \right) - e f \varepsilon^{abc} \left( \delta^b_i \partial_i \delta A^a_k \delta A^c_k + \delta^c_k \partial_i \delta A^a_k \delta A^b_i \right) + \nonumber \\
+& + \frac{\left(f'\right)^2 - e^2 f^4}{4} \gamma^{jk} \gamma^{kj} - f' \gamma^{aj} \partial_0 \delta A^{(a}_{j)} - e f^2 \varepsilon^{abc} \gamma^{ij} \left(\delta^b_{(i} \partial_{j)} \delta A^a_{c} - \delta^b_{(i} \partial_{c} \delta A^a_{j)} \right) \bigg] \,,
+\label{eq:QuadraticLYMMainText}
+\end{align}
+ \begin{align}
+\delta^2 \mathcal{S}_{\rm CS}  = & \int \textrm{d}^4 x \, \left[-\frac{\alpha}{\Lambda} \langle \phi \rangle \left(\varepsilon^{ijk} \left(\delta A^a_i\right)' \partial_j \delta A^a_k + 2 e f \left(\delta A^a_{[a}\right)' \delta A^k_{k]} + e f'  \delta A^b_{[b} \delta A^c_{c]}  \right) - \right. \nonumber \\
+& \left. - \frac{\alpha}{ \Lambda} \delta \phi \left[f' \varepsilon^{ajk}  \partial_j \delta A^a_k + 2 e f f' \delta A^a_a +  e f^2 \left(\delta A^a_a\right)' -  e f^2 \partial_i \delta A^i_0 \right]\right] \,,
+\label{eq:CSQuadraticMainText} \\
+\label{eq:EH_to_use}
+\delta^2 \mathcal{S}_{EH}  = & \int \textrm{d}^4 x \, \frac{a^2}{2} \left[\frac{ \gamma_{ij} \partial_l \partial_l \gamma_{ij} }{4} + \frac{\gamma^\prime_{ij} \gamma^\prime_{ij}}{4} \right] \,. 
+\end{align}
+
+As we will see in Sec. \ref{sec:GCG}, the term proportional to $\delta A^a_0$ in the first line of Eq.~\eqref{eq:QuadraticLYMMainText} vanishes after imposing the generalized Coulomb condition that reads (see Sec.~\ref{sec:GCG} for further details):
+\begin{equation}
+\partial_i \delta A^a_i - e f \varepsilon^{abi} \delta A^b_i = 0 \,.
+\end{equation}
+
+The equation of motion for $\delta A^a_0$ gives Gauss's law, which reads
+\begin{align}
+\label{eq:GaussLaw}
+0 & = \left(\partial_i \partial_i  - 2 e^2 f^2 \right) \delta A^a_{0} - \left(\partial_i \delta A^a_i - e f \varepsilon^{abi} \delta A^b_i\right) - \nonumber \\
+& - 2 e f' \varepsilon^{abi} \delta A^b_i - 2 e f \varepsilon^{abi} \left(\partial_i \delta A^b_0\right) + \frac{\alpha e}{\Lambda} f^2 \delta^{ai} \partial_i \delta \phi \,.
+\end{align}
+
+We write the linear equation of motion for the inflaton fluctuations in terms of the variable $(a \delta \phi)$ for later convenience
+\begin{align}
+0 & = - \left(a \delta \phi\right)'' + \partial_i \partial_i \left(a \delta \phi\right) + \frac{a''}{a} \left(a \delta \phi\right) - 2 \mathcal{H} \left(a \delta \phi\right) + 2 \mathcal{H}^2 \left(a \delta \phi\right) - a^2 V_{,\phi\phi} \left(a \delta \phi\right) - \nonumber \\
+& - \frac{\alpha}{\Lambda a} \left[f' \varepsilon^{ijk} \partial_j \delta A^i_k + 2 e f f' \delta A^a_a + e f^2 \left(\delta A^a_a\right)' - e f^2 \partial_i \delta A^i_0 \right] \,,
+\label{eq:EOMInflatonFluc}
+\end{align}
+where $\mathcal{H} = \frac{a'}{a}$. The linear equations of motion for the dynamical gauge field degrees of freedom are
+\begin{align}
+0 &= \delta A_i^{a \prime \prime } - \partial_j \partial_j \delta A_i^{a}  + \partial_i \left( -\delta A_0^{a \prime} - \partial_j \delta A^{a}_j \right) + \nonumber \\
+& - e \varepsilon^{a b c } \left[ -2 \delta A_0^{b} \delta^c_i f^\prime  + 2 f \delta^b_j \partial_j \delta A_i^{c} + f \delta^c_i  (- \delta A_0^{b \prime} + \partial_j \delta A^{b}_j) - f \delta^b_j \partial_i \delta A_j^{c} \right] - \nonumber \\
+& - e^2 f^2 \left[ \delta^a_j \delta^b_j \delta A_i^{b}+ \delta^a_j\delta^b_i \delta A_j^{b}+ \delta^b_j\delta^b_i \delta A_j^{a} - 3 \delta A_i^{a} - 2 \delta^a_i\delta^b_j \delta A_b^{j} \right] - \nonumber \\
+& - \frac{\alpha}{2 \Lambda}\left[ \phi^\prime \varepsilon_{ i j k} \left[2 \partial_j A^a_k + 2 e f \varepsilon^{abc} \delta A_j^{b} \delta^c_k\right] + 2 f^\prime \varepsilon^{aji}\partial_j \delta \phi + 2 e f^2 \delta^a_i \delta \phi' \right] - \nonumber \\
+& - f'' \gamma^{a}_i + f' \left(\gamma^a_i\right)' + e f^2  \varepsilon^{ajk} \partial_k \gamma_{ij} + e^2 f^3 \gamma^a_{i}  \equiv {\mathbf L}(\delta A,\phi,\gamma)\,,
+\label{eq:eom_i_linear}
+\end{align}
+where for later convenience we have defined the linear operator $\mathbf L$. Finally, we give the equation of motion for the metric fluctuations in terms of the variable $(a \gamma_{ij})$ 
+\begin{align}
+\frac{a}{4}\left[(a \gamma_{ij})'' + \left(-\partial_l\partial_l - \frac{a''}{a} \right) (a \gamma_{ij})\right] & = \frac{f^{\prime \ 2} - e^2 f^4}{2 a}(a \gamma_{ij} ) - f^\prime \partial_0 \delta A^{(i}_{j)}  + f^\prime \partial_{(i} \delta A^{j)}_0 + \nonumber \\
+& + e f^2 \gamma^{ij} \left[\varepsilon^{aic} \partial_{[j} \delta A^a_{c]} + \varepsilon^{ajc} \partial_{[i} \delta A^a_{c]} \right] + e^2  f^3  \delta A^{(i}_{j)} \,.
+\label{eq:eomGWs}
+\end{align}
+{We point out that the right-hand side of this equation is given by the transverse traceless component of the anisotropic energy momentum tensor, and hence this equation is equivalent to the linearized Einstein equations used in gravitational wave physics~\cite{Maggiore:1999vm}. }
+
+\subsection{Choice of gauge and basis \label{GaugeAndBasis}}
+
+In the following we explain our choice of basis for dealing with the gauge field fluctuations, which will greatly simplify the analysis. After introducing the generalization of Coulomb gauge to a non-vanishing gauge field background, we decompose the 12 degrees of freedom of the gauge fields into helicity eigenstates. We further identify the degrees of freedom associated with gauge transformations and constraint equations, leaving us with six physical degrees of freedom. The explicit form of these basis vectors is given in App.~\ref{app:basis}.
+
+
+\subsubsection{Generalized Coulomb gauge}
+\label{sec:GCG}
+
+In Eq.~\eqref{eq:ansatz-A}, we chose a particular representative $(A^{(0)})^a_i=f(\tau)\delta^a_i$ for our homogeneous and isotropic background field.  This is just one representative from the corresponding gauge-equivalence class.  When considering physical fluctuations around this background configuration, we restrict ourselves to fluctuations which are orthogonal to the space spanned by gauge-equivalent configurations
+\begin{equation}
+ U f(\tau) \delta^a_i \,  U^\dagger + \frac{i}{e} U \partial_i U^\dagger\,, \quad \forall \; U  = \exp(i \xi^a \textbf{T}_a)
+ \label{eq:GaugeSpace}
+\end{equation}
+where $\xi^a$ denotes a infinitesimal gauge transformation parameter.  This condition should apply on each time slice. This orthogonality condition reads
+\begin{equation}
+ 0 = \langle \mathbf{D}_i^{(A^{(0)})} \xi^a \textbf{T}_a | \delta A_i^c \textbf{T}_c \rangle = \text{Tr} \int (\mathbf{D}_i^{(A^{(0)})} \xi^a \textbf{T}_a) \cdot (\delta A_i^c \textbf{T}_c ) \, \textrm{d}^3 \vec{x} \quad \forall \, \xi^a \,,    
+ \label{eq:orthogonal}
+\end{equation} 
+where 
+\begin{equation}
+ \mathbf{D}_\mu^{(A)} \xi^a \textbf{T}_a = \partial_\mu \xi^a \textbf{T}_a - i e [A_\mu^b \textbf{T}_b, \xi^a \textbf{T}_a]
+ \label{eq:infinitesimal_gauge}
+\end{equation}
+denotes the gauge-covariant derivative. After some algebra, Eq.~\eqref{eq:orthogonal} becomes
+\begin{equation}
+ - \frac{1}{2} \int \xi^a (\partial_i \delta A^a_i + e \varepsilon_{a b c} (A^{(0)})^b_i \, \delta A^c_i )\, \textrm{d}^3 \vec{x}  = 0  \quad \forall \, \xi^a  \quad \Rightarrow \quad 
+ D_i^{(A^{(0)})} \delta A^a_i = 0 \,.
+\end{equation}
+Inserting Eq.~\eqref{eq:ansatz-A} for $A^{(0)}$ we obtain the gauge fixing condition 
+\begin{equation}
+ \mathbf{C}(\delta A)^{\, a} \equiv  \partial_i(\delta A^a_i) + e f(\tau) \varepsilon^{a i c}  \delta A^c_i = 0 \,.
+ \label{eq:GenCoulombGauge}
+\end{equation}
+In the following, we will in fact not fix the gauge, but we will choose a basis in which the 6 physical degrees of freedom (obeying Eq.~\eqref{eq:GenCoulombGauge}) and the 3 gauge degrees of freedom (contained in the subspace~\eqref{eq:GaugeSpace}) are explicit and orthogonal. This preserves gauge invariance as a consistency check at any point of the calculation, while clearly separating physical and gauge degrees of freedom. Together with the constraint equation~\eqref{eq:GaussLaw}, this splits the 12 degrees of freedom contained in the $3 \times 4$ matrix $\delta A^a_\mu$ into 6 physical, 3 gauge and 3 non-dynamical degrees of freedom, as expected for a massless  $\mathrm{SU}(2)$ gauge theory.
+
+\subsubsection{The helicity basis}
+\label{sec:helbas}
+
+In the absence of a background gauge field ($f(\tau) = 0$), Eq.~\eqref{eq:action} is invariant under two independent global $\mathrm{SO}(3)$ rotations: one acting on the spatial index and the other acting on the  $\mathrm{SU}(2)$ index of the gauge field $A^a_i(\tau, \vec x)$. In the presence of the background Eq.~\eqref{eq:ansatz-A}, this symmetry is reduced to a single $\mathrm{SO}(3)$ symmetry, which is the diagonal subgroup of $\mathrm{SO}(3)_\text{gauge} \times \mathrm{SO}(3)_\text{spatial}$ (see  \prettyref{app:global-symmetries} for details). The Fourier decomposition introduces a preferred direction $\vec k$, which without loss of generality we will choose to be along the $x$-axis, $\vec k = k \hat e_1$. This breaks the diagonal $\mathrm{SO}(3)$ symmetry down to an $\mathrm{SO}(2)$ symmetry of rotations around $\vec k$.  The generator of this symmetry is a helicity operator of massless particles. This generator is given explicitly by\footnote{ The helicity operator can be extended to act on the full $3\times4$ matrix $\delta A$ by defining $\mathbf{H}(\delta  A_0)^a  =  i \varepsilon^{1 c a } \delta A^c_0$.} 
+\begin{align}
+  \mathbf{H}(\overrightarrow{\mathbf{\delta  A}}) & \equiv [\mathbf{T}_1, \overrightarrow{\mathbf{\delta  A}}] + i \hat e_1 \times  \overrightarrow{\mathbf{\delta  A}} \,, \nonumber 
+ \\
+  \Rightarrow \mathbf{H}(\delta  A)^a_i & = i \varepsilon^{1 c a } \delta A^c_i + i \varepsilon^{i1j} \delta A^a_j  \,,
+     \label{eq:helicity_operator}
+\end{align}
+where $\overrightarrow{\mathbf{\delta  A}} = \delta A^a_i \mathbf{T}_a$. 
+Expressing the linearized system of equations of motion in terms of the linear operator $\mathbf L$, see Eq.~\eqref{eq:eom_i_linear}, 
+ $\mathbf{L}(\delta A, \delta \phi, \gamma) = 0 $,
+the symmetry properties above imply that this linear operator must commute with the helicity operator, $[\mathbf{L}, \mathbf{H} ] = 0$. It will thus be useful to decompose $\delta A$ into helicity eigenstates, which will lead to a block-diagonal structure for $\mathbf{L}$.  This formalism is best known in the context of metric perturbations under the name ``SVT decomposition.''
+
+Let us look at the eigenvalues and multiplicities of these states. With respect to the diagonal $\mathrm{SO}(3)$ group, the $3 \times 3$ matrix {$\delta A$} decomposes as $\mathbf{3} \otimes \mathbf{3} = \mathbf{1} \oplus \mathbf{3} \oplus \mathbf{5}$: a scalar (S), a vector (V), and a tensor (T). The corresponding helicities are
+\begin{equation}
+ (S) : 0 \,, \qquad (V) : -1, 0, + 1 \,, \qquad (T) : -2, -1, 0, +1, + 2 \,,
+\end{equation}
+implying multiplicities 3, 2 and 1 for the helicities $0$, $\pm 1$ and $\pm 2$ respectively. These nine degrees of freedom correspond to the six physical and three gauge degrees of freedom mentioned in the previous subsection. Since the gauge transformation acts only on the gauge indices and not the spatial indices (see e.g.\ Eq.~\eqref{eq:infinitesimal_gauge}), the three gauge degrees of freedom form a vector (helicities $-1,0,1$). The helicities of the remaining six physical degrees of freedom must thus be $-2, -1 , 0 (\times 2), +1, +2$. Hence in this basis, the linear operator $\mathbf L$ (and hence our equations of motion for $\delta A^a_i$) decomposes into four decoupled equations (for $\pm 1$ and $\pm 2$) and two (generically) coupled equations for the two helicity 0 modes. In the following we describe the basis we use for the gauge, constraint and physical degrees of freedom. The corresponding explicit basis vectors can be found in App.~\ref{app:basis}.  In Sec.~\ref{sec:AllFluc} we will include also the inflaton (helicity 0) and tensor metric (helicity $\pm2$) fluctuations, which will couple to the helicity 0 and $\pm2$ gauge field modes, respectively. 
+
+
+Let us first consider the pure gauge degrees of freedom, which can be decomposed in terms of  basis vectors $\hat g$  (see Appendix.~\ref{app:basis}) as 
+\begin{equation}
+ (\delta \tilde{A}^a_\mu)_\text{gauge}(\tau, \vec k) = \sum_b (\hat g_b)^a_\mu w_b^{(g)}(\tau, \vec k) 
+ =  \sum_{\lambda}( \hat g_\lambda)^a_\mu \, w^{(g)}_\lambda(\tau, \vec k)\,,
+\end{equation}
+where $\hat g_b$ $(b = \{1,2,3\})$ denotes the basis vectors of the gauge degrees of freedom in $\mathrm{SU}(2)$ space, $\hat g_\lambda$ with $\lambda = \{-,0,+\}$ denotes the basis vectors in terms of helicity states and we denote the corresponding coefficients by $w_{b}^{(g)}$ and $w_{\lambda}^{(g)}$,
+respectively. Introducing a helicity basis for the elements of the Lie algebra, $w_b^{(g)} \mathbf{T}_b = w_\lambda^{(g)} \mathbf{T}_\lambda$, with
+\begin{equation}
+ \mathbf{T}_\pm =  (\mathbf{T}_2 \pm i \mathbf{T}_3)/\sqrt{2} \,, \qquad  \mathbf{T}_0 = \mathbf{T}_1 \,,
+\end{equation}
+the infinitesimal gauge transformation~\eqref{eq:infinitesimal_gauge}  defines the basis vectors $\hat g^{(g)}_\lambda$,
+\begin{equation}
+ \mathbf{D}_{\mu}^{(A^{(0)})} \left( w_\lambda^{(g)} \mathbf{T}_\lambda \right) = (\hat g_\lambda)^a_\mu w_\lambda^{(g)} \mathbf{T}_a \,.
+ \label{eq:gaugebasis0}
+\end{equation}
+The explicit form of the three basis vectors $\hat g_\lambda$ which satisfy Eqs.~\eqref{eq:gaugebasis0} and are eigenstates of \eqref{eq:helicity_operator} are given in App.~\ref{app:basis}. We note that in  any background which is a fixed point of Eq.~\eqref{eq:symmetry3} (e.g.\ if the background follows the $c_2$-solution), the $k$ and $\tau$ dependence of the basis vectors is fully encoded in $x = - k \tau$ only.
+
+
+
+So far, we have considered only the spatial components of $\delta A$. The time components $\delta A_0$ are subject to the constraint equations~\eqref{eq:GaussLaw}. We can solve these explicitly and substitute the solution back into the equation of motion for the spatial components. 
+However in practice we will find it more convenient to introduce basis vectors also for these constraint degrees of freedom, extending the differential operator $\mathbf L$ to a differential-algebraic operator. The explicit form of the  corresponding `constraint' basis vectors in the helicity basis is given in App.~\ref{app:basis}.
+
+
+
+The remaining eigenspace of the helicity operator~\eqref{eq:helicity_operator} is spanned by the basis vectors of the physical degrees of freedom $\hat e_\lambda$, see App.~\ref{app:basis} for the explicit form.
+As anticipated, we find two states with helicity 0, and one state each with helicity $-2, -1, +1, +2$. One can immediately verify explicitly that the basis vectors presented here have the desired qualities, i.e. they are  orthonormal, eigenfunctions of $\mathbf{H}$ with eigenvalues giving the helicity, $\mathbf L(\hat g_\lambda) = 0$ (gauge invariance) and  $\mathbf{C}(\hat e_\lambda) = 0$ (compatibility with generalized Coulomb gauge, see \eqref{eq:GenCoulombGauge}). The choice of basis derived here closely resembles the basis used in Refs.~\cite{Dimastrogiovanni:2012ew,Adshead:2013nka,Adshead:2013qp,Namba:2013kia}. The main difference is that we explicitly separate the $\pm \lambda$ states and normalize our basis vectors. As we will see in the next section, this simplifies the resulting equations of motion (in particular when considering only the degrees of freedom of the gauge sector).
+
+
+
+
+
+
+
+\subsection{Equations of motion for the gauge field fluctuations}
+\label{sec:eom_gauge_fields}
+
+In this section we will compute the equations of motion for the gauge field fluctuations in the canonically normalized helicity basis introduced above (see also App.~\eqref{app:basis}) and discuss their key properties. In Sec.~\ref{sec:AllFluc} we will extend this to the inflaton and metric tensor fluctuations.
+
+Inserting $\delta A$ in terms of the helicity basis,
+\begin{equation}\label{eq:w-lambda-def}
+ \delta \tilde{A}^a_\mu(\tau,k) =   \sum_{\lambda}( \hat e_\lambda)^a_\mu \, \frac{ w^{(e)}_\lambda(x) }{\sqrt{2k}} +  \sum_{\lambda}( \hat f_\lambda)^a_\mu \, \frac{ w^{(f)}_\lambda(x) }{\sqrt{2k}} + \sum_{\lambda}( \hat g_\lambda)^a_\mu \, \frac{ w^{(g)}_\lambda(x) }{\sqrt{2k}} \,,
+\end{equation}
+into the first order equations of motion (see Sec.~\ref{sec:setup} and App.~\ref{app:fulleom}) we  obtain the equations of motions for the coefficients $w^{(i)}_\lambda$ with $i = \{e, f, g \}$ denoting the physical, constraint and gauge degrees of freedom, respectively. Here we have absorbed a factor of $\sqrt{2k}$  (originating from the normalization of the Bunch--Davies vacuum, c.f.\ Eq.~\eqref{eq:BDvac}) into $w_\lambda^{i}$. As we will see below,  for the background solutions of interest, this will render $w^{(i)}_\lambda$ a function of $x = - k \tau$ only. The three equations for the gauge degrees of freedom simply read $0 = 0$, reflecting gauge invariance. For the helicity $\pm2$ modes we obtain
+\begin{align*}
+\frac{\textrm{d}^2 }{\textrm{d}x^2} w^{(e)}_{-2}(x)+\left(1+\frac{2\xi}{x}+2\left(\frac{\xi}{x}+1\right)y_k(x)\right)w^{(e)}_{-2}(x) & =0\,, \label{eq:-2mode}\\
+\frac{\textrm{d}^2}{\textrm{d}x^2}w^{(e)}_{+2}(x) +\left(1-\frac{2\xi}{x}+2\left(\frac{\xi}{x}-1\right)y_k(x)\right)w^{(e)}_{+2}(x) & =0\,,
+\label{eq:+2mode}
+\end{align*}
+with 
+\begin{equation}
+\label{eq:y_definition}
+ y_k(x) \equiv \frac{e f(\tau)}{k} \,.
+\end{equation}
+
+
+
+We can now appreciate some of the advantages of the canonically normalized helicity basis. The equations of motion for the $\pm 2$ modes are fully decoupled, and moreover contain no terms involving the first derivatives $w_\lambda'(x)$. This makes them amenable to WKB analysis. We immediately see that for $\xi \geq 0$ and $y(x) \geq 0$ the $-2$ mode always has a positive effective squared mass, whereas the $+2$ mode can be tachyonic. Consider momentarily the limit where $\xi$ is constant and $f(\tau)$ is one of the three fixed points of the symmetry~\eqref{eq:symmetry3},  $y_k(x) = y(x) = c_i\xi/x$ for some $i\in\{0,1,2\}$, where $c_i$ is defined in \eqref{eq:c-definitions}. In this case, the solutions of Eq.~\eqref{eq:+2mode} are Whittaker functions:  
+ \[ w_{+2}^{(e)}(\tau)= e^{(1+c_{i})\pi\xi/2} W_{-i(1+c_{i})\xi,\,-i\sqrt{2\xi^{2}c_{i}-1/4}}\left(2ik\tau\right) \,,  \label{eq:AnalyticalSolution}  \]  
+with the normalization set by the Bunch--Davies vacuum \eqref{eq:BDvac} in the infinite past. For  $c_i=c_0=0$, this solution coincides with the abelian solution, Eq.~\eqref{eq:rev_Whittaker}. The region of tachyonic instability for the helicity $+2$ mode as well as some useful approximative expressions for Eq.~\eqref{eq:AnalyticalSolution} will be discussed below.
+
+Next we turn to the $\pm 1$ modes. Here we need to consider the two equations for the dynamical degrees of freedom and two constraint equations. For shorter notation, we introduce two reparameterizations of $y_k(x)$, 
+\begin{equation}
+y_k(x)=\tfrac{1}{2}\left(\tan\theta_{-}(x)-1\right)=\tfrac{1}{2}\left(\tan\theta_{+}(x)+1\right).
+\end{equation}
+with $\theta_\pm \in (- \pi/2, \pi/2)$. With this, the equations for the dynamical and constraint degrees of freedom read
+\begin{align}
+0 = & \, \frac{\textrm{d} w^{(e)}_{\pm1}(x)}{\textrm{d}x^2} \pm \sqrt{2}  i \sec \theta_{\pm}\left( \tfrac{\textrm{d}}{\textrm{d}x}\theta_{\pm}\right) w^{(f)}_{\pm1}(x) \,  + \nonumber \\
+& +\left(-\left(\tfrac{\textrm{d}}{\textrm{d}x}\theta_{\pm}\right)^{2}+\tfrac{1}{2}\left(1\pm\sin(2\theta_{\pm})\right)+\left(\frac{1}{2}\mp\frac{\xi}{x}\right)\left(2\cos^{2}\theta_{\pm}\mp\tan\theta_{\pm}\right)\right) w^{(e)}_{\pm1}(x) \,, \nonumber \\
+0 = & \, \sec \theta_{\pm} w^{(f)}_{\pm1}(x) \pm 2 \sqrt{2}  i w^{(e)}_{\pm1}(x) \tfrac{\textrm{d}}{\textrm{d}x}\theta_{\pm}  \,.
+\end{align}
+After inserting the constraint equations, this simplifies to
+\begin{align}
+ \frac{\textrm{d} w^{(e)}_{-1}(x)}{\textrm{d}x^2}+\left(3\left(\tfrac{\textrm{d}}{\textrm{d}x}\theta_{-}\right)^{2}+\tfrac{1}{2}\left(1-\sin(2\theta_{-})\right)+\left(\frac{1}{2}+\frac{\xi}{x}\right)\left(2\cos^{2}\theta_{-}+\tan\theta_{-}\right)\right)w^{(e)}_{-1}(x) & =0 \nonumber \\
+  \frac{\textrm{d} w^{(e)}_{+1}(x)}{\textrm{d}x^2}+\left(3\left(\tfrac{\textrm{d}}{\textrm{d}x}\theta_{+}\right)^{2}+\tfrac{1}{2}\left(1+\sin(2\theta_{+})\right)+\left(\frac{1}{2}-\frac{\xi}{x}\right)\left(2\cos^{2}\theta_{+}-\tan\theta_{+}\right)\right) w^{(e)}_{+1}(x) & =0.
+  \label{eq:pm1mode}
+\end{align}
+For the $c_2$ background attractor solution given in Eq.~\eqref{eq:c2solution}, the resulting effective masses are always positive. We will turn to a more detailed stability analysis in the next subsection. 
+
+Finally let us consider the two helicity zero modes. Since these expressions are somewhat more lengthy, we only give the final expression after substituting the constraint equation
+\begin{equation}
+ -  \sec^2 \theta_0  w^{(f)}_{0}(x)- \sqrt{2}  \sec \theta_0  \tfrac{\textrm{d}}{\textrm{d}x}\theta_{0} w^{(e)}_{02}(x)  = 0\label{eq:0constraint} \,,
+\end{equation}
+where we have introduced $\theta_0 \in [- \pi/2, \pi/2]$ as
+\begin{equation}
+ y_k(x)=\tfrac{1}{\sqrt{2}}\tan\theta_{0}(x) \,.
+\end{equation}
+With this,
+\begin{equation}
+ \frac{\textrm{d} }{\textrm{d}x^2}\left(\begin{array}{c}
+  w^{(e)}_{01}(x)\\
+ w^{(e)}_{02}(x)
+\end{array}\right)+M_{0}(x)\left(\begin{array}{c}
+w^{(e)}_{01}(x)\\
+w^{(e)}_{02}(x)
+\end{array}\right)  = 0
+\label{eq:0modes}
+\end{equation}
+with the $2\times2$ Hermitian mass matrix $M_{0}$ for the two $e_{0i}$ modes given by
+\[
+M_{0}=\left(\begin{array}{cc}
+1-\sqrt{2}\frac{\xi}{x}\tan\theta_{0}+2\tan^{2}\theta_{0} & -\frac{2i}{\cos\theta_0}\,\left(\frac{\xi}{x}-\tfrac{1}{\sqrt{2}}\tan\theta_{0}\right)\\
+\frac{2i}{\cos\theta_0}\left(\frac{\xi}{x}-\tfrac{1}{\sqrt{2}}\tan\theta_{0}\right) & \sin^{2}\theta_{0}+\cos^{-2}\theta_{0}-\frac{\xi}{\sqrt{2}x}\sin2\theta_{0}+3\left(\tfrac{\textrm{d}}{\textrm{d}x}\theta_{0}\right)^{2}
+\end{array}\right)\,.
+\label{eq:M0}
+\]
+{For the background solution of Eq.~\eqref{eq:c2solution} and for $\xi \gg 1$, the off-diagonal elements vanish. Furthermore, on far sub-horizon scales ($x \gg 1$) and far super-horizon scales  $x \ll 1$, the diagonals elements approach unity and $2 \xi^2/x^2$, respectively.}
+One may be tempted to diagonalize the general expression of $M_{0}$, but the diagonalization
+would be time-dependent and hence re-introduces first-derivatives of $w^{(e)}_{0i}$. {We note that the helicity 0 sector is particularly sensitive to non-linear contributions neglected in our analysis so far, arising from two enhanced helicity $2$ modes coupling to the helicity 0 modes, see also Eq.~\eqref{eq:caveat}. We will discuss this effect in more detail in Sec.~\ref{subsec:powerspectra}.}
+
+
+In summary and as anticipated, the modes with helicity $\pm 1$ and $\pm2$ form four decoupled harmonic oscillators with the time-dependent mass terms specified in Eqs.~\eqref{eq:-2mode}, \eqref{eq:+2mode} and \eqref{eq:pm1mode}. The two helicity zero modes form  a system of coupled, mass-dependent harmonic oscillators given by Eq.~\eqref{eq:0modes}.
+
+
+
+ \subsubsection*{Stability analysis}
+ Let us look at these fluctuations in two different background limits (taking $\xi$ to be constant): $f(\tau) \rightarrow 0$ and $e f(\tau) = c_2 \,  \xi/(- \tau)$ (see Eq.~\eqref{eq:c-definitions}). In the former case, defining $e_{\pm0}(x):=(e_{01}(x)\mp ie_{02}(x))/\sqrt{2}$, the effective squared mass\footnote{Since we are considering ODEs as a function of $x$, $\tfrac{\textrm{d}^2}{\textrm{d}x^2} w(x) + m^2 w(x) = 0$, the `squared mass' is dimensionless quantity.} of $e_{\pm0}$, $e_{\pm1}$, and $e_{\pm2}$ is $1\mp2\xi/x$, so that as in the abelian case, the `$-$' modes are
+unenhanced, while the `$+$' modes are enhanced for $x<2\xi$. In this case, the spatial components of the helicity basis simplify to
+\begin{equation}
+e_{\pm0}=\frac{1}{2}\left(\begin{array}{ccc}
+0 & 0 & 0\\
+0 & 1 & \pm i\\
+0 & \mp i & 1
+\end{array}\right),\quad e_{\pm1}=\frac{1}{\sqrt{2}}\left(\begin{array}{ccc}
+0 & 1 & \pm i\\
+0 & 0 & 0\\
+0 & 0 & 0
+\end{array}\right),\quad e_{\pm2}=\frac{1}{2}\left(\begin{array}{ccc}
+0 & 0 & 0\\
+0 & 1 & \pm i\\
+0 & \pm i & -1
+\end{array}\right).
+\end{equation}
+
+ \begin{figure}
+ \centering
+  \includegraphics{stabilitytensor.pdf}
+  \caption{Tachyonic region of the $+2$ mode in a non-abelian, $c_2$-background (shaded in gray). Contrary to the abelian regime, the instability region is bounded from both sides and only affects a single mode. }
+  \label{fig:stabilitytensor}
+ \end{figure}
+
+On the other hand, for $e f(\tau) = c_2 \,  \xi/(- \tau)$, the squared mass terms appearing in Eqs.~\eqref{eq:-2mode} and Eq.~\eqref{eq:pm1mode} for $w_{-2}^{(e)}(x)$ and $w_{\pm1}^{(e)}(x)$, respectively, are positive for all $x, \xi > 0$. Similarly, the matrix $M_0$ in Eq.~\eqref{eq:0modes} is positive definite if and only if $\xi > 3/\sqrt{2} \simeq 2.12$, as can be immediately checked from the sign of the trace and the determinant. The instability in the scalar sector for $\xi < 3/\sqrt{2}$ corresponds precisely to the catastrophic instability observed in \cite{Dimastrogiovanni:2012ew} for $m_g > 2 H$, where in our notation $m_g = \sqrt{2} e f(\tau)/a \mapsto \sqrt{2} c_2 \xi H$. Note however that a non-abelian background can only form for $\xi > 2$, and it is likely to form only for $\xi \gg 2$ (see Sec.~\ref{subsec:Isotropic} and in particular Fig.~\ref{fig:u0-of-xi}). Moreover, as we will see in Sec.~\ref{subsec:gaugefluctuations} (see in particular Fig.~\ref{fig:matching}) the transition from the abelian regime to the non-abelian regime occurs at $\xi \gtrsim 3$ for perturbative gauge couplings $e < 0.1$. As a consequence, despite the presence of a potentially dangerous instability  in the scalar sector, the corresponding region of the parameter space is naturally avoided by the mechanism described in this work.
+
+
+
+ The only mode which can experience a tachyonic instability in a $c_2$-background is the $e_{+2}$ mode. The mass term for this mode is then given by
+\begin{align}
+ m_{+2}^2 = 1 - \frac{2 \xi}{x} + \frac{\xi (\xi - x)}{x^2} \left(1 + \sqrt{1 - 4/\xi^2} \right) \rightarrow 1 - \frac{4 \xi}{x} + \frac{2 \xi^2}{x^2} \,,
+ \label{eq:mass-term-2p}
+\end{align}
+where in the last step we have assumed $\xi \gg 2$.
+The region in which this mass term becomes tachyonic is shown as gray shaded region in Fig.~\ref{fig:stabilitytensor} and is given by
+\begin{equation}
+ x_\text{min} \equiv \left[ 1 + c_2 - \sqrt{1 + c_2^2}\right] \xi < x <  \left[1 + c_2 + \sqrt{1 + c_2^2}\right] \xi  \equiv x_\text{max}\,,
+ \label{eq:def-xmin-xmax}
+\end{equation}
+which for $\xi \gg 2$ yields\footnote{As a word of caution, we note that in particular for small $\xi$, the lower part of this range can come close to the inhomogeneity scale of the initial conditions determined by the abelian regime, cf.~Fig.~\ref{fig:propertiesabelian}. In this case, inhomogeneities in the initial conditions may affect the instability band depicted in Fig.~\ref{fig:stabilitytensor}.}
+\begin{equation}
+ \xi (2 - \sqrt{2}) < x < \xi (2 + \sqrt{2}) \,.
+\end{equation}
+
+
+In Fig.~\ref{fig:TensorModeEvolution} we show the evolution of the helicity $+2$ mode in both regimes. The initial conditions are set by imposing the Bunch--Davies vacuum on far sub-horizon scales,
+\begin{equation}
+ w_{+2}^{(e)}(x) =   e^{i x} \qquad \text{for} \; x \gg 1 \,. \label{eq:BDsimple}
+\end{equation}
+Note that these solutions are only functions of $x = - k \tau$ and $\xi$. They are in particular independent of the value of the gauge coupling $e$ and the absolute time $\tau$ (although of course the slowly varying value of $\xi$ will introduce an implicit dependence on $\tau$).
+
+\begin{figure}
+\subfigure{
+\includegraphics[width = 0.48 \textwidth]{TensorMode3.pdf}
+}
+\hfill
+\subfigure{
+\includegraphics[width = 0.48  \textwidth]{TensorMode5.pdf}
+}
+\caption{Evolution of the helicity $+2$ mode for $\xi = 3$ (left panel) and $\xi = 5$ (right panel). The black curves correspond to the abelian regime ($f(\tau) \simeq 0$), the green curves to the non-abelian regime ($e \, f(\tau) = c_2 \xi /(- \tau)$. }
+  \label{fig:TensorModeEvolution}
+\end{figure}
+
+{A key observation here is that in the presence of a vanishing or $c_0$-type background solution, the helicity $+2$ mode of the linearized non-abelian theory behaves very much like the enhanced helicity mode of the abelian theory, see Fig.~\ref{fig:Whittakerabelian}. With this in mind, we will refer to the time before the $c_2$-solution develops as the `abelian regime', in contrast to the `non-abelian regime' characterized by the inherently non-abelian effects induced by the  $c_2$-background solution.}
+
+
+In summary, in the abelian regime ($f(\tau) = 0$), 3 modes become enhanced as soon as $x < 2 \xi$. In the non-abelian regime ($e f(\tau) = c_2 \, \xi/(- \tau)$), only a single mode is enhanced. The enhancement occurs earlier (as soon as $x \lesssim \xi(2 + \sqrt{2})$) compared to the abelian regime  but contrary to the abelian regime only lasts for some finite period of time (for $\Delta x \simeq 2  \sqrt{2} \xi $). As we will see below, these differences lead to a significant changes between the properties of gauge field fluctuations arising in the abelian and non-abelian regime. 
+In particular, due to the helicity decomposition, the single enhanced mode of the non-abelian regime can only source (at the linear level) tensor perturbations (i.e.\ gravitational waves) but not scalar perturbations (i.e.\ no curvature perturbations). 
+
+\subsubsection*{Approximate solutions for the enhanced helicity +2 mode}
+
+The tachyonically enhanced modes in the abelian regime have been discussed in much detail in the literature (see Sec.~\ref{sec:abelian}). Here we focus on the enhanced mode in the inherently non-abelian regime, i.e.\ the helicity $+2$ mode in a $c_2$ gauge-field background.  In the limit of constant $\xi$, the exact solution to Eq.~\eqref{eq:+2mode} is given by Eq.~\eqref{eq:AnalyticalSolution},\footnote{To leading order in $1/\xi$, this expression agrees with the one given in~\cite{Adshead:2013nka}. The discrepancy at higher orders is due to the different background solution chosen (see also discussion in Sec.~\ref{subsec:dynamical_background}).}
+\[
+w_{+2}^{(e)}(\tau)= e^{\kappa \pi/2} W_{-i\kappa,\,-i\mu}\left(2ik\tau\right) \,,
+\label{eq:whittakeragain}
+\]
+with $\kappa = (1 + c_2) \xi \simeq 2 \xi$ and $\mu = \xi \sqrt{2 c_2 - (2 \xi)^{-2}} \simeq \sqrt{2} \xi$. For the $c_2$ background solution, we derive useful asymptotic expressions in App.~\ref{app:asymptotics}, approximating the enhanced component of Eq.~\eqref{eq:AnalyticalSolution} on super-horizon scales and around the epoch of maximal enhancement, respectively:
+\begin{align}
+\, w_{+2} & \simeq 2 e^{(\kappa - \mu) \pi} \sqrt{\frac{ x}{ \mu}} \cos\left[\mu \ln(2 x) + \theta_0 \right]  \qquad  &&\text{for   } x \ll  x_\text{min} \,,
+ \label{eq:NonabelianAsymptotics}\\
+ w_{+2}(x)& \simeq\sqrt{4\pi}\ e^{(\kappa-\mu)\pi}\left(\frac{\zeta(x)}{V(x)}\right)^{1/4}\mathrm{Ai}\left(\zeta(x)\right) \qquad &&\text{for    } x \simeq x_\text{min} \,,
+  \label{eq:NonabelianAsymptotics2}
+\end{align}
+with Ai$(x)$ denoting the Airy Ai function and
+\begin{align}
+  V(x)  & =-\left(1-\frac{2\kappa}{x}+\frac{\mu^{2}}{x^{2}}\right) \,, \qquad
+\zeta(x)\approx\left(2\mu^{2}-2\kappa x_\text{min}\right)^{1/3}\ln\left(\frac{x}{x_\text{min}}\right) \,.
+\label{eq:Airyapp}
+ \end{align}
+These expressions will prove useful to obtain analytical estimates. For details see App.~\ref{app:asymptotics}.
+
+ 
+ \subsection{Including the inflaton and gravitational wave fluctuations \label{sec:AllFluc}}
+ 
+With this understanding of the growth of the gauge field fluctuations, let us now include the scalar and metric tensor fluctuations. The former will couple to the helicity 0 gauge field modes, the latter to the helicity $\pm2$ modes. 
+
+Let us start with the helicity 0 modes. After inserting the constraint equation which now reads
+\begin{align}
+ -    w^{(f)}_{0}(x)- \sqrt{2}  \cos \theta_0  \tfrac{\textrm{d}}{\textrm{d}x}\theta_{0} w^{(e)}_{02}(x) & = -  \frac{i k \alpha}{\sqrt{2} e \Lambda} \sin \theta^2_0 \delta \phi \,, \label{eq:0constraintphi}
+\end{align}
+the equations for the dynamical degrees of freedom read
+\begin{align}
+  \frac{\textrm{d} }{\textrm{d}x^2}\left(\begin{array}{c}
+  w^{(e)}_{01}(x)\\
+ w^{(e)}_{02}(x) \\
+ a \delta \phi(x) 
+\end{array}\right)
++ N^k_0(x)  \frac{\textrm{d} }{\textrm{d}x}\left(\begin{array}{c}
+  w^{(e)}_{01}(x)\\
+ w^{(e)}_{02}(x) \\
+ a \delta \phi(x) 
+\end{array}\right) + 
+ \tilde M^k_{0}(x)\left(\begin{array}{c}
+w^{(e)}_{01}(x)\\
+w^{(e)}_{02}(x) \\
+ a \delta \phi(x)
+\end{array}\right)  = 0\,, \label{eq:fullscalar}
+\end{align}
+with 
+\begin{align}
+ N^k_0 & = \frac{\gamma x}{\sqrt{2}} \begin{pmatrix}
+     0 & 0 &  \tan^2 \theta_0 \\
+     0 & 0 & - \frac{i}{\sqrt{2}} \sin \theta_0 \tan^2 \theta_0 \\
+     - \tan^2 \theta_0 & - \frac{i}{\sqrt{2}} \sin \theta_0 \tan^2 \theta_0  & 0
+                                            \end{pmatrix},
+\end{align}
+\begin{align}
+ \tilde M^k_0 & = \begin{pmatrix}
+        \left(M_0\right)_{11} &  \left(M_0\right)_{12}  & \frac{\gamma}{\sqrt{2}} \tan^2 \theta_0 \\
+      \left(M_0\right)_{21}  &
+        \left(M_0\right)_{22} 	& -\frac{i \gamma}{2} \left(\sin \theta_0 \tan^2 \theta_0 - 2 x \cos \theta_0 \theta_0'\right) \\
+        - \sqrt{2} \gamma x  \frac{\tan \theta_0}{\cos^2 \theta_0} \theta_0' & -\frac{i \gamma x}{16} \frac{\left(15 + \cos\left(4 \theta_0\right) \right)}{\cos^3 \theta_0} \theta_0' & m_{\phi \phi}^2
+                     \end{pmatrix},  \label{eq:M0full}         
+\end{align}
+where $M_0(x)$ is given in Eq.~\eqref{eq:M0}, $\theta_0' = \textrm{d} \theta_0 / \textrm{d}x $, $\gamma = \alpha H  / (e \Lambda) $ and
+\begin{equation}
+ m_{\phi \phi}^2 = 1 - \frac{2}{x^2} + \frac{\alpha^2 H^2 x^2}{e^2 \Lambda^2} \frac{ \sin^6 \theta_0}{\sin^2\left(2 \theta_0\right)} + \frac{V_{, \phi \phi}}{H^2 x^2	}\,.
+ \label{eq:mphi}
+\end{equation}
+As long as the gauge coupling is not very small, $e \gg \xi H  \alpha/\Lambda$, the coupling between the gauge field modes and the inflaton mode is suppressed around horizon crossing, and the two helicity 0 gauge field modes are to a good approximation described by the unperturbed system~\eqref{eq:0modes}. 
+Recalling that $\tan \theta_0/\sqrt{2} = y(x) = e f(\tau)/k$, we note that all off-diagonal terms, including the entire matrix $N_0^k$, vanish in the absence of a background gauge field, $f(\tau) = 0$. In the case of a gauge field background following the $c_2$-solution, $\tan \theta_0/\sqrt{2} = c_2 \, \xi / x$, we note that all off-diagonal terms, including the matrix $N_0^k$, vanish for $x \rightarrow \infty$, i.e.\ in the infinite past, and the matrix $\tilde M_0^k$ reduces to the unit matrix, allowing us to impose Bunch--Davies initial conditions in the infinite past. 
+ 
+
+In the opposite regime, on far super-horizon scales, the second term in Eq.~\eqref{eq:mphi} is responsible for the freezing out of the $\delta \phi$ fluctuations. In the limit $\alpha \rightarrow 0$, $x \ll1$ and $V_{,\phi\phi} \rightarrow 0$, the equations of motion for $w_0^{(\phi)} = a \, \delta \phi$ simply reads
+\begin{equation}
+ \left(w_0^{(\phi)}\right)''(x)  - \frac{2}{x^2} \,  w_0^{(\phi)}(x) = 0 \,,
+ \label{eq:freezeout}
+\end{equation}
+with the solution $x \, w_0^{(\phi)}(x) = A x^3 + B $ with the integration constants $A$ and $B$. For $x \rightarrow 0$ this leads to a decaying solution ($A = 1, B = 0$) and a constant solution ($A = 0, B = 1$). This is the usual freeze-out mechanism for scalar (and tensor) fluctuations. Note that the sign in Eq.~\eqref{eq:freezeout} is crucial to obtain a constant solution. {The last two terms in Eq.~\eqref{eq:mphi} could in principle interfere with this freeze-out mechanism, however the last term in ensured to be sub-dominant in slow-roll inflation and the second-last term only becomes large together with all the off-diagonal terms, in which case the full coupled system must be analyzed.} {We point out that the freeze-out of the inflaton perturbation, $(a \delta \phi) \propto 1/x$ also entails its decoupling from the helicity 0 gauge field modes on super-horizon scales. }
+
+
+In the left panel of Fig.~\ref{fig:fluctuations} we show the evolution of these helicity 0 modes for a parameter example of the benchmark scenario of the next section. Here $w_0^{(\phi)}$ denotes the coefficient of the comoving scalar mode $(a \, \delta \phi)$. {We clearly see the freeze-out of the inflation fluctuations after horizon crossing. The oscillations visible on sub-horizon are induced by the time-dependence of the eigenstates of the system. We have verified that the sum of the absolute value squared of all three states is $x$-independent as expected in this regime.\footnote{{The time-dependence of these (interacting)  eigenstates induces some ambiguity when imposing the Bunch--Davies initial conditions at any finite value of $x$. We have verified that our final results are not affected by this.}}
+}
+
+
+
+\begin{figure}
+\subfigure{
+\includegraphics{0modes.pdf}
+}
+\hfill
+\subfigure{
+\includegraphics{2modes.pdf}
+}
+\caption{Evolution of the (physical) scalar  and tensor fluctuations in a $c_2$-type background solution. \textbf{Left panel}: Helicity $0$ modes of the gauge field (dark green) and of the inflaton (brown). \textbf{Right panel}: Helicity $+2$ modes of the gauge field (dark green) and the metric tensor (brown). For reference, the dashed green curve shows the gauge field mode in the absence of a coupling to the metric tensor mode. Here we have set $\xi = 5$, $e = 5 \times 10^{-3}$, $H = 10^{-5} M_P$, $\alpha/\Lambda = 30$.  {Moreover, working in slow-roll approximation, we have set $V_{,\phi \phi} = 0$.}}
+  \label{fig:fluctuations}
+\end{figure}
+
+
+{Our study so far is based on the linearized system of equations given in Sec.~\ref{sec:setup}, which forbids a coupling between the enhanced helicity $+2$ mode and the helicity $0$ modes. To higher orders in $\delta A$, this is no longer true since two tensor modes can combine into a scalar mode. Schematically, e.g.\ a  term bilinear in $A$ in the action can be expressed as
+\begin{equation}
+ \text{linear: }  f \cdot w_0^{(e)} + h.c. \,, \qquad \text{quadratic: }  |w_{+2}^{(e)}|^2  
+ \label{eq:caveat}
+\end{equation}
+at the linearized level and to next order, respectively. With $\delta A \sim |w_{+2}^{(e)}| \gg |w_{0}^{(e)}|$, the condition $\delta A \ll f(\tau)$ is not sufficient to ensure that the linear term is the dominant one.  
+In fact, this observation is well known in the case of abelian axion inflation, where the backreaction of the enhanced gauge fields mode occurs precisely true the $(\delta A)^2 \rightarrow \delta \phi$ process. Generalizing the procedure of Refs.~\cite{Linde:2012bt} (see also \cite{Barnaby:2011qe}) to the non-abelian case, we will estimate the contribution to the scalar power spectrum arising from the non-linear contributions in Sec.~\ref{subsec:powerspectra}.\footnote{{In the abelian limit, these non-linear contributions are also responsible for a friction-type backreaction of the produced gauge fields on the background equation for the inflaton, see Eq.~\eqref{eq:rev_motion}. On the contrary, in the non-abelian regime (and in particular for the parameter example studied in the next section), the corresponding contribution is subdominant to the gauge field background contribution, given by the last term in Eq.~\eqref{eq:phibackground}, as long as $\delta A \ll f(\tau)$.}}
+}
+
+
+Next we turn to the helicity $\pm2$ modes, i.e.\ the gravitational waves $\gamma_{ij}$ coupled to the $e_{\pm 2}$ gauge field modes. We express the metric tensor perturbations in the helicity basis as 
+\begin{equation}
+ a \, \gamma_{ij} = \frac{1}{2} \sum_{\lambda = \pm 2} \frac{w^{(\gamma)}_{\pm 2}(x) }{\sqrt{2k}}\begin{pmatrix}
+                                                                    0 & 0 & 0\\
+                                                                    0 & \mp i & 1 \\
+                                                                    0 & 1 & \pm i
+                                                                   \end{pmatrix} \,.
+\end{equation}
+The  equations of motion are then given by
+\begin{align}
+ \frac{\textrm{d} }{\textrm{d}x^2}  \left(\begin{array}{c}
+   w^{(e)}_{\pm 2}(x)\\
+    w^{(\gamma)}_{\pm 2}(x)  
+\end{array}\right)
++ N_{\pm 2}(x)  \frac{\textrm{d} }{\textrm{d}x}\left(\begin{array}{c}
+  w^{(e)}_{\pm 2}(x)\\
+  w^{(\gamma)}_{\pm 2}(x) 
+\end{array}\right) + 
+  M_{\pm 2}(x)\left(\begin{array}{c}
+w^{(e)}_{\pm 2}(x)\\
+ w^{(\gamma)}_{\pm 2}(x) 
+\end{array}\right)  = 0\,, \label{eq:fulltensor}
+\end{align}
+with
+\begin{align}
+ N_{\pm 2}(x) &  =  \frac{y'(x) H x}{e} \begin{pmatrix}
+                    0 & - 1 \\
+                   4  & 0
+                   \end{pmatrix} \,, \\
+M_{\pm 2}(x) & = \begin{pmatrix} 
+              1  \mp \frac{2\xi}{x} + 2 (\frac{\xi}{x} \mp 1) y (x)  & \frac{H}{e} \left (-y' (x) - (2\xi \mp x) y (x)^2 + 
+      x y (x)^3 \right) \\
+                   -\frac{4 H x y (x)^2}{e}  (y (x)\mp 1) & 
+                 1 - \frac{2}{x^2} +  \frac{2 H^2 x^2}{e^2} \left( y (x)^4 -  y' (x)^2\right)  
+                 \end{pmatrix} \,.
+\end{align}
+where $y' \equiv \tfrac{\textrm{d} }{\textrm{d}x} y(x) $.
+In the large-$\xi$ limit of the $c_2$-solution, $y(x) = \xi/x$, this becomes\footnote{In the following expressions we set $M_P = 1$.}
+\begin{align}
+ N_{\pm 2}(x) &  =  - \frac{ H \xi }{e x} \begin{pmatrix}
+                    0 & -1 \\
+                   4  & 0
+                   \end{pmatrix} \,, \\
+M_{\pm 2}(x) & = \begin{pmatrix} 
+               1 \mp 4 \frac{\xi}{x} + 2 \frac{\xi^2}{x^2} & \frac{H \xi}{e x^2} \left( \pm 1 + x \xi \mp \xi^2 \right) \\
+              \frac{4 H \xi^2}{e x^2 } \left(\pm x - \xi \right) &
+                1 - \frac{2}{x^2}  + \frac{2 H^2 \xi^2}{ e^2 x^2} (-1 + \xi^2)
+                 \end{pmatrix} \,.
+\end{align}
+We recognize the tachyonic instability in the $+2$ gauge field mode in the top left entry of $M_{+2}$, leading to an exponential growth for this mode for $(2-\sqrt{2})\xi \leq x \leq (2+\sqrt{2}) \xi$. In the bottom right corner we find the (helicity conserving) mass for the metric tensor mode. Here the first term accounts for the free oscillation on sub-horizon scales, whereas the second term is responsible for the freeze-out on super-horizon scales. The last term is the source term arising from the background gauge field, see the first term on the right-hand side of Eq.~\eqref{eq:eomGWs}, and contributes a positive mass term for $\xi > 2$. Similar to the helicity 0 case discussed above, the system reduces to $N_{\pm2} = 0$ and $M_{\pm2} = \mathbb{1}$ in the far past as $x \rightarrow \infty$. For sub-horizon modes ($x > 1$), the off-diagonal elements are small as long as $e M_P \ll  H$, ensuring that the gauge field modes are well described by Eqs.~\eqref{eq:-2mode} and \eqref{eq:+2mode}. See also the right panel of Fig.~\ref{fig:fluctuations}.
+
+{Finally, let us perform an analytical estimate of the super-horizon amplitude of the enhanced gravitational wave mode in the large-$\xi$ limit. For $x \leq 1$, freeze-out of the gravitational wave implies $w_{+2}^{(\gamma)}(x) \propto 1/x$ and hence $\tfrac{d^2}{dx^2} w_{+2}^{(\gamma)}(x) = 2/x^2 w_{+2}^{(\gamma)}(x)$, thus precisely canceling the second term of the bottom right element of $M_{\pm2}$. For $x \leq 1$, the gauge field mode $w_{+2}^{(e)}$ is well described by the solution~\eqref{eq:NonabelianAsymptotics}, implying that $\overline{(w_{+2}^{(e)})'(x)} \sim 1/x \, \overline{w_{+2}^{(e)}(x)}$ where the bar indicates an averaging over the (co)sine. With this we see that the off-diagonal first derivative term is suppressed by a factor $\xi^2$ compared to the off-diagonal mass term, and the equation of motion for $w_{+2}^{(\gamma)}(x)$ at $x = 1$ reads
+\begin{equation}
+   \frac{4 H \xi^3}{e }  w_{+2}^{(e)}(x = 1) \simeq \left(1  + \frac{2 H^2 \xi^4}{ e^2}  \right) w_{+2}^{(\gamma)}(x = 1) \,.
+\end{equation}
+If furthermore $H \xi^2 \ll e$, we can immediately obtain the value of the gravitational wave mode at (and beyond) horizon crossing as
+\begin{equation}
+ x \, w_{+2}^{(\gamma)}(x) \big|_{x \lesssim 1} = -  \frac{4 H \xi^{3}}{e } w_{+2}^{(e)}(x = 1) \simeq -  \frac{2 H \xi^{5/2}}{e }  2^{3/4} e^{(2 - \sqrt{2}) \pi \xi} \,,
+ \label{eq:GWanalytical}
+\end{equation}
+where in the last step we have inserted Eq.~\eqref{eq:NonabelianAsymptotics}, replacing the cosine with a factor of 1/2. For the parameter point of Fig.~\ref{fig:fluctuations} this yields $ \, x \, w_{+2}^{(\gamma)}(x) \big|_{x \lesssim 1} \simeq 3.7 \times 10^3$, agreeing with the full numerical solution up to an order one factor.} We emphasize that due to helicity conservation only one of the two metric tensor modes is enhanced in this manner, resulting in a chiral gravitational wave spectrum. 
+
+
+ 
+ In a similar manner, the `freeze-out'-like behaviour visible for the gauge field modes in Fig.~\ref{fig:fluctuations} can be traced back to the coupling to the metric tensor perturbation through to top-right element of $M_{+ 2}$. {On far super-horizon scales, the contribution from the frozen gravitational wave mode becomes comparable to the contribution from the decaying gauge field modes in the in the equation of motion for the gauge fields. 
+ In this regime, the derivative terms are suppressed by a factor of $\xi^{-2}$ compared to the $M_{+2}$ terms.} The amplitude of $w^{(e)}_{+2}$ can then be estimated by comparing the two terms in the first line of $M_{+2}$  to get 
+ \begin{equation}
+  	w^{(e)}_{+2} (x \rightarrow 0)\simeq \frac{H\xi}{2 e} w^{(\gamma)}_{+2}(x \rightarrow 0)\, ,
+  \end{equation} 
+ For the parameter point of Fig.~\ref{fig:fluctuations} this yields  $w^{(e)}_{+2} (x \rightarrow 0)\simeq 10^{-2} \, \times \, w^{(\gamma)}_{+2}(x \rightarrow 0) $, in good agreement with the full numerical result.
+For the parameter example of this paper, the contribution of the far super-horizon modes to both the energy and variance of the gauge fields is negligible, due to a suppression both in amplitude and momentum compared to the modes crossing the horizon at the same time. Consequently, these are well described by employing the solutions of Eq.~\eqref{eq:+2mode}. On the other hand, if the gauge coupling is very small, this description is no longer accurate and the gauge and gravity sector need to be treated as a fully coupled system. {In this regime, the gauge field/gravity interactions induce an exchange of energy between the $e_{\pm 2}$ modes and gravitational waves~\cite{Caldwell:2016sut, Caldwell:2017sto}.}
+
+Both the scalar and tensor sector preserve the usual scaling behaviour of de Sitter space. In the limit of constant $H$ and $\xi$, we obtain a scale-invariant scalar and tensor power spectrum. The slow variation of $H$ and $\xi$ obtained in any realistic inflation model will lead to deviations from this exact scale invariance. We will discuss this in more detail in the next section.
+
+
+ 

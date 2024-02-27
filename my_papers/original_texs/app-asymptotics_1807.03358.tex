@@ -1,0 +1,233 @@
+
+\section{Asymptotics of the Whittaker \texorpdfstring{$W$}{W} function\label{app:asymptotics}}
+
+The purpose of this appendix is to understand the asymptotics of the Whittaker function, which describes the enhanced gauge field modes.
+
+For parameters $k$, $m$, and $b$, and a positive real variable $x$, the Whittaker functions 
+\[
+C_{1}W_{k,m}(bx)+C_{2}M_{\kappa,\mu}(bx)
+\]
+ for constants $C_{1}$ and $C_{2}$ provide the general solution to the differential equation 
+\[
+\frac{\mathrm{d}^{2}}{\mathrm{d}x^{2}}w(x)+\left(-\left(\frac{b}{2}\right)^{2}+\frac{kb}{x}+\frac{\tfrac{1}{4}-m^{2}}{x^{2}}\right)w(x)=0.
+\]
+ In general, given any differential equation of the form 
+\[
+\frac{\mathrm{d}^{2}}{\mathrm{d}x^{2}}w(x)+\left(A+\frac{B}{x}+\frac{C}{x^{2}}\right)w(x)=0,
+\]
+ it is obviously possible to solve for (possibly complex) Whittaker function parameters $k$, $m$ and $b$ which match general parameters $A$, $B$, and $C$. For our purposes, it will be convenient to make the transformation $k\mapsto-i\kappa$, $m\mapsto-i\mu$ and $b\mapsto-i\beta$. Under the assumption that $\kappa$, $\mu$ and $\beta$ are real and positive, it will be sufficient for our purposes to take $C_{2}=0$ and consider only the ``negative-imaginary Whittaker $W$ function'' 
+\[
+C_{1}W_{-i\kappa,-i\mu}(-i\beta x),
+\]
+ which solves 
+\begin{equation}
+\frac{\mathrm{d}^{2}}{\mathrm{d}x^{2}}w(x)+\left(\left(\frac{\beta}{2}\right)^{2}-\frac{\kappa\beta}{x}+\frac{\tfrac{1}{4}+\mu^{2}}{x^{2}}\right)w(x)=0.\label{eq:whiteqn}
+\end{equation}
+ The case of \prettyref{eq:+2mode} for $w_{+2}^{(e)}$ with the $c_{2}$-solution corresponds to the negative-imaginary Whittaker $W$ function with parameters
+\begin{align}
+\kappa & =(1+c_{2})\xi\approx2\xi,\label{eq:whitparams}\\
+\mu & =\sqrt{2c_{2}-(2\xi)^{-2}}\xi\approx\sqrt{2}\xi,\nonumber \\
+\beta & =2.\nonumber 
+\end{align}
+
+
+\subsection{Summary of asymptotics}
+
+The phenomenology in Sections \ref{sec:linearized} and \ref{sec:example} depends strongly on the behavior of the mode functions both in the infinite future $x\to0^{+}$ and around the global maximum. We summarize here the corresponding estimates for the Whittaker function. Derivations are given in the subsequent subsections.
+
+We impose the boundary condition 
+\begin{align}
+w(x) & =C_{1}W_{-i\kappa,-i\mu}(-i\beta x)\sim e^{i\beta x/2}\textrm{ as }x\to\infty\label{eq:whittaker-with-coeff}
+\end{align}
+ which, with our normalization conventions for mode functions, corresponds to the Bunch--Davies vacuum \prettyref{eq:BDsimple}. We show in \prettyref{subsec:asymp-normalization} that 
+\[
+C_{1}=e^{\kappa\pi/2}e^{i\phi_{0}},
+\]
+ where the phase $\phi_{0}$ is undetermined. 
+
+In \prettyref{subsec:asymp-x-0} we study the resulting behavior as $x\to0^{+}$. As is the case in \prettyref{eq:whitparams}, if $\kappa>\mu$ then upon taking $\phi_{0}$ as in \prettyref{eq:phi-0}, the real part is enhanced and the imaginary part is suppressed. Specifically, 
+\begin{align}
+\textrm{Re}(w(x)) & \approx2e^{(\kappa-\mu)\pi}\sqrt{\frac{\beta x}{2\mu}}\cos\left(\mu\ln(\beta x)+\theta_{0}\right),\label{eq:wh-re}\\
+\textrm{Im}(w(x)) & \approx\tfrac{1}{2}e^{-(\kappa-\mu)\pi}\sqrt{\frac{\beta x}{2\mu}}\sin\left(\mu\ln(\beta x)+\theta_{0}\right).\label{eq:wh-im}
+\end{align}
+ Note that this is a wave which decays in proportion to $\sqrt{x}$. Furthermore, this wave oscillates $\mu/(2\pi)$ times per e-fold. In our case of interest $w(x)=w_{+2}^{(e)}(x)$, e-folds in $x$ are equivalent to e-folds in $\tau$, and the frequency is $\approx\sqrt{2}\xi/(2\pi)$ oscillations per e-fold. 
+
+While for large $\xi$, we could approximate $\kappa$ and $\mu$ to obtain 
+\begin{align}
+w_{+2}^{(e)}(x) & \approx2^{-1/4}\sqrt{x}\left(2e^{(2-\sqrt{2})\pi\xi}\cos\theta+\tfrac{1}{2}e^{-(2-\sqrt{2})\pi\xi}i\sin\theta\right),\label{eq:as_wp2}\\
+\theta & \approx\sqrt{2}\xi\ln(2x)+\theta_{0},\nonumber 
+\end{align}
+ it is far more accurate to use \prettyref{eq:wh-re} rather than \prettyref{eq:as_wp2} due to the exponential sensitivity on $\kappa$ and $\mu$. 
+
+Finally in \prettyref{subsec:Airy-Whittaker}, we apply the WKB approximation as reviewed in \prettyref{subsec:WKB-review} and \prettyref{subsec:WKB-formulas} to obtain \prettyref{eq:airy-full-approx}, which accurately approximates $\textrm{Re}(w(x))$ around its maximum value in terms of the Airy function.
+
+\subsection{\label{subsec:asymp-normalization}Asymptotics as \texorpdfstring{$x\to\infty$}{x\to\infty}}
+
+Here we determine the magnitude $\left|C_{1}\right|$ of the coefficient in \prettyref{eq:whittaker-with-coeff} by matching the Bunch--Davies vacuum with the asymptotics of the Whittaker function. 
+
+Let $x$ be a positive real variable. For large $x$, the Whittaker function satisfies 
+\begin{align*}
+W_{k,m}(bx) & =e^{-bx/2}(bx)^{\kappa}\left(1+\epsilon_{1}(bx)\right),\\
+\epsilon_{1}(bx) & =0+\mathcal{O}\left(\frac{1+k^{2}+m^{2}}{bx}\right).
+\end{align*}
+ This asymptotic expression remains valid upon replacing $k\mapsto-i\kappa$, $m\mapsto-i\mu$ and $b\mapsto-i\beta$, and evaluating complex exponents $a^{p}=e^{p\ln a}$ using the principal branch of the logarithm. Thus 
+\begin{align}
+W_{-i\kappa,-i\mu}(-i\beta x) & =e^{i\beta x/2}(-i\beta x)^{-i\kappa}\left(1+\epsilon_{1}(\beta x)\right)\nonumber \\
+ & =e^{-\kappa\pi/2}\,e^{i\beta x/2-i\kappa\ln(\beta x)}\left(1+\epsilon_{1}(\beta x)\right)\label{eq:log-drift}
+\end{align}
+ as $x\to\infty$. Therefore $\left|C_{1}\right|=e^{\kappa\pi/2}$. Note the (inconsequential) logarithmic drift in complex phase, which prevents us at this stage from selecting a distinguished phase.
+
+\subsection{\label{subsec:asymp-x-0}Asymptotics as \texorpdfstring{$x\to0^+$}{x\to0+}}
+
+Let us now consider the behavior as $x\to0^{+}$, corresponding to the infinite future. In this limit we have 
+\begin{align*}
+W_{-i\kappa,-i\mu}(-i\beta x) & =\sqrt{\beta x}e^{-i\pi/4}\sum_{\pm}\frac{\Gamma\left(\mp2i\mu\right)}{\Gamma\left(\tfrac{1}{2}+i\kappa\mp i\mu\right)}(-i\beta x)^{\pm i\mu}\left(1+\epsilon_{2}(\beta x)\right),\\
+\epsilon_{2}(\beta x) & =0+\mathcal{O}\left(\frac{1+\kappa+\mu}{1+\mu}\beta x\right).
+\end{align*}
+ To make sense of this expression, we may rewrite it in the form 
+\begin{align}
+w(x)\equiv e^{\kappa\pi/2}e^{i\phi_{0}}W_{-i\kappa,-i\mu}(-i\beta x) & =C_{0}\sqrt{\beta x}\left(\lambda\cos\theta+i\lambda^{-1}\sin\theta+\epsilon_{3}(\beta x)\right),\label{eq:w-exact}\\
+\theta & \equiv\mu\ln(\beta x)+\theta_{0},
+\end{align}
+ where the four constants $C_{0}$, $\lambda$, $\phi_{0}$ and $\theta_{0}$ depend only on the parameters $\kappa$ and $\mu$. After some algebra, we find the exact expressions
+\begin{align}
+C_{0} & \equiv(2\mu)^{-1/2},\label{eq:whit-consts}\\
+\lambda & \equiv e^{(\kappa-\mu)\pi}\left(\frac{\sqrt{1+e^{-2(\kappa-\mu)\pi}}+\sqrt{1+e^{-2(\kappa-\mu)\pi}e^{-4\mu\pi}}}{\sqrt{1-e^{-4\mu\pi}}}\right),\label{eq:whit-lambda}\\
+\theta_{0} & \equiv\tfrac{1}{2}\left(\phi_{\Gamma,1/2}(\kappa+\mu)-\phi_{\Gamma,1/2}(\kappa-\mu)\right)-\phi_{\Gamma,0}(2\mu)\\
+\phi_{0} & \equiv\tfrac{\pi}{4}+\tfrac{1}{2}\left(\phi_{\Gamma,1/2}(\kappa+\mu)+\phi_{\Gamma,1/2}(\kappa-\mu)\right),\label{eq:phi-0}\\
+\phi_{\Gamma,a}(b) & \equiv\arg\Gamma(a+ib).\\
+\epsilon_{3}(\beta x) & =0+\mathcal{O}\left(\frac{1+\kappa+\mu}{1+\mu}(\lambda+\lambda^{-1})\beta x\right).
+\end{align}
+ To derive these parameters, we have made use of the following polar decomposition identities for the gamma function. For $b\in\mathbb{R}$, 
+\[
+\Gamma\left(ib\right)=\sqrt{\frac{\pi}{b\sinh(\pi b)}}e^{i\phi_{\Gamma,0}(b)},\quad\Gamma\left(\tfrac{1}{2}+ib\right)=\sqrt{\frac{\pi}{\cosh(\pi b)}}e^{i\phi_{\Gamma,1/2}(b)}.
+\]
+
+In the parameter range of interest (see \prettyref{eq:whitparams}), 
+\[
+\kappa\approx2\xi,\qquad\mu\approx\sqrt{2}\xi,\qquad\beta=2,\qquad\xi\geq2,
+\]
+ we have $e^{-2\pi(\kappa-\mu)}\ll1$ and $e^{-4\pi\mu}\ll1$. This allows us to very accurately approximate the part of the expression for $\lambda$ inside the parentheses in \prettyref{eq:whit-lambda} by the number $2$. Specifically, 
+\begin{align}
+\lambda & =2e^{(\kappa-\mu)\pi}\left(1+\epsilon_{4}\right),\label{eq:l-approx}\\
+\textrm{with }\ 0 & <\epsilon_{4}\leq e^{-2(\kappa-\mu)\pi}+e^{-4\mu\pi}\textrm{ when }\mu\geq\tfrac{1}{25}.
+\end{align}
+ In the worst case with our parameters (when $\xi=2$), the relative error is only $\epsilon_{4}\approx3\times10^{-4}$. 
+
+Finally, when $e^{-2\pi(\kappa-\mu)}\ll1$ and $e^{-4\pi\mu}\ll1$ we obtain the formulas \prettyref{eq:wh-re} and \prettyref{eq:wh-im} by plugging \prettyref{eq:l-approx} into \prettyref{eq:w-exact}.
+
+\subsection{WKB approximation }
+
+\subsubsection{Review of WKB approximation\label{subsec:WKB-review}}
+
+Although widely known, we briefly summarize the technique of WKB approximation as utilized here. The solutions to a differential equation of the form 
+\begin{equation}
+\frac{\mathrm{d}^{2}}{\mathrm{d}x^{2}}w(x)=V(x)w(x)\label{eq:WKB-orig}
+\end{equation}
+ are often not straightforward when $V(x)$ is a general function. Important exceptions are when $V(x)$ is one of the following model potentials $V_{0}(x)$. 
+\begin{itemize}
+\item If $V_{0}(x)=1$ then $w_{0}(x)=e^{\pm x}$ are solutions. 
+\item If $V_{0}(x)=-1$ then $w_{0}(x)=e^{\pm ix}$ are solutions. 
+\item If $V_{0}(x)=x$ then the Airy functions $w_{0}(x)=\mathrm{Ai}(x)$ and $w_{0}(x)=\mathrm{Bi}(x)$ are solutions. 
+\item If $V_{0}(x)=\pm\left(x^{2}-\alpha^{2}\right)$ for some constant $\alpha$ then the solutions are called parabolic cylinder functions, and they have $\alpha$ as a parameter. 
+\end{itemize}
+The main idea of the WKB approximation is to perform a change of variables to make \prettyref{eq:WKB-orig} resemble such a model equation. We consider transformations of \prettyref{eq:WKB-orig} which do not introduce a first-derivative term, and are of the form 
+\begin{align}
+w(x) & \mapsto\vartheta(\zeta(x))\cdot W(\zeta(x)),\label{eq:liouville}
+\end{align}
+ where $\zeta(x)$ is an increasing change of variables ($\mathrm{d}\zeta/\mathrm{d}x>0$), and $\vartheta(\zeta)$ is constructed to eliminate any first-derivative term introduced by $\zeta$. Such a transformation is called a Liouville transformation. The transformed equation should be of the form 
+\begin{equation}
+\frac{\mathrm{d}^{2}}{\mathrm{d}\zeta^{2}}W(\zeta)=\left(V_{0}(\zeta)+\epsilon(\zeta)\right)W(\zeta),\label{eq:WKB-transformed}
+\end{equation}
+ where $V_{0}(\zeta)$ is a model potential, $\epsilon(\zeta)$ is arranged to be suitably negligible. The Liouville transformation condition that ensures no first-derivative term is equivalent to 
+\begin{equation}
+\vartheta(\zeta)=\left(\frac{\mathrm{d}x}{\mathrm{d}\zeta}\right)^{1/2}.\label{eq:WKB-mult}
+\end{equation}
+A generally good choice of $\zeta(x)$ to keep $\epsilon(\zeta)$ small is 
+\begin{equation}
+\frac{\mathrm{d}\zeta}{\mathrm{d}x}=+\sqrt{\frac{V(x)}{V_{0}(\zeta)}}.\label{eq:zeta-def}
+\end{equation}
+Since this must be real, it must satisfy $\mathrm{sign}(V(x))=\mathrm{sign}(V_{0}(\zeta))$. Thus for each zero of $V(x)$ in the domain of interest, there must be a corresponding zero in $V_{0}(\zeta)$. In this way, the number of roots of $V(x)$ determines the appropriate type of model potential.
+
+Solving \prettyref{eq:zeta-def} gives 
+\[
+Z(\zeta)=X(x),\ \textrm{where}\ Z(\zeta)\equiv\int\sqrt{\left|V_{0}(\zeta)\right|}\ \mathrm{d}\zeta\ \textrm{ and }\ X(x)\equiv\int\sqrt{\left|V(x)\right|}\ \mathrm{d}x.
+\]
+In case there are any roots $\left\{ x_{i}\right\} $ of $V(x)$, then the constant of integration and any parameters of the model potential $V(x)$ must be chosen so that $X(x_{i})=Z(\zeta_{i})$, where $\left\{ \zeta_{i}\right\} $ are the corresponding zeroes of $V_{0}(\zeta)$.  Assuming that we can compute the antiderivatives $Z$ and $X$, as well as $Z^{-1}$, we have the formula 
+\[
+\zeta(x)=Z^{-1}\left(X(x)\right).
+\]
+ Working backward to get our approximate solution, let $W_{0}(\zeta)$ denote a solution to \prettyref{eq:WKB-transformed} where we ignore\footnote{For detailed error estimates for the WKB approximation, see \cite{olver1997}.} $\epsilon(\zeta)$. Plugging this into \prettyref{eq:liouville} and using \prettyref{eq:WKB-mult} and \prettyref{eq:zeta-def}, we find that 
+\begin{equation}
+w_{\textrm{approx}}(x)=C\left(\frac{V_{0}(\zeta(x))}{V(x)}\right)^{1/4}W_{0}(\zeta(x))\label{eq:WKB}
+\end{equation}
+ is an approximate solution to \prettyref{eq:WKB-orig} for any number $C$.
+
+\subsubsection{\label{subsec:WKB-formulas}WKB approximation for various model potentials}
+
+Consider first the simple case where $V(x)$ has no zeroes so that we can take $V_{0}(\zeta)=\pm1=\mathrm{sign}V$. The model solutions are $W_{0}(\zeta)=e^{\pm\sqrt{\mathrm{sign}V}\zeta}$. For the reparameterization, $Z(\zeta)=\zeta$ and so 
+\[
+\zeta_{\textrm{exp}}(x)=X(x)=\int\sqrt{\left|V(x)\right|}\,\mathrm{d}x.
+\]
+ Finally, 
+\begin{equation}
+w_{\textrm{exp-approx}}(x)=C\left|V(x)\right|^{-1/4}e^{\pm\sqrt{\mathrm{sign}V}X(x)},\label{eq:exp-approx}
+\end{equation}
+ which is the standard WKB approximation. 
+
+Consider next the case where $V(x)$ has a single simple zero at $x=x_{1}$ in the domain of interest. We take $V_{0}(\zeta)=\zeta$. Thus $Z(\zeta)=\mathrm{sign(\zeta)}\tfrac{2}{3}\left|\zeta\right|^{3/2}$, and $X(x)=\int_{x_{1}}^{x}\sqrt{\left|V(y)\right|}\,\mathrm{d}y$, so 
+\begin{align}
+\zeta_{\textrm{Airy}}(x) & =\mathrm{sign}(x-x_{1})\left|\tfrac{3}{2}X(x)\right|^{2/3},\\
+w_{\textrm{Airy-approx}}(x) & =C\left(\frac{\zeta(x)}{V(x)}\right)^{1/4}\mathrm{Ai}\left(\zeta(x)\right).\label{eq:airy-approx}
+\end{align}
+
+The case where $V(x)$ has two zeroes at $x_{1}<x_{2}$ is treated in~\cite{Olver137} and applied to the imaginary Whittaker function in~\cite{Olver_1980}. As a summary, the parameter $\alpha$ of $V_{0}$ is determined by $\int_{-\alpha}^{\alpha}\sqrt{\alpha^{2}-\zeta^{2}}=\int_{x_{1}}^{x_{2}}\sqrt{\left|V(y)\right|}\,\mathrm{d}y$, which is necessary for $\zeta(x_{1})=-\alpha$ and $\zeta(x_{2})=+\alpha$. One complication is that although $Z(\zeta)$ has a closed form, its inverse function does not. Furthermore the parabolic cylinder functions are considerably more complicated. Since our region of interest is around the global maximum, which occurs close to the zero\footnote{A slight discrepancy between $x_{1}$ and $x_{\mathrm{min}}$ arises because our $-V(x)$ differs slightly from the mass term $m_{+2}^{2}$ of \prettyref{eq:mass-term-2p}, as explained in \prettyref{fn:modified-potential}. } $x_{1}\approx x_{\mathrm{min}}$ defined in \prettyref{eq:def-xmin-xmax}, the Airy approximation \eqref{eq:airy-approx} suffices for our purposes. 
+
+\subsubsection{\label{subsec:Airy-Whittaker}Airy approximation of the imaginary Whittaker \texorpdfstring{$W$}{W} function around its maximum }
+
+We wish to find the constant coefficient of \prettyref{eq:airy-approx} which will make it agree with $\textrm{Re}(w(x))$ from \prettyref{eq:wh-re} as $x\to0$, or equivalently as $\zeta\to-\infty$. 
+
+In the imaginary Whittaker equation \prettyref{eq:whiteqn} we take\footnote{\label{fn:modified-potential}Since the WKB approximation introduces small errors, there is potential for these errors to cancel. For the Whittaker function, it is advantageous to take $V(x)$ without the $\tfrac{1}{4}x^{-2}$ term in \prettyref{eq:whiteqn}. This is equivalent to using a non-zero error term $\epsilon(x)=\tfrac{1}{4}x^{-2}$, as in \prettyref{eq:WKB-transformed}. (See \cite{olver1997} for details.) As motivation for this modification, consider $\epsilon(x)=ax^{-2}$, so that the remainder is $V(x)\approx-(\tfrac{1}{4}-a+\mu^{2})x^{-2}$ as $x\to0$. Therefore $X(x)\approx\sqrt{\tfrac{1}{4}-a+\mu^{2}}\ln x$. When $V(x)$ is large, the Airy approximation reduces to the exponential approximation, and thus by \prettyref{eq:exp-approx} the approximate solution is of the form 
+\[
+w_{\mathrm{approx}}(x)\approx C\sqrt{x}e^{\pm i\sqrt{\tfrac{1}{4}-a+\mu^{2}}\ln x}.
+\]
+ By comparison of the exponent with \prettyref{eq:wh-re}, we see that the coefficient of $\ln x$ should be $\mu$, so it is better to take $a=\tfrac{1}{4}$ rather than $a=0$. } 
+\begin{align*}
+V(x) & =-\left(\left(\frac{\beta}{2}\right)^{2}-\frac{\kappa\beta}{x}+\frac{\tfrac{0}{4}+\mu^{2}}{x^{2}}\right),
+\end{align*}
+
+To determine the proper coefficient $C$ of \prettyref{eq:airy-approx}, we substitute into \prettyref{eq:airy-approx} the asymptotic formula 
+\[
+\mathrm{Ai}(\zeta)=\pi^{-1/2}(-\zeta)^{-1/4}\sin\left(\frac{\pi}{4}+\frac{2}{3}(-\zeta)^{3/2}\right)+O(-\zeta^{-1})\textrm{ as }\zeta\to-\infty
+\]
+ to obtain 
+\[
+w_{\textrm{approx}}(x)\approx C\pi^{-1/2}V(x)^{-1/4}\sin\left(\frac{\pi}{4}-X(x)\right).
+\]
+ As $x\to0$ we have $V(x)^{-1/4}\approx\sqrt{x/\mu}$. Matching the magnitude with \prettyref{eq:wh-re}, we find $C=\sqrt{2\pi\beta}\ e^{(\kappa-\mu)\pi}$, so 
+\begin{equation}
+w_{\textrm{approx}}(x)=\sqrt{2\pi\beta}\ e^{(\kappa-\mu)\pi}\left(\frac{\zeta(x)}{V(x)}\right)^{1/4}\mathrm{Ai}\left(\zeta(x)\right).\label{eq:airy-full-approx}
+\end{equation}
+ The exact expression for $\zeta(x)$ is complicated, but it is well-approximated for $x\approx x_{1}$ by 
+\[
+\zeta(x)\approx\left(2\mu^{2}-\beta\kappa x_{1}\right)^{1/3}\ln\frac{x}{x_{1}}.
+\]
+ To give the exact formula for $\zeta(x)$ in the interval $\left(0,x_{1}\right)$ in a concise form, we introduce 
+\begin{align*}
+\chi\equiv\frac{\beta x}{2\mu},\quad\lambda & \equiv\frac{\kappa}{\mu}>1,\quad\chi_{i}\equiv\lambda+(-1)^{i}\sqrt{\lambda^{2}-1}\textrm{ for }i\in\left\{ 1,2\right\} ,\\
+R & \equiv\sqrt{\chi^{2}-2\chi\lambda+1}=\frac{x}{\mu}\sqrt{-V(x)}.
+\end{align*}
+ It is easy to verify that 
+\begin{align*}
+x_{i} & =2\mu\chi_{i}/\beta\textrm{ for }i\in\left\{ 1,2\right\} ,\\
+V(x) & =V(x)=-\left(\frac{\beta}{2\chi}\right)^{2}\left(\chi^{2}-2\chi\lambda+1\right)=-\left(\frac{\beta}{2\chi}\right)^{2}\left(\chi-\chi_{1}\right)\left(\chi-\chi_{2}\right),\\
+X(x) & =\left(R-\ln\left(1-\chi\lambda+R\right)-\lambda\ln\left(\lambda-\chi-R\right)+\ln\chi+\tfrac{1}{2}(1+\lambda)\ln\left(\lambda^{2}-1\right)\right)\mu,\\
+\zeta(x) & =\mathrm{sign}(x-x_{1})\left|\tfrac{3}{2}X(x)\right|^{2/3}.
+\end{align*}
+ Due to the limited domain of the logarithm, the expression given for $X(x)$ applies only in the interval $(0,x_{1})$. 
+
+We use \prettyref{eq:airy-full-approx} to compute the gauge-field contribution to the scalar power spectrum in \prettyref{app:variance_computation}.
+
+ 
+
+\textcolor{white}{}

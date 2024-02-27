@@ -1,0 +1,534 @@
+\documentclass[a4paper, amsfonts, amssymb, amsmath, reprint, showkeys, nofootinbib, twoside, superscriptaddress]{revtex4-1}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+%\usepackage{amsmath,amssymb}
+%\usepackage{mathtools, cuted}
+\usepackage[colorinlistoftodos, color=green!40, prependcaption]{todonotes}
+%\input{preamble}
+\usepackage[pdftex, pdftitle={Article}, pdfauthor={Author}]{hyperref} % For hyperlinks in the PDF
+%\setlength{\marginparwidth}{2.5cm}
+\usepackage[normalem]{ulem}
+\bibliographystyle{apsrev4-1}
+\usepackage{color}
+\usepackage{subfigure}
+\usepackage{enumitem}
+%\usepackage{showlabels}
+%\usepackage[bottom]{footmisc}
+%\interfootnotelinepenalty=1000
+\setlength{\skip\footins}{1.2pc plus 10pt minus 2pt}
+\usepackage{amsmath}
+\DeclareMathOperator\arctanh{arctanh}
+
+\newcommand{\tk}[1]{\textcolor{blue}{TK: #1}}
+\newcommand{\Neff}{$N_{\rm eff}$ }
+\newcommand{\LCDM}{$\Lambda$CDM}
+%\newcommand{\fm}[1]{\textcolor{purple}{#1}}
+%\newcommand{\am}[1]{\textcolor{darkgray}{#1}}
+%\newcommand{\cm}[1]{\textcolor{brown}{#1}}
+\setcounter{tocdepth}{1}
+
+
+\def\bel#1{\begin{equation} \label{#1}}
+\def\mbb#1{\mathbb{#1}}
+\def\der{\partial}
+\def\st{\phi_*}
+\def\fk{f_\kappa}
+\def\t{t_b}
+\def\b{\beta}
+\def\V{{\cal{V}}}
+\def\r{r_b}
+\def\hvp{\hat{\varphi}}
+\def\vp{\varphi}
+\def\mpl{M_{\rm pl}}
+\def\vin{\cal{V}_{\rm in}}
+\def\c{\chi_b}
+\def\G{\Gamma}
+\def\gsim{\gtrsim}
+\def\Bt{{B_\th}}
+\def\Bp{{B_\phi}}
+\def\bt{{\bar \th}}
+\def\hp{{\hat \phi}}
+\def\tg{{\rm tg }\,}
+\def\hmn{h_{\mu \nu}}
+\def\cmn{C_{\mu \nu}}
+\def\e{{\rm e}}
+\def\mc{\mathcal}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\bea{\begin{eqnarray}}
+\def\eea{\end{eqnarray}}
+\def\ni{\noindent}
+\def\la{~\mbox{\raisebox{-.6ex}{$\stackrel{<}{\sim}$}}~}
+\def\ga{~\mbox{\raisebox{-.6ex}{$\stackrel{>}{\sim}$}}~}
+\def\ltap{\ \raise.3ex\hbox{$<$\kern-.75em\lower1ex\hbox{$\sim$}}\ }
+\def\gtap{\ \raise.3ex\hbox{$>$\kern-.75em\lower1ex\hbox{$\sim$}}\ }
+\def\gl{\ \raise.5ex\hbox{$>$}\kern-.8em\lower.5ex\hbox{$<$}\ }
+\def\roughly#1{\raise.3ex\hbox{$#1$\kern-.75em\lower1ex\hbox{$\sim$}}}
+\def\inf{\text{inf}}
+\def\mod{\text{mod}}
+\def\up{\text{up}}
+\def\AdS{\text{AdS}}
+\def\mix{\text{mix}}
+\def\tot{\text{tot}}
+\def\Hinf{\mathcal{H}_{\inf}}
+\def\nn{\nonumber}
+\def\at{a_i \tau_i}
+\def\spa{\phantom{a}}
+\def\pref#1{(\ref{#1})}
+\def\hf{\frac12}
+\def\del{\partial}
+\def\half{{1\over 2}}
+\newcommand\czt{{\mathbb{C}^{3}/ \mathbb{Z}_{3}}}
+\def\op{\oplus}
+\def\cv{{{\cal{V}}}}
+\def\hcv{{\hat{\cal{V}}}}
+\def\mpl{M_{\rm pl}}
+\def\vp{\vec{p}}
+\def\varp{\varphi}
+\def\mph{m_{\varphi}}
+\def\mv{m_{\varphi}}
+\def\hm{\hat{m}}
+%\def\sh{\hat{s}}
+\newcommand{\mr}{{\mathbb{R}}}
+\newcommand{\vo}{\mathcal{V}}
+\newcommand{\comments}[1]{}
+\newcommand{\nef}{\Delta N_{\rm eff}}
+\newcommand{\sh}{{\hat{s}}}
+\newcommand{\ben}{\begin{enumerate}}
+\newcommand{\een}{\end{enumerate}}
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\ba}{\begin{align}} 
+\newcommand{\ea}{\end{align}}
+
+
+\def\HI{H\,{\sc i}~}
+\def\HII{H\,{\sc ii}~}
+\def\k{{\bm k}}
+\def\xb{\bar{x}_{{\rm H\,\textsc{\scriptsize i}}}}
+\def\x{{\bf \textit{x}}}
+
+\def\beq{\begin{equation}}
+\def\eeq{\end{equation}}
+\def\bea{\begin{eqnarray}}
+\def\eea{\end{eqnarray}}
+\def\d{\displaystyle}
+\def\ep{\epsilon}
+\def\nn{\nonumber}
+\def\Eq#1{Eq.~(\ref{#1})}
+\def\Eqs#1{Eqs.~(\ref{#1})}
+\def\ln#1{\mathrm{ln}\left(#1\right)}
+\def\lnn#1{\mathrm{ln^2}\left(#1\right)}
+\def\li#1{\mathrm{Li_2}\left(#1\right)}
+\def\tev{\rm TeV}
+
+\def\refsec#1{section \ref{sec:#1}}
+
+%\hfill{\small MITP/16-075 \, IITB-PHY160916} \\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{page}{0}
+\begin{document}
+\title{A Faster Growth of Perturbations in an Early Matter Dominated Epoch: \\  Primordial Black Holes  and Gravitational Waves}
+
+
+\author{Subinoy Das}
+    \email[]{subinoy@iiap.res.in}% Your name
+    \affiliation{Indian Institute of Astrophysics, Bengaluru, Karnataka 560034, India.}
+ \author{Anshuman Maharana}
+    \email[]{anshumanmaharana@hri.res.in}
+    \affiliation{Harish-Chandra Research Institute, HBNI, Allahabad, Uttar Pradesh 211019, India.}
+    %
+  \author{Francesco Muia}
+    \email[]{fm538@cam.ac.uk}
+    \affiliation{DAMTP,  Wilberforce Road, Cambridge CB3 0WA, United Kingdom.}   
+
+%\date{} % Leave empty to omit a date
+
+\begin{abstract}
+%\lipsum[1]
+
+We present a scenario for fast growth of cosmological perturbations;  $\delta(t) \sim a(t)^s$, $a(t)$ being the scale factor, with $s > 10$ for the numerical examples reported in this article. The basic ingredients of the scenario are an early matter dominated era and the dark fermion which experiences a scalar mediated force during the epoch. Both of these arise in string/supergravity models. The fast growth occurs for sub-horizon density perturbations of the dark fermion. The fast growth has a rich set of phenomenological implications. We outline implications for the formation of primordial black holes and the production of gravitational waves. Primordial black holes in the sub-lunar mass range (which are ideal dark matter candidates) can be produced. Gravitational waves can be produced in a wide range of frequencies due to second order scalar perturbations and due to evaporation and merger of primordial black holes.
+
+
+
+\end{abstract}
+
+%\keywords{first keyword, second keyword, third keyword}
+
+
+\maketitle
+
+\tableofcontents
+
+\setcounter{footnote}{0}
+
+\section{Introduction}
+
+\label{sec:intro}
+Understanding inhomogeneities in the observed universe is one of the central challenges in cosmology. The tendency for gravitational collapse is much weaker in an expanding universe than in flat space. Therefore, mechanisms for the fast growth of cosmological perturbations are of much interest. For instance, in matter domination an overdensity $\delta = \delta\rho/\rho$ (where $\rho$ is the energy density and $\delta\rho$ is the perturbed energy density) grows linearly with the scale factor: $\delta(t) \propto a(t)$. Here, we will present a scenario for much faster growth.
+
+This growth will take place in a pressure-less fluid composed of non-relativistic fermionic particles $\psi$ in the early universe, prior to \textit{Big Bang Nucleosynthesis} (BBN).\footnote{For a recent review of pre-BBN physics see~\cite{Allahverdi:2020bys}.} The scenario has two essential ingredients: \textit{i)} an \textit{Early Matter Domination} (EMD) era;\footnote{Usually an epoch of EMD leads to linear growth of overdensities, similar to what happens in the dark matter dominated epoch in the late universe~\cite{Georg:2016yxa, Georg:2017mqk, Erickcek:2011us, Redmond:2018xty}.} \textit{ii)} an interaction between the $\psi$ particles mediated by a massive scalar field $\phi$ in the EMD epoch. These ingredients arise naturally in string/supergravity models.
+
+We present explicit examples of background solutions incorporating the interactions and then study perturbations to exhibit the rapid growth. The physical reason for the fast growth is the scalar field mediated force, as $\psi$ particles attract each other with a stronger than gravitational interaction. We will also initiate a study of the phenomenological implications of this scenario. These will include the production of \textit{Primordial Black Holes} (PBHs) and \textit{Gravitational Waves} (GWs).\\
+
+Let us start by discussing the generic features of the essential ingredients of our setup.\\
+ 
+\noindent {\it{Early Matter Domination}:}
+
+A generic feature of string/supergravity models is the existence of moduli, i.e. gravitationally coupled scalar fields whose \textit{vevs} parametrise the size and shape of the extra-dimensions. These are massless at tree level and typically acquire masses due to higher-order corrections or loop effects. In many cases, moduli masses are set by the scale of supersymmetry breaking and it is well below the Hubble scale at the end of inflation. This implies a displacement of the scalar fields from their late time minima. The displaced scalars oscillate about their minima when the Hubble constant falls below their masses, leading to epochs of matter domination (see e.g.~\cite{Coughlan:1983ci, hep-ph/9308292, hep-ph/9308325, hep-ph/9507453, Cicoli:2016olq,  1906.03025, Erickcek:2011us}  and~\cite{1502.07746} for a review). 
+
+To accommodate the successful predictions of BBN, an EMD epoch has to end with the universe reheating above $\sim 3 \, \rm{MeV}$. This happens with the decay of the constituents of the universe during the EMD epoch. We note that while an oscillating modulus is one of the most natural ways to enter an epoch of EMD, this is not necessary for our scenario, which is insensitive to the exact nature of the particle causing the EMD epoch (we will denote quantities associated with this by a sub/superscript ‘b', for \textit{background}).\\
+
+\noindent {\it{Scalar Field Mediated Interactions}:}
+
+The other key element is a hidden sector fermion ($\psi$) experiencing a scalar ($\phi$) mediated force. Cosmological effects of a hidden fermion experiencing a scalar mediated force have been extensively studied in recent years, see e.g.~\cite{Das:2005yj, Amendola:1999er, Vagnozzi:2021quy, Tsai:2021irw, Savastano:2019zpr,  Amendola:2017xhl, Damour:1990tw, hep-th/9408025, Amendola:1999er, gr-qc/0108016, astro-ph/0303145,
+astro-ph/0208032, astro-ph/0306343, astro-ph/0212518, astro-ph/0307350, Amendola:2003wa, Domenech:2021uyx}.
+
+We will take $\psi$ to be part of a hidden sector. Its interactions with the visible sector will be feeble\footnote{Therefore the usual fifth-force bounds are not relevant.}, but it will be strongly interacting with $\phi$. In the Einstein frame, the scalar couples to the trace of the energy-momentum of $\psi$: $g^{\mu \nu} T_{\mu \nu}^{(\psi)} = \rho_{\psi} - 3 p_\psi$, where $\rho_\psi$ and $p_\psi$ are the energy density and the pressure of the $\psi$ fluid respectively. At the level of cosmological fluids, this implies the non-conservation of stress tensors of individual components. The violation is proportional to the product between the trace of the energy-momentum tensor of the $\psi$ component and the gradient of the mediating scalar. At the background level, once the scalar field is oscillating about its minimum (i.e. when $H \lesssim m_\phi$, where $H$ is the Hubble parameter) the fluids reach a scaling regime in which each component redshifts as matter and the energy exchange between fluids stops. However, the presence of the coupling leads to an attractive force between $\psi$ particles. This force leads to the fast growth of $\psi$ perturbations.\footnote{Note that in~\cite{Savastano:2019zpr} a similar mechanism causes matter perturbations to grow much faster compared to what happens in \LCDM, i.e. $\delta(t) \propto a(t)^{1.62}$, even in a radiation dominated epoch. The present work is much inspired by this.}\\
+ 
+We note that, when the coupling is non-vanishing, the background dynamics of the scalar field $\phi$ is affected. A complete study of the system would then require tracking the dynamics starting from the end of inflation, or fine-tuning the initial conditions. This is an interesting and important issue in all models that feature similar couplings~\cite{Das:2005yj, Amendola:1999er, Vagnozzi:2021quy, Tsai:2021irw, Savastano:2019zpr,  Amendola:2017xhl, Damour:1990tw, hep-th/9408025, Amendola:1999er, gr-qc/0108016, astro-ph/0303145,
+astro-ph/0208032, astro-ph/0306343, astro-ph/0212518, astro-ph/0307350, Amendola:2003wa, Domenech:2021uyx}. Alternatively, one can consider scenarios in which a change in the equation of state $w_\psi$ of the $\psi$ component takes place at the energy scale of interest, going from $w_\psi = 1/3$ to $w_\psi = 0$. Given the form of the coupling, $\propto \rho_\psi (1 - 3 w_\psi)$, this would imply that the coupling is turned on only when the equation of state deviates from $1/3$. There are in principle various possible ways to achieve this, such as scenarios where the $\psi$ particles get mass from a hidden sector symmetry breaking when a hidden scalar field acquires a vacuum expectation value~\cite{Gehrlein:2019iwl, Shelton:2010ta}. Before the symmetry breaking the $\psi$ particles would essentially be massless and behave as relativistic degrees of freedom. In general the time scale of such a symmetry breaking is much smaller than Hubble time, so one would expect a rapid transition in the $\psi$ equation of state as assumed in this paper. The second approach is a time dependent coupling constant which  is a function of the scalar vacuum expectation value~\cite{Hinterbichler:2010es}. In this well studied symmetron-based model, one naturally turns on the fifth-force or a non-zero coupling between the fermion and the scalar  when the universe starts expanding followed by a symmetry breaking in a hidden scalar sector. It is instructive to note that the actual model building of our scenario is not the focus of this work. In this paper, we will use a phenomenological approach, parametrising the equation of state to keep track of the coupling. We leave a study of the microscopic realisation of such a transition to a future work.\\
+
+Before closing the introduction, let us briefly mention the possible phenomenological implications of our scenario. Estimates of the scales involved give production of PBHs
+in the sub-lunar mass range. These are known to be ideal candidates to constitute all of dark matter. GWs will be produced with the scalar field acting as a source for the perturbations and from the dynamics of the PBHs produced. This leads to GWs in a wide range of frequencies (from $10^{-3}$ to $10^{15}$ Hz).\\
+ 
+This paper is structured as follows. In Sec.~\ref{background}, we describe our setup and obtain background solutions.
+In Sec.~\ref{sec:Perturbations} we analyse perturbations and exhibit their fast growth. We outline phenomenological implications
+in Sec.~\ref{pheno}, leaving detailed explorations for future work. We conclude in Sec.~\ref{conclude}.
+
+\section{Coupled  Dynamics in the Early Universe}
+\label{background}
+
+In this section, we first describe the equations that govern the dynamics of our system. We then present the background (homogeneous) cosmology in which perturbations will exhibit fast growth.  The solution settles into a matter dominated phase within a few e-foldings of cosmological expansion: it is in this epoch that the fast growth of perturbations takes place.
+
+As described in the introduction, the early universe we consider will have three constituents: a background component redshifting as matter ($b$)\footnote{E.g. an oscillating modulus.}, a dark sector fermion ($\psi$) and the scalar force mediator ($\phi$). The first two will be described by cosmological fluids, the latter by its equation of motion. In general, a coupling to the scalar via the trace of the stress tensor can exist for both `b' and `$\psi$'. The system is described by the following equations (see~\cite{Amendola:2003wa} and references therein):
+%
+\begin{align}
+\label{eq:GeneralConservationBackground}
+ \nabla^{\mu} T_{\mu \nu}^{b} &= - {\beta_{b}(\phi) \over M_{\rm pl} } g^{\rho \sigma} T_{\rho \sigma}^{b} \nabla_{\nu} \phi \,, \\
+ \label{eq:GeneralConservationPsi}
+ \nabla^{\mu} T_{\mu \nu}^{\psi} &= - {\beta_{\psi}(\phi) \over M_{\rm pl}}g^{\rho \sigma} T_{\rho \sigma}^{\psi} \nabla_{\nu} \phi \,, \\
+ \label{eq:GeneralKGEquation}
+ \left( \square  + m^{2} \right) \phi &=   {\beta_{b}(\phi) \over M_{\rm pl}} g^{\rho \sigma} T_{\rho \sigma}^{b} + {\beta_{\psi}(\phi) \over M_{\rm pl}} g^{\rho \sigma} T_{\rho \sigma}^{\psi} \ ,
+\end{align}
+%
+ and
+ %
+ \begin{equation}
+ \label{eq:Einstein}
+  M_{\rm pl}^{2}  G_{\mu \nu} =  T_{\mu \nu},
+\end{equation}
+%
+where $g_{\mu \nu}$ is the spacetime metric, $G_{\mu \nu}$ is the Einstein tensor and $T_{\mu \nu} = T_{\mu \nu}^{(b)} + T_{\mu \nu}^{(\psi)} + T^{(\phi)}_{\mu \nu}$ is the total stress-energy tensor. 
+
+
+The quantities $\beta_{b}(\phi)$ and $\beta_{\psi}(\phi)$ are  (field dependent) coupling constants and $M_{\rm pl}$ is the reduced Planck mass. Note that large values of the coupling constants $(\beta_{i}(\phi) \gg 1)$ imply that the scalar mediates a force that is stronger than gravity. Hierarchies in the strengths of the couplings can arise naturally in string models as a result of physical separation in the extra-dimensions between different sectors (see e.g.~\cite{Acharya:2018deu} and references therein for a recent discussion in the context of quintessence models). The goal of this paper is to exhibit the phenomenon of fast growth in a specific setting and thereby provide proof of the concept. Hence we will consider a constant coupling $\beta_\psi(\phi) \equiv \beta_\psi \gg 1$, while we take $\beta_b(\phi) = 0$ (a detailed exploration of the dynamics treating both the couplings as parameters is left for future work).
+
+The stress tensors $T_{\mu \nu}^{(b)}$ and $T_{\mu \nu}^{(\psi)}$ will be taken to be of the perfect fluid form. The component `b' seeds the matter dominated epoch; we will take $w_b =0$. As mentioned in the introduction, the $\psi$ component will make a transition from being relativistic (at early times) to becoming non-relativistic within a few e-foldings of the expansion of the universe from the start of our numerical evolution. This transition sets the form of its (time-dependent) equation of state\footnote{We will describe its precise form soon.}, $w_{\psi}$. The scalar stress tensor $T^{(\phi)}_{\mu \nu}$ is given by $T^{(\phi)}_{\mu \nu} = \nabla_\mu \phi \nabla_\nu \phi - g_{\mu \nu} \left(\frac{1}{2} g^{\lambda \rho} \nabla_\lambda \phi \nabla_\rho \phi - V(\phi)\right)$. For simplicity, we work with $V(\phi) = {1 \over 2} m_\phi^{2} \phi^{2}$.
+
+%Next, let us return to the equation of state for $\psi$. This can be  computed by taking the ratio between $p_\psi$ and $\rho_\psi$, that are given by
+%\begin{align}
+%p_\psi = \frac{g_*}{2\pi^2} \int_0^\infty dp \, \frac{p^4/3 E(p)}{\exp\left(E(p)/T\right) + 1} \,, \label{eq:PressionPsi} \\
+%\rho_\psi = \frac{g_*}{2\pi^2} \int_0^\infty dp \, \frac{p^2 E(p)}{\exp\left(E(p)/T\right) + 1} \,, \label{eq:PressionPsi}
+%\end{align}
+%where $E(p) = \sqrt{p^2 + m_\psi^2}$, $g$ is the number of degrees of freedom of $\psi$ and we have set the Boltzmann constant $k_B = 1$. Thus the equation of state can be thought of as a function of time, the initial temperature $T_{\psi, \rm{in}}$ and mass of the $\psi$ field, $m_\psi$. As the temperature of $\psi$ falls, $w_{\psi}$ smoothly transitions from the $w=1/3$ to $w=0$.
+
+Finally, the matter dominated epoch has to end before BBN. The time of the decays is controlled by the widths of the fields. We will treat the widths $\Gamma_{b}$, $\Gamma_{\psi}$ and $\Gamma_\phi$ as phenomenological parameters in our study.
+
+\subsection{Background Dynamics}
+\label{sec:BackgroundDynamics}
+
+Next, let us turn to the background solution. Using the number of e-foldings $N = \int H dt$ as the evolution variable, for a homogeneous background Eq.s~\eqref{eq:GeneralConservationBackground}-\eqref{eq:GeneralKGEquation}  become
+%
+\begin{align}
+\label{eq:ConservationBackground}
+&\rho_b' + 3 H \rho_b = 0 \,, \\
+\label{eq:ConservationPsi}
+&\rho_\psi' + 3 (1 + w_\psi) H \rho_\psi = - \beta_\psi (1 - 3 w_\psi) \rho_\psi \phi' \,, \\
+\label{eq:KGEquation}
+&H H' \phi' + H^2 \phi'' + m_\phi^2 \phi + 3 H^2 \phi' = \beta_\psi (1 - 3 w_\psi) \rho_\psi \,,
+\end{align}
+%
+where we have used that $p_b = 0$, $p_\psi = w_\psi \rho_\psi$, and the primes denote derivatives with respect to $N$. The  Friedmann equation reads:
+\begin{equation}
+H^2 = \frac{2 \left(\rho_b + \rho_\psi + \frac{1}{2} m_\phi^2 \phi^2 \right)}{6 - \phi'^2} \,.
+\label{eq:FriedmannEquation}
+\end{equation}
+An explicit form of the background solution will be presented for two benchmark values of $\beta_{\psi} =20, 30$. We will refer to these as examples 1 and 2 respectively.
+
+As already mentioned, we take a phenomenological approach to describe the equation of state of the $\psi$ component. Therefore, we parametrise $w_\psi$ in terms of the e-folding $N_{\rm NR}$ at which $w_\psi = 0.1$ and the width of the transition $\Delta N_{w_\psi}$:
+\begin{equation}
+\label{eq:EoS}
+w_\psi = \frac{1}{6} \left(- \tanh\left(\Delta N_{w_\psi} (N - (N_{\rm NR} - \delta N))\right)\right) \,,
+\end{equation}
+where $\delta N = \arctanh(0.6/\Delta N_{w_\psi})$ is adjusted so that $w_\psi = 0.1$ at $N_{\rm NR}$. In the examples reported below, we fix $N_{\rm NR} = 2$ and use two values for $\Delta N_{w_\psi}$: $\Delta N_{w_\psi} = 3$ (example 1) and $\Delta N_{w_\psi} = 2$ (example 2), see Fig.~\ref{fig:EoS}.
+
+\begin{figure}[h!]
+  \includegraphics[width=0.5\textwidth]{EquationOfState.pdf}
+\caption{Equation of state for $N_{\rm NR} = 2$ and $\Delta N_{w_\psi} = 2,3$.}
+\label{fig:EoS}
+\end{figure}
+
+At early times, the Hubble constant is much greater than the mass of the scalar and $w_{\psi} =1/3$. The former implies that the friction term in the left hand side of Eq.~\eqref{eq:KGEquation} vanishes and the latter implies that the right hand side of the same equation vanishes. This implies that the scalar is at rest at $\phi = \phi_{\rm in}$ at early times: it contributes to the energy density of the universe as a result of its initial misalignment. This energy density is $\rho_{\phi, \rm{in}} = {1 \over 2} m_\phi^{2} \phi_{\rm in}^2$. We will track the evolution starting from the point when the ‘initial’ Hubble parameter is $H_{\rm in} \sim m_\phi$ (this will be taken to correspond to $N=N_{\rm in}=0$). The other initial conditions that need to be specified are the initial energy densities in $b$ and $\psi$, $\rho_{\psi, \rm{in}}$ and $\rho_{b, \rm{in}}$. In the explicit examples that we will report, we use $\phi_{\rm{in}} = 0.1 \mpl$ and $\rho_{\psi, \rm{in}}/\rho_{b, \rm{in}} = 1$, $m_\phi/H_{\rm in} \simeq 1.22$. The exact value of $m_\phi/H_{\rm in}$ does not affect the results reported below, as long as the field is initially at rest.
+
+As it is easy to guess (given that all components behave as matter when interactions are switched off), the system quickly settles into a scaling regime in which the energy densities of all the components redshift as $1/a^3$. We plot the fractional energy densities 
+%
+\begin{equation}
+\Omega_b = \frac{\rho_b}{\rho} \,, \quad \Omega_{\psi} = \frac{\rho_\psi}{\rho} \,, \quad \Omega_\phi = \frac{\rho_\phi}{\rho} \,,
+\end{equation}
+and $\rho = \rho_b + \rho_\psi + \rho_\phi$, for our benchmark examples in Fig.~\ref{fig:ScalingRegime1} and Fig.~\ref{fig:ScalingRegime2}. The evolution of the scalar field for example 1 $(\beta_{\psi} =20, \Delta N_{w_\psi} = 3)$ is shown in Fig.~\ref{fig:FieldDynamics} (the $\phi$ evolution is very similar for example 2).
+
+\begin{figure}[h!]
+  \includegraphics[width=0.5\textwidth]{FractionalEnergyDensityEx1.pdf}
+\caption{Scaling regime for example 1, with $\beta_\psi = 20$ and $\Delta N_{w_\psi} = 3$.}
+\label{fig:ScalingRegime1}
+\end{figure}
+\begin{figure}[h!]
+  \includegraphics[width=0.5\textwidth]{FractionalEnergyDensityEx2.pdf}
+\caption{Scaling regime for example 1, with $\beta_\psi = 30$ and $\Delta N_{w_\psi} = 2$.}
+\label{fig:ScalingRegime2}
+\end{figure}
+
+\begin{figure}[h!]
+  \includegraphics[width=0.45\textwidth]{FieldDynamics.pdf}
+\caption{Scalar field dynamics for example 2, with $\beta_\psi = 20$ and $\Delta N_{w_\psi} = 3$.}
+\label{fig:FieldDynamics}
+\end{figure}
+
+\section{Fast Growth of Perturbations}
+\label{sec:Perturbations}
+
+Having obtained the homogeneous background in the previous section, we now turn to the study of perturbations in the background. We will see that there is a fast growth of the perturbations in the matter dominated epoch which the background solutions asymptote to.
+
+The equations governing the dynamics of the perturbations can be obtained in full generality by perturbing the Einstein equations as well as the conservation equations and the Klein-Gordon equation~\cite{Amendola:2003wa}. In our case, we will be interested in the perturbation of modes with wavelength $\lambda$ smaller than the Compton wavelength of the scalar field, namely $k/a \gg m_\phi$. In this limit, the equations of motion for the perturbations simplify. In Fourier space, the equations for the evolution of the fractional overdensities ($\delta_i$, $i=\psi, b$) and divergence of the dimensionless velocity perturbations ($\theta_i$, $i=\psi, b$) are\footnote{We follow the conventions of~\cite{Amendola:2003wa} for the definition of these.} 
+%
+\begin{align}
+\label{eq:PerturbationDeltaPsi}
+&\delta_\psi'' + \left[(w_\psi + 1) \theta_\psi\right]' + 3 \left[w_{\psi, \rho} (1-\beta \phi') \delta_\psi\right]' = 0 \,, \\
+\label{eq:PerturbationDeltaB}
+&\delta_b'' + \left(2 + \frac{H'}{H}\right) \delta_b' - \frac{3}{2} \Omega_\psi \delta_\psi - \frac{3}{2} \Omega_b \delta_b = 0 \,, 
+\end{align}
+where $w_{\psi, \rho} = \frac{d w}{d \log \rho} = \rho w_\psi'/\rho'$ and
+\begin{align}
+&\theta_\psi \simeq - \frac{1}{w_\psi+1} \left[\delta_\psi' + 3 w_{\psi, \rho} (1 - \beta \phi') \delta_\psi\right] \,, \nonumber\\
+&\theta_\psi' \simeq - f \theta_\psi + \frac{w_\psi + w_{\psi, \rho}}{1 + w_\psi} \kappa^2 \delta_\psi - \omega_\psi \delta_\psi - \frac{3}{2} (1+w_\psi) \Omega_b \delta_b \,,\nonumber
+\end{align}
+where $\kappa = k/(a H)$ and
+\begin{align}
+& f = \left[(1-3 w_\psi)(1 - \beta \phi') - w_{\psi, \rho} A + 1 + \frac{H'}{H}\right] \theta_\psi \,, \nonumber\\
+& A = 3 + \beta \phi' \frac{1-3w_\psi}{1+w_\psi} \,, \nonumber\\
+&\text{\small $\omega_\psi = \frac{3}{2} (1+w_\psi) \Omega_\psi \left[1 + 2 \beta_\psi^2 \frac{(1-3w_\psi)(1-3w_\psi - 3 w_{\psi,\rho})}{(1+w_\psi)^2}\right] \,.$} \nonumber
+\end{align}
+%
+We solve numerically this system of equation with ‘adiabiatic’ initial conditions $\delta_{\psi, \rm{in}} = \delta_{b, \rm{in}}$ and $(\delta'_{b, \rm{in}}, \delta'_{\psi, \rm{in}})=(0,0)$ for various\footnote{We do not consider smaller values of $\kappa$ than those reported in the legends of Fig.~\ref{fig:PerturbationsEx1} and Fig.~\ref{fig:PerturbationsEx2} because they do not go non-linear within the regime of validity of Eq.~\eqref{eq:PerturbationDeltaPsi} and Eq.~\eqref{eq:PerturbationDeltaB}.} values of $\kappa$ at $N = 0$, $\kappa_{\rm in}$. The solutions exhibit an exponentially fast growth as shown in Fig.~\ref{fig:PerturbationsEx1} and Fig.~\ref{fig:PerturbationsEx2} for example 1 and example 2 respectively. Since Eq.~\eqref{eq:PerturbationDeltaPsi} and Eq.~\eqref{eq:PerturbationDeltaB} are valid in the sub-Compton regime, the solution for the various modes is valid until $k/a \gtrsim m_\phi$. The maximum $N$ at which the solution is reliable is denoted by the dotted lines in Fig.~\ref{fig:PerturbationsEx1} and Fig.~\ref{fig:PerturbationsEx2}.
+
+The system of equations has an exactly solvable regime. Once the $\psi$ component becomes non-relativistic, so that $w_\psi, w_{\rho, \psi} \simeq 0$, in the limit $\delta_{\psi} \gg \delta_b$ Eq.~\eqref{eq:PerturbationDeltaPsi} and Eq.~\eqref{eq:PerturbationDeltaB} simplify significantly:
+%
+\begin{align}
+\label{eq:EqDeltaPsiSimplified}
+&\delta_\psi'' + \frac{1}{2} \delta_\psi' - \tilde{\omega}_{\psi} \delta_\psi = 0 \,, \\
+\label{eq:EqDeltaBSimplified}
+&\delta_b'' + \frac{1}{2} \delta_b' - \frac{3}{2} \Omega_\psi \delta_\psi - \frac{3}{2} \Omega_b \delta_b = 0 \,,
+\end{align}
+%
+where we have defined $\tilde{\omega}_\psi = \frac{3}{2} \Omega_\psi (1 + 2 \beta_\psi^2)$ and used the fact that $1 + \frac{H'}{H} \simeq \frac{1}{2}$ in a matter dominated universe.
+Now, the equation for $\delta_\psi$ is decoupled and can be solved analytically. The growing mode is an exponential function: $\delta_\psi \propto \exp\left(\gamma_\beta N\right)$, with
+\begin{equation}
+\label{eq:Exponent}
+\gamma_\beta = \frac{1}{4} \left(-1 + \sqrt{1 + 16 \tilde{\omega}_\psi}\right) \,.
+\end{equation}
+%
+The exponents for the two examples under consideration are $\gamma_1 \simeq 13$ and $\gamma_2 \simeq 23$. Interestingly, in the regime $N \gtrsim N_{\rm NR}$, this is in agreement with the growth exponents obtained numerically (Fig.~\ref{fig:PerturbationsEx1} and Fig.~\ref{fig:PerturbationsEx2}) for adiabatic initial conditions. This indicates that the growth in $\delta_{\psi}$ essentially drives the growth in the system even for adiabatic initial conditions, see Fig.~\ref{fig:PerturbationsNorm}. We have checked this numerically. Note that in the scaling regime $w_\psi = w'_\psi = 0$, so the term proportional to $\kappa^2$ in Eq.~\eqref{eq:PerturbationDeltaPsi} and Eq.~\eqref{eq:PerturbationDeltaB} vanishes. However, when the change of the equation of state described by Eq.~\eqref{eq:EoS} is taken into account, it is important that this term goes to zero sufficiently fast, otherwise it would compete with the term proportional to $\tilde{\omega}_\psi$ in Eq.~\eqref{eq:EqDeltaPsiSimplified} that drives the exponential growth. We emphasise that it is in the scaling regime that Eq.~\eqref{eq:EqDeltaPsiSimplified} and Eq.~\eqref{eq:EqDeltaBSimplified} are valid.
+
+The  solutions of Eq.~\eqref{eq:PerturbationDeltaPsi} and Eq.~\eqref{eq:PerturbationDeltaB} can be trusted until the linear approximation breaks down, namely when $\delta_{b} \big{/} \delta_{b, \rm in} \lesssim A^{-1/2}_{\delta_{b, \rm in}}$ and 
+$\delta_\psi \big{/} \delta_{\psi, \rm in}  \lesssim  A^{-1/2}_{\delta_{\psi, \rm in}}$, where $A^{-1/2}_{\delta_{b, \rm in}}$ and  $A^{-1/2}_{\delta_{\psi, \rm in}}$  are the dimensionless strength of the perturbations as defined by the power spectra. We will use  $N_{\rm NL}$ to denote the e-foldings at which the validity of the linear theory breaks down and non-linearities become important. In general, $N_{\rm NL}$ will depend on the initial conditions $(\delta_{b, \rm{in}}, \delta_{\psi, \rm{in}})$. From Fig.~\ref{fig:PerturbationsEx1} and Fig.~\ref{fig:PerturbationsEx2} it is immediate to see the regions in which the linear approximation is valid: $N_{\rm NL}$ is fixed by the intersection of the perturbation mode curves with the horizontal light green (for $A_{\delta_{\psi, \rm in}} = 10^{-10}$) and dark green (for $A_{\delta_{\psi, \rm in}} = 10^{-16}$) lines. Note that for perturbations with both the reported initial amplitude values\footnote{Note that $A_{\delta_{\psi, \rm in}}=10^{-10}$ is the value expected from a scale invariant inflationary power spectrum.}, the modes go non-linear within very few e-foldings after the onset of the matter dominated epoch and well within the regime of validity of the equations for each mode. We note that this estimate is conservative as the perturbations can in principle undergo some growth before we begin to track them leading to a higher value
+of $A_{\delta_{\psi, \rm in}}$. In both the examples and for the set of modes that we chose (which are among the first to go non-linear), we have $N_{\rm NL} \simeq 4.5$ for $A_{\delta_{\psi, \rm in}} = 10^{-10}$. We will use this value for the estimates presented in the following sections.
+%
+\begin{figure}[h!]
+  \includegraphics[width=0.45\textwidth]{PerturbationsEx1.pdf}
+\caption{Perturbations $\delta_\psi$ and $\delta_b$ for example 1. Solid lines represent $\delta_\psi$ and dashed lines represent $\delta_b$ for the various modes. The dotted lines indicate the maximum $N$ at which the solution with the corresponding color can be trusted, as Eq.~\eqref{eq:PerturbationDeltaPsi} and Eq.~\eqref{eq:PerturbationDeltaB} require $k/a \gtrsim m_\phi$. All the modes get to $\delta/\delta_{\rm in} \gtrsim 10^9$ in the regime of validity of the equations. When perturbations hit the light (for $A_{\delta_{\psi, \rm in}} = 10^{-10}$) and dark (for $A_{\delta_{\psi, \rm in}} = 10^{-16}$) green horizontal lines they go non-linear.}
+\label{fig:PerturbationsEx1}
+\end{figure}
+%
+\begin{figure}[h!]
+  \includegraphics[width=0.45\textwidth]{PerturbationsEx2.pdf}
+\caption{Perturbations $\delta_\psi$ and $\delta_b$ for example 2. See the caption of Fig.~\ref{fig:PerturbationsEx1} for the legend.}
+\label{fig:PerturbationsEx2}
+\end{figure}
+\begin{figure}[h!]
+  \includegraphics[width=0.45\textwidth]{PerturbationsNorm.pdf}
+\caption{Ratio between the numerical and analytical solutions for example 1. Asymptotically perturbations grow like $\delta_\psi \propto \exp(\gamma_\beta N)$, where $\gamma_\beta$ is given in Eq.~\eqref{eq:Exponent}.}
+\label{fig:PerturbationsNorm}
+\end{figure}
+%
+\subsection{Decays}
+\label{sec:Decay}
+
+To accommodate the successes of BBN, the matter dominated era has to end with a reheating temperature $T \gtrsim \text{a few MeV}$. This will happen if the widths of the three components $\Gamma_b$, $\Gamma_\psi$ and $\Gamma_\phi$ satisfy
+%
+\begin{equation}
+\label{d1}
+\Gamma_i \gtrsim H_{\rm BBN} \,, \quad i = b, \psi, \phi \,,
+\end{equation}
+%
+where $H_{\rm BBN} \simeq 10^{-24} \, \text{GeV}$. We also require that the decays do not occur before the epoch of fast growth sets in and the perturbations grow rapidly. This implies:
+%
+\begin{equation}
+\label{d2}
+H_{\rm BBN} \lesssim \Gamma_{b, \phi, \psi} \lesssim H_{\rm NL} \,,
+\end{equation}
+%
+where $H_{\rm NL}$ is the Hubble parameter at the time when the perturbations become non-linear.\\
+
+If the background component is an oscillating modulus with mass $m_b$ and decay rate $\Gamma_b = m_b^3/\mpl^2$, then Eq.~\eqref{d2} would imply
+\begin{equation}
+m_{b, \rm min} \lesssim m_b \lesssim m_{b, \rm min} \exp\left(\frac{3}{4} (N_{\rm BBN} - N_{\rm NL})\right) \,,
+\end{equation}
+where $m_{b, \rm min} = \left(H_{\rm BBN} \mpl^2\right)^{1/3} \simeq 20 \, \text{TeV}$.
+
+The conditions in Eq.~\eqref{d1} and Eq.~\eqref{d2} also constrain the strength of interaction of $\phi$ and $\psi$. For instance, let us consider the case in which the decays take place via Yukawa interactions
+%
+\begin{equation}
+\mathcal{L}_{\rm int} \supset y \phi \bar{\chi} \chi + g \Psi \bar{\psi} \chi + \text{h.c.} \,,
+\end{equation}
+%
+where $\chi$ is a visible sector fermion, while $\Psi$ is a visible sector scalar and $y$, $g$ are  Yukawa couplings. Then the decay rates are: 
+\begin{equation}
+\Gamma_\phi \simeq \frac{y^2 m_\phi}{8 \pi} \,, \quad \Gamma_{\psi} \simeq \frac{g^2 m_\psi}{16 \pi}.
+\end{equation}
+%
+Concerning the $\psi$ component, the constraints in Eq.~\eqref{d2} translate into constraints for the product $g^2 m_\psi$. In the case of the scalar field $\phi$, since $m_\phi \simeq H_{\rm in}$ we can write the constraints in terms of $N_{\rm BBN}$ and $N_{\rm NL}$:
+\begin{align}
+y_{\rm min} \lesssim y \lesssim y_{\rm min} \, \exp\left(\frac{3}{4} (N_{\rm BBN} - N_{\rm NL})\right) \,,
+\end{align}
+where $N_{\rm BBN}$ is the value of $N$ at the time of BBN and
+\begin{align}
+&y_{\rm min} = \sqrt{8 \pi} \, \exp\left(-\frac{3}{4} N_{\rm BBN}\right) \,. \nonumber
+\end{align}
+
+The equations used in the evolution of the background and perturbations (in Sec.~\ref{sec:BackgroundDynamics} and the previous part of this section) do not incorporate the effects of the decays. They are in an instantaneous decay approximation and valid well before the decay processes play a significant role. Note that for a decay process with rate $\Gamma$, taking place in a matter dominated epoch, at times two e-foldings before $ t = \Gamma^{-1}$, the fraction of decayed particles is approximately five per cent. Thus, as a rule of thumb, we will require that the decay takes place at $N_{\rm dec}$, with $N_{\rm NL} \lesssim N_{\rm dec} \lesssim N_{\rm NL} + 2 \lesssim N_{\rm BBN}$.
+
+For concreteness, taking $N_{\rm NR} = 2$ and $N_{\rm BBN} = N_{\rm NL} + 2$, we can give estimates for the Yukawa couplings. For instance, taking $N_{\rm NL} = 4.5$ from the numerical examples in Sec.~\ref{sec:Perturbations} yields $0.038 \lesssim y \lesssim 0.17$. %We can interpret the smallness of the Yukawa coupling $g$ as being determined by a UV scale $\Lambda \gg T_{\rm BBN}$. If the interaction term takes the form $\mathcal{L} \supset \frac{\langle s \rangle}{\Lambda} \, \Psi \bar{\psi} \chi + \text{h.c.}$ (where $s$ is a scalar field belonging to the UV theory whose \textit{vev} fixes the coupling) then $g \sim \langle s \rangle/\Lambda \sim 10^{-10}$ can be explained naturally.}
+
+\section{Phenomenological Implications}
+\label{pheno}
+%
+
+  The fast growth of perturbations can have various interesting phenomenological implications. Here, we initiate their study. Understanding them in detail
+so as to extract precise predictions requires detailed studies which we leave for future.
+
+\subsection{Primordial Black Holes}
+\label{sec:PBHs}
+
+Once the perturbations become non-linear, it is reasonable to expect that the overdensities will collapse, forming either PBHs~\cite{1966AZh, 10.1093/mnras/152.1.75, Grindlay:1975eb, Chapline:1975ojl, Khlopov:1980mg, Polnarev:1985btg, Carr:2016drx} or other kinds of compact objects, such as oscillons (see e.g.~\cite{Antusch:2017flz} for a study of oscillon formation in the context of an EMD model), primordial halos~\cite{Savastano:2019zpr}, miniclusters~\cite{Hogan:1988mp, Fairbairn:2017sil} or star-like objects, see e.g.~\cite{Krippendorf:2018tei, Visinelli:2021uve} for two comprehensive reviews. The formation of PBHs in a matter dominated universe is on one hand facilitated by the fact that the background pressure vanishes~\cite{Harada:2016mhb}. On the other hand, though, any deviation from spherical symmetry will tend to virialise the collapsing system, avoiding the formation of a horizon. We defer a detailed numerical study of the formation of PBHs and microhalos, along the lines of~\cite{Helfer:2016ljl, Widdicombe:2018oeo, Muia:2019coe, Nazari:2020fmk, Eggemeier:2020zeg, Eggemeier:2021smj}, to a future work. In the present paper, we will provide simple estimates to exhibit the potentially rich phenomenology.\\
+
+The easiest way to determine the mass scale of the PBHs that can be potentially formed is by isolating the scales for which the $\psi$ perturbations go non-linear~\cite{Amendola:2017xhl, Georg:2016yxa, Georg:2017mqk}. In our setup, the growth involves modes that are sub-Compton, i.e. $k/a > m_\phi$. For this reason, one can expect the maximum mass of the PBH formed to be
+\begin{equation}
+M_{\rm PBH} \simeq \rho(N_{\rm NL}) \times \left(\frac{\epsilon_m}{m_\phi}\right)^3 \,,
+\label{eq:MPBH0}
+\end{equation}
+where $(\epsilon_m/m_\phi)$ with $\epsilon_m < 1$ parametrises the wavelength of the collapsing mode. We can estimate the various terms in this expression in terms of $N_{\rm NL}$ and $N_{\rm BBN}$. Assuming that the background is always matter dominated, we can write $H_{\rm NL}/H_{\rm in} \simeq \exp\left(- 3 N_{\rm NL}/2\right)$ and $H_{\rm BBN}/H_{\rm in} \simeq \exp\left(- 3 N_{\rm BBN}/2\right)$. Therefore, we find
+\begin{equation}
+\rho({N_{\rm NL}}) = 3 H_{\rm NL}^2 \mpl^2 = 3 \left(\frac{H_{\rm NL}}{H_{\rm in}}\right)^2 H_{\rm in}^2 \mpl^2 \,.
+\end{equation}
+Furthermore, we can approximate $H_{\rm in} \simeq m_\phi$ since the scalar field becomes dynamical at $N \simeq 0$. Hence, using for concreteness $\epsilon_m = 0.1$, we find from Eq.~\eqref{eq:MPBH0}
+\begin{equation}
+\label{eq:PBHMass}
+M_{\rm PBH} \simeq 3 \times 10^{34} \, \text{g} \, \times  \exp\left(-\frac{3}{2} (2 N_{\rm NL} + N_{\rm BBN})\right) \,,
+\end{equation}
+where we have also used that $H_{\rm BBN} \simeq 10^{-24} \, \text{GeV}$. To make a concrete estimate, let us focus on the numbers that comes up from the numerical examples in Sec.~\ref{sec:Perturbations}. In those cases, perturbations with initial amplitude\footnote{We take the amplitude of the perturbations to be as given by the normalisation of scalar perturbations~\cite{Planck:2018vyg}, assuming a scale invariant power spectrum. $A_{\delta_{\psi, \rm{in}}} \simeq 10^{-10}$ enters the non-linear regime around $N_{\rm NL} = 4.5$ and $N_{\rm BBN} = N_{\rm NL} + 2 = 6.5$ (so that there is enough time for the various components to decay before the beginning of BBN, as explained in Sec.~\ref{sec:Decay}). In this case, Eq.~\eqref{eq:PBHMass} gives $M_{\rm PBH} \simeq 2.4 \times 10^{24} \, \text{g}$, which falls slightly above the sub-lunar mass range ($10^{17} \, {\rm g} \lesssim M_{\rm PBH} \lesssim 10^{23} \, {\rm g}$), in which PBHs can still compose $100 \%$ of dark matter~\cite{Carr:2021bzv}. Smaller values of $\beta$, smaller values for the initial amplitude of the perturbations or larger modes would give rise to larger values of $N_{\rm NL}$ and therefore slightly lighter PBHs, which would fall in the sub-lunar mass range. In Fig.~\ref{fig:ParameterSpace} we exhibit the PBH masses that can be obtained in our parameter space.}
+
+Note that the expression in Eq.~\eqref{eq:MPBH0} gives a maximum value for the mass of the PBHs that can be formed. However, lighter PBHs can also be formed\footnote{The growth takes place for all modes for which  the term proportional to $\omega_{\psi}$ drives the dynamics in Eq.~\eqref{eq:PerturbationDeltaPsi} and Eq.~\eqref{eq:PerturbationDeltaB}.} PBHs with mass around $(10^{15}-10^{16}) \, \text{g}$ would be evaporating today and therefore are severely constrained from observations of the galactic and extra-galactic $\gamma$-rays background~\cite{Carr:2020gox}. Lighter PBHs, in the range $10^9 \, \rm{g} \lesssim M_{\rm PBH} \lesssim 10^{14} \, \rm{g}$ are subject to milder constraints due to BBN. Light PBHs, $M_{\rm PBH} \lesssim 10^{15} \, \rm{g}$ are quite interesting from the phenomenological point of view, as they might be a unique probe of the total number of light scalars in the fundamental theory~\cite{Calza:2021czr}, provide a baryogenesis mechanism~\cite{Hooper:2020otu}, reheat the universe~\cite{Lennon:2017tqq, Baldes:2020nuv} and produce GWs in the ultra-high-frequency band~\cite{Anantua:2008am, Dolgov:2011cq, Zagorac:2019ekv}.
+
+Of course, to connect to phenomenology, one has to compute the fraction of PBH dark matter, i.e. $\beta = \rho_{\rm PBH}/\rho_{\rm DM}$, where $\rho_{\rm PBH}$ is the current dark matter energy density in PBHs, while $\rho_{\rm DM}$ is the current total dark matter energy density. Such a computation would require the knowledge of the threshold value $\delta_{\psi, \rm{c}}$ for a sub-Compton spherical overdensity $\delta_\psi$  for it to collapse to a PBH. In turn, computing $\delta_{\psi, \rm{c}}$ requires a careful numerical simulation that we plan to report in future work.
+
+\begin{figure}[h!]
+  \includegraphics[width=0.45\textwidth]{ParameterSpace.jpeg}
+\caption{Mass of the PBHs as a function of $N_{\rm NL}$ and $N_{\rm BBN}$.}
+\label{fig:ParameterSpace}
+\end{figure}
+
+An early pre-BBN epoch of matter domination generically produces early micro- or mini-halos~\cite{ Blinov:2021axd, Barenboim:2021swl} due to the early growth of perturbations on scales below the horizon size. If these micro-halos are stable over cosmological time scale, their annihilation signature at present epoch from the dense galactic center has been studied extensively~\cite{Blanco:2019eij}. But in our case the situation is different: the halos made of $\psi$ particles give away scalar radiation. In fact, it has been shown that scalar radiation from early halos favours PBH formation~\cite{Flores:2020drq}. The remnant halos which do not form PBHs will be destroyed as the $\psi$ particles decay into the radiation bath of the Standard Model particles. So one naively expects that the number density of micro-halos will be very tiny at the present epoch unlike~\cite{Blinov:2021axd}.
+
+\subsection{Gravitational Waves}
+\label{sec:GWs}
+
+Scalar perturbations generate GWs at second order in perturbation theory. This effect has been explored in several different contexts, see e.g.~\cite{Baumann:2007zm, Assadullahi:2009nf, Espinosa:2018eve, Kohri:2018awv, Inomata:2020yqv, Inomata:2020tkl, Domenech:2020ssp, Domenech:2021wkk} and~\cite{Domenech:2021ztg} for a recent comprehensive review on the subject. We can expect that this effect is also present in our scenario, as on sub-Compton scales the scalar field perturbations grow following the overdensity in the $\psi$ component~\cite{Amendola:2003wa}:
+\begin{equation}
+\label{eq:ScalarFieldMode}
+\delta\phi_k \simeq \left(\frac{a H}{k}\right)^2 \beta_\psi \Omega_\psi \delta_\psi \,, \qquad \frac{k}{aH} \gg 1 \,.
+\end{equation}
+In this section we sketch some estimates of the amount of GWs and frequency that one can expect in the scenario described in the previous sections, due to second order scalar perturbations.\footnote{As we will only report order of magnitude estimates, we neglect factors containing the number of degrees of freedom in this section.} We leave a detailed computation of the GW spectrum to a future work and we follow~\cite{Giblin:2014gra, Chatrchyan:2020pzh} to do the estimates. Since we have a multi-component setup, second order scalar perturbations are not the only possible source of GWs. For instance, if the $\psi$ or the background components develop an anisotropic stress-energy tensor due to the rapid growth, they could also source GWs.\\
+
+In order to do some estimates, let us do a few simplifying assumptions. We will assume that most of the GW production occurs at $N_{\rm NL}$, i.e. when the perturbations go non-linear and the scalar field fragments. We also assume that most of the GW energy is deposited in a mode $k_p/a \gtrsim m_\phi$, as it is reasonable to expect from Eq.~\eqref{eq:ScalarFieldMode}: at larger $k$ the scalar field perturbation is suppressed by the prefactor $(aH/k)$, while at lower $k$ the enhancement does not occur at all.\\
+
+First, we would like to understand what is the typical frequency range that is involved. Given Eq.~\eqref{eq:ScalarFieldMode} we would expect that the signal is maximized when $\delta\phi_k$ is maximized. As modes are not amplified at $k/a \lesssim m_\phi$, the GW spectrum features a lower cutoff, given by the mass of the field, namely\footnote{A subscript ‘0’ denotes quantities evaluated at the present time.}
+\begin{align}
+\label{eq:F0}
+f_0 \gtrsim \left(\frac{m_\phi}{10^{-17} \, \rm GeV}\right) \exp\left(N_{\rm NL} - N_{\rm BBN}\right) \times 10^{-3} \, \rm{Hz} \,,
+\end{align}
+where we have used that
+\begin{align}
+\label{eq:apa0}
+\frac{a_{\rm NL}}{a_0} &= \frac{a_{\rm NL}}{a_{\rm BBN}} \frac{a_{\rm BBN}}{a_{\rm 0}} \simeq \\
+&\simeq \exp\left[(N_{\rm NL} - N_{\rm BBN})\right] \times 10^{-10} \times \, \frac{\text{MeV}}{T_{\rm BBN}} \,. \nonumber
+\end{align}
+Eq.~\eqref{eq:F0} tells us that the signal could cover a large fraction of the GW spectrum depending on the mass $m_\phi \gtrsim 10^{-17} \, \rm{GeV}$ of the scalar field. Depending on the amplitude of the GW spectrum, the range of frequencies that is in principle involved could be probed by current and future GW experiments including LISA~\cite{amaroseoane2017laser, Barausse:2020rsu} ($f_0 \sim 10^{-2} \, \rm{Hz}$), DECIGO~\cite{Seto:2001qf} and BBO~\cite{Yagi:2011wg} ($f_0 \sim 1 \, \rm{Hz}$), LIGO/Virgo/KAGRA~\cite{KAGRA:2021kbb}, Einstein Telescope~\cite{Maggiore:2019uih} and Cosmic Explorer~\cite{Evans:2021gyd} ($f_0 \sim 100 \, \rm{Hz}$) and ultra-high-frequency band proposals~\cite{Aggarwal:2020olq} ($f_0 \gtrsim 10^3 \, \rm{Hz}$).\\
+
+In order to estimate the amplitude of the GW spectrum let us parametrise\footnote{As in~\cite{Chatrchyan:2020pzh}, we neglect the tensor structure of the perturbation for the purposes of making a basic estimate.} $\Pi^{\rm TT}_{ij} \simeq \alpha \rho_\phi$, where $\Pi^{\rm TT}_{ij}$ is the transverse traceless component of the scalar field stress-energy tensor and $\alpha \lesssim 1$. Then one can write the peak fractional energy density in GWs at production ($N_{\rm NL}$) as~\cite{Chatrchyan:2020pzh}
+\begin{align}
+\label{eq:OmegaGWk}
+\Omega_{{\rm GW}, p}(k_p) &\sim \frac{64 \pi^2}{3 \mpl^4 H_{\rm NL}^4} \frac{\rho_{\phi}^2(N_{\rm NL})}{(k_p/(a_{\rm NL} H_{\rm NL}))^2} \frac{\alpha^2}{\lambda} \nonumber \\
+& \simeq \frac{192 \pi^2 \, \Omega_\phi^2(N_{\rm NL})}{(k_p/(a_{\rm NL} H_{\rm NL}))^2} \frac{\alpha^2}{\lambda} \,,
+\end{align}
+where $\lambda$ parametrizes the logritmic width of the signal $\lambda = \Delta \log k$. 
+In order to compute $k_p/(a_{\rm NL} H_{\rm NL})$ we impose that the relevant scale is sub-Compton at $N_{\rm NL}$: $\frac{k_p}{a_{\rm NL}} \gtrsim m_\phi$, which implies
+\begin{equation}
+\frac{k_p}{a_{\rm NL} H_{\rm NL}} \gtrsim \exp\left(\frac{3 N_{\rm NL}}{2}\right) \,,
+\end{equation}
+where we have used that $m_\phi \sim H_{\rm in}$. Using $N_{\rm NL}= 4.5$ from the previous sections, one gets $k_p/(a_{\rm NL} H_{\rm NL}) \gtrsim 850$. Taking $\Omega_\phi(N_{\rm NL}) \simeq5 \times 10^{-3}$ from the numerics of the previous section and $\alpha \sim \lambda \sim 1$ one finds $\Omega_{{\rm GW}, p}(k_p) \simeq 6.5 \times 10^{-8}$.
+
+The current fractional energy density in GWs can be computed by redshifting the result in Eq.~\eqref{eq:OmegaGWk} using Eq.~\eqref{eq:apa0}
+\begin{align}
+\Omega_{\rm GW, 0} (k_p) &= \left(\frac{a_{\rm NL}}{a_0}\right)^4 \frac{\rho_{\rm NL}}{\rho_0} \, \Omega_{{\rm GW}, p} (k_p) \simeq \\
+& \simeq 10^{-4} e^{N_{\rm NL} - N_{\rm dec}} \, \Omega_{{\rm GW}, p}(k_p) \lesssim 2.4 \times 10^{-12} \,, \nonumber
+\end{align}
+where in the last step we have used the above estimate for $\Omega_{{\rm GW},p}(k_p)$ and $N_{\rm dec} - N_{\rm NL} = 1$.\\
+
+Of course, in order to properly compute the the GW amplitude, we should track the behaviour of $h_k$ all the way through, starting from $N_{\rm NR}$ to the start of the standard radiation domination phase that begins when all the components $b$, $\phi$ and $\psi$ decay. This implies tracking perturbations also when they enter the non-linear regime, which would need a full numerical analysis. In this way one would be able to understand the effects of non-linearities~\cite{Delos:2020mtj, Delos:2019tsl,Delos:2018ueo} ad whether they would enhance the GW spectrum. We plan to further study GW production, including the numerical analysis, in a future work. Nevertheless, an amplitude $\Omega_{{\rm GW}, 0} \simeq 10^{-12}$ can be probed by most of the future GW detectors mentioned above (see~\cite{Thrane:2013oya, Mingarelli:2019mvk} for a detailed discussion).\\
+
+Beyond the GW production mechanisms mentioned above, there are a couple of additional sources related to the formation of light PBHs:
+\begin{itemize}[leftmargin=*]
+\item Evaporation of light PBHs~\cite{Anantua:2008am, Dolgov:2011cq}, that produce a GW spectrum with peak at ultra-high-frequency, typically above  $10^{10} \, \rm{Hz}$. In~\cite{Dolgov:2011cq}, the maximum amplitude for the GW spectrum is computed to be $\Omega_{\rm GW} \simeq 10^{-7}$. In our scenario, it is likely that the maximum amplitude would be slightly smaller, due to an additional period of EMD before the $b$, $\phi$ and $\psi$ components decay.
+\item Mergers of PBHs~\cite{Zagorac:2019ekv, Dolgov:2011cq}: in this case the frequency can be estimated as the \textit{Innermost Stable Circular Orbit} (ISCO) frequency, namely
+\begin{equation}
+f \simeq 10^{15} \, {\rm Hz} \left(\frac{10^{20} \, {\rm g}}{M_{\rm PBH}}\right) \,,
+\end{equation}
+where we have assumed an equal mass for the two merging PBHs. Note that for $M_{\rm PBH} \simeq 10^{20} \, \rm{g}$, which is the relevant mass range for this paper, the ISCO frequency roughly falls into the frequency range that will be accessible with axion experiments~\cite{Ejlli:2019bqj} like ALPS II~\cite{Bahre:2013ywa} and JURA~\cite{doi:10.1146/annurev-nucl-102014-022120}. In order to claim the detectability of such mergers an estimate of the number of expected events at a given distance is needed, that depends on the probability of forming a binary for such light PBHs. We will analyse these points carefully in a future work.
+\end{itemize}
+
+\section{Conclusions}
+\label{conclude}
+
+  The key result of this article is a scenario for fast growth of cosmological perturbations. At first, we present cosmological solutions which asymptote  to a matter dominated era in the early universe (prior to BBN). Density perturbations in this
+matter dominated epoch grow very fast, the primary reason for this is a scalar mediated force between dark fermions. Examples with explicit (numerical) computations of the growth exponent have been presented in Sec.~\ref{sec:Perturbations}. The goal of this paper is to present the first
+explicit examples, studies of the parameter space of the models and the exploration other related mechanisms for fast growth of perturbations will be carried out in a future work. We also took a phenomenological approach to the  change in the equation of state of the $\psi$ component.  An interesting future direction would be to present a microscopic description of such a transition of the $\psi$ equation of state and study the evolution of the perturbations in the setting. Fast growth of perturbations can potentially have a whole host of interesting phenomenological implications. We have outlined these in the context of primordial black holes and gravitational waves in Sec.~\ref{pheno}. Our estimates indicate that we can obtain PBHs in the sub-lunar window, that can in principle constitute $100\%$ of dark matter. Also, GWs can be expected in a wide range of frequencies, from $10^{-3}$ Hz to $10^{15}$ Hz, with amplitudes which are in the detectable range with future experiments. Extracting detailed predictions requires analysis which is beyond the scope of the present article. We plan to report on these in subsequent works.
+
+
+
+\section*{Acknowledgments}
+We thank Stefano Savastano and Luca Amendola for email exchange regarding the perturbation growth in coupled quintessence cosmology within scaling regime. AM is supported in part by the SERB, DST, Government of India by the grant MTR/2019/000267.  SD acknowledges SERB grant CRG/2019/006147.  FM is funded by a UKRI/EPSRC Stephen
+Hawking fellowship, grant reference EP/T017279/1 and
+partially supported by the STFC consolidated grant
+ST/P000681/1.
+%\newpage
+%\appendix
+%\section*{Appendix}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\bibliography{mybib}
+\end{document}

@@ -1,0 +1,117 @@
+\label{app:axions}
+\subsubsection*{A brief review of the QCD axion}
+An axion-like particle (axion, for short) is a pseudoscalar particle $\phi$ that enjoys a continuous perturbative shift-symmetry of the form
+\begin{equation}
+\phi \rightarrow \phi + a	\,,
+\end{equation}
+where $a$ is a real constant. Historically, axions arose in field theory to solve the long-standing strong-CP problem of QCD~\cite{Crewther:1979pi}. The symmetries of QCD allow for a topological term in the Lagrangian
+\begin{equation}
+\mathcal{L}_{\text{QCD}} \supset \frac{\theta}{32 \pi^2} \text{tr} F_{\mu \nu} \tilde{F}^{\mu \nu} \,,
+\end{equation}
+where $F_{\mu \nu}$ is the QCD field strength. Such a term violates the CP symmetry and would give rise to an electric dipole moment for the neutron in contrast with observations, unless the parameter $\theta$ is tuned very small $\lesssim 10^{-10}$\cite{Baker:2006ts}.\footnote{The physical quantity is $\theta_{\text{phys}} = \theta + \text{arg} \left(\text{det} \left(M_u M_d\right)\right)$, where $M_u$ and $M_d$ are the quark mass matrices. The shift comes from a chiral rotation of quark fields in the Standard Model Lagrangian.} The introduction of an axion $\phi$, proposed by Peccei and Quinn~\cite{Peccei:1977hh, Wilczek:1977pj, Weinberg:1977ma}, solves this naturalness problem of QCD. The field $\phi$ couples with the topological term $\left(\phi/f\right) \, F \tilde F$, giving rise to an effective $\theta$ parameter
+\begin{equation}
+\theta_{\text{eff}} = \theta_{\text{phys}} + \frac{\phi}{f}\,,
+\end{equation}
+where $f$ is the axion decay constant. Due to the shift-symmetry of the theory, $\theta_{\text{phys}}$ can be absorbed into the axion field. The shift-symmetry is broken by non-perturbative effects~\cite{Vafa:1984xg} (instantons in the case of QCD) to a discrete shift symmetry of the form
+\begin{equation}
+\phi \rightarrow \phi + 2 \pi f\,,
+\end{equation}
+and a cosine-like potential for the axion is generated
+\begin{equation}
+\label{eq:axionpotential}
+V(\phi) = m_u \Lambda_{\text{QCD}}^3 \left[1 - \cos \left(\frac{\phi}{f}\right)\right]\,,
+\end{equation}
+where $\Lambda_{\text{QCD}}$ is the QCD scale and $m_u$ is the mass of the \textit{up} quark. Such a potential dynamically sets the coefficient of the topological term to zero. This procedure is very generic: non-perturbative effects always induce cosine-like potentials for axions. A coupling $\phi \, F \tilde F$ between the axion and the topological term is also allowed for Abelian gauge groups, i.e.~such a term is generically not forbidden by any symmetries. This is the basis for the coupling between the axion and Maxwell theory considered in this paper.
+
+An axionic field with a coupling of the form $\phi \, F \tilde F$ is often associated with theories exhibiting global chiral or gauge anomalies. In the case of a gauge anomaly the axion is eaten by the gauge boson, giving rise to a consistent effective theory with a massive gauge boson. As a result the axion is removed from the low energy spectrum. This can be avoided in more complicated constructions with multiple U(1) factors and a carefully chosen fermion spectrum \cite{0605225}: In particular, one can construct theories with massless gauge bosons that couple to axions as $\phi \, F \tilde F$. 
+
+\subsubsection*{Axions as inflaton fields}
+
+Due to their perturbative shift-symmetry, axions are one of the most natural candidates to drive inflation: such a symmetry protects the flatness of their scalar potential against quantum corrections. The arguably simplest axion inflation model employs the cosine potential~\eqref{eq:axionpotential}.\footnote{The inflationary potential is obtained from eq. \eqref{eq:axionpotential} substituting $m_u \Lambda_{\text{QCD}}^3 \rightarrow \Lambda^4$, where $\Lambda$ is the scale of non-perturbative effects that generate the potential for the inflaton, i.e.~$V = \Lambda^4 \left[1 - \cos\left(\phi/f\right)\right]$.} Note that inflation models based on such an oscillatory potential are models of large-field inflation: the slow-roll conditions are satisfied for $\phi \gtrsim m_p$. As the potential is periodic, this implies that the period needs to take super-Planckian values, i.e.~natural inflation requires $f \gtrsim m_p$. 
+
+More general inflationary potentials can only be generated if the shift-symmetry is broken completely. If the breaking is explicit, the protection from quantum corrections would generically be lost. However, we can retain a sufficient level of control by only breaking the shift-symmetry weakly: note that it is technically natural to take the symmetry-breaking terms  to be small. Then the quantum corrections resulting from the breaking are also suppressed. Another way of preserving the protection offered by the shift-symmetry is to only break it spontaneously. This can be realized by coupling the axion to a 3-form theory~\cite{0507215, 0811.1989, 1101.0026}. To be explicit, consider the theory of an axion $\phi$ and a 3-form $C_{\nu \rho \sigma}$ with corresponding field strength $F_{\mu \nu \rho \sigma} = 4 \partial_{[ \mu} C_{\nu \rho \sigma]}$ described by the following Lagrangian density:
+\begin{equation}
+\mathcal{L} = \frac{1}{2} (\partial \phi)^2 - \frac{1}{48} F_{\mu \nu \rho \sigma}^2 + \frac{\mu}{24} \phi \, \epsilon^{\mu \nu \rho \sigma} F_{\mu \nu \rho \sigma} \, .
+\end{equation}
+Here $\mu$ is a parameter with the dimensions of mass. As a 3-form does not have any propagating degrees of freedom in 4 dimensions, it can be integrated out, leading to
+\begin{equation}
+\mathcal{L} = \frac{1}{2} (\partial \phi)^2 - \frac{1}{2} (q+\mu \phi)^2 \, ,
+\end{equation}
+where the parameter $q$ corresponds to a VEV for $F_4$~\cite{0811.1989}. Thus one arrives at a non-periodic potential for the axion of the form $V= \tfrac{1}{2}(q+\mu \phi)^2$. The discrete shift symmetry is still intact as a shift in $\phi$ is accompanied by a shift in $q$:
+\begin{equation}
+\phi \rightarrow \phi + 2 \pi f \, , \qquad q \rightarrow q - 2 \pi \mu f \, .
+\end{equation}
+However, the symmetry is broken spontaneously once a minimum $\phi = - q / \mu$ is chosen. As $q$ is quantized and takes discrete values one finds a family of potentials of the form $V= \tfrac{1}{2}(q+\mu \phi)^2$, one for each possible value of $q$.\footnote{The existence of a family of potentials introduces the danger that the axion may tunnel to another branch of the family rather than perform slow-roll on one branch.} The model still profits from a protection from large quantum corrections: the symmetry implies that corrections to $V$ can only come in the form of powers of $V/\Lambda^4$ with $\Lambda$ the UV cutoff.   
+
+Above we saw how this approach can give rise to a quadratic axion potential. This method can also be used to realize more complicated axion potentials~\cite{0507215}. In particular, by modifying the 3-form kinetic term as
+\begin{equation}
+- \frac{1}{48} F_{\mu \nu \rho \sigma}^2 \rightarrow -\frac{M^4}{24} \mathcal{G} \left(\frac{\epsilon^{\mu \nu \rho \sigma}F_{\mu \nu \rho \sigma}}{M^2} \right) \, ,
+\end{equation}
+for some function $\mathcal{G}(x)$ and a scale $M$, one arrives at an axion potential
+\begin{equation}
+V = M^2 \int \textrm{d} \phi \, (\mathcal{G}')^{-1}\left(\frac{q-\mu \phi}{M^2} \right) \, ,
+\end{equation}
+where $(\mathcal{G}')^{-1}$ is the inverse function of $\mathcal{G}'$.
+
+So far we have discussed how theories of axions with various potentials can be constructed in field theory. For our purposes we also want to consider axion theories that -- in Einstein frame -- exhibit a non-canonical kinetic term. As we had not included gravity in our discussions of axions yet, there was no need to consider non-canonical kinetic terms, as one could always normalize. However, we will return to the question of non-canonical kinetic terms in the next sections, when we consider axions in supergravity and string theory. 
+
+While considering axions as inflatons helps overcome many UV problems of inflation in effective field theory, one cannot remain completely agnostic about UV physics. For example, natural inflation needs $f \gtrsim m_p$, which seems to be an unnatural feature in the context of quantum gravity~\cite{ArkaniHamed:2006dz, 0605206, Conlon:2012tz}. Hence, in the following we will describe how axions and their properties can arise when the UV physics is given by string theory. As string theory models of axion inflation are typically formulated in the effective supergravity theory arising from string theory compactifications, we turn to axions in supergravity next.
+
+\subsubsection*{Axions in supergravity}
+Axions can be very naturally embedded in supergravity. They can be described by either the phase or the real or imaginary parts of complex scalar fields in supermultiplets. Consider for example a theory of a chiral superfield $\Phi$ described by:
+\begin{equation}
+\mathcal{K} \equiv \mathcal{K}\left(\Phi + \overline{\Phi}\right)\,, \quad W \equiv W_0 = \textrm{const} \, .
+\end{equation}
+As $\mathcal{K}$ only depends on the combination $(\Phi + \overline{\Phi})$ and $W$ is independent of $\Phi$, the theory is symmetric under continuous shifts of $\textrm{Im}(\Phi)$, which we identify with the axion: $\phi \equiv \textrm{Im}(\Phi)$. 
+
+To generate a potential for the axion, the shift symmetry has to be broken. This can occur due to non-perturbative effects as in the non-supersymmetric case. To this end we introduce a non-Abelian gauge sector with its corresponding field strength superfield $\mathcal{W}^{\alpha}$. If we choose the corresponding gauge kinetic function to be $f=\Phi$, the axion $\phi$ will couple to the topological term of the non-Abelian gauge theory:
+\begin{equation}
+\label{gaugekin}
+{\left. \left( \Phi \ \text{tr} \, \mathcal{W}_{\alpha} \mathcal{W}^{\alpha} + \textrm{h.c.} \right) \right|}_{F} \supset  -\phi \ \text{tr} \, F_{\mu \nu} \tilde{F}^{\mu \nu}  \, .
+\end{equation}
+Then non-perturbative effects will introduce a periodic (Einstein-frame) potential for $\phi$ while at the same time breaking the continuous shift symmetry down to a discrete one. 
+
+In this paper we are also interested in the coupling between the axion and the topological term of an Abelian gauge theory. This will arise from a coupling of type~\eqref{gaugekin} where $\mathcal{W}^{\alpha}$ is now the field strength superfield of the Abelian gauge theory.  
+
+One can generate more general (i.e.~non-peridiodic) potentials for $\phi$ if the chiral superfield $\Phi$ appears in the superpotential explicitly, e.g.~$W = m h (\Phi)$ where $h$ is a holomorphic function. Then the shift symmetry of the axion is broken explicitly by $W$ (see however~\cite{0811.1989, 1101.0026}) and one may generate a polynomial Einstein-frame potential $V_E$. As $\mathcal{K}$ is still shift-symmetric, some of the axionic protections are still active. In particular, the breaking of the shift-symmetry is completely controlled by the parameter $m$. This is the ansatz for inflation models realizing $F$-term axion monodromy inflation~\cite{1404.3040, 1404.3542, 1404.3711}.
+
+For our purposes we are particularly interested in theories where the axion kinetic term depends non-trivially on the axion itself. Given a K\"ahler potential $\mathcal{K}$ the function $K(\phi)$ appearing in~\eqref{non_minimal:einstein_frame} is given by $K \equiv \partial_{\Phi} \partial_{\overline{\Phi}} \mathcal{K}$. We can then make the following observation. If $\mathcal{K}$ preserves the axionic shift-symmetry, it only depends on the combination $(~\Phi~+~\overline{\Phi}~)$ and the function $K$ will only depend on the saxion $\textrm{Re}(\Phi)$, but not on the axion $\phi = \textrm{Im}(\Phi)$. Hence it seems that in supergravity we cannot get any non-trivial axion-dependence in $K$, without breaking the axionic shift-symmetry in $\mathcal{K}$.\footnote{This finding holds for all axions, i.e.~also for axions arising as phases or the real parts of complex scalars in chiral superfields. As long as $\mathcal{K}$ does not depend on the axion as required by shift-symmetry, there cannot be any axion-dependence in $K$.} 
+
+It is possible to break the shift-symmetry in the K\"ahler potential in different ways. One possibility is to introduce an explicit breaking term as in~\cite{Ferrara:2010yw,Ferrara:2010in,Buchmuller:2012ex}. In such a case, in order not to lose all the advantages deriving from the shift-symmetry, the amount of breaking has to be small. In particular, we can always include further fields in the theory. Hence, a possibility is to break the shift-symmetry through loop effects, as for example for theories whose superpotential $W \supset \kappa \Phi S_+ S_-$~\cite{Gaillard:1993es,Stewart:1996ey,Stewart:1997wg}, where $S_\pm$ are heavy fields. Upon integrating out $S_{\pm}$, axion-dependent loop corrections modify the \Kahler potential. The amount of shift-symmetry breaking is naturally small because loop-suppressed. 
+
+Furthermore, it is important to observe that in supergravity we can never get a theory of just an axion. As the axion arises from a complex scalar, there will at least always be the saxion partner as an additional field. If we consider effective supergravity theories from string theory, the existence of further fields is rather generic. Note that these generically introduce an explicit axion-dependence in the axion kinetic term through backreaction. 
+
+Finally, note that in the Peccei-Quinn mechanism the axion arises from a phase of a complex field, whereas here we focused on axions corresponding to the imaginary part of a complex scalar: $\phi= \text{Im}(\Phi)$. However, both descriptions are related. If the real part of a complex scalar is a scalar, then calling the imaginary part or the phase a pseudoscalar is equivalent (in both cases, a complex conjugation corresponds to a change in sign in the pseudoscalar part). An explicit connection between the two cases can be made as follows. In particular, let
+\begin{equation}
+f= \Phi \equiv \sigma + i \phi \, ,
+\end{equation}
+with $\phi$ an axion and $\sigma$ denoting the scalar component (saxion). Then we can define
+\begin{equation}
+\Phi_{\textrm{PQ}} = e^{f} = e^{i \phi} (\cosh \sigma + \sinh \sigma) \, ,
+\end{equation}
+such that the axion now appears as a phase.
+Hence the descriptions of an axion as a phase vs.~the imaginary part are equivalent descriptions related by a non-linear map.
+
+\subsubsection*{Axions from String Theory and Quantum Gravity Constraints}
+
+Axions are also a very natural prediction of string theory. They arise from the dimensional reduction of form field gauge potentials on sub-manifolds of the string theory compactification space. The shift-symmetry in the four-dimensional effective field theory is a remnant of the gauge symmetry of gauge fields in the ten-dimensional theory. In addition there are also universal axions (the axionic part of the axio-dilaton and the axions from dualizing to 2-form gauge potentials (see e.g.~\cite{1404.2601} for a brief review). It is even expected that string theory compactifications may give rise to a \textit{string axiverse}~\cite{Arvanitaki:2009fg, Cicoli:2012sz}. 
+
+There has been a sustained effort in the string theory community to embed inflation in string theory. Due to issues of theoretical control, models of inflation are typically constructed in a regime where an effective field theory description is applicable, rather than working in string theory directly. In particular, models are typically realized in the effective supergravity theory. There exists a multitude of proposed models of inflation in string theory (for a review until 2014 see~\cite{1404.2601}, for subsequent progress and references until September 2014 see~\cite{1409.5350}). However, most models come with open questions regarding control of quantum corrections, such that it is difficult to make robust predictions.
+
+However, there are certain properties which appear to be universal as far as embedding axion inflation in string theory is concerned. In particular, axions with a super-Planckian period ($f > m_p$) seem to be inconsistent with string theory compactifications~\cite{0605206}. This implies that the simplest models of natural inflation cannot arise from string theory. This is also consistent with general quantum gravity arguments~\cite{ArkaniHamed:2006dz, Conlon:2012tz}.
+
+This does not imply that axion inflation in general is forbidden in string theory. However, to evade the constraints on the axion field range, models have to become more involved. The following mechanisms have been proposed to allow for inflation despite the constraint on the axion period:
+\begin{itemize}
+\item \textit{Alignment mechanisms}~\cite{Kim:2004rp}. The idea is to create a long super-Planckian inflaton trajectory in the field space of two or more sub-Planckian axions. It is necessary to tune the potential~\cite{Kim:2004rp} or to rely on kinetic terms~\cite{1404.7496, Shiu:2015xda} to create this long trajectory within a compact sub-Planckian field space. 
+\item \textit{N-flation}~\cite{Dimopoulos:2005ac, Cicoli:2014sva, Das:2014gua}: This approach exploits the fact that a diagonal direction in the field space of $N$ axions can be super-Planckian for sufficiently large $N$, even if every single axion has a sub-Planckian field range.
+\item \textit{Axion monodromy}~\cite{Silverstein:2008sg, 0808.0706}: These models make use of an explicit breaking of the shift-symmetry (e.g.~due the presence of branes) in the spirit of~\cite{0507215, 0811.1989, 1101.0026} to generate a perturbative non-periodic potential for the axion. The originally periodic axion field space is effectively unfolded. 
+\end{itemize}
+String theory compactifications contain all necessary `ingredients' for a successful embedding of any one of the above approaches: the existence of multiple axions is rather generic and D-branes and fluxes give rise to monodromies. Consequently, there exist many proposed models based on these ideas (see e.g.\cite{1409.5350} for a review until Sep.~2014). Yet, there are many open questions regarding the viability of any one model of axion inflation from string theory. Generalizations of the Weak Gravity Conjecture pose serious constraints on models based on alignment or N-flation~\cite{1503.00795, 1506.03447}. At the same time there are persistent problems with control as far as the stabilization of additional scalar fields (moduli) is concerned. Overall, at the time of writing there is no final verdict regarding axion inflation from string theory: While string theory exhibits many properties for successful axion inflation, there does not yet exist a model that withstands deeper scrutiny.\footnote{Models of axion inflation are typically models of large-field inflation which will give rise to measurable tensor modes. However, measurable tensor modes can also be generated in stringy inflation models that do not employ axions~\cite{Cicoli:2008gp, Burgess:2016owb, Cicoli:2016chb}. For such inflationary models explicit string theory embeddings have been built, including a controlled moduli stabilization procedure and the presence of a chiral visible sector~\cite{Cicoli:2016xae, ChiralGlobalFibre}.}
+
+What does this imply for the models of axion inflation considered in this work? In this paper we explore models that -- in Einstein frame -- exhibit a range of axion potentials, but also have non-canonical kinetic terms for the axion that depend on the axion itself. In addition, the axion should couple to the topological term associated with Abelian gauge theories. Overall, we find that string theory exhibits all the properties to accommodate the axion inflation models discussed in this work -- at least in principle. 
+\begin{itemize}
+\item As far as the potential is concerned, models of axion inflation in string theory were shown to give rise to a wide range of possible potentials. The possibilities increase further once back-reaction of other scalar fields (moduli) is taken into account~\cite{1011.4521,1405.3652}. 
+\item As the existence of moduli is a generic feature of string theory compactifications, back-reaction effects will typically play a role. As described in the section on supergravity, back-reaction effects can also induce axion-dependence of the kinetic terms. 
+\item Furthermore, couplings between axions and the topological terms of (non-)Abelian gauge theories is generic in string theory. These couplings are a crucial ingredient for the cancellation of gauge anomalies in consistent string vacuums via the generalized Green-Schwarz mechanism.\footnote{In this case the gauge bosons receive string scale masses.} Interestingly, couplings of the form $\phi F \tilde{F}$ can also arise if the gauge theory is non-anomalous (see e.g.~\cite{0906.1920}).
+\end{itemize}
+However, to make any more precise statements would require the construction of an explicit string embedding, which is beyond the scope of this paper. We hence leave this for future work.

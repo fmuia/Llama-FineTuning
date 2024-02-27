@@ -1,0 +1,90 @@
+In this section we give a review\footnote{For more details see for example~\cite{Barnaby:2011vw,Barnaby:2011qe,Linde:2012bt}.} of the case of a \emph{pseudoscalar} inflaton $\phi$ coupled to Abelian gauge fields. In particular we show that a generic higher-dimensional coupling between the inflaton and the gauge fields introduces an instability in the theory, which leads to an exponential production of the gauge fields~\cite{Turner:1987bw, Garretson:1992vt, Anber:2006xt}. Interestingly this effect induces a back-reaction both on the background dynamics~\cite{Anber:2009ua,Barnaby:2011qe,Barnaby:2011vw} and on the perturbations~\cite{Anber:2012du,Linde:2012bt}, leading to a wide set of observational consequences. Let us consider the action for a pseudo-scalar inflaton $\phi$, which is coupled to a certain number $\mathcal{N}$ of Abelian gauge fields $A_\mu^a$ (associated to $U(1)$ gauge symmetries,\footnote{Alternatively, these may be associated with a $SU({\cal N})$ symmetry in the weak coupling limit.} i.e.\ $a = \{1,2,...,\mathcal{N}\}$)~\cite{Turner:1987bw,Garretson:1992vt, Anber:2006xt,Anber:2012du,Anber:2009ua,Barnaby:2011qe,Barnaby:2011vw,Linde:2012bt,Domcke:2016bkh}:\footnote{The metric has signature $(-,+,+,+)$ and $m_p \simeq 2.4 \cdot 10^{18}\,$~GeV denotes the reduced Planck mass.} 
+\begin{equation}
+\label{review:action_pseudoscalar}
+\mathcal{S}= \int \textrm{d}^4 x \sqrt{|g|} \left[m_p^2 \frac{R}{2} -\frac{1}{2} \, \partial_\mu \phi \, \partial^\mu \phi - V(\phi) - \frac{1}{4} F^a_{\mu \nu} F_a^{\mu \nu} - \frac{\alpha^a}{4 \Lambda} \phi F^a_{\mu \nu} \tilde{F}_a^{\mu \nu} \right ]\ ,
+\end{equation}
+where $V(\phi)$ is the inflaton potential, $F^a_{\mu \nu} $ ($\tilde{F}^{\mu \nu}_{a}$) are the (dual\footnote{The dual field-strength tensor is defined as $\tilde{F}_a^{\mu \nu} \equiv \tilde{F}_{\rho \sigma}^a \epsilon^{\mu \nu \rho \sigma}/(2 \sqrt{-g})$,
+where $\epsilon^{\mu \nu \rho \sigma}$ is the Levi-Civita tensor.}) field-strength tensors for the gauge fields, $\Lambda$ is a mass scale (that suppresses the higher-dimensional scalar-vector coupling) and $\alpha^a$ are the dimensionless coupling constants of the Abelian gauge fields. In the following we consider $\alpha^a = \alpha$ for all $a$. Throughout this paper, the effective mass scale $\Lambda/\alpha$ will take sub-Planckian values, 
+ as required for a reasonable effective field theory. Typical values found e.g.\ in Ref.~\cite{Domcke:2016bkh} for phenomenologically interesting scenarios lie in the range $\Lambda/\alpha \simeq 0.01 - 0.03 \, m_p$.
+However, we stress that contrary to natural inflation models~\cite{Freese:1990rb}, we do not impose that this scale simultaneously sets the scale of the scalar potential or of the field excursion during inflation. A discussion on how Eq.~\eqref{review:action_pseudoscalar} may arise in the context of field theory, supergravity or string theory is provided in App.~\ref{sec:axions}.
+
+
+\subsection{Background dynamics}
+\label{review:background}
+In order to describe the dynamics we can start by computing the background equations of motion for the inflaton $\phi(t)$ and for the gauge fields $A_\mu^a(t,x)$. Without loss of generality, we proceed by assuming $ \phi > 0, \ V_{,\phi}(\phi)>0, \ \dot{\phi} < 0$, and we choose to describe the problem in the Coulomb gauge ($A_0^a = 0$, $\partial^\mu A_\mu^a(t,x) = 0$). Under these assumptions the equations of motion can be expressed as:
+\begin{align}
+\label{review:eq_motion}
+\ddot \phi + 3 H \dot{\phi} + \frac{\partial V}{\partial \phi} = \frac{\alpha}{2\Lambda} \frac{\varepsilon^{\mu\nu\rho\sigma}}{\sqrt{|g|}} \langle \partial_\mu A_\nu \partial_\rho A_\sigma \rangle & \equiv \frac{\alpha}{\Lambda} \langle \vec{E}^a \cdot \vec{B}^a \rangle \ ,\\
+\frac{d^2}{d \tau^2}\vec{A}^a - \vec{\nabla}^2 \vec{A}^a - \frac{\alpha}{\Lambda} \frac{\textrm{d} \phi}{\textrm{d} \tau} \vec{\nabla} \times \vec{A}^a & = 0 \ , \label{review:eq_motionA}
+\end{align}
+where dots are used to denote derivatives with respect to cosmic time $t$, primes are used to denote derivatives with respect to $\tau$ (conformal time defined as $\textrm{d}t \equiv a \, \textrm{d}\tau$), $\vec{\nabla}$ is the $3$-dimensional flat space gradient operator, the brackets $\langle \cdot \rangle$ denote a spatial mean and the vectors $\vec{E}^a$ and $\vec{B}^a$ are the ``electric'' and ``magnetic'' fields associated with the fields $A_\mu^a(t,x)$ defined as:
+\begin{equation}
+	\label{review:electric_magnetic}
+	\vec{E}^a \equiv -\frac{1 }{a^2} \frac{\textrm{d} \vec{A}^a}{\textrm{d} \tau} = -\frac{1 }{a} \frac{\textrm{d} \vec{A}^a}{\textrm{d} t} \ , \qquad \qquad  \vec{B}^a \equiv \frac{1}{a^2} \vec{\nabla} \times \vec{A}^a  \ .
+\end{equation}
+In order to completely specify the dynamics we also have to compute the Friedmann equation which can be expressed as:
+\begin{equation}
+\label{review:friedmann}
+3 H^2 m_p^2 = \frac{1}{2} \dot{\phi}^2 + V(\phi) + \frac{1}{2} \langle \vec{E}^{a \, 2}  +  \vec{B}^{a \, 2}\rangle  \ .
+\end{equation}
+Clearly a general analytical solution for Eq.~\eqref{review:eq_motion}, Eq.~\eqref{review:eq_motionA}, and Eq.~\eqref{review:friedmann} does not exist. However, assuming $\dot{ \phi} $ to be slowly varying (which is a reasonable assumption during slow-roll inflation) we can find an analytical solution for Eq.~\eqref{review:eq_motionA}. By substituting this solution into Eq.~\eqref{review:eq_motion} and Eq.~\eqref{review:friedmann} we can then study the back-reaction on the system.
+
+In order to solve Eq.~\eqref{review:eq_motionA} we start by performing a spatial Fourier transform and, taking $\vec{k}$ to be parallel to the x-axis $\hat{x}$, expressing the gauge fields in terms of the two helicity vectors\footnote{The two helicity vectors $\vec{e}_{\pm}$ are defined as $\vec{e}_{\pm} = (\hat{y} \pm i \hat{z})/\sqrt{2}$. It is crucial to notice that using the helicity vectors we get $\vec{k} \times \vec{A}^a =  A^{a}_{\pm} \vec{k} \times \vec{e}_{\pm} = \mp i A^{a}_{\pm} |\vec{k}| \vec{e}_{\pm}$.} as $\vec{A}^a = A_{+}^a \vec{e}_{+} + A_{-}^a \vec{e}_{-}$, the equation of motion for the gauge fields reads:
+\begin{equation}
+\label{review:eq_motionAfourier}
+  \frac{\textrm{d}^2  A^{a}_{\pm}(\tau,\vec{k})}{\textrm{d} \tau^2}  + \left[ k^2 \pm 2\, k  \, \frac{\xi}{\tau} \right]A^{a}_{\pm}(\tau,\vec{k}) =  \ 0 \ , 
+  \end{equation}
+where we have introduced the parameter $\xi$ defined as:
+\begin{equation}
+\xi \equiv \frac{\alpha \, |\dot{\phi}|}{2 \, \Lambda \, H} \ .
+\label{review:xi}
+\end{equation}
+Notice that Eq.~\eqref{review:eq_motionAfourier} describes a tachyonic instability for the $A_+$ mode. In particular for the modes with $(8 \, \xi)^{-1} \lesssim k/(aH) \lesssim 2 \, \xi$,  $A_+$ can be expressed as~\cite{Anber:2009ua,Barnaby:2010vf,Barnaby:2011vw}:
+\begin{equation}
+A_+^a \simeq \frac{1}{\sqrt{2\, k}} \left( \frac{k}{2 \,  \xi \, a \, H}\right)^{1/4} e^{ \pi \xi - 2 \sqrt{2 \xi k/(a H)}} \ ,
+\end{equation}
+so that the terms $\langle \vec{E}^a \cdot \vec{B}^a \rangle$ and $\langle \vec{E}^{a \, 2} + \vec{B}^{a \, 2} \rangle$ appearing in Eq.~\eqref{review:eq_motion} and in Eq.~\eqref{review:friedmann} can be expressed as:\footnote{These expressions only hold for $\xi \gtrsim 1$. For the correct expressions for small values of $\xi$ see~\cite{Anber:2009ua,Pieroni:2016gdg}.}
+\begin{equation}
+\langle \vec{E}^a \cdot \vec{B}^a \rangle \simeq \mathcal{N} \cdot \   2.4 \cdot 10^{-4} \frac{H^4}{\xi^4} e^{2 \pi \xi} \ , \quad \frac{1}{2} \langle \vec{E}^{a \, 2} + \vec{B}^{a \, 2} \rangle  \simeq \mathcal{N} \cdot \   1.4 \cdot 10^{-4} \frac{H^4}{\xi^3} e^{2 \pi \xi} \ .
+\end{equation}
+It is possible to show (see for example~\cite{Barnaby:2011vw}) that while the back-reaction on the Friedmann equation is fairly negligible throughout the whole evolution, the back-reaction on the equation of motion for the scalar field cannot be neglected in the last part of the evolution. In particular this back-reaction introduces an additional friction term that has an exponential dependence on $\xi$. As this parameter is proportional to $\dot{\phi}$, it typically increases towards the end of inflation in single-field inflation models. Correspondingly the new friction term may be negligible at CMB scales while significantly slowing down the last part of the evolution. As explained in~\cite{Domcke:2016bkh}, this effect induces a shift in the region of the potential that can be probed with CMB observations. It is crucial to stress that the gauge fields are not changing the total number $N \equiv - \int H \textrm{d}t$ of e-foldings (i.e.\ the CMB is still generated at $N_\text{CMB} \simeq 60$ in the complete evolution) but rather they slow down the increase of $\xi \sim |\dot{\phi}/H|$. 
+
+
+\subsection{Scalar and tensor power spectra}
+\label{review:perturbations}
+The gauge fields do not only affect the background dynamics but they also modify the equation of motion for the perturbations. In particular they induce a source term both for scalar and tensor perturbations leading to an exponential amplification of the spectra at small scales. 
+
+Let us start by discussing the modified scalar power spectrum.\footnote{More details on the derivation of these formulas are given in Sec.~\ref{sec:non-minimal}, where we also discuss the generalization to a model where the inflaton is non-minimally coupled to gravity.} As a first step we express the inflaton field as $\phi(\vec{x},t)=\phi(t) + \delta \phi(\vec{x},t)$ and by solving the linearized equation of motion for $\delta \phi(\vec{x},t)$ (for details see~\cite{Anber:2006xt,Anber:2009ua,Barnaby:2010vf,Barnaby:2011vw,Barnaby:2011qe}) we can express the scalar power spectrum $\Delta^2_s(k)$ as~\cite{Linde:2012bt,Domcke:2016bkh}:
+\begin{equation}
+\Delta^2_s(k) = \Delta^2_s(k)_\text{vac} + \Delta^2_s(k)_\text{gauge} = \left(\frac{H^2}{2 \pi |\dot{\phi}|}\right)^2 + \left( \frac{\alpha \langle \vec{E}^a\cdot \vec{B}^a \rangle/ \sqrt\mathcal{N}}{3 \Lambda b H \dot{\phi}} \right)^2 \ ,
+\label{review:scalar}
+\end{equation}
+where we have defined $b$ as:
+\begin{equation}
+b \equiv 1 - 2 \, \pi \, \xi \,  \frac{\alpha \langle \vec{E}^a \cdot \vec{B}^a \rangle}{3 \Lambda H \dot{\phi}}  \ .
+\end{equation} 
+As $\langle \vec{E}^a\cdot \vec{B}^a \rangle$ grows exponentially with $\xi$, the second term of Eq.~\eqref{review:scalar} (i.e.\ the gauge-field induced contribution) is typically negligible at CMB scales (where the stringent CMB constraints essentially require $\Delta^2_s(k) \simeq \Delta^2_s(k)_\text{vac}$) but may dominate over the first term at small scales. In particular it is possible to show that in the gauge-field dominated regime (i.e.\ typically in the last part of inflation) the spectrum is well approximated by~\cite{Linde:2012bt,Domcke:2016bkh}:
+\begin{equation}
+\Delta^2_s(k ) \simeq \frac{1}{\mathcal{N} (2 \pi \xi)^2} \ .
+\label{review:scalar_strong}
+\end{equation}
+Notice that in presence of several $U(1)$s the power spectrum is suppressed at small scales. Moreover, the presence of the gauge fields leads to the generation of equilateral non-Gaussianities~\cite{Anber:2012du}. As a consequence, the non-observation of non-Gaussianities at CMB scales~\cite{Ade:2015lrj,Ade:2015ava} can be used to set constraints on these models. In particular, this implies $\left. \xi\right|_{\text{CMB}} \lesssim 2.5$, where $\left. \xi\right|_{\text{CMB}}$ is the value of $\xi$ at CMB scales~\cite{Barnaby:2011vw,Barnaby:2011qe,Anber:2012du,Barnaby:2010vf,Linde:2012bt}.
+
+In order to compute the tensor spectrum $\Delta^2_{t}$ we start with the equation of motion for the traceless transverse part of the metric perturbations $h_{ij}(\vec{x},t)$, given by the linearized Einstein equation:\footnote{For details on the derivation of this equation see~\cite{Maggiore:1900zz}.}
+ \begin{equation}
+\frac{\textrm{d}^2 h_{ij}}{\textrm{d} \tau^2} + 2 \frac{\textrm{d} \ln a}{\textrm{d} \tau} \frac{\textrm{d} h_{ij}}{\textrm{d} \tau} - \vec{\nabla}^2 h_{ij} = \frac{2}{m_p^2} \Pi_{ij}^{\mu \nu} T_{\mu \nu} \ ,
+\label{review:linearized_einstein}
+ \end{equation}
+where $\Pi^{ij}_{\mu \nu}$ is the transverse, traceless projector and $T_{\mu \nu}$ is the matter energy-momentum tensor (which acts as a source for GWs). By solving this equation we obtain $\Delta^2_{t,L}$ and $\Delta^2_{t,R}$, power spectra for the two polarizations\footnote{In order to decompose $h_{ij}(\vec{x},t)$ in terms of the two polarizations of the GW we can use the projector $\Pi_{ij,L/R} = e_{i, \, \mp} e_{j, \, \mp}$.} $(L,R)$ of the GWs. The tensor power spectrum $\Delta^2_{t}$ (given by the sum of the spectra for the two polarizations) can then be expressed as:
+\begin{equation}
+\Omega_{GW} \equiv \frac{\Omega_{R,0}}{24} \Delta^2_{t} \simeq \frac{1}{12} \Omega_{R,0} \left(  \frac{H}{ \pi \, m_p } \right)^2 \left(1 + 4.3 \cdot 10^{-7} \mathcal{N} \frac{H^2}{ m_p^2 \, \xi^6} e^{4 \pi \xi}\right)\ ,
+\label{review:OmegaGW}
+\end{equation} 
+where $\Omega_{R,0} = 8.6 \cdot 10^{-5}$ is used to denote the radiation energy density today. Similarly to the case of the scalar power spectrum, the gauge-field sourced term (i.e.\ the second term in the parenthesis on the r.h.s. of Eq.~\eqref{review:OmegaGW}) is typically negligible at CMB scales and dominates over the first term at small scales (i.e.\ in the last part of inflation). It is also crucial to stress that the second term in Eq.~\eqref{review:OmegaGW} is only sourced by one of the two polarizations. As a consequence the GW signal that is generated during the last part of the evolution is expected to be strongly chiral. Chirality is a peculiar feature for a GW background and if detected\footnote{For details on methods to detect the chirality of GW background see~\cite{Crowder:2012ik}.} it would point to the existence of a parity violating source. In the framework of standard general relativity axion inflation is one of the simplest models which implement this parity violation.
+
+As in the context of direct GW observations it is customary to express quantities in terms of the frequency $f = k / (2 \pi)$, it is useful to introduce the relation between $f$ and the number of e-foldings $N$~\cite{Barnaby:2011qe,Domcke:2016bkh}:
+\begin{equation}
+N = N_\text{CMB} + \ln \frac{k_\text{CMB}}{0.002 \text{ Mpc}^{-1}} - 44.9 - \ln\frac{f}{10^2 \text{ Hz}} \ ,
+\label{review:Nf}
+\end{equation}
+where $k_\text{CMB} = 0.002 \text{ Mpc}^{-1}$ and $N_\text{CMB} \simeq 50 - 60$. Following the convention used throughout this work, the number of e-foldings $N$ decreases during inflation, reaching $N=0$ at the end of inflation and we will set $N_\text{CMB} = 60$.

@@ -1,0 +1,347 @@
+
+\section{The non-abelian homogeneous gauge field background \label{sec:background}}
+
+In this section we study the classical evolution of the homogeneous non-abelian gauge-field background. In Sec.~\ref{subsec:Isotropic} we discuss three distinct types of solutions. Among these, of particular interest is the ``$c_{2}$\nobreakdash-type'' of solution which, in physical coordinates, describes a background gauge field whose magnitude, for any fixed $\xi$, approaches a positive constant. This is similar to the background field assumed in CNI (see~\cite{Dimastrogiovanni:2012st,Dimastrogiovanni:2012ew,Adshead:2013qp,Adshead:2013nka}). (In comoving coordinates, the background field grows in proportion to the scale factor $a(\tau)$, or equivalently\footnote{For the time scales we are considering, $H$ is effectively constant.} in proportion to $(-\tau)^{-1}$.) We will show that this solution is only possible for $\xi\geq2$, and it is stable under perturbations. The key result of this section is to describe the initial conditions necessary to reach this type of solution. To this end, we discuss the different types of solutions both at early and at late times. We close \prettyref{subsec:Isotropic} by showing a phase-space diagram of these solutions, illustrating the different types of solutions as well as their behaviour at early and late times. Based on this in-depth study of the non-equilibrium behaviour of the classical equation of motion we will conclude that 
+\begin{itemize}
+\item Once the magnitude of the initial conditions reaches a particular threshold, the classical equation of motion for the gauge field background evolves with high probability towards a $c_{2}$\nobreakdash-type homogeneous and isotropic background solution. 
+\end{itemize}
+These initial conditions in turn are understood to be sourced by the enhanced gauge field fluctuations generated before this $c_{2}$\nobreakdash-type solution developed. We will return to these quantum fluctuations in \prettyref{sec:linearized}. For now, we will only note that in the far past, these fluctuations are well described by the abelian limit discussed in Sec.~\ref{sec:abelian}.
+
+The analysis of Sec.~\ref{subsec:Isotropic} will assume an isotropic gauge field background. We will justify this in Sec.~\ref{subsec:Anisotropic-background-fields} by demonstrating that the homogeneous background evolves towards isotropy. We will further see in Secs.~\ref{sec:linearized} and \ref{sec:example}, that this background suppresses the quantum gauge field fluctuations. We therefore conclude that after the homogeneous background is triggered, the dynamics of the gauge field background are accurately captured by the \emph{classical} equation of motion for a homogeneous and isotropic gauge field.
+
+We conclude this discussion in Sec.~\ref{subsec:dynamical_background} by including the dynamical evolution of the inflaton background. Technical details and mathematical proofs are relegated to Appendices~\ref{app:sec3} and \ref{app:gaugefields}.
+
+\subsection{\label{subsec:Isotropic}Equation of motion for an isotropic gauge field background}
+
+In this section, we consider in detail the equation of motion for the non-abelian gauge field background $A^{(0)}$. (For context, see the discussion around \prettyref{eq:background_plus_linear}.) This is the zeroth order part of our approximation, so we ignore for now the inhomogeneous first-order perturbations $\delta A$ which we will add later in Sec.~\ref{sec:linearized}. We make the following explicit assumptions on the background field: 
+\begin{itemize}
+\item The background gauge field $A^{(0)}$ is homogeneous and isotropic. (We will show in \prettyref{subsec:Anisotropic-background-fields} that isotropy is a valid assumption in our regime of interest. For a discussion on homogeneity in the abelian limit, see \prettyref{sec:abelian}.) 
+\item The inflaton field $\phi$ is homogeneous and evolves in the slow-roll regime. In particular, we consider $\xi$ to be constant. (See~\prettyref{eq:rev_xi} and the subsequent comments.) 
+\end{itemize}
+Any $\mathrm{SU}(2)$ gauge field $A^{(0)}(\tau)$ which is homogeneous and isotropic is (after applying a gauge transformation) of the form (see e.g.~\cite{Verbin:1989sg,Maleknejad:2012fw}),
+\begin{equation}
+(A^{(0)})_{0}^{a}=0,\quad(A^{(0)})_{i}^{a}=f(\tau)\,\delta_{i}^{a}.\label{eq:ansatz-A}
+\end{equation}
+We provide a rigorous proof of this statement as \prettyref{thm:isotropy} in \prettyref{app:iso-gauge}. We emphasize that although this particular choice of $A^{(0)}$ happens to be in temporal gauge, no gauge-fixing constraints have been imposed on $A^{(0)}+\delta A$. 
+
+The corresponding equation of motion for $f(\tau)$ is 
+\begin{equation}
+\frac{\mathrm{d}^{2}}{\mathrm{d}\tau^{2}}ef(\tau)+2\left(ef(\tau)\right)^{3}-\frac{2\,\xi}{-\tau}(ef(\tau))^{2}=0,\label{eq:chromonatural_eom_final}
+\end{equation}
+obtained by inserting \prettyref{eq:ansatz-A} into \prettyref{eq:eq_motion_final}. Our task is now to analyze the qualitative behaviour of solutions to this ordinary differential equation, where $e$ and $\xi$ are constants.
+
+It is helpful to observe the following symmetries of this equation. 
+\begin{itemize}
+\item There is always a factor of $e$ wherever $f(\tau)$ appears. Consequently, we focus our analysis on the quantity ``$ef(\tau)$'' instead of ``$f(\tau)$.'' The coupling constant $e$ is nothing but a scale factor. 
+\item The substitution 
+\begin{align*}
+ef(\tau) & \mapsto-ef(\tau)\\
+\xi & \mapsto-\xi
+\end{align*}
+preserves solutions of \prettyref{eq:chromonatural_eom_final}. Thus solutions with $\xi<0$, are identical (up to a sign) to solutions with $\xi>0$. As in \prettyref{sec:abelian} we assume without loss of generality that $\xi\geq0$. 
+\item \label{enu:symmetry}For any positive real number $\lambda$, the transformation 
+\begin{equation}
+ef(\tau)\mapsto\lambda\,ef(\lambda\tau)\label{eq:symmetry3}
+\end{equation}
+preserves solutions of \prettyref{eq:chromonatural_eom_final}. The most straightforward consequence is that in \prettyref{fig:scaling-symmetry}, we may replace the axis labels $(\tau,ef(\tau))$ by $(H_{*}\tau,H_{*}^{-1}ef(\tau))$ for any constant $H_{*}$. For instance, one might take $H_{*}$ to be the value of the Hubble parameter at the end of inflation. Alternatively, for convenience, in this section (and this section only) we will work in units where $\tau$ and $ef(\tau)$ are dimensionless.\\
+More generally, this transformation can be understood in terms of the physical quantity $g(N)$ defined as follows:  
+\begin{equation}
+g(N)\equiv-\tau\,ef(\tau),\ \textrm{ where }\tau=\tau_{0}\,e^{N},\ \textrm{and}\ \tau_{0}\equiv\tau(N=0).\label{eq:g-def}
+\end{equation}
+Here $N$ is the usual measure of e-folds during inflation with $dN=-Hdt=d\tau/\tau$, so that \prettyref{eq:chromonatural_eom_final} becomes 
+\begin{equation}
+\frac{\mathrm{d}^{2}}{\mathrm{d}N^{2}}g(N)-3\frac{\mathrm{d}}{\mathrm{d}N}g(N)+2g(N)\left(g(N)^{2}-\xi g(N)+1\right)=0\,.\label{eq:g-of-N}
+\end{equation}
+This is an autonomous \footnote{\emph{Autonomous} means that the time variable doesn't explicitly appear in the equation of motion. For example, the quartic oscillator equation $w''(x)+2w(x)^{3}=0$ is autonomous, while the Airy equation $w''(x)-xw(x)=0$ is not. } equation, so solutions are invariant under time translations of the form $g(N)\mapsto g(N+\ln\lambda)$. With comoving quantities, these time translations correspond precisely to the transformation~\eqref{eq:symmetry3}. When this transformation is applied in the limit $\lambda\to0^{+}$, it corresponds to the limiting behaviour as $\tau\to0^{-}$ (i.e.\ to the infinite future). As part of our analysis in the next subsection, we illustrate in \prettyref{fig:scaling-symmetry} how the transformation acts on the both the comoving quantity $ef(\tau)$ and physical quantity $g(N)$. Note that Refs.~\cite{Adshead:2012kp,Dimastrogiovanni:2012ew,Adshead:2013qp,Adshead:2013nka} work directly with the physical gauge field background. When studying the infinite future it is more convenient to work with $g(N)$, otherwise we find it more convenient to study $ef(\tau)$. 
+\end{itemize}
+
+\subsubsection{Three distinct types of solutions\label{subsec:solutions}}
+
+\subsubsection*{Typical behaviour of solutions }
+
+Before rigorously analyzing the behaviour of solutions, we begin with an informal discussion of the two most common types of solution to \prettyref{eq:chromonatural_eom_final}. Typical examples of these are depicted as solid black lines in \prettyref{fig:scaling-symmetry}. Details and proofs will be provided below. 
+\begin{figure}[t]
+\centering{}\includegraphics{xi1curves}\hfill{}\includegraphics{xi3curves}\\
+\includegraphics{xi1curvesg}\hfill{}\includegraphics{xi3curvesg}\caption{\label{fig:scaling-symmetry} Typical solutions for the classical gauge field background. The thicker black curve ($\lambda=1$) is obtained by numerically solving Eq.~\eqref{eq:chromonatural_eom_final} for specific (but generic) initial conditions. The coloured curves are obtained by applying the transformation \eqref{eq:symmetry3} for various $\lambda$. The top panels show the solutions in comoving coordinates and conformal time. The bottom panels show the same solutions in physical coordinates and e-folds, where \eqref{eq:symmetry3} simply corresponds to a time-shift. (To be definite, we choose $\Delta N$ to denote the number of e-folds before $\tau_{0}=-\tfrac{1}{8}$.) The left panels show a typical example of a $c_{0}$\protect\nobreakdash-type background solution. The right panels show a typical $c_{2}$\protect\nobreakdash-type background solution. In the far future, the bounded $c_{0}$\protect\nobreakdash-type (resp.~growing $c_{2}$\protect\nobreakdash-type) background solutions in comoving coordinates correspond in physical coordinates to decaying (resp.~bounded) solutions.}
+\end{figure}
+
+For large negative values of $\tau$ (the far past), solutions for $ef(\tau)$ are typically oscillatory of a fixed amplitude. We caution the reader that in our model, this oscillatory behaviour does not actually occur in the far past. This is because at early times, the gauge field background is dominated by small but growing fluctuations from super-horizon modes, and so the classical equation of motion breaks down there. \label{ref:no-osc}
+
+On the other hand, we shall be primarily concerned with what happens as $\tau\to0^{-}$ (the infinite future), and the influence of the initial conditions on this behaviour. Based on the two parameters which determine the initial conditions, we can divide solutions into three categories based on their behaviour as $\tau\to0^{-}$:
+\begin{description}
+\item [{$c_{0}$\nobreakdash-type~solutions}] \label{c0typesol} The function $ef(\tau)$ remains bounded, and $ef(\tau)$ converges to a finite value as $\tau\to0^{-}$. In this case, the physical gauge field background $f(\tau)/a(\tau)$ approaches zero and will remain small compared to the tachyonically enhanced gauge field fluctuations, see Eq.~\eqref{eq:variance_abelian}. 
+\item [{$c_{2}$\nobreakdash-type~solutions}] The function $ef(\tau)$ is unbounded as $\tau\to0^{-}$. In this case, the growth of $ef(\tau)$ is always proportional to $(-\tau)^{-1}$. These are the background solutions which will be most relevant throughout this work, and which are responsible for the inherently non-abelian regime of CNI. The physical gauge field background $f(\tau)/a(\tau)$ approaches a positive constant.
+\item [{$c_{1}$\nobreakdash-type~solutions}] These solutions form the ``saddle points'' between $c_{0}$\nobreakdash-type and $c_{2}$\nobreakdash-type solutions. They arise only with finely-tuned initial conditions. Just like $c_{2}$\nobreakdash-type solutions, their growth is proportional to $(-\tau)^{-1}$ as $\tau\to0^{-}$, however with a smaller proportionality constant. 
+\end{description}
+Asymptotic formulas for these three families of solutions are given in \prettyref{app:t_to_0}.
+
+Our two central questions are as follows: 
+\begin{enumerate}
+\item Given initial conditions for a solution to \prettyref{eq:chromonatural_eom_final}, will the solution be $c_{0}$\nobreakdash-type or $c_{2}$\nobreakdash-type? 
+\item For which initial conditions is the solution oscillatory? When so, at what time do the oscillations stop? \label{enu:central-questions} 
+\end{enumerate}
+
+\subsubsection*{Ansatz}
+
+We can write down up to three explicit solutions to \prettyref{eq:chromonatural_eom_final} with the ansatz 
+\begin{equation}
+ef(\tau)=c\,\xi/(-\tau)\,,\qquad\textrm{ equivalently }g(N)=c\,\xi,\label{eq:ansatz-f}
+\end{equation}
+where $c$ is a constant. Solutions of this form arise by rescaling any general solution of \prettyref{eq:chromonatural_eom_final} to its $\tau\to0^{-}$ limit, namely by applying the transformation \eqref{eq:symmetry3} in the limit as $\lambda\to0$. (This fact is part of \prettyref{thm:bg-future}, and can be readily verified from the formulas of \prettyref{app:t_to_0}.) Indeed, functions of the form of this ansatz are precisely the fixed points of \eqref{eq:symmetry3}.
+
+We obtain a solution to \prettyref{eq:chromonatural_eom_final} when $c$ is one of 
+\begin{equation}
+c_{0}=0\,,\quad c_{1}=\tfrac{1}{2}(1-\sqrt{1-4/\xi^{2}})\,,\quad c_{2}=\tfrac{1}{2}(1+\sqrt{1-4/\xi^{2}})\,,\label{eq:c-definitions}
+\end{equation}
+motivating the nomenclature for $c_{i}$\nobreakdash-type solutions introduced above. Note that since $f(\tau)$ must be real, the $c_{1}$ and $c_{2}$ solutions exist only when $\xi\geq2$. In this case, 
+\[
+0+\xi^{-2}<c_{1}\leq\tfrac{1}{2}\leq c_{2}<1-\xi^{-2}\,,
+\]
+and asymptotically as $\xi\textrightarrow\infty$ we have 
+\begin{equation}
+c_{1}=0+\xi^{-2}+O(\xi^{-4}),\quad c_{2}=1-\xi^{-2}+O(\xi^{-4})\,.\label{eq:c-asymptotics}
+\end{equation}
+The reader will find it especially useful to keep in mind that $c_{2}\approx1$ for large $\xi$.
+
+We shall see in \prettyref{subsec:phase-space} that the $c_{0}$ and $c_{2}$ solutions are stable under all small perturbations of the initial conditions. Thus they both have a two-parameter basin of attraction. The $c_{1}$-solution is stable under just one direction of perturbations, so it is just part of a one-parameter family. \prettyref{app:t_to_0} contains explicit asymptotic formulas for these families. The structure of these families is explained in \prettyref{subsec:phase-space}.
+
+The $c_{2}$ solution (which exists only when $\xi\geq2$) plays a central role in our story because it is an explicit stable non-abelian solution: 
+\begin{equation}
+ef(\tau)=c_{2}\,\xi/(-\tau)=\frac{\tfrac{1}{2}\left(1+\sqrt{1-4/\xi^{2}}\right)\xi}{-\tau}\,.\label{eq:c2solution}
+\end{equation}
+
+\begin{description}
+\item [{Note}] We refer to the three particular solutions 
+\begin{equation}
+ef(\tau)=c_{i}\,\xi/(-\tau),\quad i\in\left\{ 1,2,3\right\} \label{eq:ci-solutions-123}
+\end{equation}
+respectively as \emph{the $c_{0}$ solution} (or simply \emph{the zero solution}), \emph{the $c_{1}$ solution} and \emph{the $c_{2}$ solution}. In contrast there are three \textbf{families} of $c_{i}$\nobreakdash-\textbf{type} \emph{solutions}, of which the $c_{i}$ solutions are respective members. A $c_{i}$\nobreakdash-type solution approaches the corresponding $c_{i}$ solution in the infinite future. More details on the families of $c_{i}$\nobreakdash-type solutions are given in \prettyref{app:t_to_0}. 
+\end{description}
+
+\subsubsection*{Oscillatory behaviour}
+
+We remind the reader that although the oscillatory regime for the classical background field equation \prettyref{eq:chromonatural_eom_final} which we describe in this subsection extends to the infinite past, our model does not obey this classical equation at early times (see page~\pageref{ref:no-osc}). Nevertheless we will see in this section how the mathematical analysis of the oscillatory regime in the infinite past provides a nice criterion for determining which initial conditions lead to either $c_{0}$\nobreakdash-type solutions or $c_{2}$\nobreakdash-type solutions.
+
+The oscillatory behaviour of solutions is explained by the following theorem: 
+\begin{thm}
+\label{thm:oscillatory}Any particular solution $ef(\tau)$ to \prettyref{eq:chromonatural_eom_final} has two associated constants: 
+\begin{itemize}
+\item $\omega\geq0$, 
+\item $u_{0}\in[0,5.244)$. 
+\end{itemize}
+These constants depend on the solution, so they are determined once initial conditions are fixed. The solution can be written in the form 
+\begin{align}
+ef(\tau) & =\omega\cdot\mathrm{sn}(\omega\tau+u_{0})+\epsilon(\tau)\,,\label{eq:approx-quartic}
+\end{align}
+for some function $\epsilon(\tau)$ which is $\mathcal{O}((\xi+\xi^{2})/(-\tau))$ as $\tau\textrightarrow-\infty$. Here $\mathrm{sn}(u)$ denotes the Jacobi $\mathrm{sn}(u|m)$ function with elliptic parameter $m=-1$ (see \prettyref{app:Jacobi} for details). We recall that the Jacobi $\mathrm{sn}$ function with argument $m$ is periodic with quarter-period given by the complete elliptic integral $K(m)$. The precise range for the periodic parameter $u_{0}$ is thus $[0,4K(-1))$. The constant $\omega$ is always uniquely determined by initial conditions. The constant $u_{0}$ is uniquely determined when $\omega\neq0$. The parameters $(\omega,u_{0})$ transform under \eqref{eq:symmetry3} as 
+\begin{equation}
+(\omega,u_{0})\mapsto(\lambda\omega,u_{0})\,.\label{eq:ic-transform}
+\end{equation}
+\end{thm}
+
+Moreover, we have numerically verified the stronger statement that for \emph{all} $\tau$, 
+\begin{equation}
+\left|\epsilon(\tau)\right|\leq\frac{4\xi}{-3\tau}\,.\label{eq:epsilon-ineq}
+\end{equation}
+We prove \prettyref{thm:oscillatory} in \prettyref{app:pf-approx-w}. A rigorous proof of \prettyref{eq:epsilon-ineq} is likely possible using similar techniques, but it is beyond the scope of this paper. 
+
+\prettyref{thm:oscillatory} tells us that when $\omega>0$, $ef(\tau)\approx\omega\cdot\mathrm{sn}(\omega\tau+u_{0})$ when $\left|\epsilon(\tau)\right|\ll\omega$. In particular combining this with \prettyref{eq:epsilon-ineq}, oscillation occurs at early times when 
+\begin{equation}
+\tau\ll-\frac{\xi}{\omega}\,,\label{eq:osc-from-omega}
+\end{equation}
+which we take as the definition of the oscillatory regime. In the case $\omega=0$, \eqref{eq:epsilon-ineq} implies that $|ef(\tau)|\leq\tfrac{4}{3}\xi/(-\tau)$ so that there are no oscillations.
+
+We remark that \prettyref{thm:oscillatory} and \prettyref{eq:epsilon-ineq} are consistent with the results obtained from the ansatz~\eqref{eq:ansatz-f}. Namely the $c_{i}$ solutions correspond to $\omega=0$ and $\epsilon(\tau)=ef(\tau)=c_{i}\xi/(-\tau)$. (This satisfies \prettyref{eq:epsilon-ineq} because $\left|c_{i}\right|\leq\tfrac{4}{3}$.) To explain why $\omega=0$ is necessary for the $c_{i}$ solutions, recall that the $c_{i}$ solutions are fixed points of the transformation \eqref{eq:symmetry3}. Thus by \prettyref{eq:ic-transform} we have $\omega=\lambda\omega$ for all positive $\lambda$, and hence $\omega=0$. 
+
+\prettyref{eq:osc-from-omega} is unfortunately not very practical for determining which initial conditions lead to oscillation, because $\omega$ is difficult to compute from given initial conditions. As a remedy, the following theorem suggests a very simple criterion in terms of initial conditions $ef(\tau_{1})$ and $ef'(\tau_{1})$ at time $\tau_{1}$. It introduces a function $\omega_{ef}(\tau)$ which serves as an approximation to the constant $\omega$. 
+\begin{thm}
+\label{thm:approx-w}(Criterion for oscillation) Let $ef(\tau)$ be a particular solution to \prettyref{eq:chromonatural_eom_final}. Define the associated function 
+\begin{align}
+\omega_{ef}(\tau) & \equiv\sqrt[4]{(ef'(\tau))^{2}+\left(ef(\tau)\right)^{4}}.\label{eq:omega_ef}
+\end{align}
+ As explained in \prettyref{app:Jacobi}, this approximates the envelope of $ef(\tau)$ as it oscillates. Then 
+\[
+\omega\equiv\lim_{\tau\textrightarrow-\infty}\omega_{ef}(\tau)
+\]
+ coincides with the parameter $\omega$ specified in \prettyref{thm:oscillatory}. Furthermore, the solution is oscillatory (i.e.\ $\omega>0$) if there exists any time $\tau_{1}$ such that either 
+\begin{itemize}
+\item $\omega_{ef}(\tau_{1})>0$ when $0\leq\xi<2$, or 
+\item $\omega_{ef}(\tau_{1})>\tfrac{4}{3}\xi/(-\tau_{1})$. 
+\end{itemize}
+\end{thm}
+
+We prove this theorem in \prettyref{app:pf-approx-w}. 
+
+Based on the second bullet point, we identify the transition time $\tau_{1}$ between the oscillatory regime and non-oscillatory regime as occurring when 
+\begin{equation}
+\sqrt[4]{(ef'(\tau_{1}))^{2}+\left(ef(\tau_{1})\right)^{4}}\approx\frac{4\xi}{-3\tau_{1}}\approx\frac{\xi}{-\tau_{1}}\,.\label{eq:BoundaryOscillatory}
+\end{equation}
+ This answers the second question of page~\pageref{enu:central-questions}. As will become clear from the discussion in Sec.~\ref{subsec:phase-space}, we can use this to estimate the necessary amplitude of the gauge field fluctuations which is required to trigger a $c_{2}$\nobreakdash-type solution.
+
+Here we pause to take account of the two notions of ``oscillatory'' that we have developed so far. Firstly, a solution is, according to \prettyref{thm:oscillatory} and \prettyref{eq:epsilon-ineq}, oscillatory in the far past if the constant $\omega$ associated with the solution is positive. In that case, the solution oscillates when $\tau\ll-\frac{\xi}{\omega}$. Thus $-\omega\tau\sim\xi$ sets the scale for the transition. In contrast, \prettyref{thm:approx-w} provides a particular criterion which is well-suited for checking whether initial conditions at some time $\tau_{1}$ have corresponding solutions which begin in this oscillatory regime: $\omega_{ef}(\tau_{1})>\tfrac{4}{3}\xi/(-\tau_{1})$ with $\omega_{ef}(\tau)$ defined in \prettyref{eq:omega_ef}. 
+
+\begin{figure}[t]
+\centering{}\includegraphics{xi1-w1-f}\hfill{}\includegraphics{xi3-w1-f}\\
+\includegraphics{xi1-w1-tauf}\hfill{}\includegraphics{xi3-w1-tauf} \caption{\label{fig:omega_eq_1} Systematic study of all possible solutions to the classical background equation~\eqref{eq:chromonatural_eom_final} for two different values of $\xi$. All solutions have been normalized to unit amplitude ($\omega=1$) and the phase $u_{0}$ is indicated by colour. The lower panels show the same solutions in physical coordinates. This illustrates that the limiting values of $g(N)$ as $\tau\to0^{-}$ are $c_{i}\xi$, and the value of the phase $u_{0}$ determines which of the $c_{i}\xi$ is reached. The two special $c_{1}$\protect\nobreakdash-type solutions are indicated by thicker lines. The orange vertical line indicates the transition time $\tau=-\xi/\omega$. We have chosen $\Delta N$ to denote the number of e-folds before $\tau_{0}=-10^{-2}$. }
+\end{figure}
+For solutions with $\omega\neq0$, we may normalize the amplitude of oscillations to $\omega=1$ by applying the transformation \eqref{eq:symmetry3} with $\lambda=\omega^{-1}$. (In terms of the physical quantity $g(N)$, this entails time-shifting the solutions so that they all exit the oscillatory regime at the same point in time.) \prettyref{fig:omega_eq_1} illustrates how the solutions of \prettyref{eq:chromonatural_eom_final} (normalized to $\omega=1$) depend on the remaining free phase parameter $u_{0}$. We note that the upper-left panel with $\xi=1$ does not admit unbounded solutions as $\tau\rightarrow0^{-}$, whereas the upper-right panel ($\xi=3$) admits both bounded and unbounded solutions. The value of $u_{0}$ is colour-coded, and we point out that for $\xi=3$, the $c_{0}$\nobreakdash-type solutions have colours which range only from orange-red to yellow-green. More precisely, this is the interval $u_{0}\in\left(0.136,1.409\right)$, which is approximately one fourth of the phase range. When $\xi=3$ and the phase $u_{0}$ is random, the probability of a $c_{0}$\nobreakdash-type solution is 24.3\%, and the probability of a $c_{2}$\nobreakdash-type solution is $75.7$\%.
+
+The distinct categories of solutions are particularly evident in the lower panels of \prettyref{fig:omega_eq_1} depicting the physical gauge field amplitude. The limiting values in the infinite future are discrete: 
+\begin{thm}
+\label{thm:bg-future}When $\xi\neq2$, all solutions of \prettyref{eq:chromonatural_eom_final} satisfy
+\[
+\lim_{\tau\to0^{-}}-\tau\,ef(\tau)=c_{i}\xi
+\]
+for some $i\in\left\{ 0,1,2\right\} $, where $c_{i}$ is defined in \prettyref{eq:c-definitions}. Furthermore, the $\lambda\to0$ limit of the transformation \eqref{eq:symmetry3} applied to any solution of \prettyref{eq:chromonatural_eom_final} is the corresponding $c_{i}$ solution. 
+\end{thm}
+
+The proof is provided in \prettyref{app:pf-bg-future}, and it uses the machinery developed in \prettyref{subsec:phase-space}.
+
+\begin{figure}[t]
+\begin{centering}
+\includegraphics{phaseplot} 
+\par\end{centering}
+\caption{\label{fig:u0-of-xi}Parameter space leading to different types of solutions for the classical background gauge field. The coloured curves indicate the phase (normalized mod 1) of the two $c_{1}$\protect\nobreakdash-type solutions as a function of $\xi$. Note that the $y$-axis has period 1. The grey and white regions respectively indicate $c_{0}$- and $c_{2}$\protect\nobreakdash-type solutions. This figure illustrates that $c_{0}$\protect\nobreakdash-type solutions are rare when $\xi$ is large. }
+\end{figure}
+This theorem gives us a way to classify solutions into three distinct categories. Solutions with generic initial conditions are always of type $c_{0}$ or $c_{2}$. Fine-tuning the phase $u_{0}$ to achieve a solution exactly between $c_{0}$ and $c_{2}$ leads to exactly two values of the phase which correspond to ``$c_{1}$\nobreakdash-type solutions.'' The corresponding red and green curves in the lower panels of \prettyref{fig:omega_eq_1} are indicated with thicker lines. The following theorem formalizes the notion that the $c_{1}$\nobreakdash-type solutions are the boundary between $c_{0}$\nobreakdash-type and $c_{2}$\nobreakdash-type solutions, the proof of which is also provided in \prettyref{app:pf-bg-future}.
+\begin{thm}
+\label{thm:phase-intervals}For each $\xi>2$, there exists exactly two distinct values of $u_{0}$ corresponding to $c_{1}$\nobreakdash-type solutions. The two complementary phase intervals correspond respectively to $c_{0}$\nobreakdash-type and $c_{2}$\nobreakdash-type solutions. 
+\end{thm}
+
+\prettyref{fig:u0-of-xi} visualizes the phase intervals leading to the respective $c_{0}$\nobreakdash-type and $c_{2}$\nobreakdash-type solutions, generalizing the above results to the entire $\xi$-range of interest. We note in particular that for $\xi\gtrsim4$, the $c_{0}$\nobreakdash-type solutions become highly unlikely for random initial conditions. This will be a crucial ingredient in answering the first question on page~\pageref{enu:central-questions}. 
+
+\subsubsection{\label{subsec:phase-space}Phase space diagram}
+
+\subsubsection*{Change of variables }
+
+As we saw in \prettyref{eq:g-def}, there is a change of variables which puts \prettyref{eq:chromonatural_eom_final} into the form of an autonomous system. Thus the dynamics are captured by a 2-dimensional phase space diagram. This enables us to re-phrase the results obtained in \prettyref{subsec:solutions} in a more intuitive way.
+
+Rather than choose $(g(N),g'(N))$ as phase space coordinates, we find the following choice more convenient: 
+\begin{equation}
+q(\tau)\equiv-\tau\,ef(\tau)\,,\quad p(\tau)\equiv(-\tau)^{2}ef'(\tau)\,.\label{eq:cov}
+\end{equation}
+The equations of motion under these new coordinates then become 
+\[
+\frac{\mathrm{d}q}{\mathrm{d}\tau}=\frac{p(\tau)-q(\tau)}{-\tau},\quad\frac{\mathrm{d}p}{\mathrm{d}\tau}=\frac{-2\left(q(\tau)^{3}-\xi\,q(\tau)^{2}+p(\tau)\right)}{-\tau}\,.
+\]
+The denominator of $-\tau$ can be eliminated via the substitution $\mathrm{d}\tau=\tau\,\mathrm{d}N$, rendering the system autonomous: 
+\begin{align}
+\frac{\mathrm{d}q}{\mathrm{d}N} & =q-p\,,\quad\frac{\mathrm{d}p}{\mathrm{d}N}=2(q^{3}-\xi\,q^{2}+p)\,.\label{eq:q-p-eom}
+\end{align}
+Just as for the physical quantity $g(N)$ defined in \prettyref{eq:g-def}, the transformation \eqref{eq:symmetry3} also acts on $q(N)$ and $p(N)$ as $N$-translation 
+\begin{equation}
+N\mapsto N+\ln\lambda\,.\label{eq:lambda-time-translation}
+\end{equation}
+
+This differential equation is solved by the flow lines of the vector field 
+\begin{equation}
+\left(q-p,2\left(q^{3}-\xi\,q^{2}+p\right)\right)\,,\label{eq:vec-field}
+\end{equation}
+in the $q$-$p$ plane.
+
+We now begin a complete classification of solutions to \prettyref{eq:chromonatural_eom_final} based on an analysis of this vector field \eqref{eq:vec-field}. For simplicity we exclude the degenerate case when $\xi=2$ exactly.
+
+The zeroes of this vector field are readily verified to be 
+\begin{equation}
+\mathbf{c}_{i}\equiv\left(q,p\right)=\left(c_{i}\xi,c_{i}\xi\right),\label{eq:ci-points}
+\end{equation}
+for $c_{i}$ defined in \eqref{eq:c-definitions}, and the corresponding constant trajectories are, up to the change of variables \eqref{eq:cov}, the $c_{i}$ solutions of \prettyref{eq:ci-solutions-123}. Therefore for $\xi<2$, $\mathbf{c}_{0}$ is the unique zero of \eqref{eq:vec-field}. As $\xi$ passes through the value $2$, the pair of zeroes $\mathbf{c}_{1}$ and $\mathbf{c}_{2}$ is created at the point $(1,1)$. Thus for $\xi>2$ there are three zeroes in total. The zeroes at $\mathbf{c}_{0}$ and $\mathbf{c}_{2}$ are stable, while $\mathbf{c}_{1}$ is a saddle point. Thus the stable trajectories of $\mathbf{c}_{0}$ and $\mathbf{c}_{2}$ form two-parameter families, while the stable trajectories of $\mathbf{c}_{1}$ form only a one-parameter family. These families correspond to the ``$c_{i}$\nobreakdash-type solutions'' described on page~\pageref{c0typesol}.
+
+\subsubsection*{Visualizing solutions with a phase-like diagram}
+
+Using the change of variables from \prettyref{eq:cov}, we can visualize the structure of solutions to \prettyref{eq:chromonatural_eom_final} in a very effective manner. Solutions to \prettyref{eq:chromonatural_eom_final} can be plotted as trajectories in the $q$-$p$ plane. Two solutions parameterize the same trajectory if and only if they are related by a shift in the time variable $N$ according to \prettyref{eq:lambda-time-translation}. In the first row of \prettyref{fig:trajectories-panel} we plot various such trajectories. Since the phase $u_{0}$ defined by \prettyref{thm:oscillatory} is invariant under \eqref{eq:symmetry3}, each trajectory has a well-defined phase which is indicated by colour in the first row of \prettyref{fig:trajectories-panel}, with the same colour coding as in Fig.~\ref{fig:omega_eq_1}. Oscillation is represented by the spirals in the top right panel of \prettyref{fig:trajectories-panel}. Solutions spiral inwards along a trajectory of fixed colour, and each crossing of the $p$-axis corresponds to a zero of the solution.
+
+\begin{figure}
+\centering{}\includegraphics{rainbowpanel} \caption{\label{fig:trajectories-panel} Evolution of the background gauge field in phase space, depicted by trajectories of the vector field \prettyref{eq:vec-field} for $\xi=3$. The dots are zeroes of the vector field, corresponding to the $c_{i}$ solutions of Sec.~\ref{subsec:solutions}. The left column shows the non-oscillatory regime around the zeroes, whereas the right column is a zoomed-out view showing the oscillatory regime. The second row shows some special trajectories, the third row depicts contours of constant $-\omega\tau$. See the text for further details.}
+\end{figure}
+
+Already at this point, since no two trajectories are allowed to cross, we observe that the boundary between the basins of attraction for $\mathbf{c}_{0}$ and $\mathbf{c}_{2}$ is given precisely by the two trajectories of $c_{1}$\nobreakdash-type solutions (plus of course their limit point $\mathbf{c}_{1}$.) These are depicted as red and green lines in the second row of Fig.~\ref{fig:trajectories-panel}.
+
+We can construct a natural coordinate system on the $q$-$p$ plane by taking a coordinate complementary to the phase $u_{0}$. The complementary invariant $\omega$ of solutions is not a suitable candidate, because it transforms nontrivially under \eqref{eq:symmetry3} according to \prettyref{eq:ic-transform}. The quantity $-\omega\tau$ is however invariant under \eqref{eq:symmetry3}, and level curves are shown in the last row of \prettyref{fig:trajectories-panel} (with a spacing of $N/10$, see Eq.~\eqref{eq:g-def}). For a given trajectory, these level curves correspond to fixed-time contours, and hence the speed of approach to the respective $c_{i}$ solution is encoded in the spacing of these level curves. The contour $-\omega\tau=\xi$ is highlighted in orange, indicating the transition between the oscillatory and the non-oscillatory regime (see \prettyref{eq:osc-from-omega}). Moreover, we indicate the level curves of $D(N)^{1/4}$ (see Eq.~\eqref{eq:def-D}) as dashed lines, showing the excellent agreement between $-\omega\tau$ and the auxiliary function $D(N)^{1/4}$ in the oscillatory regime. These dashed level curves accumulate to the level curve $D(N)=0$, which plays a key role in the analysis of \prettyref{app:sec3}.
+
+The resulting coordinate system is degenerate at $\omega=0$. In the left panel of the middle row of Fig.~\ref{fig:trajectories-panel}, we show the $\omega=0$ solutions corresponding to the two ``instanton-type'' trajectories (vacuum-to-vacuum transitions which tunnel from the $c_{1}$ solution in the infinite past to either the $c_{0}$ solution or $c_{2}$ solution in the infinite future) as grey curves. The asymptotic formula for the corresponding solutions is \prettyref{eq:instanton-type} with $\rho>0$ and $\rho<0$ respectively. These instanton-type solutions, together with all the $c_{i}$ solutions (which are the limit points), are all of the only non-oscillatory ($\omega=0$) solutions to \prettyref{eq:chromonatural_eom_final}. 
+\begin{figure}
+\begin{centering}
+\includegraphics{xi-3-composite-small}$\qquad$\includegraphics{xi-3-composite-big} 
+\par\end{centering}
+\caption{\label{fig:rainbow} Summary of the evolution of the background gauge field. The coloured lines are trajectories of the classical background field evolution in phase space, with the colour coding corresponding to different phases $u_{0}$ as in Fig.~\ref{fig:omega_eq_1}. The black curves are contours of constant $-\omega\tau$. }
+\end{figure}
+
+In this way, we understand the structure of all the solutions to \prettyref{eq:chromonatural_eom_final} and how they fit together. The results are summarized in Fig.~\ref{fig:rainbow}, which simply combines the first and last row of Fig.~\ref{fig:trajectories-panel}.
+
+We see how if generic initial conditions are chosen to be oscillatory, they will spiral inwards towards either $\mathbf{c}_{0}$ or $\mathbf{c}_{2}$. Finally, recall from \prettyref{fig:u0-of-xi} that $\mathbf{c}_{2}$ is favoured, overwhelmingly so as $\xi$ increases. This explains why Eq.~\eqref{eq:BoundaryOscillatory} can be used as a criterion for the required magnitude of the initial conditions necessary to trigger a $c_{2}$\nobreakdash-type solution.
+
+We note that $c_{1}\approx0$ for large $\xi$, and hence the basin of attraction for $\mathbf{c}_{2}$ actually comes very close to $\mathbf{c}_{0}$. Thus it is quite likely that the abelian gauge field fluctuations will trigger a $c_{2}$\nobreakdash-type solution even before the oscillatory regime is entered. But given that the fluctuations grow exponentially with $\xi$, it is sufficient to simply have an order-of-magnitude estimate for the transition time. From \prettyref{eq:BoundaryOscillatory} we conclude that the transition occurs when 
+\begin{equation}
+e\langle A_{\text{ab}}^{2}\rangle^{1/2}\sim\xi/(-\tau).\label{eq:transition-time}
+\end{equation}
+  
+
+\subsection{Anisotropic background gauge fields \label{subsec:Anisotropic-background-fields}}
+
+Until now, throughout our analysis of the homogeneous background we have assumed isotropy, so that
+\begin{equation}
+(A^{(0)})_{i}^{a}=\delta_{i}^{a}\,f(\tau).\label{eq:iso-bg}
+\end{equation}
+ Here we study the effect of anisotropies in the background gauge field, assuming de-Sitter space. (Note that anisotropic CNI cosmologies have been studied e.g. in \cite{Maleknejad:2013npa}.) We verify that all anisotropies of a homogeneous gauge-field background decay (in physical coordinates) into one of the previously-studied isotropic solutions. 
+
+First we show there are no anisotropic analogues of the $c_{i}$ solutions. Next we consider homogeneous anisotropic perturbations of \eqref{eq:iso-bg} to linear order. Finally, as a non-perturbative verification, we numerically solve the full nonlinear equations of motion for a homogeneous anisotropic background. This justifies our previous assumption of isotropy.
+
+\subsubsection*{No anisotropic steady states }
+
+We make the anisotropic analogue of our ansatz \prettyref{eq:ansatz-f}, namely 
+\begin{equation}
+e\,(A^{(0)})_{i}^{a}(\tau)=C_{i}^{a}\xi/(-\tau)\,.\label{eq:ansatz-aniso}
+\end{equation}
+\prettyref{eq:eq_motion_final} yields the following equations: 
+\begin{equation}
+(2\xi^{-2}+\sigma_{2}^{2}+\sigma_{3}^{2})\sigma_{1}-2\sigma_{2}\sigma_{3}=0\textrm{ and cyclic permutations,}\label{eq:svdansatz}
+\end{equation}
+where $\sigma_{1}$, $\sigma_{2}$ and $\sigma_{3}$ are the singular values of $C_{i}^{a}$. As can be verified by solving this with a computer algebra system, the only real solutions are equivalent to the three isotropic solutions we already found in \prettyref{eq:ansatz-f}.
+
+\subsubsection*{Anisotropic perturbations of the background gauge field to linear order }
+
+We wish to consider first-order perturbations of \prettyref{eq:iso-bg} which are anisotropic, and thus of the form 
+\[
+(A^{(0)})_{i}^{a}=f(\tau)\delta_{i}^{a}+P_{i}^{a}(\tau)\,\epsilon+\mathcal{O}(\epsilon^{2})\,.
+\]
+ As explained in \prettyref{app:global-symmetries}, we may decompose $P_{i}^{a}$ into irreducible representations of the diagonal $\mathrm{SO}(3)$ subgroup of $\mathrm{SO}(3)_{\mathrm{gauge}}\times\mathrm{SO}(3)_{\mathrm{spatial}}$ as 
+\[
+P_{i}^{a}=s(\tau)\delta_{i}^{a}+v^{j}(\tau)\varepsilon_{ija}+T_{i}^{a}(\tau).
+\]
+ Since $f(\tau)$ already accounts for the diagonal degree of freedom, we impose that $s(\tau)=0$. We now substitute this ansatz into our twelve equations of motion. It's implicit here that the three $(A^{(0)})_{0}^{a}$ components are determined by the equation of motion (as constraint equations). Expanding out the remaining nine equations of motion, we obtain \prettyref{eq:chromonatural_eom_final}, together with the rank-five equation for the perturbations 
+\begin{align*}
+T''+\frac{2\xi}{-\tau}ef(\tau)\,T & =0\,.
+\end{align*}
+We find no equations of motion involving $v^{j}(\tau)$, indicating that they are the gauge degrees of freedom. Accordingly, the remaining three equations are equivalent to $0=0$.
+
+In the case of the $c_{0}$-solution $f(\tau)=0$, the general solution is $T(\tau)=T_{0}+\tau T_{1}$ so that $T(\tau)\textrightarrow T_{0}$ as $\tau\to0^{-}$. The corresponding physical quantity thus decays as $(-\tau)T_{0}+\mathcal{O}(\tau^{2})$ as $\tau\to0$. 
+
+In any $c_{2}$\nobreakdash-type solution, as the isotropic component $f(\tau)$ grows in the positive direction, WKB theory dictates that $T$ decays in proportion to $\left(-\tau^{-1}f(\tau)\right)^{-1/4}$ (see \prettyref{eq:exp-approx}). Thus when $ef(\tau)$ is any $c_{2}$\nobreakdash-type solution, $T$ decays in proportion to $\sqrt{-\tau}$, and the corresponding physical quantity decays as $(-\tau)^{3/2}$. In the case of the $c_{2}$ solution, the exact solution for $T(\tau)$ is 
+\begin{align*}
+T(\tau) & =T_{0}\sqrt{-\tau}\exp\left(\pm i\,\mu_{2}\log(-\tau)\right)+\textrm{h.c}\,,\\
+\mu_{2} & \equiv\xi\sqrt{2c_{2}-(2\xi)^{-2}}\,,
+\end{align*}
+where $T_{0}$ is a complex symmetric traceless tensor determined by the initial conditions.
+
+\subsubsection*{Numerical solutions of full nonlinear anisotropic background}
+
+We showed above that any homogeneous background solution which has anisotropies at sub-leading order must evolve towards isotropy. While this supports the hypothesis that any homogeneous background tends toward isotropy, it does not prove anything about highly anisotropic backgrounds. For this we resort to numerical simulation. Specifically, we numerically solve the fully anisotropic\footnote{For the fully anisotropic case, while one may diagonalize the spatial components of $A(\tau_{\mathrm{ini}})$ at the initial time $\tau_{\mathrm{ini}}$, the spatial components of $A(\tau_{\mathrm{ini}})$ and $A'(\tau_{\mathrm{ini}})$ are not simultaneously diagonalizable.} system \prettyref{eq:eq_motion_final} for the twelve functions\footnote{We have twelve functions $(A^{(0)})_{\mu}^{a}$ subject to three constraint equations and six independent dynamical equations. To get a well-formed system, one must add three gauge-fixing constraints. We found it convenient to impose temporal gauge $\left(A^{(0)}\right)_{0}=0$.} $(A^{(0)})_{\mu}^{a}$ which determine the background field $A^{(0)}$.
+
+\begin{figure}[t]
+\centering{}\subfigure{ \includegraphics{xi3-c2-iso-tri} } \hfill{}\subfigure{ \includegraphics{xi3-c2-iso-plot} } \caption{\label{fig:c2-iso} A $c_{2}$\protect\nobreakdash-type solution with random anisotropic initial conditions evolving towards isotropy for $\xi=3$. Left panel: the positively orientated isotropic configuration corresponds to the top-right corner. Right panel: For the same parameter point, time evolution (relative to an arbitrary time $\tau_{*}$) of the quantities $D$, $E$ and $F$ as defined in the text. The horizontal lines denote the asymptotic values $1$ and $c_{2}\approx0.87$ characterizing an isotropic $c_{2}$ solution. }
+\end{figure}
+
+In order to understand the resulting numerical solutions, we need a way to visualize their properties. As a generalization of $ef(\tau)$ to the non-isotropic case, we define for any nonzero $3\times3$ matrix $A$: 
+\begin{align}
+F(A)\equiv\frac{-\tau|A|}{\sqrt{3}\xi}\ \textrm{ where }|A|\equiv\sqrt{A_{i}^{a}A_{i}^{a}}.\label{eq:F-norm-fn}
+\end{align}
+Then in the special case that $A^{(0)}$ is isotropic, $F(A^{(0)}(\tau))=-\tau\left|ef(\tau)\right|/\xi$. Thus if $A^{(0)}$ corresponds to an isotropic $c_{i}$\nobreakdash-type solution, then $\lim_{\tau\to0^{-}}F(A^{(0)}(\tau))=c_{i}$ in accordance with \prettyref{thm:bg-future}. Next we must quantify the degree to which $A^{(0)}$ is anisotropic. We define in \prettyref{app:quant-aniso} two further parameters $D(A)$ and $E(A)$ for this purpose, which are invariant under rotation, gauge symmetry, and multiplication by a positive scalar. Up to a normalization factor, $D(A)\in\left[-1,1\right]$ is $(\det A)/\left|A\right|^{3}$, while the definition of $E(A)$ is more involved. The pair of values $(D(A),E(A))$ determines a point in the triangular-shaped region in the left panel of \prettyref{fig:c2-iso} (see also \prettyref{fig:DE-triangle}). The matrix $A$ is isotropic when $D(A)=\pm1$, or equivalently when $E(A)=1$. When $D(A)=+1$ (resp.\ $-1$) the gauge field is positively (resp.\ negatively) oriented.\footnote{We say that an isotropic gauge field $A_{i}^{a}=f(\tau)\delta_{i}^{a}$ is \emph{positive} when $f(\tau)$ is positive. This has the following physical significance. An isotropic gauge field identifies an orthonormal basis of the Lie algebra with $|f(\tau)|$ times an orthonormal basis of 3-space (via contraction). The Lie algebra carries a natural orientation where the structure constants are $+i\varepsilon^{abc}$. For 3-space, the chiral term in our Lagrangian picks out a preferred orientation (which corresponds to the standard orientation when $\xi>0$). The relative orientation thus is the sign of $\xi f(\tau)$. Since we assume $\xi>0$, the relevant sign is that of $f(\tau)$.}
+
+In \prettyref{fig:c2-iso} we show a typical example of a $c_{2}$\nobreakdash-type solution with random anisotropic initial conditions evolving towards isotropy. As expected for all $c_{2}$\nobreakdash-type solutions, $(D,E)\textrightarrow(1,1)$ in the infinite future, indicating positively-oriented isotropy. (In contrast, $(D,E)$ need not approach $(1,1)$ for $c_{0}$\nobreakdash-type solutions since $F(A)\to0$ and zero is isotropic.) In our numerical simulations, we observe that within a few e-folds, all solutions converge towards an isotropic solution of the form \prettyref{eq:ansatz-aniso}, namely either a $c_{0}$\nobreakdash-type solution or a $c_{2}$\nobreakdash-type solution. The proportion of $c_{2}$\nobreakdash-type solutions was even higher than predicted in \prettyref{fig:u0-of-xi}. We conclude that 
+\begin{itemize}
+\item the $c_{2}$\nobreakdash-type solutions are stable against small anisotropic perturbations; 
+\item sufficiently large anisotropic initial conditions with $\xi>2$ usually lead to $c_{2}$\nobreakdash-type solutions; 
+\item the continuous sourcing of the background field through the enhanced abelian super-horizon modes will therefore inevitably lead to an isotropic $c_{2}$\nobreakdash-type background solution. 
+\end{itemize}
+

@@ -1,0 +1,1169 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{jheppub}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{comment}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{tabu}
+\usepackage{subfig}
+\usepackage{float}
+\usepackage{epstopdf}
+
+
+\newcommand{\begin{eqnarray}}{\begin{eqnarray}}
+\newcommand{\end{eqnarray}}{\end{eqnarray}}
+\newcommand{\begin{itemize}}{\begin{itemize}}
+\newcommand{\end{itemize}}{\end{itemize}}
+\newcommand{\begin{enumerate}}{\begin{enumerate}}
+\newcommand{\end{enumerate}}{\end{enumerate}}
+\newcommand{\begin{equation}}{\begin{equation}}
+\newcommand{\end{equation}}{\end{equation}}
+\newcommand{\begin{align}}{\begin{align}}
+\newcommand{\end{align}}{\end{align}}
+\newcommand{\comments}[1]{}
+\def\nonumber{\nonumber}
+\def\pref#1{(\ref{#1})}
+\def\frac12{\frac12}
+\def\partial{\partial}
+\def{1\over 2{{1\over 2}}
+\def{\scriptscriptstyle \rm SM{{\scriptscriptstyle \rm SM}}
+\def{\scriptscriptstyle \rm NP{{\scriptscriptstyle \rm NP}}
+\def{\scriptscriptstyle \rm KK{{\scriptscriptstyle \rm KK}}
+\def{\scriptscriptstyle \rm DM{{\scriptscriptstyle \rm DM}}
+\def{\scriptscriptstyle \rm dS{{\scriptscriptstyle \rm dS}}
+\def{\scriptscriptstyle \rm loop{{\scriptscriptstyle \rm loop}}
+\def{\scriptscriptstyle \rm H{{\scriptscriptstyle \rm H}}
+\def{\scriptscriptstyle \rm B{{\scriptscriptstyle \rm B}}
+\def{\scriptscriptstyle \rm L{{\scriptscriptstyle \rm L}}
+\newcommand\czt{{\mathbb{C}^{3}/ \mathbb{Z}_{3}}}
+\def\oplus{\oplus}
+\def{{\cal{V{{{\cal{V}}}}
+\newcommand\mr{{\mathbb{R}}}
+\newcommand\mathcal{V}{{\mathcal{V}}}
+\newcommand{\mathbb}{\mathbb}
+\newcommand{\times}{\times}
+\newcommand{\mathcal}{\mathcal}
+\newcommand{\gtrsim}{\gtrsim}
+\newcommand{\lesssim}{\lesssim}
+\newcommand{\varphi}{\varphi}
+\newcommand{\footnote}{\footnote}
+\newcommand{\begin{eqnarray}}{\begin{eqnarray}}
+\newcommand{\end{eqnarray}}{\end{eqnarray}}
+\newcommand{\mathcal{V}}{{\cal{V}}}
+\newcommand{{\not\!\!p_T}}{{\not\!\!p_T}}
+\newcommand{\Delta\phi}{\Delta\phi}
+\newcommand{\tilde{\chi}_1^0}{\tilde{\chi}_1^0}
+\newcommand{\tilde{\chi}_2^0}{\tilde{\chi}_2^0}
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+\newenvironment{proof}[1][Proof]{\noindent\textbf{#1.}
+}{\ \rule{0.5em}{0.5em}}
+\newcommand{{\cal X}}{{\cal X}}
+\newcommand{{\rm d}}{{\rm d}}
+\newcommand{$e$\,-fold}{$e$\,-fold}
+\def\pref#1{(\ref{#1})}
+
+\setcounter{tocdepth}{2}
+
+\title{Affleck-Dine Baryogenesis in Type IIB String Models}
+
+\author[1]{Rouzbeh Allahverdi,}
+\author[2,3,4]{Michele Cicoli,}
+\author[2,3]{Francesco Muia}
+
+\affiliation[1]{Department of Physics and Astronomy,\\ University of New Mexico,\\ Albuquerque, NM 87131, USA}
+\affiliation[2]{Dipartimento di Fisica e Astronomia, Universit\`a di Bologna, \\ via Irnerio 46, 40126 Bologna, Italy}
+\affiliation[3]{INFN, Sezione di Bologna, via Irnerio 46, 40126 Bologna, Italy}
+\affiliation[4]{ICTP, Strada Costiera 11, Trieste 34014, Italy}
+
+\emailAdd{rouzbeh@unm.edu}
+\emailAdd{mcicoli@ictp.it}
+\emailAdd{muia@bo.infn.it}
+
+\abstract{We present a viable string embedding of Affleck-Dine baryogenesis in type IIB sequestered models where the late-time decay of the lightest modulus reheats the universe to relatively low temperatures. We show that if inflation is driven by a blow-up K\"ahler modulus, the Affleck-Dine field can become tachyonic during inflation if the K\"ahler metric for matter fields has an appropriate inflaton-dependent contribution. We find that the Affleck-Dine mechanism can generate the observed baryon asymmetry for natural values of the underlying parameters which lead also to successful inflation and low-energy gaugino masses in a split supersymmetry scenario. The reheating temperature from the lightest modulus decay is high enough to allow thermal Higgsino-like dark matter.}
+
+\keywords{String compactifications, AD Baryogenesis, K\"ahler moduli inflation}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+\label{sec:introduction}
+
+The origin of the matter-antimatter asymmetry of the universe still remains a mystery to be unraveled~\cite{BAU}. Most current approaches are based on mechanisms that rely on relatively high reheating temperatures $T_{\rm rh}$. For example, thermal leptogenesis~\cite{lepto} requires $T_{\rm rh}\gtrsim 10^{9}$-$10^{10}$ GeV while electroweak baryogenesis~\cite{EW} demands $T_{\rm rh} \gtrsim 1$ TeV. 
+
+However, supersymmetric (SUSY) extensions of the Standard Model (SM) and their string theory embeddings typically have moduli fields that alter the standard thermal history of the universe~\cite{ksw}. The moduli, due to their gravitational coupling to matter, are long-lived and tend to dominate the energy density of the universe before decaying. The late-time decay of the moduli typically gives rise to reheating temperatures well below the electroweak scale, particularly in models with low-energy SUSY. The moduli decay also releases a huge amount of entropy that dilutes any pre-existing relic abundance, thereby necessitating the production of dark matter (DM) and the generation of the baryon asymmetry of the universe (BAU) at relatively low temperatures. 
+
+An interesting class of string compactifications is type IIB sequestered string models with D3-branes at singularities \cite{SingD3s}. These models have been explicitly embedded in globally consistent Calabi-Yau (CY) compactifications with de Sitter (dS) closed string moduli stabilisation \cite{CYembedding}. Moreover, they can yield low-energy SUSY without introducing any cosmological moduli problem \cite{CMP} or gravitino overproduction problem \cite{gravProbl}, and provide a promising framework for building inflationary models in agreement with Planck data where the inflaton is a K\"ahler modulus \cite{InflReview}. 
+
+In the context of the Large Volume Scenario (LVS) \cite{LVS}, all sequestered models share a universal feature: the overall volume mode is the lightest modulus $\chi$. Its mass is suppressed with respect to the gravitino mass: $m_\chi \sim m_{3/2}\,\sqrt{\epsilon}$, where $\epsilon \sim m_{3/2}/M_p \ll 1$. On the other hand gaugino masses scale as $M\sim m_{3/2}\,\epsilon$ while scalar masses can behave as either $m_0 \sim M$ or $m_0 \sim m_\chi$ \cite{Blumenhagen:2009gk,Aparicio:2014wxa} depending on the exact form of the K\"ahler metric for matter fields and the mechanism responsible for achieving a dS vacuum. Thus sequestered scenarios can give rise to both MSSM-like and split SUSY-like models. TeV-scale gaugino masses can be obtained 
+for $m_{3/2}\sim 10^{10}$-$10^{11}$ GeV and $m_\chi \sim 10^{6}$-$10^{7}$ GeV. The decay of $\chi$ typically gives rise to a reheating temperature of order $T_{\rm rh}\sim m_\chi \sqrt{m_\chi/M_p} \sim {\cal O}(10)$ GeV. 
+
+A promising mechanism for generating the observed value of BAU in models with reheating temperatures below the EW scale is Affleck-Dine (AD) baryogenesis~\cite{Affleck:1984fy}. This scenario utilizes a SUSY D-flat direction that carries a non-zero baryon number, the so-called AD field. If the AD field develops a sufficiently large displacement from its late-time minimum during inflation, its post-inflationary dynamics can generate a baryon asymmetry that can survive the entropy release during the final stage of reheating. However, a successful embedding of AD baryogenesis in supergravity models is non-trivial as supergravity corrections can ruin the flatness of the potential for the AD field, thereby preventing it from acquiring a large vacuum expectation value (VEV) during inflation.         
+
+In this paper, we show that BAU can be successfully generated in sequestered models via AD mechanism. In particular, we shall outline how to construct a model where one can follow the whole cosmological evolution of the universe from inflation to the final stage of reheating by decay of the lightest modulus which successfully generates the observed BAU along with the correct DM relic abundance. The highlights of the scenario are as follows:
+\begin{itemize}
+\item Small-field inflation takes place in the closed string sector where a blow-up modulus $\sigma$ drives the exponential expansion of the universe 
+in agreement with Planck data \cite{Conlon:2005jm}. Generating density perturbations with the correct amplitude raises all the mass scales mentioned above by about two orders of magnitude, which results in gaugino masses in the range $M \sim 10^{4}$-$10^{5}$ GeV. 
+
+\item If the K\"ahler metric for matter fields has an appropriate dependence on $\sigma$, in split SUSY-like models squarks and sleptons can become tachyonic during inflation. The AD field $\phi$ can then develop a sufficiently large non-zero VEV during inflation. Moreover also the volume mode $\chi$ is shifted from its late-time minimum during inflation. 
+
+\item At the end of inflation, the inflaton becomes very heavy since $m_\sigma \sim m_{3/2}$ and its decay leads to an initial stage of reheating with a relatively high temperature. When the Hubble constant $H$ drops to $m_\phi \sim m_\chi$, both $\phi$ and $\chi$ start oscillating around their late-time minima. The SUSY breaking A-terms induce a rotational motion of the AD field and the generation of baryon asymmetry that gets transferred to quarks when $\phi$ decays.
+
+\item Given that $\chi$ is only gravitationally coupled, it decays after $\phi$ and dilutes any previously produced relic abundance.
+The final reheating temperature is $T_{\rm rh}\sim 10^{2}$-$10^{4}$ GeV, which is high enough to allow thermal Higgsino-like DM with a mass around $1$ TeV. The observed BAU can be obtained for natural initial displacements of the AD field $\phi$ of order $0.1\,M_p$.
+\end{itemize}
+
+We would like to emphasize that the sequestered model in this paper represents an explicit example where one can check in detail the viability of the main assumption underlying the AD mechanism for baryogenesis, i.e. the dynamical generation of a tachyonic mass during inflation. In fact, this class of models show an interesting interplay between inflation, SUSY breaking, soft terms, baryogenesis and DM within the same string compactification. 
+
+The paper is organised as follows. In Sec. \ref{sec:ADreview}, we briefly review AD baryogenesis and the present constraints for its embedding in a supergravity framework. In Sec. \ref{SecSeqLVS}, we give an overview of all the main features of sequestered LVS models like the structure of the 4D effective field theory, moduli stabilisation, SUSY breaking and the spectrum of soft terms. In Sec. \ref{sec:dynamics}, we describe the full cosmological evolution in our scenario including inflation, reheating and generation of BAU via the AD mechanism. Finally, we present and discuss our numerical results in Sec. \ref{SecResults} before concluding in Sec. \ref{Concl}.
+
+
+\section{Review of Affleck-Dine baryogenesis}
+\label{sec:ADreview}
+
+\subsection{Basic mechanism}
+
+The field space of SUSY extensions of the SM contains many directions along which the D-term contributions to the scalar
+potential identically vanish. These D-flat directions are parameterised by gauge invariant monomials of the chiral superfields~\cite{Dine:1995kz,gkm}. 
+They are lifted by SUSY breaking terms and superpotential terms of the form $\lambda_n {\Phi}^n/n \Lambda^{n-3}$. Here $n \geq 3$, $\Lambda$ is the scale of new physics (typically Planck or string scale), and $\Phi$ is the superfield comprising the flat direction $\phi$ and its fermionic partner. 
+
+In general, both the low-energy SUSY breaking and SUSY breaking by the non-zero energy density of the universe contribute to the lifting of flat directions. As a result, the scalar potential along $\phi$ can be written as~\cite{Dine95}:
+\begin{equation}
+V(\phi) = \left(m^2_\phi + c_{\scriptscriptstyle \rm H H^2 \right) {\vert \phi \vert}^2 +
+\vert \lambda_n \vert^2 {{\vert \phi \vert}^{2(n-1)} \over \Lambda^{2(n-3)}} + \left[(A_n + a_n H) {\lambda_n \phi^n \over n \Lambda^{n-3}} + {\rm h.c.} \right]\, ,
+\label{pot}
+\end{equation}
+where $H$ is the Hubble expansion rate. The three terms on the right-hand side of (\ref{pot}) represent, respectively, the sum of the low energy and Hubble induced soft mass terms, the contribution of superpotential terms and the sum of the low-energy and Hubble induced $A$-terms. 
+
+The role of $\phi$ in the early universe\footnote{SUSY flat directions and their cosmological consequences are discussed in detail  in~\cite{flat}.} crucially depends on the size and sign of $c_{\scriptscriptstyle \rm H$: 
+\vskip 2mm
+\noindent
+{\bf (1)} $c_{\scriptscriptstyle \rm H \gtrsim 1$. In this case, $\phi$ has a mass that exceeds the Hubble expansion rate during inflation $H_{\rm inf}$. Then, due to fast rolling,
+the field settles down to the origin of its potential during inflation, which bears no interesting consequences. 
+\vskip 2mm
+\noindent
+{\bf (2)} $0 < c_{\scriptscriptstyle \rm H \ll 1$. In this case $\phi$ makes a quantum jump of length $H_{\rm inf}/2\pi$ within
+each Hubble time. These jumps superpose in random walk fashion, resulting in the following maximum displacement for $\phi$ during inflation~\cite{Linde}:
+\begin{equation} 
+\phi_{\rm max} = \sqrt{\frac{3}{8 \pi^2}} \frac{H^2_{\rm inf}}{m_\phi}\,.
+\label{rms}
+\end{equation}
+\vskip 2mm
+\noindent
+{\bf (3)} $c_{\scriptscriptstyle \rm H < 0$.\footnote{A negative $c_{\scriptscriptstyle \rm H$ can arise at the tree-level~\cite{Dine95}, or from radiative corrections~\cite{gmo,adm}.} In this case $\phi$ becomes tachyonic during inflation. Hence it is driven away from the origin and quickly settles at the minimum of the potential that has a large VEV: 
+\begin{equation} \label{tach}
+\phi_{\rm inf} = \left({H_{\rm inf} \Lambda^{n-3} \over \sqrt{n-1} c_{\scriptscriptstyle \rm H \lambda_n} \right)^{1/(n-2)}.
+\end{equation}
+After inflation $\phi$ follows an instantaneous value that slowly varies due to the expansion of the universe. Once $H \sim m_\phi$, low energy SUSY breaking terms take over the potential, see (\ref{pot}), and $\phi$ starts oscillating about the origin with an initial amplitude:
+\begin{equation} \label{initial}
+\phi_0 ~ \sim ~ \left({m_\phi \Lambda^{n-3} \over \sqrt{n-1} \lambda_n}\right)^{1/(n-2)}\, .
+\end{equation}
+The $\phi$ field also feels a torque due to the $A$-term in (\ref{pot}) that results in rotational motion~\cite{Dine95}. If $\phi$ has a non-zero baryon number $\beta$, rotation will result in a baryon asymmetry~\cite{Affleck:1984fy}. The asymmetry per $\phi$ quanta is given by~\cite{Dine95}:
+\begin{equation} \label{asym}
+{n_{{\scriptscriptstyle \rm B} \over n_\phi} \sim \beta ~ {\rm sin} (n \theta_i) ~ {|A_n| \over m_\phi}\,,
+\end{equation}
+where $\theta_i$ is the initial angular displacement of $\phi$ from the minimum of the potential in the angular direction. This displacement could be due to a mismatch between the phases of $A$ and $a$, see (\ref{pot}), or a result of initial conditions along the angular direction (if $|a| \ll 1$). The comoving value of the generated baryon asymmetry remains constant at $H \ll m_\phi$ since the $A$-term is redshifted quickly by Hubble expansion. The asymmetry is transferred to fermions when $\phi$ decays and the final value of BAU $n_{\scriptscriptstyle \rm B/s$ (with $s$ being the entropy density) depends on the details of the post-inflationary thermal history of the universe. We will give a detailed discussion on the generation of BAU in our model later on.      
+
+\subsection{Supergravity constraints}
+\label{ssec:currentcontraints}
+
+The possibility to realise AD baryogenesis in a 4D $N=1$ supergravity theory has already been analysed in \cite{Casas:1997uk, Dutta:2010sg, Marsh:2011ud, Dutta:2012mw}. The requirement that D-flat directions develop a tachyonic mass during inflation but are non-tachyonic in the present vacuum sets strong constraints on the form of the K\"ahler metric. It has therefore been very difficult to build an explicit supergravity inflationary model where the AD field acquires a large VEV during inflation and relaxes at the origin at later times. 
+In order to overcome these difficulties, let us first summarise the common assumptions behind the previous analyses:
+\begin{enumerate}
+\item The Hubble-induced mass of the AD field $\phi$ during inflation is determined by the F-term of just one field, the inflaton $\sigma$, which dominates the energy density;
+\item The gravitino mass is never larger than the Hubble scale during inflation, i.e. $m_{3/2} \lesssim H_{\rm inf}$;
+\item The contribution of the F-term of $\sigma$ to the scalar mass of $\phi$ is negligible after the end of inflation in order to avoid tachyons.
+\end{enumerate}
+Starting from these assumptions, a no-go theorem has been worked out in~\cite{Dutta:2012mw} stating that in the case with $m_{3/2}\ll H_{\rm inf}$ it is impossible to realise both inflation and AD baryogenesis if the holomorphic sectional curvature at a given point of the field space is constant for all choices of planes in the tangent space. Moreover, it has been found~\cite{Casas:1997uk, Dutta:2010sg, Marsh:2011ud} that $\phi$ cannot become tachyonic during inflation if the K\"ahler metric for matter fields $\tilde{K}$ scales exactly as $\tilde{K} = e^{K/3}$ where $K$ is the K\"ahler potential for the geometric moduli. 
+
+In this paper we shall show how to construct an explicit model that can successfully accommodate inflation and AD baryogenesis by relaxing the previous assumptions as follows:
+\begin{enumerate}
+\item The Hubble-induced mass of $\phi$ during inflation is determined by the F-terms of several moduli and not just the inflaton $\sigma$;
+\item The gravitino mass is larger than the Hubble scale during inflation, $m_{3/2} \gg H_{\rm inf}$, while low-energy SUSY is obtained since the visible sector is sequestered from the sources of SUSY breaking;
+\item The F-term of $\sigma$ contributes to the mass of $\phi$ also after the end of inflation in a way compatible with $m_\phi^2>0$;
+\item We consider cases where the relation $\tilde{K} = e^{K/3}$ is satisfied only at leading order while it is broken by subleading corrections.
+\end{enumerate}
+
+\section{Sequestered Large Volume Scenario}
+\label{SecSeqLVS}
+
+\subsection{Setup of the compactification}
+\label{sec:setup}
+
+String compactifications always come with a number of energy scales which are dynamically determined by the theory in terms of a the single fundamental scale: the string length $\ell_s = M_s^{-1}$, where $M_s$ is the string scale. We denote the volume of the compact space $X$ by $\mathcal{V}$ (measured in string units in 4D Einstein frame). The low-energy supergravity approximation holds when $\mathcal{V} \gg 1$, producing the following hierarchy of scales:
+\begin{equation}
+M_{\scriptscriptstyle \rm KK \simeq \frac{M_p}{\sqrt{4 \pi} \mathcal{V}^{2/3}} \quad \ll \quad M_s = \frac{g_s^{1/4} M_p}{\sqrt{4 \pi \mathcal{V}}} \quad \ll \quad M_p\,,
+\end{equation}
+where $M_{\scriptscriptstyle \rm KK$ is the Kaluza-Klein scale, while $M_p$ is the reduced Planck mass and $g_s$ is the string coupling constant. We are interested in the type IIB low-energy theory below $M_{\scriptscriptstyle \rm KK$ which is characterised by the presence of many moduli: 
+\begin{itemize}
+\item The axio-dilaton $S$ whose real part $s$ determines the string coupling $g_s = \langle s \rangle^{-1}$.
+
+\item $h^{1,2}$ complex structure moduli $U_\alpha$ which parameterise the shape of the internal space.
+
+\item $h^{1,1}$ K\"ahler moduli $T_i$ whose real parts $\tau_i = \text{Re} (T_i) = \text{Vol} (D_i)$ give the size of the divisors $D_i$ of the compact space. The imaginary parts are instead axion-like fields $\psi_i = \text{Im} (T_i) = \int_{D_i} C_4$ where $C_4$ is the Ramond-Ramond 4-form.
+\end{itemize}
+
+We work in the framework of LVS models where the CY volume takes a typical Swiss-cheese form:
+\begin{equation}
+\label{eq:volume}
+\mathcal{V} = \tau_b^{3/2} - \sum_{i=1}^{n} \tau_i^{3/2}\,.
+\end{equation}
+The overall volume $\mathcal{V}$ is controlled by the size $\tau_b$ of a `big' divisor $D_b$. The internal space $X$ contains also $n$ `holes', the `small' divisors $D_i$, whose size is much smaller than that of $D_b$: $\tau_i \ll \tau_b$. String compactifications that we are going to discuss include O3/O7-planes and the following small cycles \cite{CYembedding, ModStabChir}:
+\begin{itemize}
+\item $n$ divisors $D_i$, $i=1,...,n$, supporting non-perturbative effects and allowing moduli stabilisation \`a la LVS. As we shall explain in Sec.~\ref{ssec:KMI}, the modulus governing the size of the $n$-th divisor, $\tau_n = \text{Vol} (D_n)$, will play the r\^ole of the inflaton.
+
+\item A couple of shrinkable divisors $D_a$ and $D_b$ which are exchanged by the orientifold involution. This results in a linear combination $D_+ = D_a + D_b$ which is even under the orientifold involution and a combination $D_- = D_a - D_b$ which is instead odd. $D_+$ is the cycle which hosts the visible sector and its size is denoted by $\tau_{\scriptscriptstyle \rm SM = \text{Vol}(D_+)$, while $D_-$ gives rise to an additional K\"ahler modulus $G = \int_{D_-} B_2 + i \int_{D_-} C_2$, where $B_2$ and $C_2$ are respectively the Kalb-Ramond and the Ramond-Ramond 2-forms belonging to the massless spectrum of type IIB string theory. Both $D_+$ and $D_-$ shrink to zero size due to D-terms stabilisation, namely $\tau_{\scriptscriptstyle \rm SM, \text{Re}(G) \rightarrow 0$, while the corresponding axions are eaten up by anomalous $U(1)$s \cite{CYembedding}. 
+\end{itemize}
+
+The low-energy effective field theory is an $N=1$ supergravity which is completely specified in terms of the real K\"ahler potential $K$, the holomorphic superpotential $W$ and the gauge kinetic functions $f_a$ ($a$ refers to different gauge groups). The K\"ahler potential reads (including the leading $\alpha'$ correction proportional to the constant $\hat\xi$ \cite{BBHL}):
+\begin{equation}
+\label{eq:kahlerpotential}
+K = - 2 \ln \left(\mathcal{V} + \frac{\hat\xi}{2}\right) - \ln (S + \overline{S}) + \frac{\tau_{\scriptscriptstyle \rm SM^2}{\mathcal{V}} + \frac{b^2}{\mathcal{V}} + K_{\rm cs}(U) + K_{\rm matter} \,,
+\end{equation}
+where we defined $b \equiv \text{Re}(G)$ and $\hat\xi = \xi s^{3/2}$. $K_{\rm cs}(U)$ is the tree-level K\"ahler potential for the $U$-moduli and $K_{\rm matter}$ is the K\"ahler matter metric which includes the visible fields $C^\alpha$. It takes the generic form \cite{Blumenhagen:2009gk,Aparicio:2014wxa}:
+\begin{equation}
+\label{eq:kahlermattermetric1}
+K_{\rm matter} = \tilde{K}_\alpha(U,S,T) C^\alpha \overline{C}^{\overline{\alpha}} + Z(U,S,T) \left(H_u H_d + \text{h.c.}\right) \,.
+\end{equation}
+As we shall explain in Sec.~\ref{sssec:scalarmasses}, most of the results of the present paper depend on the exact form of $\tilde{K}_\alpha$. Its leading order $\mathcal{V}$-scaling can be easily inferred by a locality argument: since visible sector fields are localised at a singularity, the physical Yukawa couplings $\hat{Y}_{\alpha \beta \gamma}$ should not depend (at least at leading order) on the overall volume $\mathcal{V}$ \cite{Conlon:2006tj}. They are related to the holomorphic Yukawas $Y_{\alpha \beta \gamma}(U,S)$ as:
+\begin{equation}
+\hat{Y}_{\alpha \beta \gamma} = e^{K/2} \frac{Y_{\alpha \beta \gamma}(U,S)}{\sqrt{\tilde{K}_\alpha \tilde{K}_\beta \tilde{K}_\gamma}} \,.
+\end{equation}
+Notice that at perturbative level $Y_{\alpha \beta \gamma}(U,S)$ do not depend on the $T$-moduli due to the holomorphicity of $W$ and the perturbative shift-symmetry of the axions $\psi_i$. Requiring that $\hat{Y}_{\alpha \beta \gamma}$ do not depend on $\mathcal{V}$ implies that:
+\begin{equation}
+\tilde{K}_\alpha = f_\alpha(U,S)\, e^{K/3} \,,
+\label{eq:uldefinition}
+\end{equation}
+where $f_\alpha(U,S)$ is a generic flux-dependent function. We distinguish between two limits, along the lines of \cite{Aparicio:2014wxa}:
+\begin{enumerate}
+\item \textit{Ultra-local limit}:~\eqref{eq:uldefinition} holds at all orders in the $\mathcal{V}$-expansion.
+
+\item \textit{Local limit}:~\eqref{eq:uldefinition} holds only at leading order in the $\mathcal{V}$-expansion.
+\end{enumerate}
+Given that the factor $e^{K/3}$ in (\ref{eq:uldefinition}) can be expanded as (for vanishing VEVs of $\tau_{\scriptscriptstyle \rm SM$, $b$ and matter fields):
+\begin{equation}
+e^{K/3}  = \frac{e^{K_{\rm cs}/3}}{(2\,s)^{1/3}}\frac{1}{\left(\mathcal{V} + \frac{\hat\xi}{2}\right)^{2/3}} = 
+\frac{e^{K_{\rm cs}/3}}{(2\,s)^{1/3}}\frac{1}{\hat\mathcal{V}^{2/3}}\left(1+\frac 23 \frac{\tau_n^{3/2}}{\hat\mathcal{V}} -\frac{\hat\xi}{3\hat\mathcal{V}}+ \cdots\right)\,,
+\end{equation}
+where $\hat\mathcal{V} = \tau_b^{3/2} - \sum_{j=1}^{n-1}\tau_j^{3/2}$, the K\"ahler matter metric $\tilde{K}_\alpha$ can be parameterised as:
+\begin{equation}
+\tilde{K}_\alpha = \frac{f_\alpha(U,S)}{\hat\mathcal{V}^{2/3}}\left(1- 2 c_n \,\frac{\tau_n^{3/2}}{\hat\mathcal{V}} -c_\xi \frac{\hat\xi}{\hat\mathcal{V}}+ \cdots\right)\,.
+\end{equation}
+The ultra-local limit defined above would then correspond to the case $c_\xi = - c_n = 1/3$.
+
+The holomorphic superpotential is instead given by:
+\begin{equation}
+\label{eq:superpotential}
+W = W_0(U,S) + \sum_{i=1}^n A_i(U,S)\, e^{-a_i T_i} + W_{\scriptscriptstyle \rm dS + W_{\rm matter}\,,
+\end{equation}
+where $W_0(U,S)$ is the flux-dependent tree-level superpotential \cite{Gukov:1999ya}:
+\begin{equation}
+W_0(U,S) = \int_X G_3 \wedge \Omega\,,
+\end{equation}
+where $\Omega$ is the holomorphic 3-form of $X$ while $G_3 = F_3 - S H_3$, with $F_3 = dC_2$ and $H_3 = dB_2$. $A_i(U,S)$, $i=1,...,n$, are $\mathcal{O}(1)$ coefficients which depend on the $S$ and $U$-moduli.\footnote{From now on we will omit the $U$ and $S$ dependence in both $W_0$ and $A_i$.} For the coefficients $a_i$ we shall take $a_i = 2 \pi/N_i$ with $N_i \in \mathbb{N}$. Finally $W_{\scriptscriptstyle \rm dS$ contains information about the dS sector, while $W_{\rm matter}$ depends on the matter fields $C^\alpha$ and looks like:
+\begin{equation}
+\label{eq:wmatter}
+W_{\rm matter} = \mu(U,S,T) H_u H_d + Y_{\alpha \beta \gamma}(U,S,T) C^\alpha C^\beta C^\gamma + \dots\,,
+\end{equation}
+where the dots indicate higher order terms in the expansion around the VEV of visible fields $\langle C^\alpha \rangle = 0$. $\mu$ is the $\mu$-term while $Y_{\alpha \beta \gamma}$ are the holomorphic Yukawa couplings. 
+
+The gauge kinetic function for the visible sector localised at the singularity $\tau_{\scriptscriptstyle \rm SM \rightarrow 0$ depends uniquely on the dilaton:
+\begin{equation}
+f_a = \kappa_a S + \lambda_a T_{\scriptscriptstyle \rm SM \rightarrow \kappa_a S \,,
+\end{equation}
+where $\kappa_a$ is a singularity-dependent coefficient. 
+
+\subsubsection{Moduli stabilisation}
+\label{ssec:modulistabilisation}
+
+Due to the no-scale structure of theories defined by a K\"ahler potential as in~\eqref{eq:kahlerpotential}, at tree level the supergravity F-term scalar potential is positive definite and depends only on $S$ and $U^\alpha$. The global supersymmetric minimum of such a scalar potential is located at:
+\begin{equation}
+\label{eq:susystabilisation}
+D_S W_0 = 0 \,, \qquad D_{U^\alpha} W_0 = 0 \,.
+\end{equation}
+In LVS corrections due to $\alpha'$ effects in (\ref{eq:kahlerpotential}) and non-perturbative effects in (\ref{eq:superpotential}) are subleading with respect to (\ref{eq:susystabilisation}) in the large volume limit $\mathcal{V} \gg 1$. Thus one can consistently first stabilise $S$ and $U^\alpha$ in a supersymmetric manner at order $\mathcal{O}\left(\mathcal{V}^{-2}\right)$, and then fix the $T$-moduli by perturbing this solution with corrections at order $\mathcal{O}\left(\mathcal{V}^{-3}\right)$. This perturbation generates also a small shift in the minimum \cite{Aparicio:2014wxa}: $D_S W \sim D_{U^\alpha} W \sim \mathcal{O}\left(\mathcal{V}^{-1}\right)$ which is of fundamental importance to generate non-vanishing gaugino masses, as explained in Sec.~\ref{sec:soft-terms}. The low-energy F-term scalar potential of the LVS model described above takes the form:
+\begin{equation}
+\label{eq:LVSscalarpotential}
+V_F = \frac{g_s}{8 \pi} \left[\sum_{i = 1}^n \left(\frac{8}{3} (a_i A_i)^2 \sqrt{\tau_i} \,\frac{e^{-2 a_i \tau_i}}{\mathcal{V}} -  4 a_i A_i W_0 \tau_i \,\frac{e^{-a_i \tau_i}}{\mathcal{V}^2}\right) + \frac{3 \hat{\xi} |W_0|^2}{4 \mathcal{V}^3}\right] + V_{\scriptscriptstyle \rm dS \,,
+\end{equation}
+where $V_{\scriptscriptstyle \rm dS$ is a term which depends on the details of the dS sector. Notice that the first two terms descend from the non-perturbative effects in~\eqref{eq:superpotential}. The axions $\psi_i$, $i=1,...,n$, are stabilised in such a way that the second term is negative. The last term in square brackets is due to $\alpha'$ corrections in~\eqref{eq:kahlerpotential}. $V_{\scriptscriptstyle \rm dS$ is essential to achieve a Minkowski/dS vacuum $V_0 \equiv \langle V \rangle \simeq 0$. Two dS sectors consistent with sequestered compactifications were considered in \cite{Aparicio:2014wxa}:
+\begin{enumerate}
+\item dS$_1$ case: \textit{de Sitter from hidden charged fields} \\ 
+LVS string compactifications generically feature hidden sector D-brane stacks on the `big' divisor $D_b$ which support matter fields $\phi_{\scriptscriptstyle \rm dS$ that are charged under a $U(1)$ symmetry \cite{CYembedding}. D-term stabilisation induces non-zero F-terms for these hidden sector fields which give rise to a positive definite contribution to the scalar potential, $V_{\scriptscriptstyle \rm dS \sim W_0^2/\mathcal{V}^{8/3}$, that can lead to Minkowski/dS vacua. From a higher-dimensional point of view, this corresponds to having a T-brane background \cite{Cicoli:2015ylx}.
+
+\item dS$_2$ case: \textit{de Sitter from non-perturbative effects} \\ 
+It is possible to have an additional shrinkable divisor $D_{\scriptscriptstyle \rm dS$ on top of the O7-plane and supporting non-perturbative effects \cite{Cicoli:2012fh}. D-term stabilisation fixes the size of this divisor to $\tau_{\scriptscriptstyle \rm dS = 0$,\footnote{Since $\tau_{\rm dS} \rightarrow 0$ the expression for the volume in~\eqref{eq:volume} is not affected by the new divisor $D_{\scriptscriptstyle \rm dS$.} while a new term in the superpotential of the form $W_{\scriptscriptstyle \rm dS = A_{\scriptscriptstyle \rm dS \,e^{-a_{\scriptscriptstyle \rm dS (S + \kappa_{\scriptscriptstyle \rm dS T_{\scriptscriptstyle \rm dS)}$ gives rise to a positive definite contribution to the F-term scalar potential with scaling $e^{-2 a_{\scriptscriptstyle \rm dS \text{Re} (S)}/\mathcal{V}$ which can lead to a Minkowski/dS vacuum.
+\end{enumerate}
+
+The position of the minimum for the scalar potential in (\ref{eq:LVSscalarpotential}) does not depend on the dS sector at leading order. It is given by the following relations:
+\begin{equation}
+\label{eq:LVSminimum}
+e^{-a_i \tau_i} \simeq  \frac{3 W_0 \sqrt{\tau_i}}{4 a_i A_i \mathcal{V}}
+ \, \qquad \text{and} \qquad \left(a_i\tau_i\right)^{3/2} \simeq \frac{\hat\xi}{2}\,\frac{1}{\sum_{i=1}^n a_i^{-3/2}} \quad\forall i=1,...,n\,.
+\end{equation}
+These relations clearly imply that at the minimum $a_i \tau_i \sim \mathcal{O}\left(\ln \mathcal{V}\right)$.
+
+\subsubsection{F-terms}
+\label{ssec:susybreaking}
+
+SUSY-breaking is governed by F- and D-terms. However, in the setup of Sec.~\ref{sec:setup} D-terms are subdominant with respect to F-terms \cite{Aparicio:2014wxa} whose general expression in supergravity is: 
+\begin{equation}
+F^i = e^{K/2} K^{i \overline{j}} D_{\overline{j}} \overline{W} \,.
+\end{equation}
+Once supersymmetry is broken, the gravitino acquires a mass given by:
+\begin{equation}
+m_{3/2} = e^{K/2} |W| \simeq \frac{g_s^{1/2}}{2 \sqrt{2 \pi}} \frac{W_0 M_p}{\mathcal{V}}\,.
+\end{equation}
+The major source of SUSY-breaking is the presence of background fluxes which generate a non-vanishing F-term for the field $\tau_b$ through a non-zero $W_0$. At leading order it does not depend on the dS sector and it is given by three terms which come from tree-level, $\alpha'$ and non-perturbative effects:
+\begin{equation}
+F^{T_b} = F^{T_b}_{\rm tree} + F^{T_b}_{\alpha'} + F^{T_b}_{\rm np}\,,
+\end{equation}
+where (the axions have already been fixed at their minimum):
+\begin{equation}
+\frac{F^{T_b}_{\rm tree}}{m_{3/2}} = - 2 \tau_b\,,\qquad \frac{F^{T_b}_{\alpha'}}{m_{3/2}} = - \frac{3\tau_b}{2} \frac{\hat\xi}{\mathcal{V}} \,,
+\qquad \frac{F^{T_b}_{\rm np}}{m_{3/2}} = \sum_{i=1}^n\frac{4 A_i a_i \tau_i}{\sqrt{\tau_b}}\,\frac{\mathcal{V}}{W_0}\,e^{-a_i\tau_i}\,.
+\label{FTb}
+\end{equation}
+The minimisation condition (\ref{eq:LVSminimum}) implies that at the minimum: 
+\begin{equation}
+\langle F^{T_b}_{\rm np} \rangle = - \langle F^{T_b}_{\alpha'} \rangle + \mathcal{O}\left( \frac{\tau_b \,\hat\xi\,m_{3/2}}{\mathcal{V} \ln\mathcal{V}}\right).
+\label{relFTb}
+\end{equation}
+Thus at the minimum $F^{T_b}$ scales as: 
+\begin{equation}
+\langle F^{T_b} \rangle = - 2 \tau_b m_{3/2}\left[1+ \mathcal{O}\left(\frac{\hat\xi}{\mathcal{V} \ln\mathcal{V}}\right)\right]\,.
+\label{FTbmin}
+\end{equation}
+Similarly to $F^{T_b}$, the F-terms associated to the `small' divisors $D_i$ receive also three contributions:
+\begin{equation}
+F^{T_i} = F^{T_i}_{\rm tree} + F^{T_i}_{\alpha'} + F^{T_i}_{\rm np}\,,
+\end{equation}
+where:
+\begin{equation}
+\frac{F^{T_i}_{\rm tree}}{m_{3/2}} = - 2 \tau_i\,,\qquad \frac{F^{T_i}_{\alpha'}}{m_{3/2}} = - \frac{3\tau_i}{2} \frac{\hat\xi}{\mathcal{V}} \,,
+\qquad \frac{F^{T_i}_{\rm np}}{m_{3/2}} = \frac{8 A_i a_i \sqrt{\tau_i}}{3}\,\frac{\mathcal{V}}{W_0}\,e^{-a_i\tau_i}\,.
+\label{eq:smallfterms2}
+\end{equation}
+Using (\ref{eq:LVSminimum}) it turns out that at the minimum: 
+\begin{equation}
+\langle F^{T_i}_{\rm np} \rangle = - \langle F^{T_i}_{\rm tree} \rangle + \mathcal{O}\left( \frac{\tau_i m_{3/2}}{\ln\mathcal{V}}\right).
+\label{relFTi}
+\end{equation}
+Hence at the minimum $F^{T_i}$ is determined by the first correction to $F^{T_i}_{\rm np}$ in the $\ln \mathcal{V}$-expansion:
+\begin{equation}
+\langle F^{T_i}\rangle \simeq - \frac{3 m_{3/2}}{2 a_i} \,.
+\label{FTimin}
+\end{equation}
+Moreover the scalar potential (\ref{eq:LVSscalarpotential}) can be rewritten as:
+\begin{equation}
+V = \sum_{I,J \in \{b,i\}} K_{I \overline{J}} F^I \overline{F}^{\overline{J}} - 3 m_{3/2}^2 \,.
+\end{equation}
+Due to the no-scale structure:
+\begin{equation}
+\sum_{I,J \in \{b,i\}} K^0_{I \overline{J}} F^I_{\rm tree} \overline{F}^{\overline{J}}_{\rm tree} - 3\,m_{3/2}^2 = 0\,,
+\end{equation}
+where $K^0_{I \overline{J}}$ is the tree-leve K\"ahler metric, the scalar potential (\ref{eq:LVSscalarpotential}) is generated by non-perturbative and $\alpha'$ corrections to the effective action. In detail, for each $i=1,...,n$, the three terms in square brackets in~\eqref{eq:LVSscalarpotential} are given by:
+\begin{enumerate}
+\item $\frac{g_s (a_i A_i)^2 \sqrt{\tau_i}}{3 \pi} \frac{e^{-2 a_i \tau_i}}{\mathcal{V}} = K^0_{T_i \overline{T}_i} F^{T_i}_{\rm np} \overline{F}^{\overline{T}_i}_{\rm np}$\,,
+
+\item $- \frac{g_s (a_i A_i) W_0 \tau_i}{2 \pi} \frac{e^{-a_i \tau_i}}{\mathcal{V}^2}= \left(K^0_{T_b \overline{T}_i} F^{T_b}_{\rm tree} + K^0_{T_i \overline{T}_i} F^{T_i}_{\rm tree} \right) \overline{F}^{\overline{T}_i}_{\rm np}+ K^0_{T_b \overline{T}_b} F^{T_b}_{\rm tree} \overline{F}^{\overline{T}_b}_{\rm np} + \text{h.c.}$\,,
+
+\item $\frac{3 g_s}{32 \pi} \frac{\hat\xi m_{3/2}^2}{\mathcal{V}} = \left(K^0_{T_b \overline{T}_b} F^{T_b}_{\rm tree} \overline{F}^{\overline{T}_b}_{\alpha'} + \text{h.c.}\right) + K^{\alpha'}_{T_b \overline{T}_b} F^{T_b}_{\rm tree}\overline{F}^{\overline{T}_b}_{\rm tree}$\,,
+\end{enumerate}
+where $K^{\alpha'}_{T_b \overline{T}_b}$ is the leading order $\alpha'$ correction to the $T_b \overline{T}_b$ element of the K\"ahler metric.
+
+Let us finally point out that the F-terms of the dilaton and the complex structure moduli are subleading relative to the others given that they are generated by the shift of their minimum induced by non-perturbative and $\alpha'$ corrections. This shift can be parameterised as in \cite{Aparicio:2014wxa}:\footnote{We report here only the leading order term in the $\ln\mathcal{V}$-expansion. Subleading corrections are nevertheless important for phenomenological applications, as explained in Sec.~\ref{sssec:gauginomasses}.}
+\begin{equation}
+F^S = s \,\omega(U,S) \frac{\tau_i^{3/2} m_{3/2}}{\mathcal{V}} \, \qquad \text{and} \qquad \, F^{U^{\alpha}} = \beta^\alpha(U,S) F^S \,,
+\end{equation}
+where $\omega(U,S)$ and $\beta^\alpha(U,S)$ are $\mathcal{O}(1)$ flux-dependent coefficients which can be tuned to produce interesting phenomenological results. As we will see in Sec.~\ref{sssec:gauginomasses}, even if $F^S$ is $\mathcal{V}$-suppressed, it plays a key r\^ole in the phenomenology of sequestered models.
+
+\subsection{Soft-terms}
+\label{sec:soft-terms}
+
+In sequestered string compactifications the visible sector lives on D3-branes at singularities \cite{SingD3s, CYembedding}. Due to this particular D-brane configuration, in sequestered models gauge degrees of freedom living on D3-branes decouple from bulk fields. Furthermore, since SUSY is broken in the bulk, this decoupling results in a suppression of soft-terms with respect to the gravitino mass $m_{3/2}$. As we shall explain in Sec.~\ref{sec:dynamics}, due to this separation of scales, sequestering can help to get low-energy SUSY without any cosmological problem associated to light moduli \cite{CMP} or gravitino overproduction \cite{gravProbl}. The aim of this section is to summarise the pattern that the soft terms acquire in sequestered models, depending on the form of the K\"ahler matter metric $\tilde{K}_\alpha$ in~\eqref{eq:kahlermattermetric1}.
+
+\subsubsection{Gaugino masses}
+\label{sssec:gauginomasses}
+
+Given that the gauge kinetic function for D3-branes at singularities depends on the dilaton $S$, gaugino masses are controlled by $F^S$ and look like: 
+\begin{equation}
+\label{eq:gauginomasses}
+M = \frac{F^S}{2s} \simeq \lambda(U,S) \frac{\hat\xi \,m_{3/2}}{\mathcal{V}}\,,
+\end{equation}
+where $\lambda(U,S)$ is a flux-dependent function whose explicit expression depends on the dS sector and is given in \cite{Aparicio:2014wxa}.
+
+\subsubsection{Scalar masses}
+\label{sssec:scalarmasses}
+
+The situation is much more involved for scalar masses whose general expression, assuming a diagonal K\"ahler metric $\tilde{K}_{\alpha \overline{\beta}} = \tilde{K}_\alpha \delta_{\alpha \overline{\beta}}$, is given by:
+\begin{equation}
+m_\alpha^2 = m_{3/2}^2 + V_0 - F^I \overline{F}^{\bar{J}} \partial_I \partial_{\bar{J}} \ln \tilde{K}_\alpha + \tilde{K}_\alpha^{-1} \sum_a g_a^2 D_a \partial_\alpha \partial_{\overline{\alpha}} D_a \,.
+\label{eq:scalarmassesgeneral}
+\end{equation}
+Non-zero D-term contributions can arise from hidden scalar fields $\phi_k$ living on D7-branes wrapped around the large 4-cycle $\tau_b$ which supports an anomalous $U(1)$ with $g_b^2 = \tau_b^{-1}$. These D-term contributions look like:
+\begin{equation}
+D_b = \sum_k Q_{k,b} \phi_k \frac{\partial K}{\partial \phi_k} + \sum_I q_{I,b} \partial_{T_I} K \,,
+\end{equation}
+where $Q_{k,b}$ and $q_{I,b}$ are, respectively, the $U(1)$ charge of the $k$-th hidden scalar and the $I$-th K\"ahler modulus under the $U(1)$ on $D_b$. 
+
+In order to compute scalar masses, it is crucial to know the exact moduli dependence of $\tilde{K}_\alpha$. The leading order results are (see \cite{Aparicio:2014wxa} for the details of the computation):
+\begin{enumerate}
+\item \textit{Ultra-local limit} \\
+Due to the form of $\tilde{K}_\alpha$ in~\eqref{eq:uldefinition}, the $\mathcal{O}\left(\mathcal{V}^{-3}\right)$ F-term contributions to scalar masses cancel off and the final result depends on the dS sector:
+\begin{itemize}
+\item[a)] dS$_1$ case: non-zero scalar masses are generated by D-term contributions at $\mathcal{O}\left(\mathcal{V}^{-3}\right)$ \cite{Aparicio:2014wxa}:
+\begin{equation}
+m_0^2 \simeq \frac{9}{64} \frac{\hat\xi \,m_{3/2}^2}{\mathcal{V}\ln\mathcal{V}} \,,
+\end{equation}
+while the leading F-term contribution to $m_0^2$ is at $\mathcal{O}\left(\mathcal{V}^{-4}\right)$. In this case scalar masses are universal.
+
+\item[b)] dS$_2$ case: D-term contributions are subleading with respect to $\mathcal{O}\left(\mathcal{V}^{-4}\right)$ contributions from F-terms of $S$ and $U$-moduli which give:
+\begin{equation}
+m_\alpha^2 \simeq Q_\alpha(U,S)\, M^2 \,,
+\label{eq:scalarmassesdilaton}
+\end{equation}
+where $Q_\alpha(U,S)$ is a flux-dependent function involving derivatives of $f_\alpha (U,S)$. In this specific case scalar masses might not be universal.
+\end{itemize}
+
+\item \textit{Local limit} \\
+In the local limit the effect of D-terms is negligible. We report the results for two limiting cases:
+\begin{itemize}
+\item[(a)] \textit{$c_n = - 1/3$}:
+\begin{equation}
+m_0^2 \simeq \frac{15}{4} \left(c_\xi - \frac 13\right) \frac{\hat\xi\, m_{3/2}^2}{\mathcal{V}} \,,
+\label{Locala}
+\end{equation}
+
+\item[(b)] \textit{$c_\xi=0$}:
+\begin{equation}
+m_0^2 \simeq \frac{15}{4\,n} \left[c_n- \frac 13 \left(n-1\right)\right] \frac{\hat\xi\, m_{3/2}^2}{\mathcal{V}} \,,
+\label{eq:scalarmassesinflaton}
+\end{equation}
+\end{itemize}
+which implies that in the local limit scalar masses have to be universal. This result has been derived assuming, without loss of generality, $a_i=a$ $\forall i=1,...,n$, so that $\tau_i^{3/2} = \hat\xi /(2\,n)$.
+\end{enumerate}
+
+Vanishing leading order results for the scalar masses in the ultra-local limit can be recovered by setting $c_\xi=1/3$ in case (a) and $c_n= (n-1)/3$ in case (b). We stress that in case (b), given that $c_\xi=0$, an effective ultra-local limit can be obtained only at the minimum using the minimisation condition (\ref{eq:LVSminimum}). Notice that in all cases, except for the ultra-local dS$_1$ case, scalars can be either tachyonic or non-tachyonic, depending on $Q_{\alpha}(U,S)$, $c_n$ and $c_\xi$. Non-tachyonic scalars require $Q_\alpha(U,S)>0$ in the ultra-local dS$_2$ case and $c_\xi>1/3$ for case (a) and $c_n > (n-1)/3$ for case (b) of the local limit. 
+
+
+\subsubsection{$A$-terms}
+\label{sssec:aterms}
+
+The scalar potential (\ref{eq:LVSscalarpotential}) contains cubic terms in the canonically normalised scalar fields ${\hat C}^\alpha$ of the form:\footnote{Higher-order superpotential terms that lift $\phi$ result in $A$-terms that are higher than cubic, corresponding to $n > 3$ in (\ref{pot}). Here we perform an explicit computation of the cubic $A$-terms. Calculations are more involved for higher order $A$-terms but the results are qualitatively similar.}   
+\begin{equation}
+V \supset \hat{Y}_{\alpha \beta \gamma} A_{\alpha \beta \gamma} \hat{C}^\alpha \hat{C}^\beta \hat{C}^\gamma\,,
+\end{equation}
+where $A_{\alpha \beta \gamma}$ are functions of the moduli of the compactification. It turns out that D-term contributions to $A_{\alpha \beta \gamma}$ are subleading \cite{Aparicio:2014wxa}, while the general F-term expression for the $A$-terms is:
+\begin{equation}
+\label{eq:generalaterms}
+A_{\alpha \beta \gamma} = F^i \partial_i \left[K + \ln\left(\frac{Y_{\alpha \beta \gamma}(U,S)}{\tilde{K}_\alpha \tilde{K}_\beta \tilde{K}_\gamma}\right)\right] \,.
+\end{equation}
+Writing the K\"ahler matter metric as $\tilde{K}_\alpha = f_\alpha \tilde{K}$, the general expression in~\eqref{eq:generalaterms} can be rewritten as:
+\begin{equation}
+\label{eq:simplifiedaterms}
+A_{\alpha \beta \gamma} = F^i \partial_i \left[K - 3 \ln \tilde{K} + \ln\left(\frac{Y_{\alpha \beta \gamma}(U,S)}{f_\alpha f_\beta f_\gamma}\right)\right].
+\end{equation}
+We study separately the different limits of the K\"ahler matter metric:
+\begin{enumerate}
+\item \textit{Ultra-local limit}: \\
+From~\eqref{eq:simplifiedaterms} it is straightforward to see that there is a cancellation between the first two terms in square brackets. As a consequence the $A$-terms are determined by the F-terms of the dilaton and the complex structure moduli:
+\begin{equation}
+A_{\alpha \beta \gamma} = \sum_{i = S, U} F^i \partial_i \left[\ln\left(\frac{Y_{\alpha \beta \gamma}(U,S)}{f_\alpha f_\beta f_\gamma}\right)\right] \equiv \frac{\Pi(U,S)}{\mathcal{V}^2}\,,
+\end{equation}
+where $\Pi(U,S)$ is an $\mathcal{O}(1)$ flux-dependent function.
+
+\item \textit{Local limit}: \\
+In this case the $A$-terms receive contributions also from the F-term of $T_b$:
+\begin{itemize}
+\item[(a)] $c_n=-1/3$:
+\begin{equation}
+\label{eq:atermsdilaton}
+A_{\alpha \beta \gamma} = \frac 92 \left(c_\xi - \frac 13\right) \frac{\hat\xi\,m_{3/2}}{\mathcal{V}} + \frac{\Pi(U,S)}{\mathcal{V}^2} \,,
+\end{equation}
+where both terms have the same volume scaling.
+
+\item[(b)] $c_\xi=0$:
+\begin{equation}
+\label{eq:inflatonaterms}
+A_{\alpha \beta \gamma} = \frac{9}{2\,n} \left[c_n- \frac 13 \left(n-1\right)\right]  \frac{\hat\xi\,m_{3/2}}{\mathcal{V}} + \frac{\Pi(U,S)}{\mathcal{V}^2}\,,
+\end{equation}
+where again both terms have the same volume scaling.
+\end{itemize}
+\end{enumerate}
+
+\subsubsection*{Summary of soft terms}
+\label{sssec:summarysoftspectra}
+
+Here we summarise the results of the last sections, noting that they can be divided in two classes depending on the form of the K\"ahler matter metric:
+\begin{enumerate}
+\item \textit{MSSM-like spectrum}: in the ultra-local dS$_2$ case all soft terms have the same volume scaling:
+\begin{equation}
+M \sim m_\alpha \sim A_{\alpha \beta \gamma} \sim \frac{M_p}{\mathcal{V}^2} \,.
+\end{equation}
+This is a typical MSSM-like spectrum with (possibly non-universal) scalars and gauginos at the same energy scale.
+
+\item \textit{Split SUSY spectrum}: in the local and ultra-local dS$_1$ cases the volume scaling of gauginos and scalars is different:
+\begin{equation}
+M \sim A_{\alpha \beta \gamma} \sim \frac{M_p}{\mathcal{V}^2} \, \qquad \text{while} \qquad m_0 \sim \frac{M_p}{\mathcal{V}^{3/2}} \,.
+\end{equation}
+Thus gauginos are lighter than scalars, featuring a splitting of the soft scales.
+\end{enumerate}
+Notice that in order to have TeV gaugino masses, the volume $\mathcal{V}$ should be in the range $10^6$-$10^8$. In turn, in order for~\eqref{eq:LVSminimum} to be satisfied without the necessity to fine-tune the coefficients $A_i$, the following relation should be satisfied:
+\begin{equation}
+a_i \tau_i \simeq \ln\left(\frac{\mathcal{V}}{W_0}\right) \qquad \quad\forall i =1,...,n\,,
+\label{eq:finetuningcondition}
+\end{equation}
+where $\tau_i$ is given in terms of $g_s$ as in (\ref{eq:LVSminimum}). For typical values of $W_0$ in the range $1$-$100$ (\ref{eq:finetuningcondition}) implies that the ratio $a_i/g_s$ has to lie in the range $60$-$120$.\footnote{We will fix $\xi = 1$ and $n = 10$ to perform numerical calculations.}
+
+\section{Inflation, reheating and Affleck-Dine baryogenesis}
+\label{sec:dynamics}
+
+As mentioned in Sec.~\ref{sec:ADreview}, in order to examine the viability of AD baryogenesis, one needs to have an explicit model for SUSY breaking and inflation. Here we use the model proposed in \cite{Conlon:2005jm} to realise inflation since in this inflationary scenario the range of $\mathcal{V}$ required to get the observed amplitude of density perturbations leads also to low-energy gauginos. 
+
+\subsection{Inflationary dynamics}
+\label{ssec:KMI}
+
+The idea behind the model proposed in \cite{Conlon:2005jm} is very simple: the `small' modulus $\tau_n$ plays the r\^ole of the inflaton which experiences an exponentially flat direction when moved away from its minimum. The CY volume $\mathcal{V}$ is instead kept almost fixed during inflation by the additional `small' moduli $\tau_j$, $j=1,...,n-1$ which sit at their minima. Therefore the total scalar potential (\ref{eq:LVSscalarpotential}) during inflation takes the simplified form: 
+\begin{equation}
+\label{eq:inflationarypotential1}
+V = \frac{g_s}{8 \pi} \left[\sum_{j = 1}^{n-1} \left(\frac{8}{3} (a_j A_j)^2 \sqrt{\tau_j} \,\frac{e^{-2 a_j \tau_j}}{\mathcal{V}} -  4 a_j A_j W_0 \tau_j \,\frac{e^{-a_j \tau_j}}{\mathcal{V}^2}\right) + \frac{3 \hat{\xi} |W_0|^2}{4 \mathcal{V}^3}\right] + V_{\scriptscriptstyle \rm dS + \delta V (\tau_n ) \,.
+\end{equation}
+where:
+\begin{equation}
+\delta V(\tau_n ) = - \frac{g_s}{2 \pi}\,a_n A_n W_0 \tau_n \frac{e^{-a_n \tau_n}}{\mathcal{V}^2}\,.
+\end{equation}
+If all $\tau_j$, $j=1,...,n-1$ and $\mathcal{V}$ are fixed at their minima during inflation, the potential in~\eqref{eq:inflationarypotential1} can be written as the sum of a constant $V_0$ and $\delta V (\tau_n )$:
+\begin{equation}
+\label{eq:inflationarypotential2}
+V_{\rm inf} = V_0 - \frac{g_s}{2 \pi}\,a_n A_n W_0 \tau_n \frac{e^{-a_n \tau_n}}{\mathcal{V}^2} \,,
+\end{equation} 
+where a careful computation gives:
+\begin{equation}
+V_0 = \frac{3}{4\,n} \frac{\hat\xi\, m_{3/2}^2}{\mathcal{V}}\,.
+\label{eq:v0}
+\end{equation}
+We stress that the minima of $\tau_j$, $j=1,...,n-1$ and $\mathcal{V}$ during inflation are slightly shifted from their values after the end of inflation:
+\begin{equation}
+\left.\ln\mathcal{V}\right|_{\rm inf} \underset{n\gg 1}{\simeq} \ln \mathcal{V} \left(1+ \frac{2}{n}\right) \qquad\text{and}\qquad 
+\left.\tau_j^{3/2}\right|_{\rm inf} \underset{n\gg 1}{\simeq} \tau_j^{3/2}\left( 1+\frac 3n\right).
+\label{shift}
+\end{equation}
+Given that the canonically normalised inflaton $\sigma$ is given by:
+\begin{equation}
+\sigma = \sqrt{\frac{4}{3 \mathcal{V}}} \,\tau_n^{3/4}\,,
+\label{eq:canonicallynormalizedinflaton}
+\end{equation} 
+the scalar potential for $\sigma$ takes the form:
+\begin{equation}
+V_{\rm inf} = V_0 - c_1 \sigma^{4/3} e^{-c_2 \sigma^{4/3}}   \qquad\text{with}\quad c_1 = \frac{g_s}{2 \pi} \frac{A_n W_0}{\mathcal{V}^2} c_2  \quad\text{and}\quad
+c_2= a_n \left(\frac{3 \mathcal{V}}{4}\right)^{2/3}\,.
+\label{eq:inflationarypotential3}
+\end{equation} 
+It is much easier to express the slow-roll parameters in terms of the non-canonically normalised fields as:
+\begin{eqnarray}
+&\epsilon& \simeq \frac{512 \, n^2}{27} \frac{a_n^3 A_n \tau_n^{5/2}}{\hat{\xi}^2 W_0^2}\, \mathcal{V}^3 \, e^{-2 a_n \tau_n}\,, \\
+&\eta& \simeq -\frac{64 \, n}{9} \frac{a_n^3 A_n \tau_n^{3/2}}{\hat\xi W_0}\, \mathcal{V}^2\,  e^{- a_n \tau_n}\,.
+\end{eqnarray}
+In order for inflation to take place, both $\epsilon$ and $\eta$ have to be much smaller than $1$. Just looking at the volume scaling, and since in the late-time minimum $a_n \tau_n \sim \ln \mathcal{V}$, it is easy to infer that inflation can take place in the region:
+\begin{equation}
+a_n \tau_n \gtrsim 2 \ln \mathcal{V}\,,
+\end{equation}
+and it ends at $\tau_n^{\rm end}$ when $\epsilon$ becomes of order $1$. Moreover we have been able to numerically compute the position of the inflaton $\tau_n^*$ corresponding to horizon exit:
+\begin{equation}
+N_e(\tau_n^*) \simeq \frac{9}{64 \, n} \frac{\hat\xi W_0}{a_n^2 A_n \mathcal{V}^2} \int_{\tau_n^{\rm end}}^{\tau_n^*} \frac{e^{a_n \tau_n}}{\tau_n^{3/2}} \,d \tau_n \simeq 60\,,
+\end{equation}
+where $N_e$ denotes the number of e-foldings. Once $\tau_{\rm inf}^*$ is known, both the tensor-to-scalar ratio $r$ and the spectral index $n_s$ can be evaluated as:
+\begin{equation}
+r = 16 \epsilon(\tau_n^*) \qquad \text{and} \qquad n_s = 1 - 6 \epsilon(\tau_n^*) + 2 \eta(\tau_n^*) \,.
+\end{equation}
+Typical values are $n_s \simeq 0.967$ and $r \lesssim 10^{-10}$, reflecting the small-field nature of this inflationary model.
+Finally, it is necessary to numerically evaluate the amplitude of density perturbations $\mathcal{A}_{\mathcal{R}}$ as a function of $\tau_n$, and to impose that it matches the measured value at $\tau_n^*$. This requirement translates into:
+\begin{equation}
+\label{eq:COBE}
+\mathcal{A}^2_{\mathcal{R}}(\tau_n^*) \simeq \frac{g_s}{8 \pi} \frac{3^4 \hat\xi^3 W_0^4}{4^6 n^3 \, a_n^4 A_n^2 (\tau_n^*)^{5/2}} \frac{e^{2 a_n \tau_n^*}}{\mathcal{V}^6} \simeq 2.7 \times 10^{-7}\,.
+\end{equation}
+The numerical analysis proceeds as follows: we set $a_j=a_n$ and $A_j=A_n$ $\forall j=1,...,n-1$ and choose the values of $a_n$ and $g_s$ as explained around (\ref{eq:finetuningcondition}) in order to avoid a severe fine-tuning of $A_n$ due to the relation (\ref{eq:LVSminimum}). Then for different values of $W_0$ in the natural range $1$-$100$ we compute the value of the volume $\left.\mathcal{V}\right|_{\scriptscriptstyle \rm COBE}$ which reproduces the measured amplitude of density perturbations using (\ref{eq:COBE}). In Tab.~\eqref{tab:tab1} we report the results for $a_n = 2 \pi$, $g_s = 0.06$ and $n = 10$.
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{cccc}
+\hline
+ & $W_0$ & $\left.\log_{10}\left(\mathcal{V}\right|_{\scriptscriptstyle \rm COBE}\right)$ & $A_n$\\
+\hline
+$(A)$ & $1$ & $5.14$ & $1.94$ \\
+\hline
+$(B)$ & $10$ & $6.15$ & $1.91$ \\
+\hline
+$(C)$ & $100$ & $7.15$ & $1.87$ \\
+\hline
+\end{tabular}
+\caption{Values of the volume $\left.\mathcal{V}\right|_{\scriptscriptstyle \rm COBE}$ which match the observed amplitude of density perturbations for different values of $W_0$ and $a_n = 2 \pi$, $g_s = 0.06$ and $n = 10$.}
+\label{tab:tab1}
+\end{table}
+
+
+\subsection{Dynamics of the Affleck-Dine field}
+\label{ssec:ADBdynamics}
+
+The dynamics of the AD field $\phi$ is governed by the scalar potential (\ref{pot}). In order to determine whether $\phi$ can acquire a large VEV during inflation, we need to compute its soft mass and the corresponding $A$-term. Since $\phi$ is made of MSSM scalars, we can readily use the expressions derived in Sec.~\ref{sssec:scalarmasses} and Sec.~\ref{sssec:aterms}. In what follows, we shall analyse separately the MSSM-like and the split SUSY case. Below, we denote with $\tilde{x}$ the value of any quantity $x$ during inflation. 
+
+\subsubsection{MSSM-like case}
+\label{sssec:ADdynamicsMSSM}
+
+As explained in Sec.~\ref{sssec:scalarmasses}, an MSSM-like spectrum arises in the ultra-local dS$_2$ case where D-terms are negligible. Using (\ref{eq:scalarmassesgeneral}) and $V_0 = |F|^2 - 3 m_{3/2}^2$, due to the ultra-local condition (\ref{eq:uldefinition}), the soft mass of $\phi$ becomes:
+\begin{equation}
+\tilde{m}_\phi^2 = m_{3/2}^2 + V_0 - \frac{1}{3} K_{I\bar{J}} F^I \overline{F}^{\bar{J}} -  F^I \overline{F}^{\bar{J}} \partial_I \partial_{\bar{J}} \ln f_\alpha(U,S) = \frac 23 \,V_0 + Q_\alpha(U,S) \,M^2\,.
+\end{equation}
+Given that $V_0 \sim \mathcal{O}\left(\mathcal{V}^{-3}\right)$ while $M^2\sim\mathcal{O}\left(\mathcal{V}^{-4}\right)$, the leading order contribution to the soft mass of $\phi$ during inflation comes from the vacuum energy $V_0$: 
+\begin{equation}
+\tilde{m}^2_\phi \simeq \frac 23 V_0 =  \frac{1}{2\,n} \frac{\hat{\xi} m_{3/2}^2}{\mathcal{V}} \simeq 2 H^2_{\rm inf}> 0\,.
+\label{mphiUL}
+\end{equation}
+This implies that in this case the AD field cannot acquire a tachyonic mass during inflation. Thus $\phi$ settles at the origin during inflation and remains there throughout the entire post-inflationary history. As a result, it cannot give rise to a successful AD baryogenesis. This is in agreement with similar results found in \cite{Casas:1997uk, Dutta:2010sg, Marsh:2011ud}.
+
+\subsubsection{Split SUSY case}
+\label{sssec:ADdynamicssplitsusy}
+
+During inflation the inflaton $\tau_n$ is displaced from its late-time minimum. Therefore the inflaton-dependent contribution to $F^{T_b}_{\rm np}$ in (\ref{FTb}) and to $F^{T_n}_{\rm np}$ in (\ref{eq:smallfterms2}) can be neglected during inflation, leading to:
+\begin{equation} 
+\frac{\tilde{F}^{T_b}_{\rm np}}{m_{3/2}} = \sum_{j=1}^{n-1}\frac{4 A_j a_j \tau_j}{\sqrt{\tau_b}}\,\frac{\mathcal{V}}{W_0}\,e^{-a_j\tau_j}\,,
+\end{equation}
+and:
+\begin{equation}
+\frac{\tilde{F}^{T_n}_{\rm np}}{m_{3/2}} = \frac{8 A_n a_n \sqrt{\tau_n}}{3}\,\frac{\mathcal{V}}{W_0}\,e^{-a_n\tau_n}  \rightarrow 0\,.
+\end{equation}
+Thus the relations (\ref{relFTb}) and (\ref{relFTi}) for $i=n$, which were true at the minimum, do not hold anymore during inflation when the F-terms of $T_b$ and $T_n$ become:
+\begin{equation}
+\tilde{F}^{T_b} = -2\tau_b\,m_{3/2}\left(1+\frac{3}{4\,n} \frac{\hat\xi}{\mathcal{V}}\right)\,,
+\end{equation}
+and:
+\begin{equation}
+\tilde{F}^{T_n} = \tilde{F}^{T_n}_{\rm tree} = - 2 \tau_n m_{3/2} \,.
+\end{equation}
+Given that both $F^{T_b}$ and $F^{T_n}$ have a different form during inflation compared with the one at the minimum (see (\ref{FTbmin}) and (\ref{FTimin}) for $i=n$ respectively), in the local case, which leads to split SUSY, the AD field can possibly develop a tachyonic mass during inflation. 
+In order to investigate this possibility, we consider the two limiting cases studied before:
+\begin{itemize}
+\item[(a)] $c_n=-1/3$ \\
+The scalar masses are determined by the following contributions:
+\begin{enumerate}
+\item $\tilde{F}^{T_b} \tilde{F}^{\overline{T}_b} \partial_{T_b} \partial_{\overline{T}_b} \ln\tilde{K}_\alpha = m_{3/2}^2 + \frac{5}{2} \frac{m_{3/2}^2}{\mathcal{V}} \,\tau_n^{3/2} - \frac{15}{4} \frac{\hat\xi m_{3/2}^2}{\mathcal{V}} \left(c_\xi - \frac 13 -\frac{1}{15 n}\right)$\,,
+\item $\tilde{F}^{T_n} \tilde{F}^{\overline{T}_b} \partial_{T_n} \partial_{\overline{T}_b} \ln\tilde{K}_\alpha 
+       + \tilde{F}^{T_b} \tilde{F}^{\overline{T}_n} \partial_{T_b} \partial_{\overline{T}_n} \ln\tilde{K}_\alpha = -3 \frac{m_{3/2}^2}{\mathcal{V}}\,\tau_n^{3/2}$\,,
+\item $\tilde{F}^{T_n} \tilde{F}^{\overline{T}_n} \partial_{T_n} \partial_{\overline{T}_n} \ln\tilde{K}_\alpha = \frac{1}{2} \frac{m_{3/2}^2}{\mathcal{V}}\,\tau_n^{3/2}$\,.
+\end{enumerate}
+Using the general expression for scalar masses (\ref{eq:scalarmassesgeneral}), we find that the contributions proportional to $\tau_n^{3/2}$ cancel off giving a soft mass of $\phi$ during inflation of the form:
+\begin{equation}
+\tilde{m}_\phi^2 = \frac{15}{4}\frac{\hat\xi m_{3/2}^2}{\mathcal{V}} \left(c_\xi - \frac 13 + \frac{2}{15\,n}\right)\,.
+\label{mphi}
+\end{equation} 
+Notice that this expression correctly reproduces the soft scalar mass at the minimum (\ref{Locala}) in the limit $n \rightarrow \infty$, and the result (\ref{mphiUL}) in the ultra-local limit $c_\xi=1/3$. Moreover (\ref{mphi}) becomes negative if:
+\begin{equation}
+c_\xi < \frac 13 - \frac{2}{15\,n}\,.
+\end{equation}
+Given that this condition is in clear contrast with the requirement of non-tachyonic scalar masses after the end of inflation, i.e. $c_\xi > \frac 13$, we conclude that in this case it is not possible to obtain a tachyonic mass for the AD field during inflation.\footnote{The $A$-terms take the same form both during and after inflation.}
+
+
+\item[(b)] $c_\xi=0$ \\
+The scalar masses are determined by the following contributions:
+\begin{enumerate}
+\item $\tilde{F}^{T_b} \tilde{F}^{\overline{T}_b} \partial_{T_b} \partial_{\overline{T}_b} \tilde{K}_\alpha = m_{3/2}^2 - \frac{15}{2} c_n \frac{m_{3/2}^2}{\mathcal{V}}\,\tau_n^{3/2} + \frac 54 \frac{\hat\xi m_{3/2}^2}{\mathcal{V}}\left(1+\frac{1}{5\,n}\right)$\,,
+\item $\tilde{F}^{T_n} \tilde{F}^{\overline{T}_b} \partial_{T_n} \partial_{\overline{T}_b} \tilde{K}_\alpha 
++\tilde{F}^{T_b} \tilde{F}^{\overline{T}_n} \partial_{T_b} \partial_{\overline{T}_n} \tilde{K}_\alpha= 9 c_n \frac{m_{3/2}^2}{\mathcal{V}}\,\tau_n^{3/2}$\,,
+\item $\tilde{F}^{T_n} \tilde{F}^{\overline{T}_n} \partial_{T_n} \partial_{\overline{T}_n} \tilde{K}_\alpha = -\frac 32 c_n \frac{m_{3/2}^2}{\mathcal{V}}\,\tau_n^{3/2}$\,.
+\end{enumerate}
+Again the contributions proportional to $\tau_n^{3/2}$ cancel off in the general expression for scalar masses (\ref{eq:scalarmassesgeneral}), leading to a soft mass of $\phi$ during inflation of the form:
+\begin{equation}
+\tilde{m}_\phi^2 = - \frac 54 \frac{\hat\xi m_{3/2}^2}{\mathcal{V}} \left(1-\frac{2}{5 n}\right)\,,
+\end{equation}
+which is always negative for $n>1$. Therefore the case with $c_\xi=0$ guarantees that the mass of the AD field becomes tachyonic during inflation for every value of $c_n$. On the other hand, as we have seen in Sec. \ref{sssec:scalarmasses}, if $c_n > (n-1)/3$, $m^2_\phi > 0$ after the end of inflation. Thus this case represents a good example where AD baryogenesis can be explicitly realised. We finally mention that also the $A$-terms get modified during inflation since they look like:
+\begin{equation}
+A = - \frac 32 \frac{\hat\xi m_{3/2}}{\mathcal{V}}\,.
+\end{equation}
+\end{itemize}
+
+\subsection{Reheating from lightest modulus decay}
+
+In order to understand how reheating takes place we need first to look at the moduli mass spectrum. The canonically normalised inflaton $\sigma$ is exponentially light during inflation but after inflation, when it oscillates around its minimum, it becomes very heavy:
+\begin{equation}
+m_\sigma \sim \frac{W_0 M_p}{\mathcal{V}}\,\ln\mathcal{V} \sim  m_{3/2}\,\ln\mathcal{V}\,.
+\label{msigma}
+\end{equation}
+Due to the local nature of this blow-up mode, $\sigma$ is coupled to the field theory living on this 4-cycle as $1/M_s \sim \sqrt{\mathcal{V}}/M_p$, as opposed to a standard Planckian-strength coupling. It therefore decays relatively quickly leading to an initial reheating temperature of order \cite{Cicoli:2010ha}: 
+\begin{equation}
+T_{\rm rh,in} \sim \sqrt{\Gamma_{\sigma} M_p} \sim \frac{m_\sigma}{M_s} \sqrt{m_\sigma M_p} \sim \frac{M_p}{\mathcal{V}}\,.
+\label{Trhin}
+\end{equation}
+If $\tau_n$ supports a hidden sector, when $\sigma$ decays, the inflaton will dump most of its energy to hidden sector degrees of freedom. This is not necessarily a problem since these hidden degrees of freedom get diluted by the decay of the lightest modulus. On the other hand, one has to check that the reheating temperature due to the decay of the inflaton does not give rise to thermal effects which destabilise the zero-temperature minimum. In LVS models this requires \cite{Anguelova:2009ht}:
+\begin{equation}
+T_{\rm rh,in} < T_{\rm max} \sim \frac{M_p}{\mathcal{V}^{3/4}}\,,
+\end{equation}
+which is safely satisfied for $\mathcal{V} \gg 1$ by the reheating temperature given in (\ref{Trhin}).
+
+As shown in (\ref{shift}), during inflation all the blow-up modes $\tau_j$, $j=1,...,n-1$ get shifted from their late-time minimum. However they have a mass of order (\ref{msigma}) which makes them heavier than the inflationary Hubble scale given in (\ref{eq:v0}) since:
+\begin{equation}
+\left(\frac{ m_{\sigma_j}}{H_{\rm inf}}\right)^2 \sim \frac{\mathcal{V}}{\sqrt{\ln\mathcal{V}}} \gg 1\,.
+\end{equation}
+Therefore, after the end of inflation, these fields quickly relax to their late-time minimum and do not play any relevant r\^ole for the post-inflationary evolution. 
+
+The situation is completely different for $\tau_b$ which is the lightest modulus. In fact, the canonically normalised `big' modulus $\chi$ acquires a mass whose exact form depends on the way to achieve a dS vacuum \cite{Aparicio:2014wxa}: 
+\begin{equation}
+{\rm dS}_1: \quad m_\chi^2 \simeq \frac{9}{16 a_n \tau_n} \frac{\hat\xi \,m_{3/2}^2}{\mathcal{V}}\,, \qquad \qquad 
+{\rm dS}_2: \quad m_\chi^2 \simeq \frac{27}{8 a_n \tau_n} \frac{\hat\xi\, m_{3/2}^2}{\mathcal{V}} \,,
+\label{eq:volumemass}
+\end{equation}
+implying that $\chi$ has a mass of order $H$ during inflation. Moreover, as shown in (\ref{shift}), $\chi$ gets a displacement in Planck units during inflation of order:
+\begin{equation}
+\chi = \sqrt{\frac 23}\ln\mathcal{V}\quad\Rightarrow\quad \Delta\chi = \chi_{\rm inf} -\chi \underset{n\gg 1}{\simeq} \frac{2\chi}{n} =
+\frac{2}{n} \sqrt{\frac 23}\ln\mathcal{V} \sim \mathcal{O}(1)\,.
+\end{equation}
+Thus right after inflation $\chi$ starts oscillating around its minimum with an initial amplitude of order $M_p$. Being only gravitationally coupled to other fields, $\chi$ decays very late when it dominates the energy density of the universe, leading to dilution of any previously produced relic abundance and a final reheating temperature \cite{DMDRcorr}:
+\begin{equation} \label{eq:treheatingmod}
+T_{\rm rh} \simeq \frac{0.3}{g_*^{1/4} \sqrt{\Delta N_{\rm eff}}}\,m_\chi\sqrt{\frac{m_\chi}{M_p}}\,,
+\end{equation}
+where $g_*$ is the number of relativistic degrees of freedom at reheating while $\Delta N_{\rm eff}$ is the amount of extra axionic dark radiation produced from the decay of the lightest modulus \cite{Cicoli:2012aq,Cicoli:2015bpq}. For $g_*\sim 100$ and $\Delta N_{\rm eff}\simeq 0.5$,\footnote{The actual prediction for axionic dark radiation is model-dependent: in MSSM-like scenarios the main visible sector decay channel for $\chi$ is into Higgses, while in split SUSY models $\phi$ can also decay into squarks and sleptons. For details, see \cite{Cicoli:2012aq,Cicoli:2015bpq}.} and using the numbers in Tab. \ref{tab:tab1}, we find $m_\chi \sim 10^{8}-10^{9}$ GeV and $T_{\rm rh}\sim 10^{3}-10^{4}$ GeV. This value of $T_{\rm rh}$ is larger than BBN temperatures of order $1$ MeV, and so this model does not suffer from any cosmological moduli problem \cite{CMP}. Moreover, since $m_\chi/m_{3/2} \sim \mathcal{V}^{-1/2} \ll 1$, the decay of the lightest modulus into gravitinos is kinematically forbidden, implying the absence of moduli-induced gravitino problem \cite{gravProbl}.
+
+
+\subsection{Generation of baryon asymmetry}
+\label{ssec:baryonasymmetry}
+
+We now compute the baryon asymmetry of the universe generated via the AD mechanism in our model. As mentioned earlier, the decay of the lightest modulus $\chi$ reheats the universe at late times and dilutes the entropy produced from the decay of the inflaton $\sigma$. We are therefore interested in deriving the ratio $n_{\scriptscriptstyle \rm B/s$, where $n_{\scriptscriptstyle \rm B$ is the baryon number density stored in the AD field and $s$ is the entropy density produced by the decay of $\chi$. The decay of $\phi$ takes place when its VEV is redshifted to a sufficiently low value such that $y |\phi| < m_\phi$ ($y$ being a gauge or Yukawa coupling), at which point the decay of $\phi$ to the fields that are coupled to it and acquire an induced mass $y |\phi|$, is kinematically allowed. We have checked that even for $\phi_0 \sim M_p$, the decay of the AD field occurs well before the decay of $\chi$, and hence any entropy that it may produce will be diluted by the decay of $\chi$. 
+
+Let us focus on the split SUSY case where the AD field can acquire a tachyonic mass during inflation. In this case, $m_\phi \sim m_\chi \sqrt{\ln\mathcal{V}} > m_\chi\sim  H_{\rm inf}$, implying that both $\phi$ and $\chi$ start oscillating straight after the end of inflation when the AD field makes a very rapid transition from the tachyonic to the non-tachyonic regime.\footnote{In cases where $m_\phi \ll H_{\rm inf}$, thermal effects from inflaton decay may lead to early oscillations of the AD field~\cite{thermal}. However, this is not an important effect in our model.} Hence, at the onset of $\chi$ oscillations, i.e. at $H \sim H_{\rm inf}$, we have:          
+\begin{equation} \label{ratio2}
+{n_\phi \over n_\chi} \simeq {m_\phi \over m_\chi} \left({\phi_0 \over M_p}\right)^2\,, 
+\end{equation}
+where we have used $n_\chi \simeq m_\chi M^2_p$ and $n_\phi \simeq m_\phi \phi^2_0$. 
+The BAU generated via the AD mechanism is then given by:
+\begin{equation} 
+{n_{\scriptscriptstyle \rm B \over s} =  {n_{\scriptscriptstyle \rm B \over n_\phi} {n_\phi \over n_\chi} {n_\chi \over s} ,
+\end{equation}
+where:
+\begin{equation}
+{n_\chi \over s} = {3 T_{\rm rh} \over 4 m_\chi}\,,
+\end{equation}
+is the yield from $\chi$ decay and $T_{\rm rh}$ is the reheating temperature of the universe after $\chi$ decay. After using the expression (\ref{asym}), and for $n \theta_i \sim \mathcal{O}(1)$, we arrive at the final result for baryon asymmetry (see also \cite{Kane:2011ih} for a similar result):
+\begin{equation} \label{bau1}
+{n_{\scriptscriptstyle \rm B \over s} \sim {|A| \over m_\chi} {T_{\rm rh} \over m_\chi} \left({\phi_0 \over M_p}\right)^2\,.
+\end{equation}
+
+\section{Results and discussion}
+\label{SecResults}
+
+\subsection{Numerical results}
+\label{sssec:numericalresults}
+
+In this Section, we numerically analyse the parameters of the model so that the following requirements are satisfied: 
+\begin{itemize}
+\item[a)] A successful model with around $60$ e-foldings of inflation that creates density perturbations of the correct size with
+all underlying parameters in their natural range;
+
+\item[b)] Low-energy gauginos which are well motivated by gauge coupling unification;
+
+\item[c)] A correct generation of the observed BAU, $n_{\scriptscriptstyle \rm B/s \simeq 10^{-10}$, via the AD mechanism.
+\end{itemize}
+
+Requirement $a)$ has already been studied in Sec. \ref{ssec:KMI}. For concreteness, we consider the points in the parameter space listed in Tab. \ref{tab:tab1}. Scalar masses are completely determined by requirement $a)$ since, as we have shown in (\ref{sssec:scalarmasses}), they depend only on $W_0$ and $\mathcal{V}$ once the string coupling constant has been fixed. On the contrary, requirement $b)$ can be easily fulfilled using the additional freedom of gaugino masses: the possibility to vary $\lambda(U,S)$ in (\ref{eq:gauginomasses}) by tuning background fluxes. In particular we require that $M = 5 \times 10^3 \, \rm GeV$ when $W_0 = 100$ and the value of the volume is the corresponding $\left.\mathcal{V}\right|_{\scriptscriptstyle \rm COBE}$ in case $(C)$ of Tab. \ref{tab:tab1}. In order for requirement $c)$ to be fulfilled, it is necessary to find the exact value of the AD field displacement $\phi_0/M_p$ such that the baryon asymmetry estimated in (\ref{bau1}) matches the measured value. We focus on the split SUSY case where late-time scalars are non-tachyonic while the AD field during inflation becomes tachyonic. Moreover we assume that the A-terms are determined solely by the first term in (\ref{eq:atermsdilaton}). We stress that these choices do not affect the qualitative behaviour of our final results. 
+
+In Fig.~\ref{fig:plot1} we illustrate the correlation between the produced baryon asymmetry and the gaugino masses in the split SUSY case. For the sake of concreteness we choose to work in the dS$_1$ scenario but the results are not dramatically affected by changing the dS sector. Differently coloured bands in Fig.~\ref{fig:plot1} correspond to different ranges for the reheating temperature. The dotted black lines correspond to constant values of $W_0$ in the natural range: $1, 10, 100$ from left to right. The continuous blue line corresponds to the locus where the amplitude of the density perturbations matches the measured value. It intersects the dotted black lines in the blue dots which respectively correspond to the cases $(A), (B), (C)$ in Tab. \ref{tab:tab1}. In Tab.~\ref{tab:tab2} we report the values of scalar masses, which are around $10^{9-10}$ GeV, the reheating temperature, which is larger than $100$ GeV, and the displacement of the AD field. Notice that it is possible to satisfy the requirements $a)$, $b)$ and $c)$ for natural $\mathcal{O}(1)$ values of the parameter $A_n$ and for $\phi_0 \sim 0.1\,M_p$. Moreover $T_{\rm rh}$ shown in Tab.~\ref{tab:tab2} and given in~(\ref{eq:treheatingmod}) is completely determined by the requirement of getting the right amplitude of density perturbations.
+
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=0.55\textwidth, angle=0]{psnew1.eps}
+\caption{$T_{\rm rh}$ as a function of $\mathcal{V}$ and gaugino masses $M$ for $a_i=2\pi$ and $g_s = 0.06$. The blue dots correspond to the points of the parameter space in Tab.~\ref{tab:tab1}. The amplitude of density perturbations in these points matches the measured one provided that the displacement of the AD field at the start of oscillations is that given in Tab.~\ref{tab:tab2}.} \label{fig:plot1}
+\end{center}
+\end{figure}
+
+
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{ccccc}
+\hline
+ & $M \, [\rm{GeV}]$ & $m_0 \, [\rm{GeV}]$ & $T_{\rm rh} \, [\rm{GeV}]$ & $\phi_0/M_p$\\
+\hline
+$(A)$ & $5.4 \times 10^5$ & $3 \times 10^{10}$ & $6.7 \times 10^3$ & $0.03$ \\
+\hline
+$(B)$ & $5.2 \times 10^4$ & $9.2 \times 10^9$ & $1.1 \times 10^3$ & $0.08$ \\
+\hline
+$(C)$ & $5 \times 10^3$ & $2.8 \times 10^9$ & $195$ & $0.19$ \\
+\hline
+\end{tabular}
+\end{center}
+\caption{Gaugino masses $M$, scalar masses $m_0$, reheating temperature $T_{\rm rh}$ and displacement $\phi_0/M_p$ needed to match the measured amplitude of density perturbations for the cases listed in Tab.~\ref{tab:tab1}.}
+\label{tab:tab2}
+\end{table}
+
+
+\subsection{Origin of dark matter abundance}
+
+In order to determine whether the DM relic abundance has a thermal or non-thermal origin, we have to compare $T_{\rm rh}$ with the DM freeze-out temperature $T_{\rm f} \sim m_{\scriptscriptstyle \rm DM/20$. If $T_{\rm rh} \, > \, T_{\rm f}$, the DM content is set by thermal freeze-out while, for $T_{\rm rh} \, < \, T_{\rm f}$, the DM abundance is produced non-thermally from the decay of the lightest modulus. Since the lowest reheating temperature that is compatible with successful inflation and baryogenesis is $T_{\rm rh} \, \simeq \, 195$ GeV, the non-thermal mechanism requires $m_{\scriptscriptstyle \rm DM \, > \, 3.9$ TeV. Due to the gravity-mediated pattern of gaugino masses, the lightest gaugino is the Bino, and hence the DM candidate in our model is either a Bino- or a Higgsino-like neutralino. Binos typically have a small annihilation rate, $\langle \sigma_{\rm ann} v \rangle \, < \, 3 \times 10^{-26}$ cm$^3$ s$^{-1}$, especially for a split SUSY spectrum because of the extremely heavy sparticles. For Higgsinos with a mass above $\simeq 1.2$ TeV, we also have $\langle \sigma_{\rm ann} v \rangle \, < \, 3 \times 10^{-26}$ cm$^3$ s$^{-1}$.
+
+Because of the smallness of the annihilation rate, non-thermal DM production must proceed through the `Branching' scenario where the correct relic abundance is produced directly from the decay of the lightest modulus~\cite{NonThDMinSeqLVS}. In this scenario, the DM abundance is given by:
+\begin{equation} \label{prodabun}
+\left({n_{\scriptscriptstyle \rm DM \over s}\right)_{\rm non-th} = {3 T_{\rm rh} \over 4 m_\chi} ~ {\rm Br}_{\scriptscriptstyle \rm DM \,,
+\end{equation}
+where ${\rm Br}_{\scriptscriptstyle \rm DM$ is the branching ratio for producing $R$-parity odd particles (which eventually decay to the DM particle) from modulus decay. Even allowing for ${\rm Br}_{\scriptscriptstyle \rm DM \sim 10^{-3}$, which is the smallest value allowed in this scenario~\cite{ADS}, and after using the values in Tab. \ref{tab:tab2}, we find that the `Branching' scenario would lead to DM overproduction by few orders of magnitude above the observed value: 
+\begin{equation} \label{obsabun}
+\left({n_{\scriptscriptstyle \rm DM \over s}\right)_{\rm obs} \simeq 5 \times 10^{-10} ~ \left({1 ~ {\rm GeV} \over m_{\scriptscriptstyle \rm DM}\right)\,.
+\end{equation}
+This implies that non-thermal DM is not compatible with inflation and baryogenesis in this model. We are therefore forced to consider thermal Higgsino DM with $m_{\scriptscriptstyle \rm DM \simeq 1.2$ TeV where thermal freeze-out can produce the right DM abundance. For $m_{\scriptscriptstyle \rm DM < 1.2$ TeV, the Higgsino is thermally underproduced, and so we need to consider mixed DM, as in the axion-Higgsino scenario~\cite{Howie}.                
+
+Regarding the production of dark radiation, it has recently been shown \cite{Cicoli:2015bpq} that split SUSY models arising in sequestered string compactifications do not feature any overproduction. This is due to the large suppression of the excess of the effective neutrino number $\Delta N_{\rm eff}$ coming from the decay of $\chi$ into MSSM scalars, which is allowed in a vast region of the parameter space.
+
+Finally we would like to comment on obtaining a large VEV for the AD field and possible implications for the DM content of the universe. It is seen in Tab. \ref{tab:tab2} that the generation of the observed BAU needs $m_\phi \sim 10^9$-$10^{10}$ GeV and $\phi_0 \sim 0.1$ $M_p$. It is possible to get $\phi_0$ in this ballpark, see~(\ref{initial}), if the AD field is lifted by a non-renormalisable term of level $n = 9$ where $\lambda_9 \sim 1$.\footnote{In fact, all of the MSSM flat directions are lifted at this level if the superpotential includes all higher-order terms that are compatible with gauge symmetry~\cite{gkm}.} In this case, depending on the Higgsino mass, one can have either Higgsino or mixed DM scenario as mentioned above. 
+
+One may also obtain the required value of $\phi_0$ if the AD field is lifted by a renormalisable term with $n = 3$. However, in this case, a very small coupling $\lambda_3 \sim 10^{-8}-10^{-7}$ is needed. This is much smaller than all of the SM Yukawa couplings, but it may arise from renormalisable superpotential terms that violate $R$-parity (namely $LLE$, $UDD$, $QLD$ terms). Such terms destabilise the Higgsino, and a question is whether this can lead to a cosmologically consistent scenario. To answer this, let us consider the situation in the presence of the $LLE$ term. In this case, the Higgsino can decay to three leptons via an off-shell slepton. The decay rate is $\Gamma_{\tilde H} \sim (\lambda_3 y_l)^2 m^5_{\tilde H}/(8 \pi \cdot 32 \pi^2) m^4_{\tilde l}$, where $y_l$ is a leptonic Yukawa coupling, $m_{\tilde H}$ and $m_{\tilde l}$ denote the Higgsino and slepton masses respectively, and the factor of $32 \pi^2$ arises due to the three-body final state. For $\lambda_3 \sim 10^{-7}$, $y_l \sim 10^{-2}$, $m_{\tilde l} \sim 10^{10}$ GeV, and $m_{\tilde H} \lesssim 200$ GeV, we may find a decay lifetime $\tau_{\tilde H} \gtrsim 10^{27}$ sec. This is compatible with the tightest cosmological bounds on decaying DM from the cosmic microwave background~\cite{slatyer}. The DM content of the universe can be explained within a mixed scenario where the Higgsino is the sub-dominant component.                
+
+\section{Conclusions}
+\label{Concl}
+
+In this paper, we have presented a successful embedding of AD baryogenesis in type IIB sequestered string models. AD baryogenesis is a suitable mechanism for generating the observed BAU at temperatures below the EW scale. Such relatively low temperatures typically arise from the late-time decay of long-lived moduli in string compactifications. However, an explicit embedding of AD baryogenesis in such models is non-trivial as supergravity corrections can ruin the flatness of the AD field that is essential for the success of the AD mechanism.
+
+The model presented here is in the context of LVS models and describes the cosmological evolution of the universe from inflation to the final stage of reheating by the decay of the volume modulus. Inflation is driven by a blow-up mode and generating density perturbations of the correct size requires gaugino masses within the range $M \sim 10^4$-$10^5$ GeV. The crucial point is that if the K\"ahler metric of the matter fields has a suitable dependence on the inflaton, sleptons and squarks in split SUSY models can become tachyonic during inflation, while being non-tachyonic in the post-inflationary era. In consequence, the AD field can develop a large VEV during inflation and its subsequent motion can lead to the generation of a baryon asymmetry that survives the dilution due to entropy release in the final stage of reheating driven by the decay of the lightest modulus. The final reheating temperature is sufficiently high to allow thermal Higgsino-like DM with a mass around $1$ TeV. 
+   
+
+\section*{Acknowledgements}
+
+We would like to thank B. Dutta, G. Kane, A. Maharana, D. Marsh, F. Quevedo, K. Sinha and S. Watson for useful discussions. The work of R.A. is supported in part by NSF Grant PHY-1417510. This work was initiated at the Aspen Center for Physics, which is supported by NSF Grant PHY-1066293.
+
+
+
+\begin{thebibliography}{99}
+
+\bibitem{BAU}
+For reviews, see: L. Canetti, M. Drewes and M. Shaposhnikov, New J. Phys. {\bf 14}, 095012 (2012) [e-Print: arXiv:1204.4186 [hep-ph]]; M. Dine and A. Kusenko, Rev. Mod. Phys. {\bf 76}, 1 (2003) [e-Print: hep-ph/0303065].
+
+\bibitem{lepto}
+For reviews, see: S. Blanchet and P. Di Bari, New J.
+Phys. 14, 125012 (2012) [e-Print: arXiv:1211.0512 [hepph]];
+W. Buchmuller, R. D. Peccei and T. Yanagida,
+Ann. Rev. Nucl. Part. Sci. 55, 311 (2005) [e-Print: hep-ph/0502169].
+
+\bibitem{EW}
+For a recent review, see: D. Morrissey and M. J.
+Ramsey-Musolf, New J. Phys. 14, 125003 (2012) [e-Print: arXiv:1206.2942 [hep-ph]].
+
+\bibitem{ksw}
+For a review, see: G. Kane, K. Sinha and S. Watson, Int. J. Mod. Phys. {\bf D} 24 (2015) 1530022 [e-Print: arXiv:1502.07746 [hep-th]].
+
+\bibitem{SingD3s}
+  G.~Aldazabal, L.~E.~Ibanez, F.~Quevedo and A.~M.~Uranga,
+  ``D-branes at singularities: A Bottom up approach to the string embedding of the standard model,''
+  JHEP {\bf 0008} (2000) 002
+  [hep-th/0005067];
+  S.~Krippendorf, M.~J.~Dolan, A.~Maharana and F.~Quevedo,
+ ``D-branes at Toric Singularities: Model Building, Yukawa Couplings and Flavour Physics,''
+  JHEP {\bf 1006} (2010) 092
+  [arXiv:1002.1790 [hep-th]].
+  M.~J.~Dolan, S.~Krippendorf and F.~Quevedo,
+  ``Towards a Systematic Construction of Realistic D-brane Models on a del Pezzo Singularity,''
+  JHEP {\bf 1110} (2011) 024
+  [arXiv:1106.6039 [hep-th]].
+
+\bibitem{CYembedding}
+M.~Cicoli, S.~Krippendorf, C.~Mayrhofer, F.~Quevedo and R.~Valandro,
+  ``D-Branes at del Pezzo Singularities: Global Embedding and Moduli Stabilisation,''
+  JHEP {\bf 1209} (2012) 019
+  [arXiv:1206.5237 [hep-th]];
+  %%CITATION = ARXIV:1206.5237;%%
+M.~Cicoli, D.~Klevers, S.~Krippendorf, C.~Mayrhofer, F.~Quevedo and R.~Valandro,
+  ``Explicit de Sitter Flux Vacua for Global String Models with Chiral Matter,''
+  JHEP {\bf 1405} (2014) 001
+  [arXiv:1312.0014 [hep-th]].
+  %%CITATION = ARXIV:1312.0014;%%
+
+\bibitem{CMP}
+G.~D.~Coughlan, W.~Fischler, E.~W.~Kolb, S.~Raby and G.~G.~Ross,
+  ``Cosmological Problems for the Polonyi Potential,''
+  Phys.\ Lett.\ B {\bf 131} (1983) 59;
+  %%CITATION = PHLTA,B131,59;%%
+T.~Banks, D.~B.~Kaplan and A.~E.~Nelson,
+  ``Cosmological implications of dynamical supersymmetry breaking,''
+  Phys.\ Rev.\ D {\bf 49} (1994) 779;
+  %%CITATION = HEP-PH/9308292;%%
+B.~de Carlos, J.~A.~Casas, F.~Quevedo and E.~Roulet,
+  ``Model independent properties and cosmological implications of the dilaton and moduli sectors of 4-d strings,''
+  Phys.\ Lett.\ B {\bf 318} (1993) 447.
+  %%CITATION = HEP-PH/9308325;%%
+
+\bibitem{gravProbl}
+M.~Endo, K.~Hamaguchi and F.~Takahashi,
+  ``Moduli-induced gravitino problem,''
+  Phys.\ Rev.\ Lett.\  {\bf 96} (2006) 211301;
+  %%CITATION = HEP-PH/0602061;%%
+S.~Nakamura and M.~Yamaguchi,
+  ``Gravitino production from heavy moduli decay and cosmological moduli problem revived,''
+  Phys.\ Lett.\ B {\bf 638} (2006) 389.
+  %%CITATION = HEP-PH/0602081;%%
+
+\bibitem{InflReview}
+M.~Cicoli and F.~Quevedo,
+  ``String moduli inflation: An overview,''
+  Class.\ Quant.\ Grav.\  {\bf 28} (2011) 204001
+  doi:10.1088/0264-9381/28/20/204001
+  [arXiv:1108.2659 [hep-th]];
+  %%CITATION = doi:10.1088/0264-9381/28/20/204001;%%
+  %46 citations counted in INSPIRE as of 08 Apr 2016
+	C.~P.~Burgess, M.~Cicoli and F.~Quevedo,
+  ``String Inflation After Planck 2013,''
+  JCAP {\bf 1311} (2013) 003
+  doi:10.1088/1475-7516/2013/11/003
+  [arXiv:1306.3512 [hep-th]];
+  %%CITATION = doi:10.1088/1475-7516/2013/11/003;%%
+  %68 citations counted in INSPIRE as of 08 Apr 2016
+  C.~P.~Burgess, M.~Cicoli, S.~de Alwis and F.~Quevedo,
+  ``Robust Inflation from Fibrous Strings,''
+  arXiv:1603.06789 [hep-th].
+  %%CITATION = ARXIV:1603.06789;%%
+  %3 citations counted in INSPIRE as of 08 Apr 2016
+
+\bibitem{LVS}
+   V.~Balasubramanian, P.~Berglund, J.~P.~Conlon and F.~Quevedo,
+  ``Systematics of moduli stabilisation in Calabi-Yau flux compactifications,''
+  JHEP {\bf 0503} (2005) 007
+  doi:10.1088/1126-6708/2005/03/007
+  [hep-th/0502058];
+M.~Cicoli, J.~P.~Conlon and F.~Quevedo,
+  ``General Analysis of LARGE Volume Scenarios with String Loop Moduli Stabilisation,''
+  JHEP {\bf 0810} (2008) 105
+  doi:10.1088/1126-6708/2008/10/105
+  [arXiv:0805.1029 [hep-th]].
+  %%CITATION = doi:10.1088/1126-6708/2008/10/105;%%
+  %89 citations counted in INSPIRE as of 19 Jan 2016
+
+\bibitem{Blumenhagen:2009gk}
+  R.~Blumenhagen, J.~P.~Conlon, S.~Krippendorf, S.~Moster and F.~Quevedo,
+  ``SUSY Breaking in Local String/F-Theory Models,''
+  JHEP {\bf 0909} (2009) 007
+  [arXiv:0906.3297 [hep-th]].
+
+\bibitem{Aparicio:2014wxa}
+  L.~Aparicio, M.~Cicoli, S.~Krippendorf, A.~Maharana, F.~Muia and F.~Quevedo,
+  ``Sequestered de Sitter String Scenarios: Soft-terms,''
+  JHEP {\bf 1411} (2014) 071
+  [arXiv:1409.1931 [hep-th]].
+
+\bibitem{Affleck:1984fy}
+  I.~Affleck and M.~Dine,
+  ``A New Mechanism for Baryogenesis,''
+  Nucl.\ Phys.\ B {\bf 249} (1985) 361.
+
+\bibitem{Conlon:2005jm}
+  J.~P.~Conlon and F.~Quevedo,
+  ``Kahler moduli inflation,''
+  JHEP {\bf 0601} (2006) 146
+  [hep-th/0509012].
+ 
+\bibitem{Dine:1995kz}
+  M.~Dine, L.~Randall and S.~D.~Thomas,
+  ``Baryogenesis from flat directions of the supersymmetric standard model,''
+  Nucl.\ Phys.\ B {\bf 458} (1996) 291
+  [e-Print: hep-ph/9507453].
+
+\bibitem{gkm}
+T.~Gherghetta, C.~F.~Kolda and S.~P.~Martin,
+  ``Flat directions in the scalar potential of the supersymmetric standard model,''
+  Nucl.\ Phys.\ B {\bf 468} (1996) 37 [e-Print: hep-ph/9510370].
+
+\bibitem{Dine95}
+  M.~Dine, L.~Randall and S.~D.~Thomas,
+  ``Supersymmetry breaking in the early universe,''
+  Phys.\ Rev.\ Lett.\  {\bf 75} (1995) 398 [e-Pri9nt: hep-ph/9503303].
+
+\bibitem{flat}
+For a recent review, see: R.~Allahverdi and A.~Mazumdar,
+  ``A mini review on AD baryogenesis,''
+  New J.\ Phys.\  {\bf 14} (2012) 125013; for a detalied review, see:  K.~Enqvist and A.~Mazumdar,
+  ``Cosmological consequences of MSSM flat directions,''
+  Phys.\ Rept.\  {\bf 380} (2003) 99
+  [hep-ph/0209244]. 
+
+\bibitem{Linde}
+  A.~D.~Linde,
+  ``Particle physics and inflationary cosmology,''
+  Contemp.\ Concepts Phys.\  {\bf 5} (1990) 1
+  [hep-th/0503203].
+
+\bibitem{gmo}
+  M.~K.~Gaillard, H.~Murayama and K.~A.~Olive,
+  ``Preserving flat directions during inflation,''
+  Phys.\ Lett.\ B {\bf 355} (1995) 71
+  [hep-ph/9504307].
+
+\bibitem{adm}
+  R.~Allahverdi, M.~Drees and A.~Mazumdar,
+  ``Hubble induced radiative corrections and AD baryogenesis,''
+  Phys.\ Rev.\ D {\bf 65} (2002) 065010
+  [hep-ph/0110136].
+
+\bibitem{Casas:1997uk}
+  J.~A.~Casas and G.~B.~Gelmini,
+  ``Conditions for viable AD baryogenesis: Implications for string theories,''
+  Phys.\ Lett.\ B {\bf 410} (1997) 36
+  doi:10.1016/S0370-2693(97)00971-4
+  [hep-ph/9706439].
+
+\bibitem{Dutta:2010sg}
+  B.~Dutta and K.~Sinha,
+  ``AD Baryogenesis in Effective Supergravity,''
+  Phys.\ Rev.\ D {\bf 82} (2010) 095003
+  doi:10.1103/PhysRevD.82.095003
+  [arXiv:1008.0148 [hep-th]].
+
+\bibitem{Marsh:2011ud}
+  D.~Marsh,
+  ``Towards Constraining AD Baryogenesis,''
+  JHEP {\bf 1205} (2012) 041
+  doi:10.1007/JHEP05(2012)041
+  [arXiv:1108.4687 [hep-th]].
+
+\bibitem{Dutta:2012mw}
+  B.~Dutta and K.~Sinha,
+  ``Holomorphic Bisectional Curvatures, Supersymmetry Breaking, and AD Baryogenesis,''
+  Phys.\ Rev.\ D {\bf 86} (2012) 103517
+  doi:10.1103/PhysRevD.86.103517
+  [arXiv:1205.6267 [hep-th]].
+
+\bibitem{ModStabChir}
+M.~Cicoli, C.~Mayrhofer and R.~Valandro,
+  ``Moduli Stabilisation for Chiral Global Models,''
+  JHEP {\bf 1202} (2012) 062
+  [arXiv:1110.3333 [hep-th]];
+  %%CITATION = ARXIV:1110.3333;%%
+  	
+\bibitem{BBHL}
+K.~Becker, M.~Becker, M.~Haack and J.~Louis,
+  ``Supersymmetry breaking and alpha-prime corrections to flux induced potentials,''
+  JHEP {\bf 0206} (2002) 060
+  doi:10.1088/1126-6708/2002/06/060
+  [hep-th/0204254].
+
+\bibitem{Conlon:2006tj}
+  J.~P.~Conlon, D.~Cremades and F.~Quevedo,
+  ``Kahler potentials of chiral matter fields for Calabi-Yau string compactifications,''
+  JHEP {\bf 0701} (2007) 022
+  doi:10.1088/1126-6708/2007/01/022
+  [hep-th/0609180].
+
+\bibitem{Gukov:1999ya}
+  S.~Gukov, C.~Vafa and E.~Witten,
+  ``CFT's from Calabi-Yau four folds,''
+  Nucl.\ Phys.\ B {\bf 584} (2000) 69
+   [Nucl.\ Phys.\ B {\bf 608} (2001) 477]
+  [hep-th/9906070].
+  
+\bibitem{Cicoli:2015ylx}
+  M.~Cicoli, F.~Quevedo and R.~Valandro,
+  ``De Sitter from T-branes,''
+  arXiv:1512.04558 [hep-th].
+  %%CITATION = ARXIV:1512.04558;%%
+  %1 citations counted in INSPIRE as of 19 janv. 2016
+	
+\bibitem{Cicoli:2012fh}
+  M.~Cicoli, A.~Maharana, F.~Quevedo and C.~P.~Burgess,
+  ``De Sitter String Vacua from Dilaton-dependent Non-perturbative Effects,''
+  JHEP {\bf 1206} (2012) 011
+  [arXiv:1203.1750 [hep-th]].
+
+\bibitem{Cicoli:2010ha}
+  M.~Cicoli and A.~Mazumdar,
+  ``Reheating for Closed String Inflation,''
+  JCAP {\bf 1009} (2010) 09,  025
+  doi:10.1088/1475-7516/2010/09/025
+  [arXiv:1005.5076 [hep-th]];
+  %%CITATION = doi:10.1088/1475-7516/2010/09/025;%%
+  %43 citations counted in INSPIRE as of 26 Feb 2016
+M.~Cicoli and A.~Mazumdar,
+  ``Inflation in string theory: A Graceful exit to the real world,''
+  Phys.\ Rev.\ D {\bf 83} (2011) 063527
+  doi:10.1103/PhysRevD.83.063527
+  [arXiv:1010.0941 [hep-th]].
+  %%CITATION = doi:10.1103/PhysRevD.83.063527;%%
+  %30 citations counted in INSPIRE as of 26 Feb 2016
+
+\bibitem{Anguelova:2009ht}
+  L.~Anguelova, V.~Calo and M.~Cicoli,
+  ``LARGE Volume String Compactifications at Finite Temperature,''
+  JCAP {\bf 0910} (2009) 025
+  doi:10.1088/1475-7516/2009/10/025
+  [arXiv:0904.0051 [hep-th]].
+
+\bibitem{DMDRcorr}
+  R.~Allahverdi, M.~Cicoli, B.~Dutta and K.~Sinha,
+  ``Correlation between Dark Matter and Dark Radiation in String Compactifications,''
+  JCAP {\bf 1410}, 002 (2014)
+  [arXiv:1401.4364 [hep-ph]].
+  %%CITATION = ARXIV:1401.4364;%%
+
+\bibitem{Cicoli:2012aq}
+  M.~Cicoli, J.~P.~Conlon and F.~Quevedo,
+  ``Dark radiation in LARGE volume models,''
+  Phys.\ Rev.\ D {\bf 87} (2013) no.4,  043520 [e-Print: arXiv:1208.3562 [hep-ph]];
+  %%CITATION = doi:10.1103/PhysRevD.87.043520;%%
+  %78 citations counted in INSPIRE as of 18 Mar 2016
+T.~Higaki and F.~Takahashi,
+  ``Dark Radiation and Dark Matter in Large Volume Compactifications,''
+  JHEP {\bf 1211} (2012) 125 [e-Print: arXiv:1208.3563 [hep-ph]]. 
+
+\bibitem{Cicoli:2015bpq}
+  M.~Cicoli and F.~Muia,
+  ``General Analysis of Dark Radiation in Sequestered String Models,''
+  JHEP {\bf 1512} (2015) 152 [e-Print: arXiv:1511.05447 [hep-th]].
+  %%CITATION = doi:10.1007/JHEP12(2015)152;%%
+  %1 citations counted in INSPIRE as of 19 janv. 2016
+
+\bibitem{thermal}
+R. Allahverdi, B. A. Campbell and J. R. Ellis, ``Reheating and supersymmetric flat direction baryogenesis", Nucl. Phys. B {\bf 579}, 355 (2000) [e-Print: hep-ph/0001122]; A. Anisimov and M. Dine, ``Some issues in flat direction baryogenesis", Nucl. Phys. B {\bf 619}, 729 (2001) [e-Print: hep-ph/0008058]. 
+  
+\bibitem{Kane:2011ih}
+  G.~Kane, J.~Shao, S.~Watson and H.~B.~Yu,
+  ``The Baryon-Dark Matter Ratio Via Moduli Decay After Affleck-Dine Baryogenesis,''
+  JCAP {\bf 1111} (2011) 012  [e-Print: arXiv:1108.5178 [hep-ph]].
+ % doi:10.1088/1475-7516/2011/11/012
+ % [arXiv:1108.5178 [hep-ph]].
+
+\bibitem{NonThDMinSeqLVS}
+R.~Allahverdi, M.~Cicoli, B.~Dutta and K.~Sinha,
+  ``Nonthermal dark matter in string compactifications,''
+  Phys.\ Rev.\ D {\bf 88}, 095015 (2013)
+  [arXiv:1307.5086 [hep-ph]].
+  %%CITATION = ARXIV:1307.5086;%%
+
+\bibitem{ADS}
+R. Allahverdi, B. Dutta and K. Sinha, ``Cladogenesis: Baryon-Dark Matter Coincidence from Branchings in Moduli Decay", Phys. Rev. D {\bf 83}, 083502 (2011) [e-Print: arXiv:1011.1286 [hep-ph]].
+	
+\bibitem{Howie}
+H. Baer, A. Lessa, S. Rajagopalan and W. Sreethawong, ``Mixed axion/neutralino cold dark matter in supersymmetric models", JCAP {\bf 1106}, 031 (2011) [e-Print: arXiv:1103.5413 [hep-ph]].
+
+\bibitem{slatyer}
+T. R. Slatyer,``Energy Injection And Absorption In The Cosmic Dark Ages", Phys. Rev. D {\bf 87}, 123513 (2013) [e-Print: arXiv:1211.0283 [astro-ph.CO]]. 
+
+
+\end{thebibliography}
+
+\end{document}

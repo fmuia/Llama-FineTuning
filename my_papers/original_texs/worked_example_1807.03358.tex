@@ -1,0 +1,238 @@
+ \section{A worked example \label{sec:example}}
+ 
+ To illustrate the results obtained so far, we will discuss an explicit parameter example in this section. The most natural scalar potential for an axion is a periodic potential, breaking the shift symmetry of the axion down to a discrete symmetry due to non-perturbative effects,
+ \begin{equation}
+  V = V_0 \left[1 - \cos\left( \frac{\phi}{f_\phi} \right) \right] \simeq \frac{1}{2} m^2 \phi^2 - \frac{\lambda}{4} \phi^4 \,.
+  \label{eq:ScalarPotential}
+ \end{equation}
+In the following we will take $m = 7.5 \times 10^{-6}~M_P$ and $\lambda = 1.1 \times 10^{-13}$ (corresponding to $V_0^{1/4} 
+\simeq 8.3 \times 10^{-3}~M_P$ and $f_\phi \simeq 9.2~M_P$). This parameter choice ensures the correct normalization of the scalar power spectrum at CMB scales as well as a tensor-to-scalar ratio in agreement with the Planck data~\cite{Ade:2015lrj}.\footnote{We note that natural inflation, described by Eq.~\eqref{eq:ScalarPotential} is in some tension with the latest Planck data. For our purposes, the precise form of the potential is not relevant, so we stick with Eq.~\eqref{eq:ScalarPotential} for simpicity. For a discussion of the impact of different types of scalar potentials in abelian axion inflation, see Ref.~\cite{Domcke:2016bkh}.} 
+The remaining parameters are then the gauge-field inflaton coupling $\alpha/\Lambda$ which directly controls the size of the parameter $\xi$ and the gauge coupling $e$. In the following we choose $\alpha/\Lambda = 30$ and $e = 5 \times 10^{-3}$. This parameter choice places the matching point between the abelian and the non-abelian regime within the observable last 55 e-folds of inflation while keeping a safe distance from the CMB scales. It serves to illustrate the main results as well as the difficulties encountered in a concrete realization of emerging chromo-natural inflation. A generalization of this setup is briefly discussed at the end of Subsection~\ref{subsec:gaugefluctuations}.
+ 
+ The discussion in this section is organized as follows. In Subsection~\ref{subsec:gaugefluctuations} we will discuss the growth of the gauge field fluctuations with particular emphasis on the tachyonic modes as well as their backreaction on the homogeneous background field. Upon determining the range of validity of our linearized approach, we turn to the scalar and tensor power spectra in Subsection~\ref{subsec:powerspectra}.
+ 
+ \subsection{Growth of gauge field fluctutions \label{subsec:gaugefluctuations}}
+ 
+We first recall some key results about the homogeneous background evolution and the gauge field fluctuations from the previous sections:
+\begin{itemize}
+
+\item In single field inflation models, and in particular for the scalar potential considered here, the inflaton velocity $\dot \phi$ and hence the parameter $\xi$ increases during inflation.
+ 
+ \item In the far past, when $\xi<2$, the only stable solution for a classical isotropic gauge field background is the zero solution. General solutions are described by small perturbations around the zero solution.
+ 
+  \item As long as the homogeneous background  is sufficiently small, three of the six gauge field modes are tachyonically enhanced, corresponding to three copies of the abelian limit described in Sec.~\ref{sec:abelian} (see Fig.~\ref{fig:TensorModeEvolution}). In this abelian limit, the variance  $\langle A_\text{ab}^2 \rangle^{1/2}$ grows exponentially with $\xi$ and is well described by Eq.~\eqref{eq:variance_abelian}.  
+
+  \item When $\xi > 2$, a stable, non-zero background solution develops (see Sec.~\ref{sec:background}).  We refer to this second solution as the ``$c_2$-solution.'' It becomes possible that at some point, large fluctuations arising from the tachyonically enhanced modes will push the background away from the zero solution and towards the $c_2$-solution. 
+ 
+  \item The transition from an approximately-zero homogeneous background field to the $c_2$-solution occurs once the fluctuations become large enough to trigger the $c_2$-solution, $ e \langle A_\text{ab}^2 \rangle^{1/2} \sim \xi / (- \tau)$, see Eq.~\eqref{eq:transition-time}.\footnote{Eq.~\eqref{eq:BoundaryOscillatory} marks the boundary to the oscillatory regime, from where $c_i$-type solutions spiral inwards to their asymptotic $c_i$ values. As Fig.~\ref{fig:u0-of-xi} illustrated, for sufficiently large $\xi$ the $c_2$ solution becomes overwhelmingly likely. In the unlikely event that the classical background begins to evolve towards a $c_0$ solution, the gauge field background would be continued to be dominated by $\langle A_\text{ab}^2 \rangle^{1/2}$, growing according to Eq.~\eqref{eq:variance_abelian}. The resulting stochastic initial conditions will eventually trigger a $c_2$-type background. Numerically, the condition $ e \langle A_\text{ab}^2 \rangle^{1/2} \sim \xi / (- \tau)$ is basically equivalent to requiring that the magnitude of the fluctuations be of the same order as the $c_2$ solution and very similar to the requirement of Eq.~\eqref{eq:Conditionabelian}. This `matching condition' is conservative in the sense that even smaller fluctuations which reach the  $c_1$ saddle point solution (see Sec.~\ref{subsec:phase-space}) could (classically) evolve towards the $c_2$-solution. This is depicted by the dotted blue line in Fig.~\ref{fig:matching}. } This is depicted by the solid black line in Fig.~\ref{fig:matching}.
+
+  \item As the background grows, we enter the non-abelian regime.  In this regime, the background field evolves towards the isotropic $c_2$-solution where only the helicity $+2$-mode is enhanced.
+  \end{itemize}
+
+\begin{figure}
+ \centering
+ \includegraphics[width = 0.6 \textwidth]{matching.pdf}
+ \caption{Values of $\xi$ required to match the abelian and non-abelian regime as a function of the gauge coupling $e$. The horizontal and vertical gray lines indicate the parameter point used in this section. {For reference, the dashed gray lines indicate modified matching conditions, $\langle A_\text{ab}^2 \rangle^{1/2} = {\cal N} \xi /(- \tau e)$ with ${\cal N} = \{1/3, 3 \}$ parametrizing the theoretical uncertainties in the matching condition, see text. The dotted blue line indicates where $\langle A_\text{ab}^2 \rangle^{1/2}$ can reach the unstable $c_1$ background solution  (see Sec.~\ref{subsec:phase-space}). }}
+ \label{fig:matching}
+\end{figure}
+
+Based on these observations, our strategy will be the following: (i) As long as the abelian variance $\langle A_\text{ab}^2 \rangle^{1/2}$ as given in Eq.~\eqref{eq:variance_abelian} is much smaller than $\xi /(- \tau e)$ we work in the abelian limit with $f(\tau) = 0$. (ii) When $\langle A_\text{ab}^2 \rangle^{1/2} \simeq \xi /(- \tau e)$ we take $f(\tau)$ to be given by the $c_2$-solution~\eqref{eq:c2solution}. We match $\phi(\tau)$ and $\phi'(\tau)$ at this point, but turning on the term on the right-hand side of Eq.~\eqref{eq:rev_motion} will cause a discontinuity in $\phi''(\tau)$.\footnote{In the abelian regime, the corresponding term is given by the right-hand side of Eq.~\eqref{eq:rev_motion} after inserting Eq.~\eqref{eq:rev_EB}. For the parameter point discussed in this section, this is about a factor 10 smaller than the non-abelian expression at the matching point.} We ensure that for the parameter point we consider this term is sub-dominant, so as to limit any unphysical effects here. (iii) We compute the evolution of all degrees of freedom in this background, tracking each mode from the sub- to the super-horizon regime. Note that for smaller values of the gauge coupling, the transition from the abelian to the non-abelian regime at $ e \langle A_\text{ab}^2 \rangle^{1/2} = \, \xi/(- \tau)$ requires larger values of $\xi$, see Fig.~\ref{fig:matching}.
+
+Several comments are in order. Firstly, our matching procedure from the abelian to the non-abelian regime should be seen as a rough order-of-magnitude estimate only, and the results for the evolution of the background and of the fluctuations in this transition regime should be treated with care accordingly. Secondly, the linearization we are using is justified~\footnote{Notice that this is the same criterion adopted in~\cite{Adshead:2016omu} . In particular Eq.~\eqref{eq:estimate-variance} is equivalent to Eq.(7.6) of~\cite{Adshead:2016omu} .} as long as $\langle \delta A^2 \rangle^{1/2} \ll f(\tau)$. Once the growth of the $e_{+2}$ mode overcomes the background evolution, a different treatment of the gauge field background becomes necessary, which is beyond the scope of this paper.
+
+\begin{figure}[t]
+ \centering
+ \subfigure{
+ \includegraphics[width = 0.48 \textwidth]{phi-evolution-small-coupling.pdf}}
+ \hfill 
+ \subfigure{
+  \includegraphics[width = 0.48 \textwidth]{phi-evolution-small-coupling-xi.pdf}}
+ \caption{Evolution of the inflaton field $\phi$ for $\alpha/\Lambda = 0$ in the absence of the inflaton - gauge field coupling (dashed blue), in the abelian limit ($\alpha/\Lambda = 30, \, e = 0$, solid black) and including non-abelian effects in the weak coupling limit ($\alpha/\Lambda = 30, \, e = 5 \times 10^{-3}$, solid orange). The gray lines indicate the matching between the abelian and non-abelian regime as detailed in the text.}
+ \label{fig:phi-evolution}
+\end{figure}
+
+In Fig.~\ref{fig:phi-evolution}, we depict the evolution of the homogeneous inflaton background in the abelian (solid black curve) and in the non-abelian regime (solid orange curve), obtained by numerically solving Eq.~\eqref{eq:phibackground} with $f(\tau)$ set to 0 and to $c_2 \, \xi/(- e \tau)$ in the two regimes, respectively. The matching point $\langle A^2_\text{ab} \rangle^{1/2} = c_2 \, \xi/(- e \tau)$ is indicated by the horizontal and vertical gray lines. For reference, we also show the evolution in the absence of the inflaton - gauge field coupling (dashed blue curve). The x-axis of Fig.~\ref{fig:phi-evolution} is labeled in e-folds, $dN = - H dt$, where we use the convention that inflation ends at $N = 0$ and the CMB scales exit the horizon at $N \simeq 55$.
+
+
+
+
+{The right panel of Fig.~\ref{fig:phi-evolution} shows the velocity of $\phi$, encoded by the parameter $\xi$. After the matching, the velocity drops abruptly, since turning on the background gauge field enhances the gauge-field induced term in the inflaton equation of motion. {The details are sensitive to the matching procedure we invoke, and for our computations of the scalar and tensor power spectra in Sec.~\ref{subsec:powerspectra} we will therefore exclude a few e-folds around this transition regime.}
+
+More importantly, after this transition regime the last term in Eq.~\eqref{eq:phibackground} in only proportional to $\xi^3$ instead of being  exponentially sensitive to $\xi$ as in the abelian regime (see Eq.~\eqref{eq:rev_EB}). Consequently, the dominant terms in the equation for $\phi$ in this regime are the second and third term of Eq.~\eqref{eq:phibackground}, and, similar to the situation in the absence of the gauge field - inflaton coupling, $\xi \propto \sqrt{\varepsilon} \propto 1/\sqrt{N}$~\cite{Domcke:2016bkh} (see also Sec.~\ref{subsec:dynamical_background}). This in particular implies that in this regime we are not in the `magnetic drift regime' studied in \cite{Adshead:2013nka}, which is characterized by the gauge friction dominating over the Hubble friction. }
+
+
+
+
+Next we consider the evolution of the gauge field fluctuations in this background. From the discussion in the previous section, we know that the helicity $+2$ mode captures the enhancement both in the abelian and in the non-abelian regime. For simplicity, we will restrict our discussion here to this mode, however we have checked numerically that including the full system does not lead to any significant changes. In de Sitter space, any mode with co-moving momentum $k$ exits the horizon at $k = a H = - x/\tau$, where to good approximation $3 H^2 M_P^2 = V(\phi)$. Setting $a = 1$ at the end of inflation, this implies that at e-fold $N$, the mode $k_N = \exp(-N) H$ exits the horizon. In Fig.~\ref{fig:modes-evolution} we show the evolution of six modes which exit the horizon in the abelian regime (left panel) and in the non-abelian regime (right panel). The gradual change within each panel is due to the evolving background, i.e.\ the slow increase of $\xi$.
+
+\begin{figure}[t]
+\subfigure{
+\includegraphics[width = 0.48 \textwidth]{modes-dynamical-0.pdf}
+}
+\hfill
+\subfigure{
+\includegraphics[width = 0.48  \textwidth]{modes-dynamical-1.pdf}
+}
+\caption{Evolution of the helicity $+2$ mode in a dynamical background. \textbf{Left panel}: abelian regime, modes exiting at $N = 25,26\dots 31$. \textbf{Right panel}: Non-abelian regime, modes exiting at $N = 8,9,\dots 13$. In both panels, $k$ increases (i.e.\ the value of $N$ labelling the horizon exit decreases) from purple to blue. Parameters as in Fig.~\ref{fig:phi-evolution}.}
+  \label{fig:modes-evolution}
+\end{figure}
+
+
+Since the change of $\xi$ is slow, we can estimate the variance of these fluctuations by {(see Eq.~\eqref{eq:variance_abelian})}
+{ \begin{equation}
+ \langle \delta A^2 \rangle_N = \int \frac{\textrm{d}^3 \vec{k}}{(2 \pi)^3 } \frac{1}{2 k} | w_{+2}^{(e)}\left(k, 
+ \tau(N) \right) |^2  \simeq \frac{1}{\left(- \tau(N)\right)^2} \int \frac{x \,  \textrm{d}x}{4 \pi^2} | w_{+2,N}^{(e)}(x) |^2 \,,
+ \label{eq:estimate-variance}
+\end{equation} 
+where $w_{+2,N}$ indicates the mode function of the wave vector $k_N$ (see Fig.~\ref{fig:modes-evolution}), which we use to approximate the full mode function at the e-fold $N$. } In the left panel of Fig.~\ref{fig:variance} we show the resulting variance (green dots), together with the homogeneous background solution $f(\tau)$ (solid blue). In the abelian regime, the semi-analytical expression Eq.~\eqref{eq:variance_abelian} (shown as a dashed green line) gives a good approximation over most of this regime. {The deviation at large $N$ simply reflects that our fitting formula~\eqref{eq:variance_abelian} is not optimized for very small values of $\xi$,} 
+whereas the deviations a few e-folds before the matching point reflect that the super-horizon parts of these modes are affected by the non-abelian regime, which leads to a suppression of the variance. In the following analysis we will exclude the modes which exit the horizon within 3 e-folds before or after the matching point, so as to minimize artifacts introduced by the specific matching procedure. To illustrate the uncertainties involved, the gray curves indicate the variance we obtain in the transition region with the matching procedure above (dashed gray curve) and by imposing the matching at a later point (dotted gray curve), as indicated by the vertical dashed line.
+
+
+In the non-abelian regime, the fluctuations are initially suppressed compared to the abelian case, due to a combination of two effects: { Firstly, as is evident from Fig.~\ref{fig:phi-evolution}, the parameter $\xi$, which controls the tachyonic instability in the helicity $+2$ gauge field mode, initially drops after switching on the background gauge field. Secondly, in the non-abelian regime the variance grows more slowly as a function of $\xi$, c.f.\ right panel of Fig.~\ref{fig:variance}.} The smallness of $\langle \delta A^2 \rangle$ compared to its counterpart in the abelian regime and compared to the classical background $f(\tau)$ is a crucial ingredient in justifying the ansatz of a linearized analysis around a homogeneous background field in the non-abelian regime. In the parameter example at hand, the non-Abelian fluctuations are at best mildly suppressed compared to the homogeneous background, implying significant uncertainties in our analysis of the non-abelian regime for this parameter point. The situation improves for smaller gauge - inflaton couplings $\alpha/\Lambda$ and for smaller gauge couplings $e$. In particular, we note the gauge friction dominated regime of CNI is free from this problem~\cite{Adshead:2016omu}. However, in these cases the systematic uncertainties associated with the matching procedure tend to be larger. Given these limitations, we refrain from tweaking the parameter point discussed here, emphasizing that its purpose is to illustrate our main line of thought as well as the encountered obstacles, leaving a more detailed investigation of the parameter space to future works. 
+
+Once the fluctuations reach values close to the background field we cannot trust our treatment anymore, since the motion of the background field is now no longer determined by its classical motion.\footnote{We note that the perturbativity criterion employed in~\cite{Caldwell:2017chz} (see also~\cite{Adshead:2016omu,Adshead:2017hnc}), which measures the fluctuations per logarithmic frequency interval, $(\tfrac{\textrm{d} }{\textrm{d} \ln k} \langle \delta A^2 \rangle^{1/2})/f$ is less restrictive. This quantity does not exceed the percent level in the entire regime depicted in Fig.~\ref{fig:variance}. This may indicate the possibility of pushing the linearized analysis somewhat further than  the conservative cut-off implemented in this analysis. Moreover, we are somewhat overestimating the variance in Eq.~\eqref{eq:estimate-variance}, since we are integrating over the super-horizon part of the mode $ w_{+2, k_N}^{(e)}(\tau)$, whereas we should be taking the super-horizon contributions of the modes which crossed the horizon accordingly earlier, at correspondingly smaller $\xi$. } 
+This regime calls for a dedicated lattice simulation to capture the non-linear effects, which is beyond the scope of this work.
+
+
+\begin{figure}[t]
+\subfigure{
+\includegraphics{variance-small-coupling.pdf}
+}
+\hfill
+\subfigure{
+\includegraphics{variance-small-coupling-xi.pdf}
+}
+\caption{Magnitude of the gauge fields. Background solution $f(\tau)$ (blue) and estimated variance of the fluctuations (green). The solid vertical line denotes the matching point. The gray dashed lines are auxiliary quantities as described in the text. Same parameters as in Fig.~\ref{fig:phi-evolution}.}
+ \label{fig:variance}
+\end{figure}
+
+The results in this section were obtained for the parameter choice given below Eq.~\eqref{eq:ScalarPotential}. The parameters of the scalar potential, $m$ and $\lambda$, are directly related to the CMB observables and do not impact the discussion of this section much. On the other hand, the coupling parameters $\alpha/\Lambda$ and $e$ are crucial for our discussion. Increasing $\alpha/\Lambda$ increases $\xi$ at the CMB scales and consequently leads to an earlier transition to the non-abelian regime. Current observations constrain $\xi_\text{CMB} \lesssim 2.5$ in the contest of abelian axion inflation~\cite{Barnaby:2011qe}. Increasing the gauge coupling $e$ leads to a lower threshold of $\xi$ to trigger the non-vanishing gauge field background, see Fig.~\ref{fig:matching}. Correspondingly, the transition happens earlier and also more smoothly, since the gauge field source term in the inflaton equation of motion~\eqref{eq:phibackground}, proportional to $\xi^3/e^2$ when inserting the $c_2$-solution, is less important.
+
+ 
+
+ 
+\subsection{Scalar and tensor power spectra \label{subsec:powerspectra}}
+
+We now turn to the scalar and tensor power spectra of the benchmark model of the previous subsection, the key observables of any inflation model (for a review, see~\cite{Baumann:2009ds}):
+\begin{align}
+ \langle \zeta_{\vec k} \zeta_{\vec k}' \rangle & = (2 \pi)^3 \delta (\vec k + \vec k') {\cal P}_\zeta(k)  \,, \\
+ \langle h_{\vec k}^\lambda h_{\vec k'}^{\lambda'} \rangle & = (2 \pi)^3 \delta (\vec k + \vec k') \delta_{\lambda \lambda'} {\cal P}_{h^\lambda}(k)  \,.
+\end{align}
+Identifying the Mukhanov variables which are canonically normalized on far sub-horizon scales as $v^\zeta = (a \, \delta \phi)$ and $v^h = (a \gamma)$ for scalars and tensors, respectively, the power spectra read
+\begin{align}
+  {\cal P}_\zeta(k) & =  \left( \frac{H}{\dot \phi} \right)^2 \left(\frac{|v^\zeta_k(x)|}{a}\right)^2 \,, \\
+  {\cal P}_{h^\lambda}(k) & =  \left( \frac{2}{M_P} \right)^2 \left(\frac{|v^h_k(x)|}{a}\right)^2 \,,
+\end{align}
+where $\zeta$ denotes the gauge invariant curvature perturbation and $\lambda$ denotes the helicity of the gravitational wave $h^\lambda$.
+Due to the freeze-out of $(a \delta \phi)$ and $(a \gamma)$ on super-horizon scales (see Sec.~\ref{sec:AllFluc}), it suffices to evaluate these power spectra at horizon crossing $(x = 1)$. Since at this point in time the coupling to the gauge fields can be very relevant, we perform this task numerically, solving the mode equations Eq.~\eqref{eq:fullscalar} and \eqref{eq:fulltensor} in the evolving background discussed in Sec.~\ref{sec:example}.
+
+Recalling that $ v_k^{\zeta,h}(x)$ is a function of $x$ only, it is convenient to introduce
+\begin{equation}
+ \Delta_s^2 = \frac{k^3}{2 \pi^2} {\cal P}_\zeta(k) \,, \qquad  (\Delta_t^\lambda)^2 = \frac{k^3}{2 \pi^2} {\cal P}_{h^\lambda}(k) \,,
+\end{equation}
+such that
+\begin{align}
+ \Delta_s^2 & = \left( \frac{H_*}{2 \pi_*}\right)^2 \left( \frac{H_*}{\dot \phi_*}\right)^2  \left(  x \, |w^{(\phi)}_0(x)| \right)^2 \bigg|_{x \ll 1}  \,, \label{eq:Ds}\\
+ (\Delta_t^\pm)^2 & = \left( \frac{H_*}{2 \pi}\right)^2 \left( \frac{2}{M_P}\right)^2  \left(  x \, |w^{(\gamma)}_{\pm2}(x)| \right)^2 \bigg|_{x \ll 1}  \,, \label{eq:Dt}
+\end{align}
+where $H_*$ and $\dot \phi_*$ denote the Hubble parameter and inflaton velocity at the point in time when the mode in question crosses the horizon $(x = 1)$. To ensure that we are fully in the freeze-out regime, the last parenthesis in Eqs.~\eqref{eq:Ds} and \eqref{eq:Dt} is evaluated at $x = 0.1$. We emphasize that the numerical evaluation of the scalar and tensor power spectrum presented below should be taken with a grain of salt, due to the lack of a clear hierarchy between the gauge field background and its fluctuations in the non-abelian regime for this particular parameter point. In other parts of the parameter space, where this problem does not arise, the analysis below applies without this caveat.  
+
+
+\subsubsection{Scalar power spectrum \label{subsec:PS}}
+
+The scalar power spectrum computed in this way is subject to the caveat described around Eq.~\eqref{eq:caveat}:  to linear order in $\delta A$, it is sourced only by helicity zero objects, including the helicity zero gauge field fluctuations. However at ${\cal O}(\delta A^2)$, the helicity $+2$ gauge fluctuations contribute too, and due to their strong enhancement, can become the dominant source.
+Generalizing the procedure of Ref.~\cite{Linde:2012bt} (see also \cite{Barnaby:2011qe}) to the non-abelian case, we can obtain an estimate for the full scalar power spectrum including this second order contribution. For simplicity, let us consider only the  helicity 0 mode associated with $\delta \phi$, whose coupling to $\langle F \tilde F \rangle$ in the action contains a coupling to two enhanced helicity $+2$ gauge field modes. In real space, the equation of motion for $\delta \phi$ reads,
+\begin{equation}
+ \ddot{\delta \phi} + 3 H \dot{\delta \phi} - \frac{\nabla^2}{a^2} \delta \phi + m_{\phi \phi}^2 \delta \phi = - \frac{\alpha}{4 \Lambda} \delta(\langle F \tilde F \rangle) \,,
+ \label{eq:dphiRealSpace}
+\end{equation}
+where we have neglected here the couplings to the helicity 0 gauge field modes, which are discussed in depth in Sec.~\ref{sec:AllFluc}. The right-hand side is the variation of the Chern-Simons term with respect to the average value entering in the 0th order equation, taking also into account the $\dot \phi$-dependence of $\langle F \tilde F\rangle$ through the parameter $\xi$,
+\begin{align}
+ \delta (\langle F \tilde F \rangle ) & = [F \tilde F - \langle F \tilde F \rangle ]_{\delta \phi = 0} + \frac{\partial \langle F \tilde F \rangle }{\partial \dot \phi} \dot{\delta \phi} \,. 
+\end{align}
+As demonstrated in App.~\ref{app:variance_computation}, this can be re-expressed as 
+\begin{align}
+ \delta (\langle F \tilde F \rangle ) = \frac{H^4}{ \pi^2} e^{2 \pi(\kappa - \mu)} \left[  \left(\frac{ \tilde T_1 + \tilde T_2}{5} \right)^{1/2} + \frac{  2 \pi \alpha (\kappa - \mu ) }{2 \Lambda  \xi} \,  \tilde T_0  \, \delta \phi\right] \,.
+\end{align}
+with 
+\begin{align}
+\tilde T_1 = 0.0082 \cdot \xi^8   \,, \quad \tilde T_2 = 0.051 \cdot  \xi^6   \,, \quad \tilde T_0 = - 0.24 \cdot  \xi^3\,,
+\end{align}
+where $\kappa$ and $\mu$ are defined below Eq.~\eqref{eq:whittakeragain}. At horizon crossing the first and third term in Eq.~\eqref{eq:dphiRealSpace} cancel. Moreover, neglecting the slow-roll suppressed term proportional to $m_{\phi \phi}^2$ and using $\dot{\delta \phi} \simeq H \delta \phi$, we obtain
+\begin{equation}
+ \delta \phi \simeq - \frac{\alpha}{12 \Lambda H^2} \delta(\langle F \tilde F \rangle) \simeq \frac{- \frac{e^{2 \pi(\kappa - \mu)}}{{12} \pi^2} \frac{\alpha}{\Lambda} H^2 \sqrt{\frac{\tilde T_1 + \tilde T_2}{5}}}{1 + \frac{e^{2 \pi(\kappa - \mu)}}{24 \pi^2} \left(\frac{\alpha}{\Lambda} \right)^2  \frac{2 \pi (\kappa - \mu )}{\xi} H^2 \tilde T_0} \,.
+ \label{eq:deltaphi_2nd}
+\end{equation}
+Note that for sufficiently large $\xi$, when the right-hand side dominates Eq.~\eqref{eq:dphiRealSpace} simply becomes
+\begin{equation}
+ \delta \phi \simeq \frac{-2 \xi \Lambda}{ 2 \pi \alpha (\kappa - \mu )} \left( \frac{\tilde T_1 + \tilde T_2}{5} \right)^{1/2} \frac{1}{\tilde T_0 } \,.
+\end{equation}
+More generally, the two limiting cases of Eq.~\eqref{eq:deltaphi_2nd} are
+\begin{align}
+ \left(\Delta_s^2\right)^\text{2nd} & \sim \left( \frac{H}{\dot \phi} \delta \phi \right)^2   \simeq \begin{cases}
+    \left( \frac{\alpha H}{2 \pi \Lambda} \right)^4  \frac{\tilde T_1 + \tilde T_2}{180 \, \xi^2}  e^{4 \pi(\kappa - \mu)}
+     &\qquad  \text{for     } \xi^3 e^{2 \pi(\kappa - \mu)} \ll 270  \left( \frac{\Lambda}{\alpha H}\right)^2    \label{eq:Ds_2nd} \\
+  \frac{\tilde T_1 + \tilde T_2}{5 \, \tilde T_0^2}   \left[2 \pi (\kappa - \mu )\right]^{-2}   &\qquad \text{for    } \xi^3 e^{2 \pi(\kappa - \mu)} \gg 270  \left( \frac{\Lambda}{\alpha H}\right)^2  
+   \end{cases} \,.
+\end{align}
+
+\begin{figure}
+\centering
+\includegraphics{PS.pdf}
+\caption{Scalar power spectrum. Our semi-analytical estimate~\eqref{eq:Ds_2nd}  in the non-abelian regime is shown as a dotted orange line. For reference, we show the standard contribution of the vacuum fluctuations which also well describe the results of the linearized analysis (solid gray) and the (non-linear) contribution in the abelian regime (dashed blue). Same parameters as in Fig.~\ref{fig:phi-evolution}.}
+ \label{fig:spectraPS}
+\end{figure}
+
+We note that initially, for small values of $\xi$, this grows as $\exp[4 \pi (\kappa - \mu)] \simeq \exp[4 \pi \xi (2 - \sqrt{2})]$ whereas for large values of $\xi$ we find the same $1/\xi^2$ dependence as in the abelian case~\cite{Linde:2012bt}. The total scalar power spectrum is the sum of the vacuum contribution~\eqref{eq:Ds} and the contribution sourced by the enhanced gauge field mode~\eqref{eq:Ds_2nd}.\footnote{{As this work was being finalized, Refs.~\cite{Dimastrogiovanni:2018xnn,Papageorgiou:2018rfx} appeared, which also consider these nonlinear couplings. The main focus of Ref.~\cite{Dimastrogiovanni:2018xnn} is the three-point correlators between the scalar and tensor perturbations, whereas Ref.~\cite{Papageorgiou:2018rfx} is a dedicated study of the leading nonlinear contribution to the scalar power spectrum.  A direct comparison of our results is difficult due to the different background evolution (see discussion in Sec.~\ref{subsec:dynamical_background}) and due to the fact that in our parameter space we typically encounter larger values of $\xi$ than encountered in \cite{Papageorgiou:2018rfx}. Using a very different methodology than presented here, Ref.~\cite{Papageorgiou:2018rfx} concludes that the non-linear contributions to the scalar power spectrum begin to dominate over the vacuum contributions at  $m_Q \simeq 2.7$, where  $m_Q \simeq c_2 \, \xi$, {and hence $\xi (m_Q = 2.7) \simeq 3$. From Eq.~\eqref{eq:Ds_2nd}, we can estimate that in our analysis, the non-linear term comes to dominate at $\xi \simeq 2.5$.   Moreover, the exponential sensitivity on $\xi$, $\Delta_s^2 \sim e^{2 \pi m_Q}$ in \cite{Papageorgiou:2018rfx}, is similar to what we find here. 
+Within the uncertainties inherent to both methods, we consider this a  good agreement.}  For related work in the abelian case see also Refs.~\cite{Barnaby:2010vf,Barnaby:2011vw}.}
+
+} In  Fig.~\ref{fig:spectraPS}, we show the resulting estimate for scalar spectrum in the non-abelian regime (dotted orange). The `strong backreaction regime', where the simplified expression in the second line of Eq.~\eqref{eq:Ds_2nd} applies is reached only around $N \simeq 10$. For reference, we show also corresponding estimate in the abelian regime (dashed blue)~\cite{Linde:2012bt},
+\begin{align}
+ (\Delta_s^2)_\text{ab.}  = (\Delta_s^2)_\text{vac} +  (\Delta_s^2)_\text{gauge} = \left( \frac{H^2}{2 \pi \dot \phi}\right)^2 + \left(\frac{ \alpha \langle \vec E \vec B \rangle}{2 \beta \Lambda H \dot \phi} \right)^2 \,, 
+\end{align}
+with
+\begin{equation}
+ \beta = 1 - 2 \pi \xi \frac{\alpha \langle \vec E \vec B \rangle}{3 \Lambda H \dot \phi} \,, \quad  \langle \vec E \vec B \rangle = - 2.0 \cdot 10^{-4} \frac{H^4}{\xi^4} e^{2 \pi \xi} \,,
+\end{equation}
+as well as  the standard vacuum contribution (solid gray line, obtained by setting the last parenthesis in Eq.~\eqref{eq:Ds} to 1), which agrees well with the results obtained from the linearized analysis. The horizontal gray line indicates the observed value at the CMB scales. 
+
+
+\subsubsection{Gravitational wave spectrum \label{subsec:TS}}
+Next we turn to the tensor power spectrum. For the purpose of direct gravitational wave searches (Pulsar timing arrays (PTAs) and interferometers), it is customary to express the stochastic gravitational wave background (SGWB) as the energy in gravitational waves per logarithmic frequency interval normalized to the critical energy density~$\rho_c$ \cite{Turner:1993vb,Seto:2003kc,Smith:2005mm}, 
+\begin{equation}
+ \Omega_{\rm GW}(k) = \frac{1}{\rho_c} \frac{\partial \rho_{GW}(k)}{\partial \ln k}  = \frac{(\Delta_t^+)^2 + (\Delta_t^-)^2}{24} \Omega_r \frac{g_*^k}{g_*^0} \left( \frac{g_{*,s}^0}{g_{*,s}^k} \right)^{4/3} \,,
+\end{equation}
+for modes entering during the radiation dominated epoch of the universe, where $g_*^{k,0}$ ($g_{*,s}^{k,0}$) denotes the effective number of degrees of freedom contributing to the energy (entropy) of the thermal bath at the point in time when the mode $k$ entered the horizon and today, respectively. $\Omega_r = 8.5 \times 10^{-5}$ denotes the fraction of radiation energy today. Neglecting the change in the number of degrees of freedom, this leads to
+\begin{align}
+ \Omega_{\rm GW}(k) & = \frac{\Omega_r}{24} \left( \frac{H}{2 \pi}\right)^2 \left( \frac{2}{M_P}\right)^2 \left[  \left(  x \, |w^{(\gamma)}_{-2}(x)| \right)^2  +  \left( x \, |w^{(\gamma)}_{+2}(x)| \right)^2 \right]\bigg|_{x = 1}  \\
+ & = \frac{\Omega_r}{24} \left( \frac{H}{2 \pi}\right)^2 \left( \frac{2}{M_P}\right)^2 \left[  \left( 1  +  x \, |w^{(\gamma)}_{+2}(x)| \right)^2 \right]\bigg|_{x = 1}  \,,
+ \label{eq:OmegaGW} 
+\end{align}
+where we have made use of the observation that the $w_{-2}^{(\gamma)}$ mode is not enhanced and hence is given by the usual solution of the Mukhanov-Sasaki equation, $w_{-2}^{(\gamma)}(x = 1) = 1 $.
+
+\begin{figure}
+\centering
+\includegraphics{GWs_plot.pdf}
+\caption{Stochastic gravitational wave background. Our semi-analytical estimate~\eqref{eq:GWapprox} in the non-abelian regime  is shown as dotted orange line. For reference, we show the standard contribution of the vacuum fluctuations (solid gray)and the (non-linear) contribution in the abelian regime (dashed blue). The results of the linearized analysis are shown as green dots. Same parameters as in Fig.~\ref{fig:phi-evolution}.}
+ \label{fig:spectraGW}
+\end{figure}
+
+
+In Fig.~\ref{fig:spectraGW} we show the resulting  SGWB compared to current and upcoming experimental constraints from pulsar timing arrays~\cite{vanHaasteren:2011ni,Kramer:2004rwa} and from the interferometer experiments LIGO~\cite{TheLIGOScientific:2016wyq}, LISA~\cite{Audley:2017drz} and the Einstein Telescope~\cite{ET}. For reference, we also show the standard vacuum solution (in gray), obtained by setting $  w^{(\gamma, \phi)}(x = 1) = 1$, as well as the analytical results from the abelian regime (dashed blue line),
+\begin{align}
+ (\Omega_{\rm GW})_\text{ab.}  = \frac{1}{24} \Omega_r \left( \frac{H}{\pi M_P} \right)^2 \left( 2 + 4.3 \cdot 10^{-7} \frac{2 H^2}{M_P^2} \frac{e^{4 \pi \xi}}{\xi^6}\right) \,.
+ \label{eq:GWab}
+\end{align}
+ {A key feature of the non-abelian regime is that the gravitational waves couple to the enhanced gauge-field mode at the linear level, resulting in the enhanced SGWB at large frequencies~\cite{Adshead:2013nka}. In the abelian regime, such a source term is absent at the linear level and only appears at the non-linear level. This is simply because the energy-momentum tensor, the source term of the GW equation of motion, is bi-linear in the gauge fields and we do not have a background gauge field in the abelian regime. This non-linear term is of course not captured by the linearized analysis performed here, and hence we simply include the non-linear contribution in the abelian regime given by Eq.~\eqref{eq:GWab} a posteriori. Note that in the non-abelian regime this non-linear contribution is sub-dominant as long as $\delta A \ll f$. For the parameter point studied here, we find the SGWB to be out of reach of the GW interferometers LIGO and LISA, and barely reachable with the Einstein Telescope. However we stress that a different parameter choice, leading e.g.\ to an earlier matching between the abelian and non-abelian regime, could change this picture. A full-fledged study of the parameter space is beyond the scope of the current paper. We note that as in Ref.~\cite{Agrawal:2017awz}, we expect this gravitational wave background to be very non-gaussian, which may be used as a powerful model discriminator in future observations~\cite{Bartolo:2018qqn}.
+
+
+
+Combining Eqs.~\eqref{eq:GWanalytical} and \eqref{eq:OmegaGW} we can obtain an analytical estimate of the SGWB in the non-abelian regime,
+\begin{equation}
+ \Omega_{\rm GW} \simeq \frac{1}{24} \Omega_r \left( \frac{\xi^3 H}{\pi M_P} \right)^2_{\xi = \xi_\text{cr}}  \left( \frac{2^{7/4} H}{e} \xi^{-1/2} e^{(2 - \sqrt{2}) \pi \xi}  \right)^2_{\xi = \xi_\text{ref}} \,.
+ \label{eq:GWapprox}
+\end{equation}
+Here, to take into account the variation of $\xi$, we evaluate the first parenthesis (related to the GW - gauge field coupling at horizon crossing) at $\xi_\text{cr} = \xi(x = 1)$, whereas we evaluate the second parenthesis (describing the helicity $+2$ gauge field solution) at a the reference value $x = (2 + \sqrt{2}) \xi_\text{cr}$ roughly corresponding to the onset of the instability in the gauge field mode. The resulting estimate for the GW spectrum is depicted by the dotted orange line in  Fig.~\ref{fig:spectraGW}. The discrepancy to the numerical result can be traced back to Eq.~\eqref{eq:GWanalytical}, which overestimates the GW amplitude by about a factor of three.}
+
+
+In summary, we reproduce the vacuum contribution for both the scalar and tensor power spectrum at large $N$,  thus ensuring agreement with all CMB observations. As we approach smaller scales, we observe an enhancement of both spectra as we pass first through the abelian and then through the non-abelian regime. For the specific parameter point studied in this section, the effects seem out of reach of current and upcoming experiments, though a more careful analysis is required to correctly account for the uncertainties due the lack of hierarchy between the gauge field background and its fluctuations. We generically expect larger signals with increasing $\alpha/\Lambda$ and/or increasing gauge coupling, see discussion at the end of Sec.~\ref{subsec:gaugefluctuations}. This part of the parameter space however comes with even larger gauge field fluctuations, requiring a different computational strategy to even reliably describe the background evolution in this regime.

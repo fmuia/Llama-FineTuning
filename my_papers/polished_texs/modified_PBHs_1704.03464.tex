@@ -1,0 +1,171 @@
+\subsection{A quick review of PBH formation}
+
+The models discussed in the previous sections generically lead to a strong enhancement of the scalar power spectrum at small scales. If the scalar fluctuations are sufficiently large, this leads to the formation of PBHs in the subsequent evolution of the universe. Here we briefly review the resulting PBH distribution following Ref.~\cite{Carr:2009jm}, collecting the relevant tools to apply this formalism to our discussion.
+
+Primordial scalar fluctuations with a power spectrum $P(\zeta)$ form PBHs upon re-entry into the horizon if  $\zeta > \zeta_c$. The mass $M$ of the resulting black hole can be estimated to be determined by the mass $M_H$ contained in the horizon at the  time of horizon re-entry $t_N$,
+\begin{equation}
+M(N) = \gamma M_H
+ \simeq  \gamma \, \frac{4 \pi \, m_p^2}{H_\text{inf}}\,  e^{j N} \simeq 55 \, g \, \gamma \, \left( \frac{10^{-6} \, m_p}{H_\text{inf}}\right) \, e^{j N} \,,
+ \label{eq:MH}
+\end{equation}
+with $N$ counting the number of e-folds from the end of inflation when the fluctuations in question exited the horizon, $H_\text{inf}$ denoting the Hubble parameter at this time and $j$ parameterizing if the equation of state between the end of inflation and the re-entry of the fluctuation was mainly matter dominated ($j = 3$) or radiation dominated ($j = 2$). In the setup of Sec.~\ref{sec:review} we expect reheating to be efficient due to the inflaton gauge field coupling. In the following we will thus work with $j = 2$. Finally, $\gamma$ is a numerical factor depending on the details of the gravitational collapse. Following~\cite{Green:2004wb, Carr:2016drx} we will use $\gamma = 0.4$. 
+
+The fraction of the energy density of the universe which collapses into PBHs at any given time $t_N$ is given by 
+\begin{equation}
+\beta(N) = \int_{\zeta_c}^\infty  \frac{ M(N)}{M_H(N)} P_N(\zeta) \, \textrm{d}\zeta =  \int_{\zeta_c}^\infty  \gamma \, P_N(\zeta) \, \textrm{d}\zeta\,.
+\label{eq:beta0}
+\end{equation}
+Here $P_N(\zeta)$ denotes the probability distribution of fluctuations sourced at $N$ e-folds before the end of inflation. In our case, the fluctuations are characterized by a strong equilateral non-Gaussianity~\cite{Anber:2012du}, and can in particular be expressed as $\zeta = g^2 - \langle g^2 \rangle$ with $g \propto (\vec E \cdot \vec B)^{1/2}$ following a Gaussian distribution (see Eq.~\ref{eq:phiEB})~\cite{Linde:2012bt}. For such a positive $\chi$-squared form of non-Gaussianities, the probability distribution is given by (see e.g.~\cite{0510052, 1201.4312, Byrnes:2012yx}):
+\begin{equation}
+P_N(\zeta) = \frac{\exp \left( - \frac{\zeta + \sigma_N^2}{2 \sigma_N^2}\right)}{\sqrt{2 \pi \sigma_N^2 (\zeta + \sigma_N^2)}} \;,
+\label{eq:Pnongauss}
+\end{equation}
+with $\sigma_N^2 = (\Delta_s^2(N))^{1/2}$ and $\int_{- \sigma_N^2}^\infty P_N(\zeta) \, \textrm{d}\zeta = 1$.  
+Since Eq.~\eqref{eq:MH} provides a unique relation between the time of formation $t_N$ and the mass of the PBH $M$, we can equivalently express the fraction $\beta(N) \, \textrm{d}N$ of the universe collapsing in the time interval $[t_N, t_{N + dN}[$ as a function of the PBH mass $M$:
+\begin{equation}
+\beta(N) \, \textrm{d}N = \beta(M) \frac{dN}{dM}\, \textrm{d}M = \frac{\beta(M)}{2 \, M} \, \textrm{d}M \,.
+\label{eq:betaM}
+\end{equation}
+We stress that $\beta$ denotes the fraction of the universe collapsing into PBHs at the respective time of formation. Within the $\Lambda$CDM model, we can translate this to the fraction of the energy density in the Universe at some later time. Ignoring the decay of PBHs for the moment (we will return to this point below) and assuming an adiabatically expanding universe, the ratio of the number density of PBHs $n_{\text{PBH}}(t)$ and the entropy $s(t)$ is constant. We can hence relate the function $\beta(M)$ to the number density of PBHs at any later time $t$ as~\cite{Carr:2009jm}:
+\begin{equation}
+\beta(M) = \frac{M n_\text{PBH}(t_N)}{\rho(t_N)} = \frac{4\,  M \, n_\text{PBH}(t)}{3 \, T(t_N) \, s(t)} \,,
+\label{eq:nPBH}
+\end{equation}
+with $\rho(t_N) = 3/4 \, T(t_N) \, s(t_N)$ denoting the energy density of the Universe, assuming that the universe is dominated by radiation at $t_N$. The temperature $T(t_N)$ is related to $H(t_N) = H_\text{inf} \exp(- 2 N)$ through the Friedmann equation. Substituting $H_\text{inf} \exp(- 2 N)$ into Eq.~\eqref{eq:MH}, we find that the fraction of dark matter today formed by PBHs is
+\begin{align}
+f(M)  & = \frac{M n_\text{PBH}(t_0) }{\Omega_\text{CDM} \, \rho_c} \simeq \nonumber \\ 
+& \simeq 4.1 \cdot 10^8 \, \gamma^{1/2} \left( \frac{g_{*}(t_N)}{106.75}\right)^{-1/4} \left( \frac{h}{0.68}\right)^{-2} \left( \frac{M}{M_\odot} \right)^{-1/2} \beta(M)\,,
+\label{eq:f}
+\end{align}
+where we have inserted $\rho_c = 3 H_0^2 m_p^2$ with $H_0 = h \, 100 \,$~(km/s)/Mpc for the critical density and $\Omega_\text{CDM} \simeq 0.21$ for the dark matter fraction today. In the following, we will set $h = 0.68$ and $g_*(t_N) = 106.75$. PBHs with masses below $M_\text{PBH} < M_* \simeq 5 \cdot 10^{14}$~g have a life time shorter than the current age of the universe and would have evaporated through Hawking radiation by now.\footnote{The numerical value $M_*$ might be enhanced when taking into account accretion and merger processes in the matter dominated regime which stabilize light PBHs, see App.~\ref{app:PBH}.} The interpretation of $f(M)$ as the fraction of dark matter hence only applies for $M > M_*$, for smaller values of $M$ the ratio $f(M)$ may simply be seen as a convenient way of parameterizing the initial PBH abundance $\beta(M)$.
+
+The production of PBHs is subject to various constraints, see Ref.~\cite{Carr:2009jm} for an overview and Ref.~\cite{Carr:2016drx} for updated bounds on the mass range $M > M_*$, which will be the range most relevant for us here. As pointed out in Ref.~\cite{Carr:2016drx}, applying these bounds to an extended mass function requires some care. Essentially, a flat constraint $f_\text{max}$ in a certain mass range implies that the total amount of PBHs in this mass range may not exceed the value $f_\text{max}$. A general constraint can then be treated as a sequence of approximately flat constraints. Here we follow the procedure suggested there, requiring
+\begin{equation}
+\int_{M_1}^{M_2} \frac{\textrm{d}M}{2 M} f(M) < f_\text{max}^{[M_1,M_2]} \,,
+\label{eq:fbound}
+\end{equation}
+with the constraints $f_\text{max}$ taken from Tab.~1 of Ref.~\cite{Carr:2016drx} and $f_\text{max}^{[M_1,M_2]}$ denoting the weakest constraint in the mass range $[M_1,M_2]$. Here we vary the integration boundaries $M_{1,2}$ so that all relevant mass intervals are covered. We have used Eq.~\eqref{eq:betaM} to obtain a dimensionless integrand in Eq.~\eqref{eq:fbound}. 
+
+We note that the PBH formation as sketched above is subject to theoretical uncertainties, in particular concerning the effects of critical collapse, non-spherical properties of the primordial fluctuations and late time accretion and mergers. We discuss these issues in more detail in App.~\ref{app:PBH}. The upshot is that these uncertainties are to large degree degenerate with our model parameters, and hence will not change the overall picture presented here.
+
+
+\subsection{PBHs in models with non-minimal coupling to gravity}
+
+
+
+In Fig.~\ref{fig:BH1} we depict two typical results for $f(M)$ for the first model discussed in Sec.~\ref{sec:attractors}, characterized by a non-minimal coupling to gravity through $h(\phi) = \phi$. The parameters\footnote{Here $m^2 = 2 \lambda^4$ in Eq.~\eqref{attractors:model_def}.}  $\alpha/\Lambda$, $m$, $\varsigma$ and ${\cal N}$ are chosen to meet the following conditions: (i) the amplitude and spectral tilt of the scalar spectrum at the CMB scales match the observed values, (ii) the effect of the gauge field contribution is maximized while respecting the CMB non-Gaussianity bounds and (iii) the PBH abundance is maximized while respecting the depicted PBH bounds. Moreover, the orange curve corresponds to the situation which roughly maximizes the contribution to PBH dark matter in this setup. The parameter values for the depicted curves are $m = 7.6 \cdot 10^{-5}\, m_p$, $\alpha/\Lambda = 43.2$ for the $\varsigma = 5$ example and $m = 5.4 \cdot 10^{-5}\, m_p$, $\alpha/\Lambda = 37$ for the $\varsigma = 3$ example. The resulting mass functions increase towards low PBH masses at $M \ll M_*$, hence only the high-mass tails of these distributions can contribute to PBH dark matter today. The strongest constraints close to the dark matter threshold come from evaporating PBH around $M \sim M_*$, which leave traces in the anisotropies of the CMB~ and in the (extra-) galactic photon background (see \cite{Carr:2009jm} for details), which imply $\beta(M) \lesssim 10^{-28}$ in this mass range. For the depicted examples, we find for the scalar spectral index $n_s$, the tensor-to scalar ratio $r$ and the fraction of PBH dark matter $f_\text{tot}$,
+\begin{align}
+\varsigma &= 5: \quad n_s = 0.98 \,, \quad r = 1 \cdot 10^{-3} \,, \quad f_\text{tot} \approx 0  \,,\\
+\varsigma &= 3: \quad n_s = 0.97 \,, \quad r = 5 \cdot 10^{-3} \,, \quad f_\text{tot} = 3 \cdot 10^{-23} \,.
+\end{align}
+
+
+\begin{figure}
+%
+\centering
+\includegraphics[width=0.6\textwidth]{chaoticn3plot.pdf}\hfill
+%\includegraphics[width=0.48\textwidth]{finverse.pdf}
+%
+\caption{Would-be fraction of PBH dark matter, compared to the constraints in Ref.~\cite{Carr:2009jm,Carr:2016drx} for models based on Eq.~\eqref{attractors:model_example}. The parameters of these curves are chosen to maximize the PBH contribution while obeying the depicted PBH bounds as well as the CMB constraints. 
+ Note that the quantity $f(M)$ corresponds to the fraction of dark matter today  only for $M > M_* \simeq 5 \cdot 10^{14}$~g.}
+\label{fig:BH1}
+%
+\end{figure}
+
+
+
+To obtain a mass distribution peaked at heavier PBHs, we need to modify the functional dependence of the non-minimal coupling, $h(\phi)$. In particular we require a scalar spectrum which rises at larger values of $N$, i.e.\ at an earlier stage during inflation. As discussed in Sec.~\ref{sec:attractors}, this can be realized by considering for example $h(\phi) = 1 - 1/\phi$. In this case, for sufficiently large values of $\varsigma$ the scalar spectrum features a peak at large scales (see Fig.~\ref{fig:spectra}) that can suitably induce the generation of a distribution of PBHs. The exact position and the shape of the peak are controlled by the parameters $\alpha/\Lambda$ and $\varsigma$.
+In particular, increasing the value of $\varsigma$ moves the peak towards larger values of $N$ (see also Fig.~\ref{fig:spectra}) and suppresses the amplitude, whereas increasing the value of $\alpha/\Lambda$ enhances the spectrum while also shifting the peak towards larger values of $N$ (see e.g.\ \cite{Domcke:2016bkh}). 
+Since both parameters also impact the CMB observables, the depicted curves roughly demonstrate the range of possibilities for this choice of $h(\phi)$.
+
+
+ For the examples shown in the plot of Fig.~\ref{fig:BH2} we have: 
+\begin{align}
+\varsigma &= 45.7, \quad \alpha/\Lambda \simeq 63: \quad n_s = 0.963 \,, \quad r = 3.2 \cdot 10^{-4} \,,\\
+\varsigma &= 55, \quad \ \ \alpha/\Lambda \simeq 71: \quad n_s = 0.957 \,, \quad r = 3.3 \cdot 10^{-4}  \,,
+\\\varsigma &= 65.5, \quad \alpha/\Lambda \simeq 74: \quad n_s = 0.958 \,, \quad r = 7.4 \cdot 10^{-4} \,.
+\end{align}
+For reference, we also show the result for a negligible non-minimal coupling (purple curve). The bumps in the spectra for the three models shown in Fig.~\ref{fig:BH2} lead to the generation of PBH distributions peaked around $M \sim 10^{20}, \, 10^{25}$ and $10^{31}$~g, respectively, thus in all three cases the entire PBH population contributes to dark matter today. In all cases we restrict ourselves to a single gauge field, ${\cal N} = 1$. As in Fig.~\ref{fig:BH1}, the model parameters for these benchmark points have been chosen in order to maximize the PBH contribution while obeying all relevant bounds. The reduced amplitude for the $\varsigma = 65.5$ example is due CMB constraints which become more relevant as $\alpha/\Lambda$ is increased. 
+
+\begin{figure}
+%
+\centering
+%\includegraphics[width=0.48\textwidth]{chaoticn3plot.pdf}\hfill
+\includegraphics[width=0.85\textwidth]{finverse.pdf}
+%
+\caption{Fraction of energy in PBH at time of formation, compared to the constraints in Ref.~\cite{Carr:2016drx}, for models based on Eq.~\eqref{attractors:inv_definition}. Model parameters and color coding as in Fig.~\ref{fig:xi_inv}. Compatibility with the depicted constraints is confirmed using Eq.~\eqref{eq:fbound}.}
+\label{fig:BH2}
+%
+\end{figure}
+
+In this mass range, the strongest constraints come from neutron star capture~\cite{Capela:2013yf} as well as from micro lensing constraints from the Kepler, MACHO, EROS and OGLE experiments~\cite{Griest:2013aaa,Tisserand:2006zx,Novati:2013fxa}. 
+In particular, the micro lensing constraints restrict the total amount of PBHs to be less than $4\%$ to $30\%$ in their respective mass ranges, whereas the neutron star capture constraint requires the total amount of PBHs to be less than $6\%$ for $10^{18}~\text{g} \lesssim M \lesssim 10^{24}$~g. 
+This last constraint (shown as a dashed curve in Fig.~\ref{fig:BH2}) has been disputed, as it relies on assumptions about the dark matter content in globular clusters~\cite{Carr:2016drx}. For the pink curve in Fig.~\ref{fig:BH2} we thus choose to omit this constraint, demonstrating that in this case PBHs can account for \textit{all} of dark matter.\footnote{Upon finalizing this paper, we became aware of the very recent microlensing constraint from the Subaru Hyper Suprime-Cam~\cite{Niikura:2017zjd}, which sets strong constraints on most of this window, leaving only a narrow slice around $M \simeq 10^{20}$~g for a significant PBH contribution to dark matter in this mass range.} Of course, if new results confirm this bound, the fraction of PBH dark matter in this mass range must be less than the $6\%$ mentioned above. 
+
+
+
+The total fraction of PBH dark matter today is given by
+\begin{equation}
+f_\text{tot} = \frac{\Omega_{\text{PBH}}}{\Omega_{\text{CDM}}} = \int_{M_*}^\infty \frac{\textrm{d} M}{2 M}  \, f(M) \,,
+\end{equation}
+where in practice we need to integrate only over the strongly enhanced part of the scalar spectrum, as it is well-known that the contribution from the spectrum at CMB scales (where the amplitude is fixed by CMB observations) is completely negligible.\footnote{Strictly speaking, our analysis here applies only to PBH formed in the radiation dominated regime, i.e.\ for $M < M(N_\text{eq})$ with $N_\text{eq} \simeq N_\text{CMB} - 1.2$ labeling the primordial fluctuations entering the horizon at matter-radiation equality. However as these scales are strongly constrained by the CMB, we do not need to worry about this subtlety.} For example, for the curves in Fig.~\ref{fig:BH2} we find 
+\begin{equation}
+f_\text{tot}^{\varsigma = 45.7} = 98.6 \%,  \, \quad f_\text{tot}^{\varsigma = 55} = 39.4 \% , \, \quad f_\text{tot}^{\varsigma = 65.5} = 1.2 \cdot 10^{-4} \, \% \,.
+\end{equation}
+In summary, while for the $h(\phi) = \phi$ case the contribution to dark matter is completely negligible, PBHs can contribute a very significant fraction of dark matter for $h(\phi) = 1 - 1/\phi$ in this setup.
+
+\subsection{Searching for PBHs with GW interferometers \label{app:GWs}}
+
+PBHs can form binary objects which source GWs similar to the event observed by LIGO~\cite{Abbott:2016blz}. In this subsection, we address the question if these GWs may be observable in future GW interferometers, see also~\cite{Garcia-Bellido:2017fdg}.  We will normalize the results of this subsection to $M = M_\odot = 1.99 \cdot 10^{33}$~g, which roughly corresponds to the brown curve in Fig.~\ref{fig:BH2} after taking into account the mass increase of the PBH during the matter dominated phase due to accretion and mergers (see App.~\ref{app:PBH}).
+
+Let us first consider GW signal from inspiraling PBHs (see e.g.\ \cite{Maggiore:1900zz}). Comparing the orbital distance of two (point-like) objects rotating with frequency $\omega$,
+\begin{equation}
+R_\text{orb} = \left( G M_\text{sys} / \omega^2 \right)^{1/3} \,,
+\end{equation}
+where $G = 6.67 \cdot 10^{-11} \text{m}^3/(\text{kg} \, \text{s}^2)$ and $M_\text{sys}$ is the sum of the two masses, to the sum of the Schwarzschild radii,
+\begin{equation}
+R_\text{schw} = G M_\text{sys} /c^2 \,,
+\end{equation}
+we find for the peak frequency of the GW signal of a black hole binary, $f =  \omega/\pi$,
+\begin{equation}
+f_\text{max} \sim 6.4 \cdot 10^4 \text{ Hz } \left( \frac{2 \cdot M_\odot}{M_\text{sys}}\right) \,.
+\end{equation}
+For comparison, the  frequency band of LIGO extends to about few times $ 10^3$~Hz. In the early inspiral phase, the system will emit GWs at lower frequencies, thus potentially `crossing' the LIGO frequency band as the system approaches coalescence. 
+The time $\tau$ between when signal is at the LIGO peak sensitivity of $f \sim 100$~Hz and coalescence is given by
+\begin{equation}
+\tau = 3 \, \text{s} \, \left( \frac{M_\odot}{M_c}\right)^{5/3} \left( \frac{100~\text{Hz}}{f} \right)^{8/3} \,,
+\end{equation} 
+where $M_c$ is the so-called chirp mass, $M_c^5 = (M_1 M_2)^3/(M_1 + M_2) $, constructed from the masses of the two individual BHs.
+The amplitude of the emitted GWs, detected at a distance $r$ from the source is given by
+\begin{equation}
+h \simeq \frac{4}{r} \left( \frac{G M_c}{c^2} \right)^{5/3} \left(\frac{\pi f}{c} \right)^{2/3} \,.
+\end{equation}
+Comparing this to the strain sensitivity of advanced LIGO, $h \simeq 10^{-24}/\sqrt{\text{Hz}}$~\cite{TheLIGOScientific:2016agk}, we find that assuming a bandwidth of 10~Hz, a signal originating from a binary BH system can be detected if a source is within 
+\begin{equation}
+r = 8.0 \cdot 10^2 \, \text{Mpc} \, \left( \frac{M_c}{M_\odot} \right)^{5/3} \left( \frac{f}{100 \text{ Hz}} \right)^{2/3} 
+\label{eq:detectorreach}
+\end{equation}
+of the detector. For comparison, the size of the Milky Way is about 30 - 55 kpc and the size of the Virgo super cluster is about 33~Mpc. 
+This has to be compared to the expected rate of BH mergers, which has been estimated to be~\cite{Bird:2016dcv,Clesse:2016vqa,Sasaki:2016jop}
+\begin{equation}
+\Gamma =  10^{-8} \, f_\text{tot} \, \delta_\text{PBH}^\text{loc}\, \text{yr}^{-1}\,  \text{Gpc}^{-3} \,.
+\label{eq:rate}
+\end{equation}
+Here $\delta_\text{PBH}^\text{loc}$ denotes the local PBH density contrast, where $\delta_\text{PBH}^\text{loc} = 1$ yields the expected merger rate if PBH are distributed uniformly throughout the universe. Clustering of PBHs into sub-halos may however increase the value to $\delta_\text{PBH}^\text{loc} \sim 10^7 - 10^9$~\cite{Clesse:2016vqa}, dramatically enhancing the prospects for detection. Note that Eq.~\eqref{eq:rate} is independent of the PBH mass, which drops out when combining the dark matter number density and the BH - BH capture cross section (see e.g.~\cite{Bird:2016dcv}). Hence for $M \sim M_\odot$ and $f_\text{tot} = {\cal O}(0.1)$ one might indeed expect a handful of these events per year at $f = 10^2$~Hz, baring in mind the huge uncertainty in $\delta_\text{PBH}^\text{loc}$.  Note however that since the reach of the detector is sensitive to the PBH mass (see Eq.~\eqref{eq:detectorreach}), the total rate drops significantly for lighter PBHs.
+
+In addition to the transcendent GWs signal from PBH binaries discussed above, there will also be a diffuse stochastic background arising from binaries which are too faint to be detected as individual sources. For a recent analysis see Ref.~\cite{Clesse:2016ajp}, where it was concluded that depending on the PBH merger rate (see above) and the shape of the PBH distribution, such a stochastic background might indeed be detectable by LISA.\footnote{In addition, the formation process of BPHs
+may lead to a stochastic GW background similar to first order phase transitions~\cite{Garcia-Bellido:2017fdg}. }
+
+
+
+\subsection{Discussion}
+
+The peaks of the mass distributions in Fig.~\ref{fig:BH2} are in an interesting mass region. In the lower mass region (pink and grey curves) the bounds on $f(M)$ are weaker (in particular if one omits the neutron star capture bound), and it becomes possible to account for a significant fraction, or maybe even all of dark matter, in PBHs. Moreover, the mass ranges found in these benchmark models lie below the lower bound expected from BHs formed in stellar evolution, $M \gtrsim 3 \, M_\odot$~\cite{Misner:1974qy}. If detected, such light BHs thus immediately point towards a possible primordial origin. On the other hand, the higher mass region (brown curve) provides PBHs which might be in the correct ballpark to be detected through their gravitational wave signatures in advanced LIGO. However, we emphasize that for the specific, simple choice of $h(\phi)$ discussed here, the abundance of PBHs in this mass range is strongly constrained by CMB observations, rendering a detection with LIGO very challenging even for large density contrasts~$\delta_\text{PBH}^\text{loc}$.
+%
+
+
+
+We stress that the spectra depicted in Fig.~\ref{fig:BH2} are not a unique prediction but only three representative benchmark models. Clearly, varying the parameters (as discussed in Sec.~\ref{sec:attractors}) the amplitude of this signal can be adjusted. Moreover, as can be seen by comparing Figs.~\ref{fig:BH1} and \ref{fig:BH2}, the position of the peak is very sensitive to the choice of the function $h(\phi)$. In this context, we point out that Ref.~\cite{Carr:2016drx} recently identified two interesting `windows' for PBH dark matter, in which dark matter could still consist of PBH to $100\%$. The lunar BH window $M_\text{PBH} \sim 10^{20} - 10^{24}~g$ opens when omitting the neutron star capture constraint, as mentioned above. The second window is located at $M_\text{PBH} \sim 1\,  M_\odot - 10^3 \, M_\odot$ (LIGO-like BHs) and may be reached by either considering more complicated functions $h(\phi)$ or by a better understanding of the accretion and merger processes in the matter dominated regime.
+ 
+
+Given the different spectra depicted in Fig.~\ref{fig:scalar}, one might wonder if a sizable PBH population might be achieved without invoking a non-minimal coupling to gravity, i.e.\ for $\varsigma = 0$. In this case the characteristic feature of the scalar spectrum is a plateau extending to small scales. The function $\beta(M)$ will hence also be constant, and the strongest constraint come from searches for anisotropies in the CMB and for anomalies in the (extra-) galactic photon background, restricting $\beta \lesssim 10^{-28}$ at $M \sim 10^{13}$~g~\cite{Carr:2009jm}. This implies $f \sim 10^{-20} \, (M_\odot/M)^{1/2}$. Integrating over the entire range which could contribute to PBHs, the lower bound $M > 5 \cdot 10^{14}~g $ dominates the integral leading to $f_\text{tot} \lesssim 10^{-11}$, i.e.\ a completely negligible fraction of dark matter. In the setup discussed here, the non-minimal coupling $\varsigma$ is hence essential to obtain a significant fraction of dark matter in PBHs.

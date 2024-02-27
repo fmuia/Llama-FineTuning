@@ -1,0 +1,359 @@
+
+\section{\label{app:sec3}Supplemental material for \prettyref{sec:background}}
+
+In \prettyref{app:Jacobi} we describe the properties of the Jacobi $\sn$ function, which is used to describe the oscillatory regime for solutions to \prettyref{eq:chromonatural_eom_final} for the homogeneous and isotropic gauge-field background. In \prettyref{app:pf-bg-future} we qualitatively describe the asymptotic behaviour of solutions in the infinite past and infinite future. \prettyref{app:t_to_0} gives asymptotic expansions for solutions in the infinite future, while \prettyref{app:pf-approx-w} proves asymptotics in the far past. Along the way, we prove the theorems stated in \prettyref{subsec:solutions}.
+
+\subsection{\label{app:Jacobi}Solution of the quartic oscillator equation via the Jacobi \texorpdfstring{$\sn$}{sn} function}
+
+In the case $\xi=0$ (or in the limit $\tau\to-\infty$ when the last term can be neglected), the equation of motion \prettyref{eq:chromonatural_eom_final} is a quartic oscillator, which is solved by the Jacobi \texorpdfstring{$\sn$}{sn} function. We review some basic facts about this function while providing a derivation. Let $v(\tau)$ denote any solution to the $\xi=0$ version of \prettyref{eq:chromonatural_eom_final}. For comparison, let $h(\tau)$ be any solution to the harmonic oscillator equation. Then 
+\begin{align}
+v''(\tau)+2\left(v(\tau)\right)^{3} & =0, & h''(\tau)+h(\tau) & =0.\label{eq:jacobi-eom}
+\end{align}
+ Multiplying \prettyref{eq:jacobi-eom} by $2v'(\tau)$ and $2h'(\tau)$ respectively, after integration we obtain 
+\begin{align}
+v'(\tau)^{2}+v(\tau)^{4} & =\omega^{4}, & h'(\tau)^{2}+h(\tau)^{2} & =A^{2},\label{eq:jacobi-energy}
+\end{align}
+ where $\omega^{4}$ and $A^{2}$ are integration constants. We will identify $\omega$ and $A$ with the respective amplitudes of oscillation. Identifying the second terms on the left-hand sides of \eqref{eq:jacobi-energy} as twice the potential energy, we note that the first equation in \eqref{eq:jacobi-energy} describes a quartic oscillator. Separating variables and integrating, 
+\begin{align}
+\int\mathrm{d}\tau & =\int\frac{\mathrm{d}v}{\sqrt{\omega^{4}-v^{4}}}, & \int\mathrm{d}\tau & =\int\frac{\mathrm{d}h}{\sqrt{A^{2}-h^{2}}}\nonumber \\
+\tau+u_{0}/\omega & =F\left(\sin^{-1}\left(v/\omega\right)\mid-1\right)/\omega & \tau+\theta_{0} & =\sin^{-1}\left(h/A\right),\label{eq:elliptic-F}
+\end{align}
+ where $u_{0}/\omega$ and $\theta_{0}$ are constants of integration, and $F(\phi\mid m)\equiv\int_{0}^{\phi}\left(1-m\,\sin^{2}(\theta)\right)^{-1/2}\,\mathrm{d}\theta$ is the \emph{incomplete elliptic integral of the first kind} with \emph{elliptic parameter} $m$. For fixed $m$, the inverse function of $u=F(\phi\mid m)$ is defined as the \emph{Jacobi amplitude} $\phi=\am(u\mid m)$. Solving for $v(\tau)$ and $h(\tau)$ respectively, we obtain the general solution 
+\begin{equation}
+v(\tau)=\omega\,\sn\left(\omega\tau+u_{0}\mid-1\right),\qquad h(\tau)=A\,\sin\left(\tau+\theta_{0}\right),\label{eq:quartic-solution}
+\end{equation}
+ where $\sn(u\mid m)\equiv\sin\left(\am\left(u\mid m\right)\right)$. Since we will be concerned only with the case $m=-1$, we define as shorthand
+\[
+\sn(u)\equiv\sn(u\mid-1),\quad\sn'(u)\equiv\tfrac{\mathrm{d}}{\mathrm{d}u}\sn(u\mid-1).
+\]
+ The functions $\sn(u)$ and $\sn'(u)$ both oscillate with unit amplitude and satisfy $\sn(0)=0$ and $\sn'(0)=1$. Just as the quarter-period of $\sin(\theta)$ is given by $\sin^{-1}(1)=\pi/2$, it follows from \prettyref{eq:elliptic-F} that the quarter-period of $\sn(u)$ is $K(-1)\approx5.244$, where $K(m)\equiv F(\sin^{-1}(1)\mid m)$ denotes the \emph{complete elliptic integral of the first kind}. From \prettyref{eq:jacobi-eom} and the $\omega=1$ version of \prettyref{eq:jacobi-energy}, we obtain the identities
+\begin{equation}
+\tfrac{\mathrm{d}}{\mathrm{d}u}\sn'(u)=-2\sn(u)^{3},\qquad\sn'(u)^{2}+\sn(u)^{4}=1.\label{eq:sn-identities}
+\end{equation}
+ Note that the general solution \eqref{eq:quartic-solution} to \prettyref{eq:jacobi-eom} has amplitude $\omega$ and frequency $\tfrac{1}{4}\omega/K(-1)$. 
+
+For any function $s(\tau)$, it will be useful to define the Jacobi version of polar coordinates in phase space. We introduce the radial coordinate $\omega_{s}(\tau)\geq0$ and the angular coordinate $u_{s}(\tau)$ according to 
+\begin{equation}
+\left(s(\tau),s'(\tau)\right)=\left(\omega_{s}(\tau)\sn(u_{s}(\tau)),\ \omega_{s}(\tau)^{2}\sn'(u_{s}(\tau))\right).\label{eq:polar-def}
+\end{equation}
+ It follows from the second identity in \eqref{eq:sn-identities} that 
+\[
+\omega_{s}(\tau)=\sqrt[4]{s'(\tau)^{2}+s(\tau)^{4}}.
+\]
+ Moreover if $s(\tau)$ satisfies an equation of the form $s''(\tau)+2s(\tau)^{3}=F(s(\tau),s'(\tau))$, then the corresponding polar equations are 
+\begin{align}
+\omega_{s}'(\tau)  =\frac{\sn'(u_{s}(\tau))}{2\omega_{s}(\tau)}F,  \qquad \qquad u_{s}'(\tau)  =\omega_{s}(\tau)-\frac{\sn(u_{s}(\tau))}{2\omega_{s}(\tau)^{2}}F, \nonumber \\
+F  =F\left(\omega_{s}(\tau)\sn(u_{s}(\tau)),\ \omega_{s}(\tau)^{2}\sn'(u_{s}(\tau))\right).  \hspace{1.cm}  \label{eq:Jacobi-polar}
+\end{align}
+ In particular, if $F=0$ as in the case $s(\tau)=v(\tau)$ given in \prettyref{eq:jacobi-eom}, then $\omega_{v}'(\tau)=0$ and $u_{v}'(\tau)=\omega$, which agrees with \prettyref{eq:quartic-solution}. 
+
+\subsection{\label{app:pf-bg-future}The limiting behaviour of solutions to the homogeneous background gauge-field equation in the infinite past and future}
+
+Here we analyze the asymptotic behaviour of the equations of motion \prettyref{eq:q-p-eom}. Solutions are given by trajectories of the vector field \eqref{eq:vec-field}, as pictured in \prettyref{fig:trajectories-panel}. In summary, we prove that the observations made in \prettyref{subsec:phase-space} are generally true. We consider two asymptotic limits: the infinite past ($N\to+\infty)$ and the infinite future\footnote{Although inflation ends at $N=0,$ it is still mathematically useful to analyze our background equation of motion by taking limits. The appropriate future limit corresponding to $\tau\to0^{-}$ is $N\to-\infty$. } $(N\to-\infty)$. As we shall see, Bendixson's criterion and the Poincar\'e--Bendixson theorem \cite{bendixson1901} allow us to give a complete classification of all trajectories. Namely, Bendixson's criterion rules out pathologies such as periodic or homoclinic\footnote{A \emph{homoclinic orbit} is a trajectory for which the same (saddle) point is the limit in both the infinite past and infinite future.} orbits, and then the Poincar\'e--Bendixson theorem implies that some limit exists, being either a zero of the vector field or $\bm{\infty}$.\footnote{We say that the limit of a trajectory is $\bm{\infty}$ when the magnitude of the trajectory limits to infinity. Equivalently, when $\mathbb{R}^{2}$ is compactified to $S^{2}$ by adding a point denoted by $\bm{\infty}$, then the limit converges to $\bm{\infty}$. } Further use of Bendixson's criterion will allow us in \prettyref{lem:asymptotic-table} to exactly count the number of trajectories as classified by their asymptotic limits.
+
+The vector field \eqref{eq:vec-field} has at most three zeroes denoted $\mathbf{c}_{0}$, $\mathbf{c}_{1}$, and $\mathbf{c}_{2}$ (see \eqref{eq:ci-points}). We will make use of the following readily-verified properties of the vector field \eqref{eq:vec-field}:
+\begin{itemize}
+\item The divergence $\nabla\cdot$ is strictly positive (the constant function $+3$). 
+\item When $0\leq\xi<2$, there is a single zero at the point $\mathbf{c}_{0}$. When $\xi>2$ there are three zeroes at $\mathbf{c}_{0}$, $\mathbf{c}_{1}$ and $\mathbf{c}_{2}$. (To avoid irrelevant complications arising from degenerate zeroes\footnote{A zero of the vector field $V$ is \emph{degenerate} if its linearization $\frac{\partial V_{i}}{\partial x_{j}}$ at that zero is given by a matrix whose determinant is $0$.} of a vector field, we exclude from analysis the case when $\xi$ is exactly equal to $2$.) In either case, the zeroes are non-degenerate, and $\mathbf{c}_{1}$ is a saddle point while $\mathbf{c}_{0}$ and $\mathbf{c}_{2}$ are attractors (they arise as limit points in the infinite future $N\to-\infty$ but not in the infinite past $N\to+\infty$). 
+\item Whenever it is positive, the auxiliary quantity $D(N)$ given by 
+\begin{equation}
+D(q,p)\equiv p^{2}+q^{4}-\tfrac{4}{3}\xi q^{3},\qquad D(N)\equiv D(q(N),p(N)),\label{eq:def-D}
+\end{equation}
+ is decreasing in time along trajectories. Namely by \prettyref{eq:q-p-eom}, it satisfies 
+\begin{equation}
+-\frac{\mathrm{d}D}{\mathrm{d}N}=-3D-(p^{2}+q^{4})<0\ \textrm{ whenever }D>0.\label{eq:D-decreasing}
+\end{equation}
+\end{itemize}
+To explain the significance of $D(N)$, note that 
+\begin{equation}
+\tau^{-4}D(N)=\left(ef'(\tau)\right)^{2}+\left(ef(\tau)\right)^{4}-\tfrac{4}{3}\xi(ef(\tau))^{3}/(-\tau)=\omega_{ef}(\tau)^{4}\left(1+\mathcal{O}\left(\frac{\xi}{-\tau\omega_{ef}(\tau)}\right)\right).\label{eq:DN-asymptotic}
+\end{equation}
+ When $\tau\ll-\xi/\omega_{ef}(\tau)$ we have $D(N)\approx(\tau\omega_{ef}(\tau))^{4}$. Thus $D(N)$ encodes the approximate amplitude $\omega_{ef}(\tau)$ of oscillations while also satisfying the monotonicity property \eqref{eq:D-decreasing}.  
+\begin{lem}
+\label{lem:oscillation-condition}For a given trajectory, the following conditions are equivalent:
+\begin{enumerate}
+\item \label{enu:inf-past-trajectory-infinity}The trajectory converges to $\bm{\infty}$ in the infinite past.
+\item \label{enu:inf-past--tomega-infinity}$-\tau\omega_{ef}(\tau)\to+\infty$ as $\tau\to-\infty$. 
+\item \label{enu:inf-past-D-infinity}$D(N)\to+\infty$ as $N\to+\infty$. 
+\end{enumerate}
+Moreover, if $D(N)$ is bounded, then the trajectory is bounded.
+\end{lem}
+
+We will show later that these three conditions are also equivalent to $\omega>0$. 
+\begin{proof}
+Consider the limit in the infinite past. A trajectory converges to $\bm{\infty}$ if and only if $p^{2}+q^{4}\to+\infty$. Since $p^{2}+q^{4}=(-\tau\omega_{ef}(\tau))^{4}$ it follows that items \ref{enu:inf-past-trajectory-infinity} and \ref{enu:inf-past--tomega-infinity} are equivalent. Supposing that $-\tau\omega_{ef}(\tau)\to+\infty$, it follows from \prettyref{eq:DN-asymptotic} that $D(N)\to+\infty$. One also sees from \prettyref{eq:DN-asymptotic} that $D(N)$ is large only when $-\tau\omega_{ef}(\tau)$ is. Thus item \ref{enu:inf-past-D-infinity} is also equivalent. Finally, if $D(N)$ is bounded, then $-\tau\omega_{ef}(\tau)$ is bounded and hence $p^{2}+q^{4}$ and thus the trajectory are bounded.
+\end{proof}
+\begin{lem}[Bendixson's criterion]
+\label{lem:Bendixson-criterion}The vector field \eqref{eq:vec-field} has no periodic trajectory. More generally, there are no bounded sets of positive area which are invariant under the flow of \eqref{eq:vec-field}. In particular, no finite union of bounded trajectories forms a loop.
+\end{lem}
+
+\begin{proof}
+Since the divergence is $+3$, the area of any bounded set is proportional to $e^{3N}$ under the flow of \eqref{eq:vec-field}. Since the area of any invariant set must be constant under the flow, any bounded invariant set must have zero area. No periodic orbit is possible: the interior of the enclosed region would be bounded, positive area, and invariant. Similarly, the union of finitely many bounded trajectories cannot form any loop. This general argument goes back to \cite{bendixson1901}. 
+\end{proof}
+Note that \prettyref{lem:Bendixson-criterion} forbids loops formed by any bounded trajectories, regardless of the direction of the flow. Just as it is impossible to flow $\mathbf{a}\to\mathbf{b}$ and $\mathbf{b}\to\mathbf{a}$, it is also forbidden to flow $\mathbf{a}\to\mathbf{b}$ along two distinct trajectories, because the enclosed region would be invariant and have positive area. 
+\begin{lem}[Poincar\'e--Bendixson theorem]
+\label{lem:Poincare-Bendixson} In either limit $N\to\pm\infty$, any trajectory either converges to $\mathbf{c}_{0}$, $\mathbf{c}_{1}$ or $\mathbf{c}_{2}$, or the trajectory is unbounded. 
+\end{lem}
+
+\begin{proof}
+According to the Poincar\'e--Bendixson theorem \cite{bendixson1901}, given any smooth vector field on $\mathbb{R}^{2}$ which has a finite number of non-degenerate zeroes, the limiting behaviour of any trajectory as $N\to+\infty$ or respectively as $N\to-\infty$ is given by one of the following five distinct possibilities: 
+\begin{enumerate}
+\item \label{enu:pb-zero}The trajectory limits to a zero of the vector field. 
+\item \label{enu:pb-unbounded}The trajectory is unbounded. 
+\item \label{enu:pb-periodic}The trajectory is periodic.
+\item \label{enu:pb-almost-periodic}The trajectory spirals towards a periodic trajectory.
+\item \label{enu:pb-broken}The trajectory spirals towards some limiting loop which is a union of finitely many trajectories which connect subsequent saddle-point zeroes of the vector field to each other. 
+\end{enumerate}
+In our case, Bendixson's criterion (\prettyref{lem:Bendixson-criterion}) applies. Thus \ref{enu:pb-periodic}, \ref{enu:pb-almost-periodic} and \ref{enu:pb-broken} are impossible, so \ref{enu:pb-zero} or \ref{enu:pb-unbounded} must be true. 
+\end{proof}
+The next two lemmas imply that $\bm{\infty}$ behaves as a repeller (it arises as a limit in the infinite past $N\to+\infty$ for all sufficiently large initial conditions, but it is never a limit in the infinite future).
+
+\begin{lem}
+\label{lem:D-unbounded} The forward evolution (in the direction $N\to-\infty$) of any trajectory converges to $\mathbf{c}_{0}$, $\mathbf{c}_{1}$ or $\mathbf{c}_{2}$. 
+\end{lem}
+
+\begin{proof}
+For any trajectory beginning at $N_{0}$, consider $D(N)$ for values with $N\leq N_{0}$. Since $D(N)$ cannot be simultaneously positive and increasing with $-N$, it satisfies $D(N)\leq\max(0,D(N_{0}))$ for all $N\leq N_{0}$. Thus $D(N)$ is bounded in the future direction. It follows from \prettyref{lem:oscillation-condition} that the trajectory itself is bounded (see \prettyref{lem:oscillation-condition}), and thus \prettyref{lem:Poincare-Bendixson} implies that the limit is a zero of the vector field. 
+\end{proof}
+%
+\begin{lem}
+\label{lem:dichotomy}Every trajectory satisfies exactly one of the following two conditions:
+\begin{enumerate}
+\item \label{enu:bounded-traj}$D(N)\leq0$ for all $N$, and the trajectory converges to $\mathbf{c}_{0}$, $\mathbf{c}_{1}$ or $\mathbf{c}_{2}$ in the infinite past.
+\item \label{enu:conv-to-inf}The trajectory converges to $\bm{\infty}$ in the infinite past, and $-\tau\omega_{ef}(\tau)\to+\infty$ as $\tau\to-\infty$.
+\end{enumerate}
+\end{lem}
+
+We will see in \prettyref{lem:D-negative-omega-zero} that the first case corresponds to $\omega=0$, which consists of constant trajectories and, by \prettyref{lem:asymptotic-table}, also the instanton-type trajectories. In \prettyref{lem:omega-positive} we will see that the second case corresponds to $\omega>0$, which are the solutions which oscillate in the far past.
+\begin{proof}
+If $D(N)\leq0$ for all $N$ then by \prettyref{lem:oscillation-condition} the trajectory is bounded, and hence by \prettyref{lem:Poincare-Bendixson} it converges to $\mathbf{c}_{0}$, $\mathbf{c}_{1}$ or $\mathbf{c}_{2}$ in the infinite past. For the remainder of the assertion, it suffices to show that if $D(N_{1})>0$ for some $N_{1}$ then $D(N)\to+\infty$ as $N\to\infty$, because then \prettyref{lem:oscillation-condition} implies \ref{enu:conv-to-inf}. From \prettyref{eq:D-decreasing}, it follows that $D(N)$ is increasing as $N$ increases for $N\geq N_{1}$. Thus either $D(N)\to+\infty$ or $D(N)$ increases to some finite positive limit. Suppose for contradiction that $D(N)$ increases to a finite positive limit. Then $D(N)$ and hence also the trajectory are bounded as $N\to\infty$. By \prettyref{lem:Poincare-Bendixson} it follows that the trajectory must limit to some $\mathbf{c}_{i}$. However, as is easily verified, $D(\mathbf{c}_{i})\leq0$ so this is impossible. In summary, if $D(N)\leq0$ then the trajectory is bounded and so \ref{enu:bounded-traj} holds. Otherwise there exists some $N_{1}$ such that $D(N_{1})>0$ from which it follows that $D(N)\to+\infty$, and \ref{enu:conv-to-inf} holds. 
+\end{proof}
+\begin{lem}
+\label{lem:D-negative-omega-zero}If $D(N_{1})\leq0$ then $\omega_{ef}(\tau_{1})\leq\tfrac{4}{3}\xi/(-\tau_{1})$, where $N_{1}$ and $\tau_{1}$ correspond to the same time. In particular, if $D(N)\leq0$ for all $N$, then $\omega=0$. 
+\end{lem}
+
+\begin{proof}
+From \prettyref{eq:DN-asymptotic}, $D(N_{1})\leq0$ is equivalent to 
+\[
+\omega_{ef}(\tau_{1})^{4}=\left(ef'(\tau_{1})\right)^{2}+\left(ef(\tau_{1})\right)^{4}\leq\tfrac{4}{3}\xi(ef(\tau_{1}))^{3}/(-\tau_{1}).
+\]
+ Thus 
+\[
+\omega_{ef}(\tau_{1})^{4}\leq\tfrac{4}{3}\xi\omega_{ef}(\tau_{1})^{3}/(-\tau_{1})\implies\omega_{ef}(\tau_{1})\leq\tfrac{4}{3}\xi/(-\tau_{1}).
+\]
+ If this inequality holds for all $\tau$, then $\omega\equiv\lim_{\tau\to-\infty}\omega_{ef}(\tau)=0$.
+\end{proof}
+%
+\begin{lem}
+\label{lem:asymptotic-table}When $0\leq\xi<2$, all non-constant trajectories limit to $\bm{\infty}$ in the infinite past and to $\mathbf{c}_{0}$ in the infinite future. If we identify trajectories which differ by a shift in $N$ so that each point $(q,p)$ belongs to a unique trajectory, then for $\xi>2$, the number of non-constant trajectories classified by their asymptotic behaviour is given by \prettyref{tab:asymptotic-classification}.
+\begin{table}[h]
+\begin{centering}
+\begin{tabular}{|l|>{\centering}p{3cm}|>{\centering}p{3cm}|>{\centering}p{3cm}|}
+\hline 
+\diagbox[width=5.9cm,height=1.81cm]{infinite past}{infinite future} & $\mathbf{c}_{0}$ as $N\to-\infty$\linebreak{}
+($c_{0}$\nobreakdash-type) & $\mathbf{c}_{1}$ as $N\to-\infty$\linebreak{}
+($c_{1}$\nobreakdash-type) & $\mathbf{c}_{2}$ as $N\to-\infty$\linebreak{}
+($c_{2}$\nobreakdash-type)\tabularnewline
+\hline 
+$\bm{\infty}$ as $N\to+\infty$ ($\omega>0$) & $\infty$ & $2$ & $\infty$\tabularnewline
+\hline 
+$\mathbf{c}_{1}$ as $N\to+\infty$ (instanton-type) & $1$ & $0$ & $1$\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\caption{\label{tab:asymptotic-classification}Number of non-constant trajectories for $\xi>2$ as classified by their behaviour in the infinite past ($N\to+\infty)$ and the infinite future ($N\to-\infty$).}
+\end{table}
+\end{lem}
+
+\begin{proof}
+First assume that $\xi>2$. Then by Lemmas~\ref{lem:D-unbounded} and \ref{lem:dichotomy}, the limit in the infinite past or future of any trajectory exists and belongs to the set $\left\{ \mathbf{c}_{0},\mathbf{c}_{1},\mathbf{c}_{2},\bm{\infty}\right\} $. Since $\mathbf{c}_{0}$ and $\mathbf{c}_{2}$ are attractors, they cannot arise as $N\to+\infty$ except as constant trajectories. In \prettyref{lem:D-unbounded}, we showed that $\infty$ is not a limit as $N\to-\infty$. Thus the rows and columns listed in \prettyref{tab:asymptotic-classification} correspond to all possibilities. 
+
+Now we deduce the values listed in \prettyref{tab:asymptotic-classification}. Since $\mathbf{c}_{1}$ is a saddle point, exactly two trajectories limit to $\mathbf{c}_{1}$ as $N\to+\infty$ (resp. $N\to-\infty$). We call the pair converging to $\mathbf{c}_{1}$ as $N\to+\infty$ the ``instanton-type trajectories'' and to $\mathbf{c}_{1}$ as $N\to-\infty$ the ``$c_{1}$\nobreakdash-type trajectories.'' First consider the possibility that a trajectory is simultaneously an instanton-type and $c_{1}$\nobreakdash-type trajectory. No non-constant trajectory can limit to $\mathbf{c}_{1}$ both as $N\to+\infty$ and $N\to-\infty$ since that would form a loop, which is forbidden by Bendixson's criterion (\prettyref{lem:Bendixson-criterion}). Thus the only simultaneously instanton-type and $c_{1}$\nobreakdash-type trajectory is constant, so the corresponding table entry is $0$. Since the middle column corresponds to $c_{1}$\nobreakdash-type solutions, of which there are two, the remaining table entry must be $2$, and thus both $c_{1}$\nobreakdash-type solutions must converge to $\bm{\infty}$ as $N\to+\infty$. Next we consider the two instanton-type solutions which correspond to the bottom row of the table. It is impossible for any entry in the bottom row to be $2$, because that would lead to a loop. Therefore the remaining two entries along the bottom row must be $1$. Finally, since $\mathbf{c}_{0}$ and $\mathbf{c}_{2}$ are attractors, infinitely many trajectories limit to them as $N\to-\infty$. Since the corresponding columns must sum to $\infty$, the remaining two entries must be $\infty$. 
+
+In order to deduce the result for the case $\xi<2$, note that the $\mathbf{c}_{1}$ and $\mathbf{c}_{2}$ points do not exist, so the corresponding version of \prettyref{tab:asymptotic-classification} collapses to the single entry in the upper-left. 
+\end{proof}
+The previous lemmas lead easily to the proof of \prettyref{thm:bg-future} and \prettyref{thm:phase-intervals}:
+\begin{proof}[Proof of \prettyref{thm:bg-future}]
+\label{pf:bg-future} We must show that $\lim_{\tau\to0^{-}}-\tau\,ef(\tau)=c_{i}\xi$ for some $c_{i}$, and that $\lim_{\lambda\to0^{+}}\lambda\,ef(\lambda\tau)=c_{i}\xi/(-\tau)$. For the former, 
+\[
+\lim_{\tau\to0^{-}}-\tau\,ef(\tau)=\lim_{N\to-\infty}q(N)=c_{i}\xi,
+\]
+ where $q(\tau)$ is defined in \eqref{eq:cov}, the change of variables to $N$ is defined in \eqref{eq:g-def}, and the last equality follows from \prettyref{lem:asymptotic-table}: the trajectory limits to one of the points $\mathbf{c}_{i}$, and the $q$-coordinate of $\mathbf{c}_{i}$ is equal to $c_{i}\xi$ by \eqref{eq:ci-points}. Finally, 
+\[
+\lim_{\lambda\to0^{+}}\lambda\,ef(\lambda\tau)=(-\tau)^{-1}\lim_{\lambda\to0^{+}}q(N+\ln\lambda)=c_{i}\xi/(-\tau).
+\]
+ 
+\end{proof}
+%
+\begin{proof}[Proof of \prettyref{thm:phase-intervals}]
+ Fix any real number $C>0$. For any fixed $\xi>2$, we first observe that the set of all trajectories (modulo shifts in $N$) which limit to $\bm{\infty}$ in the infinite past is parameterized by the level set $\left\{ (q,p)\mid D(q,p)=C\right\} $, which is topologically a circle. In particular, each trajectory must intersect this level set exactly once. This is because $D$ is decreasing in time when positive, $D(N)\to+\infty$ in the infinite past, and by \prettyref{lem:asymptotic-table}, $D(N)\to D(\mathbf{c}_{i})\leq0$ for some $\mathbf{c}_{i}$ in the infinite future. Also from \prettyref{lem:asymptotic-table}, exactly two trajectories of this type correspond to $c_{1}$\nobreakdash-type solutions. The non-constant $c_{0}$\nobreakdash-type and $c_{2}$\nobreakdash-type solutions comprise the remaining points, which topologically are two disjoint open intervals. Since $c_{0}$\nobreakdash-type and $c_{2}$\nobreakdash-type solutions are basins of attraction for the attractors $\mathbf{c}_{0}$ and $\mathbf{c}_{2}$, they are open subsets of the $q$-$p$ plane. Thus their intersections with the level set are non-empty open subsets of the circle. The only way to partition two disjoint intervals into two non-empty open subsets is when each subset corresponds to an interval. Thus the two points on the circle corresponding to $c_{1}$\nobreakdash-type solutions divide the complement of the circle into two open intervals of respective $c_{0}$\nobreakdash-type and $c_{2}$\nobreakdash-type solutions. 
+
+The phase $u_{0}$ also gives a continuous parameterization of all trajectories (modulo shifts in $N$), and it can be shown that $u_{0}$ parameterizes each level set. Thus for each fixed $\xi>2$, there are two phases corresponding to $c_{1}$\nobreakdash-type solutions, and the two complementary phase intervals correspond to intervals of respective $c_{0}$\nobreakdash-type and $c_{2}$\nobreakdash-type solutions.
+\end{proof}
+
+\subsection{\label{app:t_to_0}Asymptotics for the general solution of the background gauge field equations in the infinite future (\texorpdfstring{$\tau\to0^-$}{\tau\to0-}) }
+
+We provide here a complete description of the asymptotic behaviour of solutions to \prettyref{eq:chromonatural_eom_final} as $\tau\to0^{-}$. According to \prettyref{thm:bg-future}, for any fixed $\xi$, the limit 
+\[
+\lim_{\tau\to0^{-}}-\tau\,ef(\tau)
+\]
+achieves at most three distinct values as $ef(\tau)$ ranges over all solutions: $c_{i}\xi$ for $i\in\left\{ 0,1,2\right\} $, where $c_{i}$ is defined in \prettyref{eq:c-definitions}. In this way, each solution falls into one of three families: two two-parameter families ($c_{0}$\nobreakdash-type and $c_{2}$\nobreakdash-type) and a one-parameter family ($c_{1}$\nobreakdash-type). For each of these three families we provide the leading terms of an asymptotic series solution to \prettyref{eq:chromonatural_eom_final} around $\tau=0$ from which all the parameters can be determined. For brevity, we omit the degenerate case $\xi=2$. The following expressions can be verified by substituting them into \prettyref{eq:chromonatural_eom_final}. Higher-order expressions can be derived by the method of undetermined coefficients.
+\begin{enumerate}
+\item The $c_{0}$\nobreakdash-type solutions with parameters $\beta$ and $\eta$ are 
+\[
+ef(\tau)=\beta+2\xi\beta^{2}\cdot(-\tau)\ln(-\tau)+\eta\cdot(-\tau)+\mathcal{O}\left(\left(\xi^{2}\left|\beta^{3}\ln(-\tau)\right|+\xi\eta^{2}\right)(-\tau)^{2}\right)\ \mathrm{as}\ \tau\to0^{-}.
+\]
+ Under the transformation \eqref{eq:symmetry3}, the parameters transform as $(\beta,\eta)\mapsto(\lambda\beta,\lambda^{2}(\eta+2\xi\beta^{2}\ln\lambda)).$
+\item The $c_{1}$\nobreakdash-type solutions with the single parameter $\rho$ are 
+\begin{equation}
+ef(\tau)=\frac{c_{1}\xi}{-\tau}\left(1+\rho\left(-\tau\right)^{\tfrac{1}{2}\left(3+\sqrt{d_{1}}\right)}+\mathcal{O}\left(\rho^{2}\left(-\tau\right)^{3+\sqrt{d_{1}}}\right)\right)\ \mathrm{as}\ \tau\to0^{-},\label{eq:c1-family}
+\end{equation}
+ where 
+\[
+d_{1}=25-8c_{1}\xi^{2}.
+\]
+ As $\xi$ increases from $2$ to $\infty$, $\sqrt{d_{1}}$ increases from $3$ to $\sqrt{17}$. The parameter $\rho$ transforms under \eqref{eq:symmetry3} as $\rho\mapsto\lambda^{\tfrac{1}{2}\left(3+\sqrt{d_{1}}\right)}\rho$. 
+\item The $c_{2}$\nobreakdash-type solutions when\footnote{If $2<\xi<\sqrt{\frac{625}{136}}$ then the square root is negative, so \prettyref{eq:c2-sol} must be rewritten in overdamped form. The case $\xi=\sqrt{\frac{625}{136}}$ corresponds to critical damping. Qualitatively, the only difference in these cases is that the perturbations around the $c_{2}$ solution decay without oscillating. } $\xi>\sqrt{\frac{625}{136}}\approx2.14$ with parameters $\upsilon$ and $\theta$ are of the form 
+\begin{equation}
+ef(\tau)=\frac{c_{2}\xi}{-\tau}\left(1+\nu(-\tau)^{3/2}\cos\left(\tfrac{1}{2}\sqrt{-d_{2}}\ln(-\tau)+\theta\right)+\mathcal{O}\left(\nu^{2}(-\tau)^{3}\right)\right)\ \mathrm{as}\ \tau\to0^{-},\label{eq:c2-sol}
+\end{equation}
+ where 
+\[
+d_{2}:=25-8c_{2}\,\xi^{2}.
+\]
+ The parameters transform under \eqref{eq:symmetry3} as $(\nu,\theta)\mapsto(\lambda^{3/2}\nu,\theta+\tfrac{1}{2}\sqrt{-d_{2}}\ln(\lambda))$. 
+\end{enumerate}
+In accordance with \prettyref{thm:bg-future}, it is clear from these formulas and the corresponding transformation laws for the parameters that in the limit $\lambda\to0$ of \eqref{eq:symmetry3} (corresponding to the infinite future), we recover the respective $c_{i}$-solutions $ef(\tau)=c_{i}\xi/(-\tau)$. Note that in this same limit the error terms also vanish, and so these asymptotic formulas become exact.
+
+Closely related to the $c_{1}$ solutions are the instanton-type solutions 
+\begin{equation}
+ef(\tau)=\frac{c_{1}\xi}{-\tau}\left(1+\rho\left(-\tau\right)^{\tfrac{1}{2}\left(3+\sqrt{d_{1}}\right)}+\mathcal{O}\left(\rho^{2}\left(-\tau\right)^{3+\sqrt{d_{1}}}\right)\right)\label{eq:instanton-type}
+\end{equation}
+ which are vacuum-to-vacuum transitions which tunnel from the $c_{1}$ solution in the infinite past to either the $c_{0}$ solution or $c_{2}$ solution in the infinite future.
+
+\subsection{\label{app:pf-approx-w}Convergence of \texorpdfstring{$ef(\tau)$}{ef(\tau)} to the Jacobi \texorpdfstring{$\sn$}{sn} function in the far past}
+
+In this subsection, we prove \prettyref{thm:oscillatory} by studying the asymptotic behaviour of solutions to \prettyref{eq:chromonatural_eom_final} as $\tau\to-\infty$. 
+
+As is visible from the envelope of solutions shown in \prettyref{fig:omega_eq_1}, the mean value of the oscillations is slightly positive, and decaying to zero. To very good approximation, this mean value is given by $\xi/(-3\tau)$ as $\tau\to-\infty$. This is verified by defining $s(\tau)$ with this value subtracted from $ef(\tau)$: 
+\begin{equation}
+s(\tau)\equiv ef(\tau)-\xi/(-3\tau),\label{eq:def-s}
+\end{equation}
+ We compare the equations of motion for $ef(\tau)$ and $s(\tau)$: 
+\begin{equation}
+(ef)''(\tau)+2\left(ef(\tau)\right)^{3}=\frac{2\,\xi}{-\tau}(ef(\tau))^{2}\implies s''(\tau)+2s(\tau)^{3}=\frac{2}{3}\left(\frac{\xi}{-\tau}\right)^{2}\left(1+\left(\frac{2}{9}-\frac{1}{\xi^{2}}\right)\left(\frac{\xi}{-\tau s(\tau)}\right)\right)s(\tau).\label{eq:s-eom}
+\end{equation}
+The right-hand sides can be viewed as forcing terms of the quartic oscillator. The forcing term for $ef(\tau)$ decays in proportion to $(-\tau)^{-1}$, while the forcing term for $s(\tau)$ decays faster as $\tau^{-2}$. Thus the Jacobi $\sn$ function approximates $s(\tau)$ to higher order as $\tau\to-\infty$. Indeed, this allows us to prove asymptotics by switching to Jacobi polar coordinates for $s(\tau)$. 
+
+We shall compute $\omega$ by taking the limit of $\omega_{s}(\tau)$ in the asymptotic past. First we show that working with $\omega_{s}(\tau)$ yields the correct result:
+\begin{lem}
+\label{lem:omega-ef-equivalent-to-omega-s}If either $\lim_{\tau\to-\infty}\omega_{ef}(\tau)$ or $\lim_{\tau\to-\infty}\omega_{s}(\tau)$ exists, then both limits exist and equal $\omega$. Furthermore, $\lim_{\tau\to-\infty}-\tau\omega_{ef}(\tau)=+\infty$ if and only if $\lim_{\tau\to-\infty}-\tau\omega_{s}(\tau)=+\infty$. 
+\end{lem}
+
+\begin{proof}
+Recall that $\omega$ is by definition the first limit. Expanding out using the definitions, $\omega_{ef}(\tau)^{4}-\omega_{s}(\tau)^{4}=\mathcal{O}(\xi\omega_{ef}(\tau)^{3}/(-\tau))$, and symmetrically $\omega_{ef}(\tau)^{4}-\omega_{s}(\tau)^{4}=\mathcal{O}(\xi\omega_{s}(\tau)^{3}/(-\tau))$. If either limit exists, then the respective asymptotic estimate shows that the difference of the limits vanishes. A similar argument applied to the ratio $-\tau\omega_{s}(\tau)/(-\tau\omega_{ef}(\tau))\to1$ proves the last assertion. 
+\end{proof}
+In order to estimate $\omega_{s}(\tau)$ and $u_{s}(\tau)$, we use their differential equations. Substituting \prettyref{eq:s-eom} into \prettyref{eq:Jacobi-polar}, 
+\begin{align}
+\omega_{s}'(\tau) & =\frac{1}{3}\left(\frac{\xi}{-\tau}\right)^{2}\left(\sn(u_{s}(\tau))+\left(\frac{2}{9}-\frac{1}{\xi^{2}}\right)\left(\frac{\xi}{-\tau\omega_{s}(\tau)}\right)\right)\sn'(u_{s}(\tau)),\label{eq:omega-eom}\\
+u_{s}'(\tau) & =\omega_{s}(\tau)\left(1-\frac{1}{3}\left(\frac{\xi}{-\tau\omega_{s}(\tau)}\right)^{2}\left(\sn(u_{s}(\tau))^{2}+\left(\frac{2}{9}-\frac{1}{\xi^{2}}\right)\frac{\xi\sn(u_{s}(\tau))}{-\tau\omega_{s}(\tau)}\right)\right).\label{eq:u-eom}
+\end{align}
+
+\begin{thm}
+\label{thm:omega-s}The numbers $\omega$ and $u_{0}\equiv\lim_{\tau\to-\infty}\left(u_{s}(\tau)-\omega\tau\right)$ are well-defined. If $\omega=0$ then $\omega_{ef}(\tau)\leq\tfrac{4}{3}\xi/(-\tau)$ for all $\tau$. If $\omega>0$ then 
+\begin{align*}
+\omega_{s}(\tau_{2}) & =\left(1+\mathcal{O}\left(\frac{\xi^{2}}{\omega^{2}\tau_{2}^{2}}\right)\right)\omega,\ \textrm{ and } & u_{s}(\tau)= & \omega\tau+u_{0}+\mathcal{O}(\xi^{2}/(-\omega\tau))\ \textrm{ as }\tau\to-\infty.
+\end{align*}
+\end{thm}
+
+\begin{proof}
+In what follows, we prove several lemmas which, when taken together, imply this result. According to \prettyref{lem:omega-ef-equivalent-to-omega-s}, we can replace $\omega_{ef}(\tau)$ with $\omega_{s}(\tau)$. We already know from \prettyref{lem:dichotomy} that there are two cases to consider: either $D\leq0$ for all $\tau$ or $\lim_{\tau\to-\infty}-\tau\omega_{s}(\tau)=+\infty$. \prettyref{lem:D-negative-omega-zero} showed that the former case leads to $\omega=0$ with the desired estimate. For the remainder, it suffices to assume $\lim_{\tau\to-\infty}-\tau\omega_{s}(\tau)=+\infty$. Under this assumption, we prove in \prettyref{lem:ws-limit-exists} that $\omega$ exists, in \prettyref{lem:omega-positive} that $\omega>0$, and the desired estimates in \prettyref{lem:omega-s-estimate} and \prettyref{lem:u0-error}. 
+\end{proof}
+%
+\begin{lem}
+\label{lem:ws-limit-exists}In the case $\lim_{\tau\to-\infty}-\tau\omega_{s}(\tau)=+\infty$, the number $\omega\equiv\lim_{\tau\to-\infty}\omega_{ef}(\tau)$ is well-defined.
+\end{lem}
+
+\begin{proof}
+By \prettyref{lem:omega-ef-equivalent-to-omega-s}, it suffices to show that $\lim_{\tau\to-\infty}\omega_{s}(\tau)$ converges. This is equivalent to showing that for all $\tau_{1}\leq\tau_{2}$, 
+\[
+\left|\omega_{s}(\tau_{2})-\omega_{s}(\tau_{1})\right|\to0\textrm{ as }\tau_{2}\to-\infty.
+\]
+ We can estimate the difference $\omega_{s}(\tau_{2})-\omega_{s}(\tau_{1})=\int_{\tau_{1}}^{\tau_{2}}\omega_{s}'(\tau)\,\mathrm{d}\tau$ by using the differential equation \eqref{eq:omega-eom}. Since $\left|\sn(u)\right|\leq1$ and $\left|\sn'(u)\right|\leq1$, 
+\[
+\left|\omega_{s}'(\tau)\right|\leq\frac{1}{3}\left(\frac{\xi}{-\tau}\right)^{2}\left(1+\left|\frac{2}{9}-\frac{1}{\xi^{2}}\right|\left(\frac{\xi}{-\tau\omega_{s}(\tau)}\right)\right).
+\]
+ Since $-\tau\omega_{s}(\tau)\to\infty$ as $\tau\to-\infty$, for any $\epsilon>0$, there exists a $\tau_{*}$ such that for all $\tau\leq\tau_{*},$ 
+\[
+\left|\omega_{s}'(\tau)\right|\leq\frac{1}{3}\left(\frac{\xi}{-\tau}\right)^{2}\left(1+\epsilon\right).
+\]
+ Here we choose $\tau_{*}$ corresponding to $\epsilon=2$. It follows that for any $\tau_{1}\leq\tau_{2}\leq\tau_{*}$, 
+\[
+\left|\omega_{s}(\tau_{2})-\omega_{s}(\tau_{1})\right|\leq\int_{\tau_{1}}^{\tau_{2}}\left|\omega_{s}'(\tau)\right|\,\mathrm{d}\tau\leq\frac{\xi^{2}}{-\tau_{2}}\to0\ \textrm{ as }\ensuremath{\tau_{2}\to-\infty}.
+\]
+\end{proof}
+\begin{lem}
+\label{lem:omega-positive}If $\lim_{\tau\to-\infty}-\tau\omega_{s}(\tau)=+\infty$ then $\omega>0$ and the function $s(\tau)$ is $\mathcal{O}(\omega)$ as $\tau\to-\infty$. 
+\end{lem}
+
+Suppose for contradiction that $\omega=0$. Then the proof of \prettyref{lem:ws-limit-exists} gives 
+\[
+-\tau_{2}\omega_{s}(\tau_{2})=-\tau_{2}\omega_{s}(\tau_{2})-\tau_{2}\omega=-\tau_{2}\int_{-\infty}^{\tau_{2}}\omega_{s}'(\tau)\,\mathrm{d}\tau\leq\xi^{2},
+\]
+ which contradicts $-\tau\omega_{s}(\tau)\to+\infty$. Thus $\omega>0$. In this case, $\left|s(\tau)\right|\leq2\omega$ for sufficiently negative $\tau$. Thus $s(\tau)$ is $\mathcal{O}(\omega)$. 
+\begin{lem}
+\label{lem:omega-s-estimate}If $\omega>0$ then 
+\begin{equation}
+\omega_{s}(\tau)=\left(1+\mathcal{O}\left(\frac{\xi^{2}}{\omega^{2}\tau^{2}}\right)\right)\omega\ \textrm{ as }\tau\to-\infty.\label{eq:omega-quadratic-asymptotic}
+\end{equation}
+\end{lem}
+
+\begin{proof}
+For this proof it is easier not to use polar coordinates. We need the identity 
+\[
+\frac{\mathrm{d}}{\mathrm{d}\tau}\omega_{s}(\tau)^{4}=2s'(\tau)\left(s''(\tau)+2s(\tau)^{3}\right)=\frac{2}{3}\left(\frac{\xi}{-\tau}\right)^{2}\left(s(\tau)^{2}\right)'+\frac{4}{3}\left(\frac{2}{9}-\frac{1}{\xi^{2}}\right)\left(\frac{\xi}{-\tau}\right)^{3}s'(\tau),
+\]
+ which follows from \prettyref{eq:s-eom}. By the fundamental theorem of calculus, 
+\begin{align*}
+\omega_{s}(\tau_{2})^{4}-\omega^{4} & =\int_{-\infty}^{\tau_{2}}\frac{\mathrm{d}}{\mathrm{d}\tau}\omega_{s}(\tau)^{4}\,\mathrm{d}\tau=\int_{-\infty}^{\tau_{2}}\left(\frac{2}{3}\left(\frac{\xi}{-\tau}\right)^{2}\left(s(\tau)^{2}\right)'+\frac{4}{3}\left(\frac{2}{9}-\frac{1}{\xi^{2}}\right)\left(\frac{\xi}{-\tau}\right)^{3}s'(\tau)\right)\,\mathrm{d}\tau\\
+ & =\frac{2\xi^{2}s(\tau_{2})^{2}}{3\tau_{2}^{2}}+\left(\frac{2}{9}-\frac{1}{\xi^{2}}\right)\frac{4\xi^{3}s(\tau_{2})}{-3\tau_{2}^{3}}-\int_{-\infty}^{\tau_{2}}\left(\frac{4\xi^{2}s(\tau)^{2}}{-3\tau{}^{3}}+\left(\frac{2}{9}-\frac{1}{\xi^{2}}\right)\frac{4\xi^{3}s(\tau)}{\tau^{4}}\right)\,\mathrm{d}\tau,
+\end{align*}
+ where the last equality follows from integration by parts. From \prettyref{lem:omega-positive} we obtain 
+\[
+\omega_{s}(\tau_{2})^{4}-\omega^{4}=\omega^{4}\left(\mathcal{O}\left(\frac{\xi^{2}}{\omega^{2}\tau_{2}^{2}}\right)+\int_{-\infty}^{\tau_{2}}\mathcal{O}\left(\frac{\xi^{2}}{-\omega^{2}\tau^{3}}\right)\,\mathrm{d}\tau\right)=\omega^{4}\mathcal{O}\left(\frac{\xi^{2}}{\omega^{2}\tau_{2}^{2}}\right).
+\]
+ Solving for $\omega_{s}(\tau_{2})$ and using $\sqrt[4]{1+\epsilon}=1+\mathcal{O}\left(\epsilon\right)$, we obtain \prettyref{eq:omega-quadratic-asymptotic}.  
+\end{proof}
+\begin{lem}
+\label{lem:u0-error}If $\omega>0$ then the limit $u_{0}\equiv\lim_{\tau\to-\infty}\left(u_{s}(\tau)-\omega\tau\right)$ is well-defined (modulo the period of $\sn$), and $u_{s}(\tau)=\omega\tau+u_{0}+\mathcal{O}(\xi^{2}/(-\omega\tau)).$ 
+\end{lem}
+
+\begin{proof}
+From \prettyref{eq:u-eom}, 
+\[
+u_{s}'(\tau)=\omega\left(1+\mathcal{O}\left(\frac{\xi^{2}}{\omega^{2}\tau_{2}^{2}}\right)\right)\left(1+\mathcal{O}\left(\frac{\xi^{2}}{\omega^{2}\tau_{2}^{2}}\right)\mathcal{O}\left(1\right)\right)=\omega\left(1+\mathcal{O}\left(\frac{\xi^{2}}{\omega^{2}\tau_{2}^{2}}\right)\right).
+\]
+ Thus if $\tau_{1}\leq\tau_{2},$ then 
+\[
+\left|(u(\tau_{2})-\omega\tau_{2})-(u(\tau_{1})-\omega\tau_{1})\right|=\int_{\tau_{1}}^{\tau_{2}}\mathcal{O}\left(\frac{\xi^{2}}{\omega\tau_{2}^{2}}\right)\,\mathrm{d}\tau=\mathcal{O}\left(\frac{\xi^{2}}{-\omega\tau_{2}}\right).
+\]
+ Since this approaches zero as $\tau_{2}\to-\infty$, the limit $u_{0}$ exists, and the claimed asymptotic holds.  
+\end{proof}
+%
+\begin{proof}[Proof of \prettyref{thm:oscillatory}]
+\label{pf:oscillatory} To show that $(\omega,u_{0})\mapsto(\lambda\omega,u_{0})$, one applies the transformation \eqref{eq:symmetry3} to \prettyref{eq:approx-quartic}. It remains to prove the error estimate. From the definitions \eqref{eq:def-s} of $s(\tau)$ and \eqref{eq:polar-def} of Jacobi polar coordinates, 
+\[
+ef(\tau)=\xi/(-3\tau)+s(\tau)=\omega_{s}(\tau)\sn(u_{s}(\tau))+\mathcal{O}(\xi/(-\tau))\ \textrm{ as }\tau\to-\infty.
+\]
+ Note that since $\sn'(u)$ is bounded, it follows that $\sn(u+\epsilon)=\sn(u)+\mathcal{O}(\epsilon)$. Combining this with the estimates of \prettyref{thm:omega-s}, 
+\begin{align*}
+ef(\tau) & =\omega\left(1+\mathcal{O}\left(\frac{\xi^{2}}{\omega^{2}\tau^{2}}\right)\right)\left(\sn(\omega\tau+u_{0})+\mathcal{O}(\xi^{2}/(-\omega\tau))\right)+\mathcal{O}(\xi/(-\tau))\\
+ & =\omega\sn(\omega\tau+u_{0})+\mathcal{O}((\xi+\xi^{2})/(-\tau)),
+\end{align*}
+ as desired. 
+\end{proof}
+%
+\begin{proof}[Proof of \prettyref{thm:approx-w}]
+\label{pf:approx-w} The parameter $\omega$ which appeared in the proof of \prettyref{thm:oscillatory} was indeed the same $\omega$ defined as $\lim_{\tau\to-\infty}\omega_{ef}(\tau)$. In order to show that $\omega>0$ for the two given cases, by \prettyref{lem:oscillation-condition} and \prettyref{lem:omega-positive} it suffices to show that the trajectory converges to $\bm{\infty}$ in the infinite past. In the case $0\leq\xi<2$, \prettyref{lem:asymptotic-table} implies that all non-zero trajectories limit to $\bm{\infty}$ in the infinite past, and $\omega_{ef}(\tau)>0$ implies that the trajectory is nonzero. For general $\xi$, if $\omega_{ef}(\tau_{1})>\tfrac{4}{3}\xi/(-\tau_{1})$ then \prettyref{lem:D-negative-omega-zero} implies that $D(N_{1})>0$, and then \prettyref{lem:dichotomy} implies that the trajectory limits to $\bm{\infty}$. 
+\end{proof}
+

@@ -1,0 +1,53 @@
+In this appendix we present some details of the derivation of Eq.~\eqref{non_minimal:gauge_sourced} and we also show some plots that ensure the validity of the approximations performed during this procedure. Let us start by expressing Eq.~\eqref{non_minimal:scalar_fluctuations} as:
+\begin{equation}
+\begin{aligned}
+	\label{spectrum:perturbations_final}
+	&-\frac{\alpha}{\Lambda} \frac{\delta_{\vec{E}\cdot \vec{B}}}{K}  = \ddot{\delta\phi} + \left[ 3H + \dot{\phi}_0 \frac{\textrm{d} \ln K}{\textrm{d} \phi_0}   - \frac{\pi}{ H K} \left( \frac{\alpha}{\Lambda} \right)^2  \langle \vec{E} \cdot \vec{B} \rangle \right] \dot{\delta \phi} \, +  \\ 
+	&\qquad \qquad + \left[ \frac{1}{2} \frac{\textrm{d}}{\textrm{d} \phi_0} \left(\frac{\textrm{d} \ln K}{\textrm{d} \phi_0}\right) \dot{\phi}_0^{ 2}  + \frac{\textrm{d}}{\textrm{d} \phi_0} \left( \frac{V_{E,\phi_0}}{K}\right) - \left(\frac{\alpha}{\Lambda}\right) \frac{\textrm{d} \ln K}{\textrm{d} \phi_0}   \frac{\langle \vec{E}\cdot \vec{B}\rangle}{K} - \frac{\vec{\nabla}^2}{a^2} \right] \delta \phi \  .
+\end{aligned}
+\end{equation}
+By neglecting the $\ddot{\delta \phi}$ term and the $ \vec{\nabla}^2 \delta \phi /a^2$ (that clearly are higher order in terms of the slow-roll parameters) and, following the same procedure used in~\cite{Linde:2012bt} by approximating $\dot{\delta \phi}$ with $H \delta \phi$, Eq.~\eqref{spectrum:perturbations_final} can be expressed as:
+\begin{equation}
+\begin{aligned}
+	\label{spectrum:perturbations_approx}
+	&-\frac{\alpha}{\Lambda} \frac{\delta_{\vec{E}\cdot \vec{B}}}{K}  = \left[ 3H^2 + \dot{\phi}_0 H \frac{\textrm{d} \ln K}{\textrm{d} \phi_0}   - \frac{\pi}{ K} \left( \frac{\alpha}{\Lambda} \right)^2  \langle \vec{E} \cdot \vec{B} \rangle \right.  \, +  \\ 
+	&\qquad \qquad + \left. \frac{1}{2} \frac{\textrm{d}}{\textrm{d} \phi_0} \left(\frac{\textrm{d} \ln K}{\textrm{d} \phi_0}\right) \dot{\phi}_0^{ 2}  + \frac{\textrm{d}}{\textrm{d} \phi_0} \left( \frac{V_{E,\phi_0}}{K}\right) - \left(\frac{\alpha}{\Lambda}\right) \frac{\textrm{d} \ln K}{\textrm{d} \phi_0}   \frac{\langle \vec{E}\cdot \vec{B}\rangle}{K} \right] \delta \phi \  .
+\end{aligned}
+\end{equation}
+At this point, we can proceed by neglecting all the other terms that are not relevant in order to study the evolution of the system in the gauge field dominated regime. In particular, it is possible to show that most of the terms appearing in Eq.~\eqref{spectrum:perturbations_approx} are not relevant for our purposes. In order to show this explicitly we have substituted the solution $\phi_0(N)$ for the background equations of motion (i.e.\ the system given by Eq.~\eqref{non_minimal:background_scalar} and Eq.~\eqref{non_minimal:background_friedmann_2}) into Eq.~\eqref{spectrum:perturbations_approx}. The plots of the absolute values of the different terms appearing in Eq.~\eqref{spectrum:perturbations_approx} is shown in Fig.~\ref{fig:checks} for two of the models presented in Sec.~\ref{sec:attractors}. It should be clear from these plots that Eq.~\eqref{spectrum:perturbations_approx} can be approximated by only keeping the terms proportional to $3H^2$ and the $\frac{\pi}{ K} \left( \frac{\alpha}{\Lambda} \right)^2  \langle \vec{E} \cdot \vec{B} \rangle$. 
+
+\begin{figure}
+\centering
+\includegraphics[width=0.565\textwidth]{Check_nm=001_N=10}
+\includegraphics[width=0.425\textwidth]{Check_nm=7_N=1}
+\caption{Evolution of the terms in Eq.~\eqref{spectrum:perturbations_approx} for the case $h(\phi) = \phi$ with $\varsigma = 0.01$, $\mathcal{N}=10$ (left plot) and for the case $\varsigma = 7$, $\mathcal{N}=1$ (right plot) expressed in natural units. In particular the different colors correspond to the six terms on the right hand side of Eq.~\eqref{spectrum:perturbations_approx} respectively.}
+\label{fig:checks}
+\end{figure}
+
+Using this approximation (consistent with the discussion carried out in~\cite{Linde:2012bt}) Eq.~\eqref{spectrum:perturbations_approx} can be expressed as:
+\begin{equation}
+	-\frac{\alpha}{\Lambda} \delta_{\vec{E}\cdot \vec{B}} =  3H^2 K \left[ 1  - \pi \left( \frac{\alpha}{\Lambda} \right)^2  \frac{\langle \vec{E}\cdot \vec{B}\rangle}{3 H^2 K}  \right] \delta \phi \ . 
+	\label{eq:phiEB}
+\end{equation}
+At this point we can proceed by defining:
+\begin{equation}
+	b \equiv  1  -  \pi \left( \frac{\alpha}{\Lambda} \right)^2  \frac{\langle \vec{E}\cdot \vec{B}\rangle}{3 H^2 K} \ ,
+\end{equation}
+so that in the case $K(\phi) = 1$ we recover the usual expression:
+\begin{equation}
+	b = 1  -  \pi \left( \frac{\alpha}{\Lambda} \right)^2 \frac{\langle \vec{E}\cdot \vec{B}\rangle}{3 H^2 } \ .
+\end{equation}
+In the approximation $\langle \zeta^2(x) \rangle \simeq \Delta^2_s (k)  $, the scalar power spectrum in the gauge field dominated regime can thus be expressed as:
+\begin{equation}
+ 	\left.  \Delta^2_s (k) \right|_\text{gauge} \simeq \left(\frac{H}{\dot{\phi}_0}\right)^2 \langle \delta\phi^2 \rangle \simeq \left(\frac{H}{\dot{\phi}_0}\right)^2 \left(\frac{\alpha}{\Lambda}\right)^2 \left(\frac{1}{3 b H^2 K }\right)^2 \langle (\delta_{\vec{E}\cdot \vec{B}})^2 \rangle \ ,
+ \end{equation} 
+ and finally, using $\langle (\delta_{\vec{E}\cdot \vec{B}})^2 \rangle \simeq \langle \vec{E}\cdot \vec{B} \rangle^2$, we get:
+ \begin{equation}
+ 	\label{spectrum:gauge_sourced}
+ 	\left.  \Delta^2_s (k) \right|_\text{gauge} \simeq  \left(\frac{\alpha \langle \vec{E}^a \cdot \vec{B}^a  \rangle / \sqrt{\mathcal{N}} }{3 b \Lambda \dot{\phi}_0 H K }\right)^2  \ ,
+ \end{equation}
+  where we also have generalized the definition of $b$:
+  \begin{equation}
+	b \equiv  1  -  \pi \left( \frac{\alpha}{\Lambda} \right)^2  \frac{\langle \vec{E}^a \cdot \vec{B}^a  \rangle }{3 H^2 K} \ ,
+ \end{equation}
+in order to extend our results to the case with $\mathcal{N}$ Abelian gauge fields.

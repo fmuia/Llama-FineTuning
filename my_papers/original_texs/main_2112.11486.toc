@@ -1,0 +1,15 @@
+\contentsline {title}{A Faster Growth of Perturbations in an Early Matter Dominated Epoch: \\ Primordial Black Holes and Gravitational Waves}{1}{section*.2}%
+\contentsline {abstract}{Abstract}{1}{section*.1}%
+\tocdepth@munge 
+\contentsline {section}{\numberline {}Contents}{1}{section*.3}%
+\tocdepth@restore 
+\contentsline {section}{\numberline {I}Introduction}{1}{section*.4}%
+\contentsline {section}{\numberline {II}Coupled Dynamics in the Early Universe}{2}{section*.5}%
+\contentsline {subsection}{\numberline {A}Background Dynamics}{3}{section*.6}%
+\contentsline {section}{\numberline {III}Fast Growth of Perturbations}{4}{section*.7}%
+\contentsline {subsection}{\numberline {A}Decays}{6}{section*.8}%
+\contentsline {section}{\numberline {IV}Phenomenological Implications}{7}{section*.9}%
+\contentsline {subsection}{\numberline {A}Primordial Black Holes}{7}{section*.10}%
+\contentsline {subsection}{\numberline {B}Gravitational Waves}{8}{section*.11}%
+\contentsline {section}{\numberline {V}Conclusions}{9}{section*.12}%
+\contentsline {section}{\numberline {}Acknowledgments}{9}{section*.13}%

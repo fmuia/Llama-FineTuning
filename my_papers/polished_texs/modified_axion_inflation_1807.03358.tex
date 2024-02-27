@@ -1,0 +1,159 @@
+
+\section{The role of gauge fields during inflation \label{sec:axioninflation}}
+
+\subsection{The abelian limit \label{sec:abelian}}
+
+In the limit of small gauge couplings and/or small gauge field amplitudes, any non-abelian $\mathrm{SU}(N)$ gauge group will (approximately) act as $N^2 - 1$ copies of an abelian group. Let us thus, also for later reference, begin by briefly reviewing the case of a pseudoscalar inflaton $\phi$ coupled to an abelian gauge field $A_\mu$~\cite{Turner:1987bw,Garretson:1992vt,Anber:2006xt} (for recent analyses see e.g.\ \cite{Barnaby:2010vf,Barnaby:2011qe,Domcke:2016bkh,Jimenez:2017cdr}),
+\label{eq:rev_action_pseudoscalar}
+\begin{equation}
+\mathcal{S}= \int \textrm{d}^4 x \sqrt{|g|} \left[M_P^2 \frac{R}{2} -\frac{1}{2} \, \partial_\mu \phi \, \partial^\mu \phi - V(\phi) - \frac{1}{4} F_{\mu \nu} F^{\mu \nu} - \frac{\alpha}{4 \Lambda} \phi F_{\mu \nu} \tilde{F}^{\mu \nu} \right ]\, .
+\end{equation}
+Here $V(\phi)$ denotes the inflaton potential, $F_{\mu \nu} \, (\tilde F^{\mu \nu})$ is the (dual) field-strength tensor of the abelian gauge group and $\alpha/\Lambda$ encodes the coupling between the inflaton and the gauge field.\footnote{Identifying $\phi$ as an axion of a global $\mathrm{U}(1)$ symmetry constrains the coupling $\alpha/\Lambda$. For $\alpha = e^2/(4 \pi)$, the scale $\Lambda$ indicates the scale at which coupling of the axion to the chiral anomaly becomes relevant and the effective theory should be replaced by a more fundamental theory. This scale $\Lambda$ should lie above the Hubble scale of inflation. On the other hand, the scalar potential breaking the axion shift symmetry through non-perturbative contributions is periodic in $2 \pi \Lambda$, with slow-roll inflation requiring $\Lambda \gtrsim M_P$ (the extra friction arising from the last term in Eq.~\eqref{eq:rev_action_pseudoscalar} cannot evade this conclusion for the parameter values considered here). A UV-completion is thus far from obvious (see Ref.~\cite{Agrawal:2018mkd} for recent progress), and we here retain the effective field theory point of view, treating $V(\phi)$ and $\alpha/\Lambda$ as independent free parameters.}
+
+
+
+Since $F_{\mu \nu} \tilde{F}^{\mu \nu}$ is CP-odd, it will prove useful to work with the Fourier-modes of the gauge field in the chiral basis, 
+\begin{equation}
+	\label{eq:Fourier_A}
+	 \vec{A}(\tau, \vec{x}) = \int \frac{\textrm{d}^3 \vec{k}}{(2\pi)^{3/2}} \left[ \sum_{\lambda = \pm} \tilde{A}_{\lambda}(\tau, \vec{k}) \vec{e}_\lambda (\vec{k}) \hat{a}(\vec{k}) e^{i\vec{k}\cdot\vec{x}} + \tilde{A}_{\lambda}^*(\tau, \vec{k}) \vec{e}^*_{\lambda^\prime} (\vec{k}) \hat{a}^\dagger (\vec{k}) e^{-i\vec{k}\cdot\vec{x}} \right] \; ,
+\end{equation}
+with the polarization vectors fulfilling $\vec e_\lambda(\vec k) \cdot \vec k = 0$, $\vec e_\lambda(\vec k) \cdot \vec e_{\lambda'}(\vec k) = \delta_{\lambda \lambda'}$ and  $i \vec k \times \vec e_\lambda(\vec k) = \lambda  k\vec e_{\lambda}(\vec k)$ with $k = |\vec k|$. $\hat a^{(\dagger)}$ denotes the annihilation (creation) operator and $\tilde{A}_\lambda(\vec k)$ the corresponding Fourier coefficients. Here $\vec k$ and $\vec x$ denote the co-moving wave vector and coordinates,
+\begin{equation}
+ \textrm{d} s^2 = g_{\mu \nu }\textrm{d}x^\mu \textrm{d}x^\nu = a^2 (\tau) (-\textrm{d} \tau^2 + \textrm{d} \vec{x}^2 ) = a^2 (\tau) \eta_{\mu \nu }\textrm{d}x^\mu \textrm{d}x^\nu \,,
+\end{equation}
+with $a(\tau)$ the metric scale factor and $\eta_{\mu \nu}$ the Minkowski metric. Adopting temporal gauge, we have moreover set $A_0 = 0$. The equations of motion for the homogeneous inflaton field and for the gauge field then read,
+\begin{align}
+\label{eq:rev_motion}
+\ddot \phi + 3 H \dot{\phi} + \frac{\partial V}{\partial \phi} & = \frac{\alpha}{\Lambda} \langle \vec{E} \cdot \vec{B} \rangle \ ,\\
+\label{eq:rev_motionAfourier}
+ \tilde{A}''_{\pm}(\tau,\vec{k})  + \left[ k^2 \mp \, k  \, \frac{2\xi}{-\tau} \right]\tilde{A}^{a}_{\pm}(\tau,\vec{k}) & =  \ 0 \ , 
+\end{align}
+where we have introduced the physical `electric' and `magnetic' fields as
+\begin{equation}
+	\label{eq:rev_electric_magnetic}
+	\vec{E} \equiv -\frac{1 }{a^2} \frac{\textrm{d} \vec{A}}{\textrm{d} \tau}  \ , \qquad \qquad  \vec{B} \equiv \frac{1}{a^2} \vec{\nabla} \times \vec{A}  \ .
+\end{equation}
+The expectation values $\langle \bullet \rangle$ in Eq.~\eqref{eq:rev_motion} indicate the spatial average.
+The parameter $\xi$, encoding the tachyonic instability in Eq.~\eqref{eq:rev_motionAfourier}, is given by
+\begin{equation}
+\xi \equiv \frac{\alpha \, \dot{\phi}}{2 \, \Lambda \, H} \ ,
+\label{eq:rev_xi}
+\end{equation}
+with $H = \dot a/a$ denoting the Hubble rate during inflation. In the following we will consider $\dot \phi > 0$ and hence $\xi > 0$ without loss of generality.
+
+In the slow-roll regime, $|\ddot \phi| \ll H |\dot \phi|, | V_{,\phi}|$, we can neglect the change of $\xi$ on the time-scales relevant in Eq.~\eqref{eq:rev_motionAfourier}. This enables us to approximately decouple the equations and solve the equation of motion for the gauge fields analytically, with a parametric dependence on the parameter $\xi$,
+\begin{equation}
+ \tilde A_\lambda(\tau,k) = \frac{1}{\sqrt{2k}} e^{\lambda \pi \xi/2} W_{- i \lambda \xi, 1/2}(2 i k \tau) \,.
+ \label{eq:rev_Whittaker}
+\end{equation}
+Here $W_{k,m}(z)$ is the Whittaker function. For $\lambda = +$ this describes an oscillatory function which starts to grow exponentially around horizon crossing ($k |\tau| \sim 1$), before becoming approximately constant on super-horizon scales, see Fig.~\ref{fig:Whittakerabelian}. The $\lambda = -$ mode does not exhibit this tachyonic instability and remains oscillatory.
+The overall normalization is obtained by matching to the Bunch--Davies vacuum in the infinite past, namely 
+\begin{equation}
+\tilde{A}_{\lambda}(\tau,k)\approx\frac{e^{-ik\tau}}{\sqrt{2k}}\quad\textrm{as }\tau\textrightarrow-\infty.\label{eq:BDvac}
+\end{equation}
+
+\begin{figure}
+ \center
+ \includegraphics{whittaker.pdf}
+ \caption{Enhanced helicity mode described by Eq.~\eqref{eq:rev_Whittaker} for different values of $\xi$. The solid (dashed) curves show the absolute value of growing (decaying) component. For a suitable choice of the complex phase of the Whittaker function (see also App.~\ref{app:asymptotics}), the growing (decaying) component is the real (imaginary) part.}
+ \label{fig:Whittakerabelian}
+\end{figure}
+
+
+The explicit solution~\eqref{eq:rev_Whittaker} in turn enables us to explicitly evaluate the right-hand side of Eq.~\eqref{eq:rev_motion}. For $\xi \gtrsim 3$ this is well approximated by
+\begin{equation}
+ \langle \vec E \cdot \vec B \rangle  \simeq - 2.4 \cdot 10^{-4} \frac{H^4}{\xi^4} e^{2 \pi \xi} \,.
+ \label{eq:rev_EB}
+\end{equation}
+Recalling the definition of $\xi$ in Eq.~\eqref{eq:rev_xi}, this enables us to (numerically) solve Eq.~\eqref{eq:rev_motion}. 
+The resulting evolution of 
+this system with the inflaton coupled to an abelian gauge field 
+has been studied e.g.\ in Refs.~\cite{Anber:2009ua,Barnaby:2010vf,Cook:2011hg,Barnaby:2011qe,Anber:2012du,Linde:2012bt,Domcke:2016bkh}, obtaining the following key results:
+\begin{itemize}
+ \item The tachyonic enhancement of the $A_+$ modes leads to a significant backreaction in the equation of motion for $\phi$, which is exponentially sensitive to $\xi$. This can be interpreted as an additional friction term for the inflaton.
+ \item In single field inflation models, $V_{,\phi}/V$ typically increases over the course of inflation, implying an increasing value of $\xi$. Constraints on non-gaussianities in the CMB impose $\xi_\text{CMB} \lesssim 2.5$ whereas the backreaction mentioned above dynamically limits the growth of $\xi$ over the course of 50-60 e-folds of inflation, typically leading to $\xi \lesssim 10$.\footnote{Note that for $\xi \gtrsim 4.5$, perturbative control has been shown to break down~\cite{Ferreira:2015omg, Peloso:2016gqs}.}
+ \item The presence of the gauge fields leads to an additional source term for the scalar and tensor power spectra. Due to the increasing value of $\xi$ this effect is typically largest at small scales (i.e.\ towards the end of inflation).
+\end{itemize}
+
+For later reference, let us discuss in detail three quantities which will be relevant for the analysis carried out in the next parts of this work: the gauge field variance, the homogeneity scale and decoherence time.
+
+\textit{Variance}. Isotropy ensures that averaged over the whole universe $\langle \vec A \rangle = 0$, but we may estimate the magnitude of the gauge fields in any Hubble patch by computing the variance,
+\begin{align}
+ \langle 0 | \vec A(\tau, \vec x) \vec A(\tau, \vec x) | 0 \rangle^{1/2} & = \left(\int  \frac{\textrm{d}^3 \vec{k} }{(2\pi)^3}  \left[ \tilde{A}_{+}(\vec{k})  \tilde{A}_{+}^*(\vec{k}) + \tilde{A}_{-}(\vec{k})  \tilde{A}_{-}^*(\vec{k} ) \right] \right)^{1/2} \nonumber \\
+ & =  e^{\pi \xi/2} \sqrt{ \int \frac{ \textrm{d} k}{2\pi^2} \, \frac{k}{2} \left| W_{-i\xi,1/2}(2ik\tau)\right|^2 } \nonumber \\
+ &  = \frac{aH}{2\pi} e^{\pi \xi/2} \sqrt{ \int_0^{x_{UV}} \textrm{d} x\, x \left|W_{-i\xi,1/2}(- 2 i x)\right|^2 } \nonumber \\
+ & \simeq \frac{1}{(-\tau)}\,  0.008 \times e^{2.8 \xi} \,.	 \label{eq:variance_abelian}
+\end{align}
+Here we set the upper integration limit to $x_{UV} = 2 \xi$, so as to not count the vacuum contribution. In agreement with Ref.~\cite{Jimenez:2017cdr}, we find that all the integrals of this type performed in this paper are rather insensitive to the choice of $x_{UV}$ for $\xi \gtrsim 3$.
+
+
+\textit{Homogeneity}. The energy density stored in the gauge fields can be computed as  $(\vec E^2 + \vec B^2)/2$ with
+\begin{align}
+ \frac{1}{2} \langle \vec E^2 \rangle & = \frac{1}{2 a^4} \int \frac{\textrm{d}^3 \vec{k}}{(2 \pi)^3} \bigg|\frac{\partial \tilde{A}_+^k(\tau)}{\partial \tau}\bigg|^2  = \frac{H^4}{8 \pi^2}e^{\pi \xi} \int_0^{2 \xi} \textrm{d} x \,\,x^3 \bigg| \frac{\partial W_{-i \xi, 1/2}(- 2 i x)}{\partial x} \bigg|^2 \,,\\
+  \frac{1}{2} \langle \vec B^2 \rangle & = \frac{1}{2 a^4} \int \frac{\textrm{d}^3 \vec{k}}{(2 \pi)^3} k^2 \bigg|\tilde{A}_+^k(\tau)\bigg|^2  = \frac{H^4}{8 \pi^2}e^{\pi \xi} \int_0^{2 \xi} \textrm{d} x \,\,x^3 \bigg|  W_{-i \xi, 1/2}(- 2 i x)\bigg|^2 \,.
+\end{align}
+We can now determine for each value of $\xi$, the value of $x_{90}$ for which $90\%$ of the energy is contained in modes with $x < x_{90}$, see  left panel of Fig.~\ref{fig:propertiesabelian}. For any $x > x_{90}$, we can then safely model the gauge field as a homogeneous background field. We conclude that for (the phenomenologically interesting) large values of $\xi \gtrsim 3$, the homogeneity scale lies at $x_{90} \lesssim {\cal O}(1)$, so that on sub-horizon scales, this gauge field acts like a homogeneous background field. This approximation becomes better for larger values of $\xi$. For reference, the dashed line in Fig.~\ref{fig:propertiesabelian} indicates the value of $x$ for which $95\%$ of the energy is contained within $x < x_{95}$. 
+\begin{figure}
+\subfigure{
+\includegraphics{homogeneity.pdf}
+}
+\hfill
+\subfigure{
+\includegraphics{decoherence1.pdf}
+}
+\caption{Properties of the gauge fields in the abelian regime. \textit{Left panel:} Scale of homogeneity for different values of $\xi$, defined such that $90\%$ ($95\%$) of the energy is contained in modes with $- k \tau = x < x_{90}$ ($x < x_{95}$). \textit{Right panel}: $|A^\lambda_k \pi^\lambda_k|$ for $\xi = 0, 2, 3, 4$. Decoherence occurs once $|A^\lambda_k \pi^\lambda_k| \gg 1$.}
+  \label{fig:propertiesabelian}
+\end{figure}
+
+\textit{Decoherence.} For any given mode decoherence is reached if $|\tilde{A}^\lambda_k \pi^\lambda_k| \gg 1$~\cite{Guth:1985ya}. Using the free-field expression for the conjugate momentum, $\pi^\lambda_k = \partial_0 \tilde{A}^\lambda_k$, the right panel of Fig.~\ref{fig:propertiesabelian} demonstrates that decoherence is reached at $x \sim \xi$. As a further check, in order to establish the transition to the classical behaviour, we computed the number of particles $n_k$ in each mode (see~\cite{Brax:2010ai}) and we checked at which point the regime $n_k \gg 1$ is reached. The results agree with those shown in Fig. \ref{fig:propertiesabelian}\,: decoherence is reached at $x \sim \xi$.
+
+
+In summary, we find that in the abelian limit, any Hubble patch develops a classical, approximately homogeneous gauge field background, whose average magnitude grows exponentially with $\xi$ as indicated in Eq.~\eqref{eq:variance_abelian}. In the next section, we will highlight the key changes to this picture in the non-abelian regime. 
+
+\subsection{Non-abelian regime}
+
+Let us now consider the same action as in Eq.~\eqref{eq:rev_action_pseudoscalar}, but now in the case of an $\mathrm{SU}(2)$ gauge group,
+\begin{align}
+\mathcal{S} & = \int \textrm{d}^4 x \sqrt{|g|} \left[M_P^2 \frac{R}{2} -\frac{1}{2} \, \partial_\mu \phi \, \partial^\mu \phi - V(\phi) - \frac{1}{4} F^a_{\mu \nu} F_a^{\mu \nu} - \frac{\alpha}{4 \Lambda} \phi F^a_{\mu \nu} \tilde F_a^{\mu \nu} \right ] \nonumber \\
+& \equiv \int d^4 x \, \sqrt{-g} \, \left[\mathcal{L}_{\rm EH} + \mathcal{L}_{\phi} + \mathcal{L}_{\rm YM} + \mathcal{L}_{\rm CS}\right] \,. \label{eq:action}
+\end{align}
+The resulting equations of motion for the homogeneous inflaton field $\phi(\tau)$ and the gauge fields $A^a_\mu(\tau,\vec x)$ read:
+\begin{equation}
+	\ddot{\phi} + 3H \dot{\phi} + V_{,\phi} + \frac{\alpha}{4 \Lambda} \, \frac{\varepsilon^{\mu \nu \rho \sigma} }{ a^3(t)} \, F^a_{\mu\nu} F^a_{\rho\sigma} = 0 \;,
+	\label{eq:phib}
+\end{equation}
+and
+\begin{equation}
+\begin{aligned}
+\label{eq:eq_motion_final}
+	\eta^{\nu\sigma} \left\{\Box A_\sigma^a - \partial_\sigma \left(\partial_\mu \eta^{\mu\rho} A_\rho^a \right)+ e \varepsilon^{a b c} \eta^{\mu\rho} \left[ 2A_\rho^b \partial_\mu A_\sigma^c + \left( \partial_\mu A_\rho^b\right) A_\sigma^c - A_\mu^b \partial_\sigma A_\rho^c \right] + \right. \\
+	+ \left. e^2 \eta^{\mu\rho} \left[ A_\rho^a \left( A_\mu^b A_\sigma^b \right) - A_\sigma^a \left( A_\mu^b A_\rho^b \right) \right] \right\} + \frac{\alpha}{2 \Lambda} \phi^\prime \varepsilon^{0 \nu j k} \left[2 \partial_j A^a_k + e \varepsilon^{abc} A^b_j A^c_k\right] = 0 \; ,
+	\end{aligned}
+\end{equation}
+where we have introduced the $\Box$-operator defined as usual as $\Box \equiv g^{\mu\nu} \partial_{\mu} \partial_{\nu}$ which here is expressed in co-moving coordinates.
+
+The non-linear equation~\eqref{eq:eq_motion_final} is highly sensitive to the presence of a gauge field background as described in Sec.~\ref{sec:abelian}. An exact treatment of the system requires solving the non-linear coupled system of equations of motions in an exponentially expanding background, a very challenging task. Instead, we will work in a linear approximation (as in Refs.~\cite{Dimastrogiovanni:2012ew,Adshead:2013qp,Adshead:2013nka}), expanding the gauge fields around a homogeneous background, denoted by $A^{(0)}(\tau)$, so that 
+\begin{equation}
+\begin{aligned}
+\label{eq:background_plus_linear}
+A(\tau, \vec x) = A^{(0)}(\tau) + \delta A(\tau, \vec x).
+\end{aligned}
+\end{equation}
+We will discuss the (classical) evolution of the background in Sec.~\ref{sec:background} and the (quantum) evolution of the fluctuations in Sec.~\ref{sec:linearized}. This treatment is valid as long as the evolution of the background is indeed governed by the classical equation of motion, i.e.\ as long as the growth of the fluctuations does not overcome the classical motion.  A similar condition ensures the washout of the initial inhomogeneities: As discussed above, the energy stored in the gauge fields enhanced during the abelian regime is peaked on super-horizon scales. This physical scale arises from a dynamical equilibrium between a continuous re-sourcing of the background gauge field by (enhanced) horizon-crossing modes and the red-shifting of longer wavelength modes. Consequently, a suppression of the growth of the gauge-field fluctuations in the non-abelian regime (with respect to their abelian counterpart) diminishes the supply of modes sourcing the peak in the Fourier spectrum, leading to a red-shift of this inhomogeneity scale to larger, far super-horizon scales. To make the overall picture clear from the start, we highlight in the following some of the key results, the derivation of these will follow in Secs~\ref{sec:background} and \ref{sec:linearized}, correspondingly. 
+
+\begin{figure}[t]
+\centering
+ \includegraphics[width = 0.7 \textwidth]{sketch.pdf}
+ \caption{Sketch of the evolution of the average magnitude of the gauge fields from the abelian to the non-abelian regime. The vertical line marks the transition from the abelian limit to the full non-abelian theory, the gray circle indicates the requirement of matching the initial conditions accordingly. In the non-abelian regime, the fluctuations grow slower, but may nevertheless at some point overcome the classically evolving background. This region of parameter space is beyond the scope of the present paper, as indicated by gray shaded region. }
+ \label{fig:sketch}
+\end{figure}
+
+
+ We find that the background field dynamically evolves towards an isotropic configuration with two distinct asymptotic behaviours. On the one hand, for small initial conditions, the co-moving background evolves towards a constant value, and thus remains small compared to tachyonically enhanced fluctuations, see Eq.~\eqref{eq:variance_abelian}. 
+ In this regime, we are essentially back in the abelian limit, i.e.\ the fluctuations are well described by Eq.~\eqref{eq:rev_Whittaker} with 3 enhanced  and 3 oscillating modes.\footnote{ One may worry about the justification of the linearization~\eqref{eq:background_plus_linear} in this regime. From Eq.~\eqref{eq:eq_motion_final}, we note that in the limit $A^{(0)}(\tau) \rightarrow 0$, a necessary condition for the linearization to be valid is $e \, (\delta A)^2  \ll \partial_\mu \delta A$, or in other words $ e \, \delta A \ll k = x/(- \tau)$, indicating the regime where the non-abelian terms become irrelevant. For modes crossing the horizon  ($x = 1$), this condition holds if
+ \begin{equation}
+  0.008 \times \exp(2.8 \, \xi) \ll 1/e \,,
+  \label{eq:Conditionabelian}
+ \end{equation}
+where we have inserted Eq.~\eqref{eq:variance_abelian}. For far super-horizon modes, the non-abelian terms become more important. However, at this point due to a red-shift in momentum and a decay in the amplitude, the contribution of these modes to e.g.\ the variance of the energy density is negligible. Note that the condition~\eqref{eq:Conditionabelian} is not sufficient to justify the linearization of the equation of motion for the inflaton~\eqref{eq:phib}. In the abelian regime, the last term contains at least two powers of $\delta A_\mu^a$, and its relative importance will depend on the coupling strength $\alpha/\Lambda$. We will return to the importance of these non-linear effects in detail in Sec.~\ref{sec:example}.} On the other hand, for sufficiently large initial conditions (and only if $\xi \geq 2$), there is an asymptotic solution for the background which, in terms of the comoving gauge field $A^{(0)}$, grows as $1/|\tau|$. 
+We stress that this background is driven by classical motion and, contrary to the approximately homogeneous gauge field formed in the abelian case, it is not sourced by super-horizon fluctuations. In this regime, the background significantly modifies the equation of motion for the fluctuations. Consequently, we find that only a single gauge field mode is enhanced, and the enhancement is moreover significantly suppressed compared to the abelian case. Given the strong gauge field production in the abelian regime and the increasing value of $\xi$ over the course of inflation, eventually the growing background solution will be triggered. The point at which this happens depends on the gauge coupling $e$ and the CP-violating coupling $\alpha/\Lambda$. A sketch of this overall picture is given in Fig.~\ref{fig:sketch}. 

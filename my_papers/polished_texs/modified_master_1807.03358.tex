@@ -1,0 +1,72 @@
+% Hint to arXiv that we want to be rendered with PDFLaTeX:
+\pdfoutput=1
+
+\documentclass[11pt,a4paper]{article}
+\input{preamble}
+\begin{document}
+\begin{titlepage}
+
+% For the arXiv version, where people print from, for sane page numbers, show the title page as page 1.
+\thispagestyle{plain}
+
+\vskip 1.5cm
+\flushright{DESY 18-106}
+\vskip 1.5cm
+
+\begin{center}
+{\LARGE\bf Emerging chromo-natural inflation}
+
+\vskip 1cm
+{\large  Valerie~Domcke$^1$, Ben Mares,  Francesco Muia$^2$, Mauro Pieroni$^3$}\\[3mm]
+{\it{
+${}^{1}$ Deutsches Electronen Synchrotron (DESY), 22607 Hamburg, Germany  \\
+${}^2$ ICTP, Strada Costiera 11, Trieste 34014, Italy,\\
+${}^{3}$ Instituto de F\'{\i}sica Te\'orica UAM/CSIC C/ Nicol\'as Cabrera 13-15 \\Universidad Aut\'onoma de Madrid Cantoblanco, Madrid 28049, Spain  \\[3mm]
+}}
+
+
+\end{center}
+
+\vskip 2cm
+
+\begin{abstract}
+The shift-symmetric coupling of a pseudo-scalar particle driving inflation to gauge fields provides a unique way of probing cosmic inflation. For the case of an $\mathrm{SU}(2)$ gauge group, we suggest a possible mechanism for the development of a classical isotropic background gauge field from the standard quantum mechanical vacuum in the far past. Over the course of inflation, the theory dynamically evolves from an approximately abelian regime into an inherently non-abelian regime, with distinct predictions for the scalar and tensor power spectra. The latter regime closely resembles a setup known as chromo-natural inflation, although our main focus here is on a new part of the parameter space which has received little attention so far. For single-field slow-roll inflation models, large scales may exit the horizon in the abelian regime, ensuring agreement with the observations of the anisotropies in the cosmic microwave background, whereas smaller scales experience the non-abelian effects. This results in a strong enhancement of the stochastic gravitational wave background at small scales,  e.g.\ at frequencies accessible with ground-based interferometers. For the scalar power spectrum, a similar enhancement arises due to non-linear contributions.
+\end{abstract}
+
+\end{titlepage}
+
+% Page after title is now page 2.
+\setcounter{page}{2}
+
+\tableofcontents
+\newpage
+
+\input{Introduction}
+\input{axion_inflation}
+\input{gauge-background}
+\input{gauge-background-dynamical-xi}
+\input{linearized}
+\input{worked_example}
+\input{conclusion}
+
+\vspace{1cm}
+\subsubsection*{Acknowledgements}
+
+We thank P.~Adshead, J.~Beltran, D.~Figueroa, A.~Maleknejad, M.~Peloso and S.~Rodrigues Sandner for valuable comments and discussions at various stages of this work. M.P. acknowledges the support of the Spanish MINECOs ``Centro de Excelencia Severo Ocho'' Programme under grant SEV-2012-0249. This project has received funding from the European Unions Horizon 2020 research and innovation programme under the Marie Sk{\boldsymbol{l{}odowska-Curie grant agreement No 713366.
+
+\newpage
+\appendix
+\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
+\input{app-fulleom}
+\input{app-basis}
+\input{app-variance}
+\input{app-gauge-supp}
+\input{app-homogeneous-implies-constant}
+\input{app-asymptotics}
+
+\bibliographystyle{JHEP}
+\bibliography{refs_non-abelian}{}
+
+\end{document}
+\grid
+\grid

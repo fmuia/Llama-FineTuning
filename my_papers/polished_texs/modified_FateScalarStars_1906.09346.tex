@@ -1,0 +1,1158 @@
+\documentclass[11pt,a4paper]{article}
+\pdfoutput=1
+\usepackage{jheppub}
+
+%\oddsidemargin 0.0in
+%\textwidth 6.3 in
+%\topmargin -0.5in
+%\textheight 9in
+
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%\usepackage{authblk}
+\usepackage{braket}
+\usepackage{hyperref}
+\usepackage{frontespizio}
+\usepackage{comment}
+\usepackage{epsfig}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{color}
+\usepackage[font=small,skip=5pt]{caption}
+%\graphicspath{{../}}
+
+\setcounter{tocdepth}{2}
+
+
+\usepackage{subfigure}
+\newcommand{\begin{eqnarray}}{\begin{eqnarray}}
+\newcommand{\end{eqnarray}}{\end{eqnarray}}
+\newcommand{\begin{equation}}{\begin{equation}}
+\newcommand{\end{equation}}{\end{equation}}
+\newcommand{\begin{align}}{\begin{align}}
+\newcommand{\end{align}}{\end{align}}
+\newcommand{\mathcal{V}}{\mathcal{V}}
+\newcommand{\Kahler}{\ensuremath{\text{K}\ddot{\text{a}}\text{hler}\,}}
+
+
+\newcommand{\nonumber}{\nonumber\\}
+\newcommand{ H }{ H }
+\newcommand{\fnl}{f_{\rm{NL}}}
+\newcommand{M_\mathrm{Pl}}{m_{\rm{Pl}}}
+\newcommand{\As}{A_{\rm{s}}}
+\newcommand{\ns}{n_{\rm{s}}}
+\newcommand{\as}{\alpha_{\rm{s}}}
+\newcommand{\ks}{\kappa_{\rm{s}}}
+
+%\captionsetup{hangindent=20pt,font={sl,small}}
+\newcommand{\KC}[1]{\textcolor{blue}{#1}}
+%\newcommand{\FM}[1]{\textcolor{red}{#1}}
+
+
+\title{The Fate of Dense Scalar Stars}
+%
+\author[1]{Francesco Muia}
+\author[2,3]{, Michele Cicoli}
+\author[4]{, Katy Clough}
+\author[2,3]{, Francisco Pedro}
+\author[4,5]{, Fernando Quevedo}
+\author[3]{, Gian Paolo Vacca}
+
+\affiliation[1]{\small \it ICTP, Strada Costiera 11, Trieste 34014, Italy}
+\affiliation[2]{\small \it Dipartimento di Fisica e Astronomia, Universit\'a di Bologna, via Irnerio 46, 40126 Bologna, Italy}
+\affiliation[3]{\small \it INFN, Sezione di Bologna, viale Berti Pichat 6/2, 40127 Bologna, Italy}
+\affiliation[4]{\small \it Astrophysics, University of Oxford, DWB, Keble Road, Oxford OX1 3RH, UK}
+\affiliation[5]{\small \it DAMTP, Centre for Mathematical Sciences, Wilberforce Road, Cambridge, CB3 0WA, UK}
+%
+\emailAdd{fmuia@ictp.it}
+\emailAdd{michele.cicoli@unibo.it}
+\emailAdd{katy.clough@physics.ox.ac.uk}
+\emailAdd{francisco.pedro@bo.infn.it}
+\emailAdd{fq201@damtp.cam.ac.uk}
+\emailAdd{Gianpaolo.Vacca@bo.infn.it}
+%
+\abstract{
+
+Long-lived pseudo-solitonic objects, known as \textit{oscillons/oscillatons}, which we collectively call \textit{real scalar stars}, are ubiquitous in early Universe cosmology of scalar field theories. Typical examples are \textit{axions stars} and \textit{moduli stars}. Using numerical simulations in full general relativity to include the effects of gravity, we study the fate of real scalar stars and find that depending on the scalar potential they are either meta-stable or collapse to black holes. In particular we find that for KKLT potentials the configurations are meta-stable despite the asymmetry of the potential, consistently with the results from lattice simulations that do not include gravitational effects. For $\alpha$-attractor potentials collapse to black holes is possible in a region of the parameter space where scalar stars would instead seem to be meta-stable or even disperse without including gravity. Each case gives rise to different cosmological implications which may affect the stochastic spectrum of gravitational waves.}
+%
+\keywords{Moduli Stars, Oscillons, Oscillatons, Black Hole Formation, Early Universe}
+%
+%\arxivnumber{}
+
+%\date{\small\today}
+
+
+
+\begin{document} 
+\maketitle
+
+\section{Introduction}
+\label{sec:Introduction}
+
+The discovery of the Higgs field~\cite{Aad:2012tfa, Chatrchyan:2012xdj} represents the first observation of a fundamental scalar field\footnote{Even though the possibility that the Higgs is not a fundamental particle is not ruled out yet, see~\cite{Csaki:2015hcd} for a recent review.}. However, there are many reasons to believe that the Higgs is not the only fundamental scalar degree of freedom existing in nature. In fact, most extensions of the Standard Model of particle physics (SM) provide for the existence of scalar fields at various energy scales. Some examples include:
+
+\begin{itemize}
+
+\item{} The existence of a pseudo-scalar field, the QCD axion, is implied by one of the best motivated solutions to the strong CP problem of QCD, via the Peccei-Quinn mechanism~\cite{Peccei:1977hh}, see~\cite{Marsh:2015xka} for a review. 
+
+\item{} At least one scalar field is required in the simplest models of inflation, which is the currently most accepted extension of $\Lambda$CDM: it describes an accelerated expansion of the Universe during its early stages due to the potential energy stored in a scalar field that is undergoing a slow-roll motion, see e.g.~\cite{Baumann:2009ds} for a review. 
+
+\item{} Any supersymmetric extension of the SM includes scalar fields with masses above the electroweak scale, see e.g.~\cite{Martin:1997ns, Weinberg:2000cr}. 
+
+\item{} String theory predicts the existence of several gravitationally coupled scalar fields, called \textit{moduli}, whose vacuum expectation values parametrize the size and shape of the extra-dimensions required for the consistency of the theory~\cite{Ibanez:2012zz}. String theory also predicts the existence of a plethora of axion-like particles, not necessarily related to the strong CP problem of QCD~\cite{Arvanitaki:2009fg, Cicoli:2012sz}.
+
+\item Very recently four-dimensional extensions of the SM (not including gravity) modelled as fundamental QFT have been considered~\cite{Litim:2014uca}. They are based on the UV completion mechanism called \textit{asymptotic safety}, characterized by the presence of a non trivial UV fixed point of the renormalization group which allows to overcome problems such as the presence of Landau poles in the theory. Perturbative analyses of interacting non-Abelian gauge fields, fermions and scalars in the Veneziano limit for different gauge groups and matter representations have shown that generically several fundamental scalar fields are required for the UV fixed point to exist.
+\end{itemize}
+
+The classical equations of motion of scalar fields admit (meta-)stable localized solutions\footnote{The energy density associated to a (pseudo-)solitonic solution goes rapidly to zero far away from the centre of the (pseudo-)soliton. While solitons are classically stable due to some conservation law, pseudo-solitons can be long-lived but eventually decay.}, also known as \textit{(pseudo-)solitons}~\cite{Weinberg:1996kr, Rubakov:2002fi, Manton:2004tk, Tong:2005un}. The rapid dispersion of such localized solutions is avoided due to the non-linearity of the equations of motion, giving rise to stable or long-lived compact objects that, if formed during the early Universe, can leave observable signatures in the form of a stochastic background of Gravitational Waves (GWs). The detection of such GW background would provide valuable information about the pre-Big Bang Nucleosynthesis (BBN) era~\cite{Kusenko:2008zm, Dolgov:2011cq, Amin:2011hj, Amin:2014eta, Amin:2013ika, Amin:2010jq, Antusch:2016con, Antusch:2017flz}. In some scenarios, long-lived (pseudo-)solitons can survive till the current time, either providing a natural candidate for dark matter~\cite{Kusenko:1997ad, Kusenko:1997si, Kusenko:2001vu, Olle:2019kbo} or a source of distinct signatures if a fraction of the dark matter is in the form of compact objects, see e.g.~\cite{Bai:2016wpg, Braaten:2016dlp, Levkov:2016rkk, Eby:2017xaw, Hui:2016ltb, Desjacques:2017fmf}.
+
+There exist a plethora of distinct (pseudo-)solitonic compact objects, whose differences can be traced back to the mechanism that guarantees their (meta-)stability, see~\cite{Krippendorf:2018tei} for a recent review. If this is ensured by the conservation of a topological charge, the resulting compact object is a \textit{topological soliton}~\cite{Manton:2004tk}. Examples of this class are kinks, vortices and skyrmions. If the stability is given by the conservation of a Noether charge, then the compact object is a \textit{non-topological soliton}~\cite{Lee:1991ax}: some of the simplest representatives of this class are summarized in Tab.\ \ref{tab:Classification}. We collectively refer to the objects appearing in Tab.\ \ref{tab:Classification}, i.e. non-topological solitons composed by a single scalar field, as \textit{scalar stars}.
+
+A complex scalar field whose Lagrangian obeys a global $U(1)$ symmetry\footnote{E.g. if the complex field $\phi$ has canonical kinetic terms and scalar potential $V = \frac{1}{2} m^2 |\phi|^2 + \frac{g}{4!} |\phi|^4$.} \label{foo:Potential} gives rise to non-topological solitons called \textit{boson stars}~\cite{Jetzer:1991jr}; the global $U(1)$ charge guarantees their stability. In the regime in which gravity is negligible the same system leads to non-topological solitons such as \textit{Q-balls}~\cite{Coleman:1985ki}: they can be formed if the attractive self-interactions of the complex scalar field compensate for the gradient energy. Contrary to fermion stars (like neutron stars) for which the mass of the compact object is $M_f\sim M_p^3/m^2$ (where $M_p$ is the reduced Planck mass and $m$ the mass of the corresponding particle), typical boson stars have a much smaller mass $M_b\sim M_p^2/m$ and are therefore sometimes called {\it mini-boson stars}~\cite{Jetzer:1991jr}. If the self-interactions are strong enough, i.e. if $g M_p^2/m^2 \gg 1$ (the coupling $g$ is defined in the scalar potential in footnote~\ref{foo:Potential}), the star can be as heavy as the corresponding fermion star and then it is simply called boson star~\cite{Colpi:1986ye}.
+
+In the case of real scalar fields, there is no global symmetry to guarantee the stability of the compact objects, but these can be long-lived due to approximate symmetries~\cite{Mukaida:2016hwd}. The object in question in this case is a \textit{pseudo-soliton}, whose main representative is given by an \textit{oscillaton}. Typical examples of oscillatons are \textit{axion stars}\footnote{Axion stars are expected to be produced in the unbroken PQ scenario~\cite{Kolb:1993zz, Kolb:1993hw, Hogan:1988mp, Visinelli:2017ooc} and for this reason they are particularly well motivated.}. \textit{Oscillons}~\cite{Seidel:1991zh, Kolb:1993hw, Alcubierre:2003sx, UrenaLopez:2001tw, UrenaLopez:2002gx, UrenaLopez:2012zz} belong to the same class as oscillatons, but they are typically restricted to the regime in which the role of gravity is negligible. Their stability is provided by attractive non-linear interactions, rather than gravity: their existence requires the scalar potential to be \textit{shallower than quadratic} at least on one side around the minimum. Oscillons are formed during a preheating-like stage in a wide variety of inflationary models~\cite{Amin:2011hj, Amin:2014eta, Amin:2013ika, Amin:2010jq, Antusch:2016con, Antusch:2017flz}, as well as in string moduli potentials as a consequence of field displacement~\cite{Antusch:2017flz}. We collectively refer to pseudo-solitonic objects arising from a single real scalar field, i.e. the bottom line of Tab.\ \ref{tab:Classification}, as \textit{real scalar stars} (RSSs). The goal in this paper is to explore the importance of gravity for the stability of RSSs, studying their dynamics at the border between the oscillon and oscillaton regimes.
+
+The fate of RSSs is the subject of the analysis in the present paper. It is known that in the free-field case the solutions are characterized by a stable and an unstable branch~\cite{UrenaLopez:2002gx}: perturbed configurations belonging to the latter either collapse to black holes or they migrate to the stable branch, depending on the sign of the perturbation. In the interacting case, studying the equilibrium configurations is challenging both from the analytic and from the numerical points of view~\cite{UrenaLopez:2012zz}. It is, however, possible to address this question performing numerical studies that include the effects of General Relativity (GR) and the full non-linear dynamics of the self-interactions\footnote{See~\cite{Cotner:2018vug} for an alternative approach.}.
+
+An example of such a study is~\cite{Helfer:2016ljl}, where the authors considered stability of RSSs in the specific case of an axion potential. As expected they found that, depending on the parameters of the model, axions stars can be stable, disperse or collapse to black holes. Interestingly, non-linear interactions are crucial for a proper understanding of the dynamics of these objects: even if the initial radius of the star is much larger than the corresponding Schwarzschild radius, the interplay of non-linear interactions and gravity can drive the star to collapse or to dispersion. 
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Scalar} & {\bf $G = 0$} &  \multicolumn{2}{c|}{\bf $G = 1$} \\ 
+\hline \hline
+\multirow{2}{4em}{\centering{Complex}}  & \multirow{2}{6em}{\centering{\textbf{\textit{Q-Balls}}} \\ \centering{Global $U(1)$}} & \textbf{\textit{Mini-Boson Stars}} & \textbf{\textit{Boson Stars}} \\
+ &  & weak self-interactions & strong self-interactions \\
+%&  & ($g M_p^2/m^2 \ll 1$) & ($g M_p^2/m^2 \gg 1$) \\ 
+\hline\hline
+%& &  \multicolumn{2}{c|}{} \\
+\multirow{2}{2em}{Real} & \textbf{\textit{Oscillons}} &  \multicolumn{2}{c|}{\multirow{2}{6em}{\textbf{\textit{Oscillatons}}}} \\ 
+& attractive self-interactions & \multicolumn{2}{c|}{} \\  
+\hline
+\end{tabular}
+\caption{Classification of complex and real scalar stars. Here and in the rest of the paper we denote by ``$G = 0$" the cases in which gravity effects are negligible (where $G$ is the Newton's constant), and by ``$G = 1$" the cases in which gravity effects are important.}
+\label{tab:Classification}
+\end{table}
+
+RSSs formed after inflation and before BBN and composed of the inflaton or any other modulus that is displaced from the late-time minimum after inflation~\cite{Coughlan:1983ci, deCarlos:1993wie, Banks:1993en, Kane:2015jia} are particularly well-motivated because - when gravity is negligible - the existence of these compact objects requires the potential to be shallower than quadratic, which translates into an attractive interaction between particles. This requirement is met both by inflationary potentials, as the latest Planck 2018~\cite{Akrami:2018odb} results favour plateau-like potentials, and by moduli potentials, since string models feature potentials that open-up on at least one side with respect to the late-time minimum. As we will show in the rest of the paper, the most interesting dynamics appear	 if the effects of gravity become of the same order as those due to self-interactions.
+
+Note that the objects we consider in this work have a compactness\footnote{The compactness is defined as $\mathcal{C} = M/R$, where $M$ is the total mass of the RSS and $R$ its radius, containing $90\%$ of the mass of the star.} comparable to that of the corresponding black hole. The formation of such objects needs to be checked for each specific model via dedicated lattice simulations. In the simplest and most model-independent scenarios, self-interactions of a single field are sufficient to make the quantum fluctuations grow and enter the non-linear regime. The growth can take place mainly through \textit{parametric resonance} (see~\cite{Amin:2014eta} and references therein) or \textit{tachyonic resonance}~\cite{Brax:2010ai}. Focusing on the models studied in the present paper, parametric and tachyonic resonance are efficient production mechanisms in the case of the KKLT model and $\alpha$-attractors T-models respectively\footnote{For $\alpha$-attractor T-models~\cite{Kallosh:2013yoa, Kallosh:2015lwa} the region of the parameter space investigated is borderline in terms of the efficiency of the tachyonic resonance production mechanism, and should be checked through lattice simulations. The formation of RSSs is however beyond the scope of this work and we leave it for the future.}. In the case of $\alpha$-attractor E-models (or Starobinsky-like potentials), the production might be difficult to achieve through parametric and/or tachyonic resonance, but it could take place through other mechanisms, e.g. \textit{i)} through parametric resonance induced by a second oscillating field~\cite{Kofman:1997yn}, \textit{ii)} through some enhancement in the scalar power spectrum, as for the formation of primordial black holes (see~\cite{Widdicombe:2018oeo} for recent work in this direction), \textit{iii)} through dynamical clustering of lighter objects~\cite{Amin:2019ums}.
+
+A better understanding of the evolution of moduli stars is important for a number of reasons:
+\begin{enumerate}
+\item Non-spherically symmetric oscillons produce GWs due to the dynamics of each single object~\cite{Dufaux:2007pt}. The GW spectrum at production is peaked at frequencies $f \sim \mathcal{O}(m)$, where $m$ is the mass of the scalar field. The current diluted value is roughly given by
+\begin{equation}
+f \gtrsim \left(\frac{m}{\text{TeV}}\right)^{5/6} \, \text{Hz} \,,
+\end{equation}
+where the uncertainty is related to the knowledge of the exact production time and is removed by numerical simulations. For $m \sim 10^9 \, \text{GeV}$ the peak would fall in the LIGO frequency range. In~\cite{Antusch:2017vga}, the authors parameterized the oscillon profile as
+\begin{equation}
+\label{eq:ParametrizedProfile}
+\phi(t, \mathbf{x}) = \Phi(t) \mathcal{F}(t, \mathbf{x}) \,,
+\end{equation}
+where $\Phi(t) \equiv \mathcal{A} f(t)$ is the time-dependent oscillon amplitude ($f(t)$ a periodic function, e.g. $f(t) = \cos(t)$), while $\mathcal{F}(t,\mathbf{x})$ is the asymmetric profile. Since the source of the anisotropic stress tensor is $\propto \partial_i \phi \partial_j \phi$, the energy density in GWs produced by such a configuration is
+\begin{equation}
+\label{eq:GWSpectrumAmplitude}
+\Omega_{\text{GW}} \propto \mathcal{A}^4 \,,
+\end{equation}
+hence the amplitude of the GW spectrum is proportional to the fourth power of the oscillon field amplitude. Typically, the larger is the oscillaton field amplitude, the larger is the compactness $\mathcal{C}$ of the compact object. In this paper we focus on the dynamical evolution of spherically symmetric configurations, and we leave the analysis of the formation of dense RSSs through various mechanisms operating in the early Universe and of the related GW production to future work.
+\item If RSSs are stable for a long time, they could undergo dynamical interactions including the \textit{i)} formation of binaries~\cite{Amin:2019ums} and collisions~\cite{Helfer:2018vtq} with subsequent emission of primordial GWs that would result in a stochastic background; \textit{ii)} clustering and formation of heavier bound objects~\cite{Belotsky:2018wph}, with possible collapse to heavy black holes that could survive even after the decay of the fields that compose the original star, and constitute a dark matter candidate. The richness of these dynamics would be enhanced if the stars collapse to black holes, since the longer lifetime would make it easier for the black holes to cluster. RSSs themselves could constitute a dark matter candidate if the mass of the scalar field is so small that they have not decayed yet, see~\cite{Olle:2019kbo} for recent work in that direction. In the regime of weak gravity, the RSS would have a low density and a very large size, composing the core of dark matter halos and possibly providing a solution to the cusp-core problem of cold dark matter, see e.g.~\cite{Marsh:2015wka}.
+\item If RSSs collapse to black holes, these would have a very small mass and would evaporate quickly, providing one of the necessary conditions required for an explicit realization of the \textit{Hawking genesis} scenario proposed in~\cite{Lennon:2017tqq}. As black holes evaporate democratically into all sectors of the model, such a scenario would provide strong constraints on string model building, given that hidden sectors typically contain dark radiation candidates~\cite{Cicoli:2012aq, Cicoli:2015bpq, Acharya:2015zfk, Halverson:2018xge, Cicoli:2018cgu}, which is highly constrained by CMB measurements~\cite{Aghanim:2018eyx}. Moreover, the collapse to black holes would modify substantially the lifetime of the compact objects. While RSSs have a lifetime which is $\tau_{\text{star}} \sim 10^3-10^4 \times m^{-1}$, the lifetime for a black hole with mass\footnote{We take the mass of the black hole to be of the same order of the mass of the original star, which is consistent with our findings in collapsing cases.} $M \sim M_p^2/m$ would be
+\begin{equation}
+\tau_{\text{BH}} \sim \frac{M^3}{M_p^4} \simeq \left(\frac{M_p}{m}\right)^2 \times m^{-1} \,,
+\end{equation}
+which is larger than $\tau_{\text{star}}$ for any $M_p/m \gtrsim 10^{2}$.
+\end{enumerate}
+
+A genuinely new feature of some of the models that we consider in the present paper is the asymmetry of the scalar potential around the minimum. While in symmetric cases the real scalar particles feel either an attractive (if the potential is shallower than quadratic) or a repulsive (if the potential is steeper than quadratic) force, in the case of asymmetric potentials the two behaviours alternate at each oscillation. We would have naively expected this feature to make the RSS more unstable if compared to the symmetric case. We will show in the next subsection that this is actually a model-dependent statement, emphasizing the importance of performing numerical simulations to find out the true RSS dynamics when non-linear interactions and gravity are important.
+
+The paper is organized as follows: in Sec.~\ref{sec:Models} we review the models for which we will analyze the dynamics of the RSSs. In Sec.~\ref{sec:NumericalSetup} we briefly summarize the numerical setup that we use for the simulations in the relativistic regime. In Sec.~\ref{sec:Results} we illustrate the results of the simulations. In Sec.~\ref{sec:Conclusions} we draw conclusions and make suggestions for future work.
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Models}
+\label{sec:Models}
+
+In this Section we introduce the models for which the dynamics will be studied.
+In order to determine whether a given potential supports these solutions in the first place let us  consider a single real scalar field $\phi$ in the absence of self-gravity for the non-perturbative scalar field clumps. One crucial parameter is the typical scale of the potential $\Lambda$, which sets the size of the non-linear interactions. Take the for instance the potential
+\begin{align}
+\label{eq:GenericPotential}
+V &= \frac{1}{2} m^2 \phi^2 + \frac{1}{3!} \lambda \phi^3 + \frac{1}{4!} g \phi^4 \equiv \nonumber  \\
+&\equiv m^2 \Lambda^2\left[ \frac{1}{2} \left(\frac{\phi}{\Lambda}\right)^2 + \frac{1}{3!} \frac{\lambda \Lambda}{m^2} \left(\frac{\phi}{\Lambda}\right)^3 + \frac{1}{4!} \frac{g \Lambda^2}{m^2} \left(\frac{\phi}{\Lambda}\right)^4 \right] \,.
+\end{align}
+We define the typical scale of the potential $\Lambda$ as the scale at which the potential deviates significantly from a quadratic potential. Requiring that the interaction terms are of the same order of the mass term in the potential at $\phi \sim \Lambda$, this corresponds to requiring that the couplings are of order
+\begin{equation}
+\lambda \sim m \left(\frac{m}{\Lambda}\right) \,, \qquad g \sim \left(\frac{m}{\Lambda}\right)^2 \,.
+\end{equation}
+The potential in Eq. \eqref{eq:GenericPotential} supports RSS (oscillon, i.e. solutions in which gravity is negligible) if~\cite{Hertzberg:2010yz}
+\begin{equation}
+ \frac{5}{3} \left(\frac{\lambda}{m}\right)^2 - g > 0\ .
+ \label{eq:formCond}
+ \end{equation}
+As a rule of thumb, if the potential is symmetric around the minimum ($\lambda = 0$), it supports oscillon solutions whenever it is ``shallower than quadratic", which translates into attractive interactions. In order to estimate whether or not self-gravity is negligible for these solutions, let us restrict ourselves for a moment to the simpler case $\lambda = 0$: the mass and radius of the RSS in the dense regime, i.e. when the oscillation amplitude of the field is $\phi \sim \mathcal{O}(\Lambda)$, take the form~\cite{Hertzberg:2010yz}
+\begin{equation}
+M \simeq \frac{m}{g} \simeq \frac{\Lambda^2}{m} \,, \qquad R \simeq \frac{1}{m} \,.
+\end{equation}
+In order to have a measure of the importance of gravity for the problem at hand, we can take the ratio between the RSSs radius $R$ and the corresponding Schwarzschild radius $R_s$:
+\begin{equation}
+\frac{R_s}{R} \approx \left(\frac{\Lambda}{M_p}\right)^2 \,,
+\end{equation}
+which suggests that GR effects become non-negligible if the typical scale of the potential $\Lambda$ is close to $M_p$. It follows immediately that for RSSs formed in the \Kahler moduli inflation scenario~\cite{Conlon:2005jm}, as shown in~\cite{Antusch:2017flz}, GR effects are never important, since the typical scale of the potential is set by the string scale $\Lambda \equiv M_s = M_p/\mathcal{V}^{1/2}$, where $\mathcal{V} \gg 1$ is the volume of the extra-dimensions.\\
+Note that the criterion described above is relevant for the need to include GR effects as we do in this paper - objects with compactness $\mathcal{O}(1)$ (and down to around $\mathcal{O}(10^{-3}))$ can show relativistic behaviour during their evolution. But gravity can already provide support for RSSs at much lower compactnesses, and then Newtonian gravity is already necessary (but also sufficient) for their study, see e.g.~\cite{Visinelli:2017ooc, Schiappacasse:2017ham}.
+
+In this paper we study various examples of potentials, with highly compact RSSs, in the regime in which GR effects are non-negligible. As already mentioned, we do not deal with the RSS formation mechanism, and we leave the analysis of the effects of GR on such mechanisms to future work. As shown in~\cite{Amin:2019ums}, it is likely that throughout most of the formation and evolution, Newtonian gravity would be sufficient for a study of the evolution from oscillon to oscillaton. It is only in extreme regimes, or in cases in which perturbations are enhanced, that the objects become sufficiently compact for GR effects to be important. One can then ask the question, at what point do such objects become unstable to gravitational collapse? This question is non trivial, especially in cases in which the potential is asymmetric about the minimum, where the object will experience alternating dispersive and attractive interactions during the course of one oscillation. We thus focus on the stability of large perturbations in the field, and the interplay between the non-linear field dynamics, and gravitational effects\footnote{For a similar study in the context of complex field boson stars see~\cite{Cunha:2017wao}.}. 
+
+We will consider three classes of potentials: $\alpha$-attractor T- and E-models, and KKLT. The shapes of the potentials, crucial for the dynamics of the RSSs, is summarized in Fig.~\ref{fig:Potentials} where we normalized the mass of the field to the same mass $m$. Although the results illustrated in Sec. \ref{sec:Results} are valid for any value of the mass $m$, for $\alpha$-attractor potentials, once $\Lambda$ is fixed, then also the value of the mass $m$ is fixed in order for the inflationary dynamics to be in agreement with observations.\\
+
+\begin{figure}[htp!]
+    \centering
+    \includegraphics[width=1.00\textwidth]{Potentials.pdf}
+    \caption{Summary of the potentials analyzed in Sec.~\ref{sec:Results}.}
+\label{fig:Potentials}
+\end{figure}
+
+
+\noindent \textbf{$\alpha$-attractor T-models}\\
+\noindent $\alpha$-attractors have been proposed as supergravity models of inflation~\cite{Kallosh:2013yoa, Kallosh:2015lwa}. In this class of models the field-space curvature, parametrised by $\alpha$, plays a crucial role in the determination of the inflationary observables, as it allows for the tuning of the tensor to scalar ratio. The general scalar potential for $\alpha$-attractor T-models takes the form
+\begin{equation}
+V = V_0 \, \tanh^{2n} \left(\frac{\phi}{\Lambda}\right) \,,
+\end{equation}
+where $V_0$ is a normalization constant and $\Lambda$ is the typical scale of the potential, related to the geometrical parameter $\alpha$ via $\frac{\Lambda}{M_p}\propto \sqrt{\alpha}$. Given that the tensor-to-scalar ratio can be written as 
+\begin{equation}
+r\approx \frac{2}{N_e^2} \frac{\Lambda^2}{M_p^2} \,,
+\end{equation}
+where $N_e\equiv \ln a$ is the number of efoldings of expansion during inflation, the current upper bound $r\le 0.07$ constrains the scale $\Lambda$ to $\Lambda/M_p < 10$ for $N_e\sim 50-60$. This corresponds to having the observable range of inflationary expansion being produced in the plateau region of the potential.
+
+Normalisation of the scalar curvature perturbations 
+\begin{equation}
+\mathcal{A}_s=\frac{H^2}{8 \pi^2 \epsilon}\sim 2\times 10^{-9}
+\label{eq:As}
+\end{equation}
+implies that the scale of the potential $V_0$ is bounded from above: $V_0\le 10^{-9} M_p^4$.
+
+
+Around the minimum the potential admits an expansion of the form
+\begin{equation}
+V=V_0 \left(\frac{\phi}{\Lambda}\right)^{2n} \left\{1-\frac{2n}{3}\frac{\phi^2}{\Lambda^2}+\frac{7 n+10 n^2}{45 }\frac{\phi^4}{\Lambda^4}+\mathcal{O}(\phi^6)\right\}
+\end{equation}
+and therefore it obeys the ``shallower than quadratic" criterion for the existence of oscillon solutions in the absence of gravity. We stress that this criterium is simply an indication for when the formation might take place in the absence of gravity. If gravity effects are included meta-stable solutions exist even for the free-field case. In our simulations we use the full potential for all models. We will set $n=1$, in which case the cubic coupling vanishes and the quartic becomes $g = - 16 V_0/\Lambda^4$, automatically satisfying Eq. \eqref{eq:formCond}. In this kind of potential oscillons are formed for $\Lambda \ll M_p$ in the broad resonance regime \cite{Amin:2019ums}.\\ 
+
+\noindent \textbf{$\alpha$-attractor E-models}\\
+\noindent $\alpha$-attractor E-models of inflation feature a plateau-like potential which is favoured by the latest Planck results~\cite{Akrami:2018odb}. They are a generalization of the Starobinsky potential of the form
+\begin{equation}
+\label{eq:StarobinskyPotential}
+V = V_0 \left(1 - e^{-\frac{\phi}{\Lambda}}\right)^2 \,.
+\end{equation}
+Notice that the original Starobinsky model has $\Lambda/M_p = \sqrt{3/2}$ while {fibre inflation} corresponds to the case with $\Lambda/M_p = 1/\sqrt{3}$ \cite{Cicoli:2008gp}. Like the T-models, this class of models features a minimum at the origin and a flat plateau for $\phi\gg \Lambda$. We note however that while the minimum for the T-models is symmetric, in the case of E-models it is not.
+
+If  $\phi$ is the inflaton field,  to leading order in $N_e\gg1$ one has
+\begin{equation}
+r\approx\frac{8}{N_e^2} \left(\frac{\Lambda}{M_p}\right)^2\qquad\text{and}\qquad \mathcal{A}_s\approx \frac{N_e^2}{12 \pi^2} \frac{V_0}{\Lambda^2 M_p^2}\ .
+\end{equation}
+Inflationary constraints on $r$ and $\mathcal{A}_s$ map to the bounds $\Lambda/M_p \leq 5$ and $V_0\le 10^{-9} \, M_p^4$. We stress that these only apply if $\phi$ is responsible for inflation and that in Sec.~\ref{sec:Results} we will consider cases where these conditions are violated.
+
+Around the minimum one may expand
+\begin{equation}
+\frac{V}{V_0}=\left(\frac{\phi}{\Lambda}\right)^2-\left(\frac{\phi}{\Lambda}\right)^3+\frac{7}{12}\left(\frac{\phi}{\Lambda}\right)^4+\mathcal{O}\left(\left(\frac{\phi}{\Lambda}\right)^6\right)
+\end{equation}
+and so the E-model potential is shallower than quadratic to the right of the minimum and steeper to its left, c.f. Fig. \ref{fig:Potentials}. As a consequence of this asymmetry, over the course of a cycle, the RSS particles will experience alternating attractive and repulsive forces.
+
+
+This class of potential therefore meets the zeroth order criterion for oscillon formation in the absence of gravity. If the oscillon amplitude is small enough such that the quartic expansion of $V$ is a good approximation, the  formation criterion of  Eq. \eqref{eq:formCond} reduces to $V_0 >7/30 \, \Lambda^2 M_p^2$. Note that in this regime $\phi$ cannot be the inflaton as it would violate the normalisation of the scalar power spectrum, Eq. \eqref{eq:As}.\\
+
+\noindent \textbf{KKLT}\\
+\noindent KKLT is one of the most well-known mechanisms for K\"ahler moduli stabilisation in Type IIB string compatifications~\cite{Kachru:2003aw}. In its  simplest variant it features one single \Kahler modulus $T = \tau + i a$ describing the overall size of the compactification space. The scalar potential for the complex scalar $T $ is generated by non-perturbative corrections to the action. More explicitly it is generated by the \Kahler potential and superpotential 
+\begin{equation}
+\label{eq:KahlerSuperPotential}
+K \supset -3 \ln\left(T + \overline{T}\right) \,, \qquad W = W_0 + A e^{-a_N T} \,,
+\end{equation}
+where $W_0$ is the Gukov-Vafa-Witten superpotential arising from fluxes~\cite{Gukov:1999ya}, $A$ is a $\mathcal{O}(1)$ coefficient depending on the details of the non-perturbative physics that produces the non-perturbative correction and $a_N = \frac{2 \pi}{N}$, where $N$ is the number of D7-branes wrapping the 4-cycle whose volume is parameterized by $\tau$. 
+Given that Eq. \eqref{eq:KahlerSuperPotential} implies
+\begin{equation}
+\mathcal{L}\supset \frac{3}{4} \left(\frac{\partial\tau}{\tau}\right)^2=\frac{1}{2} (\partial \phi)^2,
+\end{equation}
+the canonically normalised volume modulus is
+\begin{equation}
+\frac{\phi}{M_p}=\sqrt{\frac{3}{2}}\ln\tau .
+\label{eq:cannorm}
+\end{equation}
+Assuming that the axion $a$ is stabilised at the minimum of its scalar potential, the potential for $\tau$ arising from Eq. \eqref{eq:KahlerSuperPotential} takes the form
+\begin{equation}
+V = \frac{V_0}{6 \tau^2} \left[a A^2 (3 + a \tau) e^{-2 a \tau} - 3 a A W_0 e^{-a \tau}\right] + V_{\rm dS} \,,
+\end{equation}
+where $V_{\rm dS} = V_{\rm up} \, \tau^{-2}$ is an additional term that ensures a de Sitter minimum~\cite{Kachru:2003aw}. This potential features a minimium with vanishing cosmological constant at $\bar{\tau}$ defined by 
+\begin{equation}
+W_0=-\frac{1}{3}A e^{-a \bar{\tau}}(5-2 a \bar{\tau}).
+\end{equation}
+Around the minimum the potential admits an expansion of the form
+\begin{equation}
+\begin{split}
+V=&\frac{a^3 A^2 e^{-2 a \bar{\tau}}}{12 \bar{\tau}^2}\left\{(3+2 a \bar{\tau})(\tau-\bar{\tau})^2+\left(\frac{-19 }{3}a-\frac{6}{\bar{\tau}}-2 a^2 \bar{\tau}\right)(\tau-\bar{\tau})^3\right.\\
+&\left.+\left(\frac{59}{12}a^2+\frac{9}{\bar{\tau}^2}+\frac{32 a}{3 \bar{\tau}}+\frac{7 a^3 \bar{\tau}}{6}\right)(\tau-\bar{\tau})^4+....\right\}\ .
+\end{split}
+\label{eq:VKKLMTmin}
+\end{equation}
+From Eq. \eqref{eq:VKKLMTmin} and Eq. \eqref{eq:cannorm} one sees that $V$ is asymmetric around the minimum and shallower than quadratic to the right of it, meeting the zeroth order criterium for the existence of oscillon solutions in the absence of gravity. It has been shown in~\cite{Antusch:2017flz} that in the large $|W_0|$ regime\footnote{The minimum in KKLT is located at $|W_0| \sim e^{-a \tau} \ll 1$. The adjective \textit{large} here means $10^{-6} \lesssim |W_0| \lesssim 10^{-2}$.} oscillons are formed in the KKLT scenario.
+
+\section{Numerical Setup}
+\label{sec:NumericalSetup}
+
+We use numerical relativity (NR) simulations to search for stable solutions to the Einstein-Klein-Gordon (EKG) equations with each of the given models. We start with profiles for the scalar field which would, in the absence of self-interactions in the field, provide stable solutions. For each of the models described above, we evolve these forward in time to see if a stable state is reached, or whether collapse or dispersion of the perturbation occurs.
+
+In this Section we give further details of the initial conditions and numerical techniques used, including code verification tests.
+
+\subsection{Initial conditions}
+
+In the free-field oscillaton case, with $V(\phi) = \frac{1}{2} m^2 \phi^2$, meta-stable solutions\footnote{As emphasized in Sec.~\ref{sec:Introduction}, these compact objects are bound to disperse, given that there is no conservation law preventing their decay, see however~\cite{Gleiser:1999tj, Salmi:2012ta, Gleiser:2008ty, Saffin:2006yk, Gleiser:2019rvw}.} to the EKG equations can be found numerically using a shooting method, as in~\cite{Alcubierre:2003sx,UrenaLopez:2002gx,UrenaLopez:2001tw}. Once the field mass $m$ is fixed, they describe a one parameter family of solutions, parameterised by the central amplitude or, equivalently, by the total mass of the perturbation. We will use the latter to specify the initial configurations of the simulations. The one parameter family of solutions is composed of two different branches, i.e. the \textit{stable branch} and the \textit{unstable branch}. For a fixed value of $m$, upon increasing the central amplitude of the field, the total mass $M$ of the equilibrium configurations grows till the maximum value $M_{\rm max} = 3.04 \, M_p^2/m$: this is the stable branch. If the central amplitude is increased any further, the total mass $M$ starts moving towards smaller values: this is the unstable branch. Perturbed configurations on the stable branch quickly go back to a stable configuration, while perturbed configurations on the unstable branch either collapse to black holes (if the perturbation increases the total mass for fixed central amplitude) or it migrates towards the stable branch (if the perturbation decreases the total mass for fixed central amplitude). We will consider configurations that belong to the stable branch in the free-field case, in the range of total masses $2.6 \, M_p^2/m < M < 3.0 \,M_p^2/m$. We choose this range based on the following observations: \textit{i)} below $2.6 \, M_p^2/m$ GR effects become less and less important for the potentials considered in this paper, and \textit{ii)} above the mass $M = 3.04 \, M_p^2/m$ any perturbation makes the free-field RSS unstable, so this value sets our upper bound for the total mass. For definiteness, we consider the three values $M = 2.6 \, M_p^2/m$, $M = 2.9 \, M_p^2/m$ and $M = 3.0 \, M_p^2/m$ for the initial total mass of the RSSs, respectively corresponding to the initial central amplitudes $\phi/M_p = 0.2$, $\phi/M_p = 0.3$, $\phi/M_p = 0.4$ for the scalar field of the free-field RSSs. In this way, we quantify and compare the change in stability as a result of the non-linear self-interactions.
+
+A time slice of these solutions is used as the initial conditions for our simulations. For numerical convenience, we choose a slice on which $\phi(r) = 0$ and $\dot \phi(r) \neq 0$, see App. A of~\cite{Helfer:2016ljl} for further details. This gives us a moment of time symmetry (at the level of the metric and the stress-energy tensor) such that the momentum constraint is trivially satisfied. In addition, since the field is everywhere at the minimum in the potential, it does not at this point ``feel'' the deviations from the free-field case, and thus the numerically obtained RSS solutions for the metric and the field satisfy the Hamiltonian constraint exactly, without further modification.
+
+Whilst it should be emphasised that the free-field oscillaton solutions are not necessarily stable once self-interactions are added, they nevertheless provide a convenient set of initial conditions with which to systematically test the stability properties of each model. The interacting solution is likely to be similar to the non-interacting one, at least for small self-interactions, so one may hope that such an approach makes it more likely that we will converge on the stable solutions (compared to starting with, for example, a gaussian, or other random perturbation profiles\footnote{Although note that in \cite{Michel:2018nzt}, gaussians were used successfully to investigate stable and unstable solutions, and yielded results similar to those found in \cite{Helfer:2016ljl}, which used a similar approach to our own.}), if such solutions exist. We note that a failure to settle into a steady state in our simulations is not evidence that no stable solution exists - we could simply have not found it. However, in all cases studied, we do see our solution settle into a stable state below some critical mass, justifying the approach.
+
+A further practical advantage of using the RSS solutions is that one can check that in the limit of small amplitudes and/or small self-interactions, the solution remains stable and unchanged (modulo some initial gauge evolution), which is an invaluable check of the code and potential function.
+
+Finally we note that, for asymmetric potentials, we have a choice of which direction in field space we initially send the field - to the attractive or repulsive part of the potential. We do not find that this makes a significant difference to our results; the collapsing cases will still collapse, just with a longer or shorter timescale. So we choose to always send it in the direction of positive $\phi$.
+
+\subsection{Numerical methods}
+
+We use the publicly available NR code $\textsc{GRChombo}$ to evolve the initial data forward in time. GRChombo is itself built on top of the open source $\mathtt{Chombo}$ framework \cite{Chombo}. For a more full discussion of $\textsc{GRChombo}$ see \cite{Clough:2015sqa}, or the website \url{www.grchombo.org}. For completeness we describe below the key features of the code as used in this work.
+
+The evolution uses the method of lines, with metric and field derivatives calculated using finite difference stencils of the grid values and a Runge-Kutta time integration for the evolution equations. The metric in the 3+1D decomposition:
+\begin{equation}
+ds^2 = - \alpha^2 dt^2 + \gamma_{ij} (dx^i + \beta^i dt) (dx^j + \beta^j dt) \,,
+\end{equation}
+where $\alpha$ is the lapse and $\gamma_{ij}$ is the three-metric on the equal time hypersurfaces.
+
+The BSSN formulation \cite{Nakamura:1987zz,Shibata:1995we,Baumgarte:1998te} of the 3+1D ADM equations \cite{Arnowitt:1962hi} is used for numerical stability, with CCZ4 \cite{Alic:2011gg} constraint damping terms added to reduce constraint violation over the simulation. The moving puncture gauge  \cite{Pretorius:2005gq,Baker:2005vv,Campanelli:2005dd} is employed to allow the simulations to follow black hole formation - this is a dynamical gauge choice which maintains coordinate observers at approximately fixed positions relative to the center of the domain, avoiding the focussing of geodesics on the overdense regions.
+
+The length of the domain is $L = 64 \times 1/m$, where $m$ is the mass of the field, and we enforce between 4 and 7 (2:1) refinement levels at the start of the simulation with the coarsest having $N$ grid points, where $N=64^3$ is usually sufficient, but several values are used to check convergence. Additional resolution is added if collapse occurs, triggered dynamically by second derivatives in the field $\phi$ and metric conformal factor $\chi$ exceeding set thresholds. The metric conformal factor is defined as $\chi = \left(\det \gamma_{ij}\right)^{-1/6}$, thus the formation of a singularity is signalled by $\chi$ falling to zero at the center, where the metric determinant becomes infinite. Note, however, that due to the rapidly varying amplitude of the field, we frequently needed to fix the resolution at the maximum level achieved using Adaptive Mesh Refinement (AMR), following an initial exploratory run, so as to control the errors from too frequent regridding.
+Kreiss-Oliger dissipation is used to control numerical errors in the evolution of the fields, in particular that arising at the grid boundaries. We evolve only 1/8th of the grid using the octant symmetry in cartesian coordinates, and apply Sommerfeld boundary conditions (which permit outgoing radiation and thus reduce reflections into the grid) at the outer edges. Whilst a code adapted to the spherical symmetry of the solutions would provide a far more efficient approach, the method adopted gives us the potential to generalise our studies in future work. Beyond tracking the dynamics of $\chi$, we check the formation of black holes by finding the apparent horizon on each spatial hypersurface \cite{Thornburg:2006zb}. Apparent horizons are ``trapped" surfaces for which the expansion of the outgoing null geodesics normal to the surface is zero - for a stationary metric they coincide with the event horizon but in a dynamical spacetime the event horizon (which can only be found by integrating the null geodesics over all time) may lie outside the apparent horizon. An apparent horizon area thus provides a lower limit on the mass of any black hole present in the spacetime.
+
+We have checked convergence of the simulations in critical cases where we identify a boundary between collapse and stability. An illustration of the tests performed is shown in Fig. \ref{fig:Converge}. We find the solution to be well converged in the range of base resolutions between $N = 48^3$ to $N = 96^3$. In other simulations away from the critical cases we check that the profiles obtained for the field $\phi$ and the inverse determinant of the metric $\chi$ are indistinguishable when the simulation is performed at several different base resolutions centered on $N = 64^3$.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.49\textwidth]{Convergence_Chi.pdf}
+    \includegraphics[width=0.49\textwidth]{Profile_Ham.pdf}
+    \caption{Here we show two plots from our convergence testing for the T-model potential ($n=1$) with $\Lambda/M_p = 0.2$ and total mass of the initial configuration $M = 2.9 \, M_p^2/m$. The first shows that the error in the conformal factor $\chi$ is converging at approximately 2nd order, calculated by comparing the difference between the results at 3 successive resolutions, which correspond to base resolutions of $64^3$, $80^3$ and $96^3$, each with 7 levels of 2:1 refinement. On a plot of $\chi$ versus time the results at the three resolutions are indistinguishable. The second plot shows the L2 norm of the Hamiltonian constraint violation at each resolution, showing that it remains bounded thoughout the simulation and decreases with resolution.}
+\label{fig:Converge}
+\end{figure}
+
+We note that the time period of our simulations is necessarily much shorter than the expected lifetime of the oscillatons due to computational limitations, such that we cannot explicitly confirm that the solutions we class as ``meta-stable'' will remain so in the longer term. However, where we see the solution settle into a periodic pattern (usually with modulations that appear to be decaying over time), it is reasonable to assume that in the absence of further perturbations it will then slowly decay rather than suffer a sudden collapse. Running several simulations for longer periods supports this intuition.
+ 
+Finally, we also present cases with gravity ``switched off" for comparison. In such cases we evolve only the scalar field dynamics on a Minkowski background, that is, setting $G=0$, and the initial metric to flat space. In doing so we can see how gravity supports the collapse, in addition to the non-linear self-interactions.
+
+\section{Results of the Simulations}
+\label{sec:Results}
+
+In this Section we present the results of our NR simulations, showing the dynamics of the central field amplitude $\phi$ and of the metric conformal factor $\chi$. Generically for all the models, as can be seen in the figures,  in the metastable phase the central field amplitude oscillates in proper time such as in Eq.~\eqref{eq:ParametrizedProfile}, with $\Phi(\tau) \propto \cos(\omega \tau + \delta)$, $\omega = c\, m$ and $c=\mathcal{O}(1)$. The decrease of $\chi$ to zero at the center signals the formation of a black hole, that we check by finding an apparent horizon whose area gives a lower bound on the mass of the final black hole. For all the cases in which a collapse occurs, the final mass of the black hole, computed using the apparent horizon, is between $85\%$ and $95\%$ of the original mass of the RSS.
+
+\subsection{$\alpha$-attractor T-models}
+
+We consider values of the typical scale of the potential $0.14 < \Lambda/M_p < 0.2$ and we take for concreteness $n = 1$. These values are borderline for the formation of oscillons in the simplest scenario of single field with self-interactions, since the requirement for the formation in that case is $\Lambda \ll M_p$. For smaller values of the scale $\Lambda$, GR effects are always negligible, as already observed in~\cite{Amin:2019ums}. For each value of the typical scale of the potential we vary the initial total mass $M$ of the configuration in the range $2.6 \, M_p^2/m < M < 3.0 \, M_p^2/m$. We observe three peculiar behaviours for RSSs in T-model potentials:
+\begin{enumerate}
+\item For the smallest $\Lambda/M_p = 0.14$, all the solutions (corresponding to different initial total masses) radiate scalar waves during the first oscillations, settling down into an equilibrium configuration. We show this behaviour for the heaviest initial total mass $M = 3.0 \, M_p^2/m$ in Fig.~\ref{fig:phiT014phi04N32}. By the end of the simulation the RSS has lost $25\%$ of its initial total mass and the compactness has decreased by a factor $\mathcal{C}_{\rm initial}/\mathcal{C}_{\rm final} = 4.4$.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.85\textwidth]{phiT014phi04N32.pdf}
+    \caption{{\it T-model potential: }Evolution of the central field amplitude for the T-model potential with $n = 1$, $\Lambda/M_p = 0.14$ and initial total mass of the configuration $M = 3.0 \, M_p^2/m$. The RSS settles into a stable configuration after radiating part of the energy into scalar waves during the first oscillations.}
+\label{fig:phiT014phi04N32}
+\end{figure}
+
+\item For $\Lambda/M_p = 0.17$ the configurations with initial total mass $2.9 \, M_p^2/m \leq M \leq 3.0 \, M_p^2/m$ collapse to black holes after a few oscillations with increasing amplitude, see left panel of Fig.~\ref{fig:T017phi0203} for the $M = 2.9 \, M_p^2/m$ case. The configuration with initial total mass $M = 2.6 \, M_p^2/m$ remains meta-stable after a couple of oscillations with large amplitude, during which it radiates part of the energy into scalar waves, see right panel of Fig.~\ref{fig:T017phi0203}.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.49\textwidth]{chiT017phi03.pdf}
+    \includegraphics[width=0.5\textwidth]{T017phi02.pdf}
+    \caption{{\it T-model potential: }\textit{(Left panel)} Dynamical evolution of the conformal factor $\chi$ for the configuration with initial total mass $M = 2.9 \, M_p^2/m$ and $\Lambda/M_p = 0.17$. The configuration quickly collapses to a black hole. \textit{(Right panel)} Dynamical evolution of the central field amplitude $\phi$ for the configuration with initial mass $M = 2.6 \, M_p^2/m$ and $\Lambda/M_p = 0.17$. The configuration settles into an equilibrium configuration after radiating away part of the energy through scalar waves during the first two oscillations.}
+\label{fig:T017phi0203}
+\end{figure}
+\item For $\Lambda/M_p = 0.2$ the behaviour is analogous to the case $\Lambda/M_p = 0.17$: configurations with initial total mass $2.9 \, M_p^2/m \leq M \leq 3.0 \, M_p^2/m$ collapse very rapidly to black holes, see Fig.~\ref{fig:phiT02phi03Comp}. Configurations with initial total mass $M = 2.6 \, M_p^2/m$ settles into a stable solution after radiating part of the energy into scalar waves during the first transient stage.
+\end{enumerate}
+
+\begin{figure}[h!]
+\centering
+	\includegraphics[width=0.49\textwidth]{phiT02phi03Comp.pdf}
+    \includegraphics[width=0.49\textwidth]{chiT02phi03.pdf}
+    \caption{
+    {\it T-model potential: } \textit{(Left panel)} 
+   Dynamical evolution of the central amplitude of the oscillaton for a configuration with total initial mass $M = 2.9 \, M_p^2/m$ and typical scale of the potential $\Lambda/M_p = 0.2$. The black curve correspond to the evolution that takes into account the effects of gravity, while the blue curve is the stable evolution in the absence of gravity.
+ The spike at $\tau \simeq 19 \times 1/m$ in the black curve is caused by the collapse to a black hole as the puncture gauge evolves, and is thus somewhat unphysical. The convergence test for this parameter point is shown in Fig.~\ref{fig:Converge}. 
+ \textit{(Right panel)} Dynamical evolution of the metric conformal factor $\chi$ for $\Lambda/M_p = 0.2$ with initial total mass $M = 2.9 \, M_p^2/m$. The convergence test for this parameter point is shown in Fig.~\ref{fig:Converge}.}
+\label{fig:phiT02phi03Comp}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.85\textwidth]{phiT02phi02Comp.pdf}
+    \caption{{\it T-model potential: }The black curve corresponds to the dynamical evolution of the central amplitude taking into account the effects of gravity, while the blue curve corresponds to the evolution of the same initial configuration neglecting gravity effects. The total initial mass is $M = 2.6 \, M_p^2/m$ and the typical scale of the potential is $\Lambda/M_p = 0.2$. Both solutions are stable - the latter due only to self-interactions - but the former has a larger amplitude of oscillations that could give rise to a larger stochastic background of GWs, as explained in Sec.~\ref{sec:Introduction} (see Eq.~\eqref{eq:GWSpectrumAmplitude}).}
+\label{fig:phiT02phi02Comp}
+\end{figure}
+
+In Fig.~\ref{fig:phiT02phi02Comp} we show the comparison between the dynamical evolution of the central amplitude of two RSSs with the same initial total mass $M = 2.6 \, M_p^2/m$ when gravity is taken into account (black line) and when gravity are neglected (blue line), for $\Lambda/M_p = 0.2$. Upon adding the effects of gravity the equilibrium amplitude is larger: this could be an important effect for GW production in the light of Eq.~\eqref{eq:GWSpectrumAmplitude}, in the non-spherically symmetric cases. This effect is even more pronounced for stable RSSs with larger initial amplitude but not large enough to make them collapse to black holes.
+
+\subsection{$\alpha$-attractor E-models}
+
+In this case we consider two cases: $\Lambda/M_p = 1$ and $\Lambda/M_p = 2$, so as not to restrict ourselves to a single model. We observe the following behaviours:	\\
+\begin{enumerate}
+\item For $\Lambda/M_p = 1$ the configurations with initial total mass $2.9 \, M_p^2/m \leq M \leq 3.0 \, M_p^2/m$ collapse rapidly to black holes, see Fig.~\ref{fig:chiSa1phi0304}. The configuration with initial total mass $M = 2.6 \, M_p^2/m$ settles into a stable solution after radiating part of the energy into scalar waves.
+\item For $\Lambda/M_p = 2$ the configuration with initial total mass $M = 3.0 \, M_p^2/m$ collapses to a black hole, see left panel of Fig.~\ref{fig:chiSa2phi0304}, while the configurations with initial total mass $2.6 \, M_p^2/m \leq M \leq 2.9 \, M_p^2/m$ settle into stable solutions after radiating part of the energy into scalar waves, see right panel of Fig.~\ref{fig:chiSa2phi0304}.
+\end{enumerate}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{chiSa1phi03.pdf}
+    \includegraphics[width=0.49\textwidth]{chiSa1phi04.pdf}
+    \caption{{\it E-model potential: } \textit{(Left panel)} Plot of the conformal factor $\chi$ in the case of an E-model potential with parameter $\Lambda/M_p = 1$ and initial total mass $M = 2.9 \, M_p^2/m$. The number of points in the coarsest grid for the simulation from which the curve is extracted is $N=96$. \textit{(Right panel)} Plot of the conformal factor $\chi$ in the case of an E-model potential with parameter $\Lambda/M_p = 1$ and initial total mass $M = 3.0 \, M_p^2/m$.}
+\label{fig:chiSa1phi0304}
+\end{figure}
+
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.48\textwidth]{chiSa2phi04.pdf}
+    \includegraphics[width=0.49\textwidth]{phiSa2phi03.pdf}
+    \caption{{\it E-model potential: }\textit{(Left panel)} Plot of the conformal factor $\chi$ in the case of an E-model potential with parameter $\Lambda/M_p = 2$ and initial total mass $M = 3.0 \, M_p^2/m$. \textit{(Right panel)} Central field profile $\phi$ in the case of an E-model potential with parameter $\Lambda/M_p = 2$ and initial total mass $M = 2.9 \, M_p^2/m$.}
+\label{fig:chiSa2phi0304}
+\end{figure}
+
+In the left panel of Fig.~\ref{fig:phiSa2phi03Comp} we show the comparison between the stable configuration obtained including gravity effects in the simulation (black line) and the configuration with the same initial conditions if gravity effects are switched off (blue line): the presence of gravity makes the RSS stable even in the case in which the attractive self-interactions are not strong enough to allow the existence of the oscillon solution, as evident from the fact that the central field is damped very quickly, i.e. the RSS disperses. At the same time, in the right panel we show how the attractive gravitational interaction can dynamically drive the RSS to black hole collapse, even in a case that would quickly disperse in the absence of gravity effects.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.49\textwidth]{phiSa2phi03Comp.pdf}
+    \includegraphics[width=0.49\textwidth]{phiSa1phi04Comp.pdf}
+    \caption{{\it E-model potential: }\textit{(Left panel)} Comparison between the dynamical evolution of the same initial configuration (total mass $M = 2.9 \, M_p^2/m$) in the E-model potential with $\Lambda/M_p = 2$ with and without gravity. The presence of gravity stabilizes the RSS even if the attractive self-interactions are not strong enough to make the configuration stable. \textit{(Right panel)} Comparison between the dynamical evolution of the same initial configuration (total mass $M = 3.0 \, M_p^2/m$) in the E-model potential with $\Lambda/M_p = 1$ with (black line) and without gravity (blue line). The presence of gravity drives the RSS to collapse to a black hole.}
+\label{fig:phiSa2phi03Comp}
+\end{figure}
+
+\subsection{KKLT}
+
+In the KKLT scenario we observe the same qualitative behaviour for all the initial total masses in the range $2.6 \, M_p^2/m < M < 3.0 \, M_p^2/m$: the RSS radiates part of the energy into scalar waves until it settles into a quasi-equilibrium configuration. We never observe collapse to black holes in this scenario for the region of the parameter space investigated (i.e. $|W_0| \gtrsim 10^{-4}$) for which the formation of oscillons has been studied in~\cite{Antusch:2017flz}. In Fig.~\ref{fig:phiW02phi04} we show the evolution of the central field amplitude for the parameter point $|W_0| = 10^{-2}$ and initial total mass $M = 3.0 \, M_p^2/m$. This point has been chosen in such a way to maximize the typical scale of the potential. At the very end of the simulation the RSS has lost $44\%$ of its mass and it seems to be still radiating energy into scalar waves very slowly. The compactness is reduced by a factor $\mathcal{C}_{\rm initial}/\mathcal{C}_{\rm final} \simeq 5$. Notice the remarkably different behaviour with respect to the case without gravity shown in Fig.~\ref{fig:phiW02phi04Comp}: the oscillation amplitude is initially much larger if the effects of gravity are included. 
+
+\begin{figure}[h!]
+    \begin{center}
+    \includegraphics[width=0.85\textwidth]{W02phi04.pdf}
+    \end{center}
+    \caption{{\it KKLT potential: } Evolution of the central amplitude for the KKLT potential with $|W_0| = 10^{-2}$ and initial total mass $M = 3.0 \, M_p^2/m$. The RSS slowly radiates energy into scalar waves until it settles into an equilibrium configuration. At the very end of the simulation the RSS seems to be very slowly losing energy through scalar radiation. Likely, it will keep losing energy until it reaches an equilibrium configuration close to that obtained by setting $G = 0$, see Fig.~\ref{fig:phiW02phi04Comp}.}
+\label{fig:phiW02phi04}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.85\textwidth]{W02phi04Comp.pdf}
+    \caption{{\it KKLT potential: }Comparison between the evolutions of the central amplitude for the KKLT potential with $|W_0| = 10^{-2}$ including the effects of gravity ($G = 1$) and neglecting them $(G = 0)$. The initial total mass is $M = 3.0 \, M_p^2/m$. In the latter case the RSS radiates the excess energy into scalar waves very quickly, until it settles into an equilibrium configuration. In the former case the decay is very slow and the oscillation amplitude is much larger for a long time.}
+\label{fig:phiW02phi04Comp}
+\end{figure}
+
+\section{Conclusions}
+\label{sec:Conclusions}
+
+We have analyzed by means of full GR simulations the stability of RSS solutions in various potentials relevant for inflation and for realistic string theory scenarios. Assuming large relativistic perturbations of various masses as an initial condition, we have used NR techniques to study their dynamical evolution and stability. The results are summarized in Tab.~\ref{tab:Summary}, including the results obtained in the absence of gravity effects. The present analysis is relevant for a better understanding of the post-inflationary dynamics and the possible production of GWs during the pre-BBN era. We have observed several different behaviours, depending on the potential, the parameters of the model and the mass of the initial RSS configuration. While we observe that in KKLT scenarios RSSs are meta-stable in the region of parameter space investigated even for the heaviest initial configurations taken into account, for the other potentials the heaviest RSSs can be dynamically driven (by the interplay of gravity and self-interactions) to collapse to black holes, even if the initial radii are much larger than the corresponding Schwarzschild radii. We have performed a comparison with the corresponding solutions that would be obtained in the absence of gravity, showing that gravitational effects can significantly modify the dynamics of the RSSs in the region of parameter space taken into account. In particular we observe the following general features:
+\begin{itemize}
+\item In cases in which the RSS quickly disperses in the absence of gravity, gravitational effects can either stabilize it, or drive it to collapse to black hole, see e.g. Fig.~\ref{fig:phiSa2phi03Comp} for the case with E-model potential. Hence, one would expect to observe more RSSs (and hence enhanced GW production) than those predicted by lattice simulations of preheating scenarios that do not take into account gravity. Further studies to better understand  the formation of RSSs in these potentials are required, to determine under what circumstances perturbations can grow to relativistic amplitudes.
+\item In some cases in which the RSS is stable with self-interactions only, gravitational effects can either enhance the amplitude of the field oscillations in its interior, see e.g. Fig.~\ref{fig:phiT02phi02Comp} (T-models) and Fig.~\ref{fig:phiW02phi04Comp} (KKLT), or dynamically drive it to collapse to black holes, see e.g. left panel of Fig.~\ref{fig:phiT02phi03Comp} (T-models). While the former effect can have a significant impact on the production of GWs due to the RSS dynamics, as explained in Sec.~\ref{sec:Introduction} (see Eq.~\eqref{eq:GWSpectrumAmplitude}), the latter effect would significantly affect the reheating history of the Universe.
+\end{itemize}
+
+Numerical simulations are valuable tools for understanding the physics of the very early Universe. The simulations we have performed can be easily adapted to study more complex systems of perturbations in the absence of spherical symmetry. Some possible future directions include the production of relativistic oscillatons during preheating, the formation of primordial black holes, and the production of GWs from early matter domination. We plan to return to these and related questions in future work.\\
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+\hline
+\multirow{2}{*}{Model} & \multirow{2}{*}{Parameters} & \multicolumn{2}{c|}{$M = 2.6 \, M_p^2/m$} & \multicolumn{2}{c|}{$M = 2.9 \, M_p^2/m$} & \multicolumn{2}{c|}{$M = 3.0 \, M_p^2/m$} \\ \cline{3-8} 
+                  &                   & $G = 0$ & $G = 1$ & $G = 0$ & $G = 1$ & $G = 0$ & $G = 1$ \\ \hline \hline
+Free-Field & $\times$ & D & MS & D & MS & D & MS \\ \hline \hline 
+\multirow{3}{*}{} & $\Lambda/M_p = 0.14$ & MS & MS & MS & MS &          MS & MS \\ \cline{2-8} 
+T-models & $\Lambda/M_p = 0.17$ & MS & MS & MS &         C & MS & C \\ \cline{2-8} 
+                  & $\Lambda/M_p = 0.2$ & MS & MS & MS & C & MS &          C \\ \hline \hline
+\multirow{2}{5em}{E-models} & $\Lambda/M_p = 1$ & D &          MS & D & C & D & C \\ \cline{2-8} 
+                  & $\Lambda/M_p = 2$ & D &  MS & D & MS & D & C \\ \hline \hline
+KKLT & $|W_0| = 10^{-2}$ & MS & MS & MS & MS & MS & MS \\ \hline
+\end{tabular}
+\caption{Summary of the results. The capital letters stand for: D = Dispersion, MS = Meta-Stable, C = Collapse to a black hole. For completeness, we show the comparison with the free-field case: the stability in that case is achieved only if the configuration lies on the stability curve, as explained in~\cite{UrenaLopez:2001tw}. \label{tab:Summary}}
+\end{table}
+
+\section*{Acknowledgments}
+
+We appreciate interesting discussions with Francesco Cefal\'a and Stefano Orani. We thank Ricardo Becerril and Thomas Helfer for having provided the initial conditions for stable oscillatons. KC acknowledges support from the European Research Council. Our simulations used the Argo cluster at ICTP and we thank Ivan Girotto for his support with using the system. We acknowledge CINECA, for the availability of high performance computing resources and support which were also used in this work. Finally some simulations were performed using the Cambridge Service for Data Driven Discovery (CSD3), part of which is operated by the University of Cambridge Research Computing on behalf of the STFC DiRAC HPC Facility (www.dirac.ac.uk). The DiRAC component of CSD3 was funded by BEIS capital funding via STFC capital grants ST/P002307/1 and ST/R002452/1 and STFC operations grant ST/R00689X/1. DiRAC is part of the UK National eInfrastructure.
+
+
+\begin{thebibliography}{99}
+
+\bibitem{Aad:2012tfa}
+  G.~Aad {\it et al.} [ATLAS Collaboration],
+  ``Observation of a new particle in the search for the Standard Model Higgs boson with the ATLAS detector at the LHC,''
+  Phys.\ Lett.\ B {\bf 716} (2012) 1
+  %doi:10.1016/j.physletb.2012.08.020
+  [arXiv:1207.7214 [hep-ex]].
+  
+\bibitem{Chatrchyan:2012xdj}
+  S.~Chatrchyan {\it et al.} [CMS Collaboration],
+  ``Observation of a new boson at a mass of 125 GeV with the CMS experiment at the LHC,''
+  Phys.\ Lett.\ B {\bf 716} (2012) 30
+  %doi:10.1016/j.physletb.2012.08.021
+  [arXiv:1207.7235 [hep-ex]].
+
+\bibitem{Csaki:2015hcd}
+  C.~Csaki, C.~Grojean and J.~Terning,
+  ``Alternatives to an Elementary Higgs,''
+  Rev.\ Mod.\ Phys.\  {\bf 88} (2016) no.4,  045001
+  %doi:10.1103/RevModPhys.88.045001
+  [arXiv:1512.00468 [hep-ph]].
+
+\bibitem{Peccei:1977hh}
+  R.~D.~Peccei and H.~R.~Quinn,
+  ``CP Conservation in the Presence of Instantons,''
+  Phys.\ Rev.\ Lett.\  {\bf 38} (1977) 1440.
+  %doi:10.1103/PhysRevLett.38.1440
+  
+\bibitem{Marsh:2015xka}
+  D.~J.~E.~Marsh,
+  ``Axion Cosmology,''
+  Phys.\ Rept.\  {\bf 643} (2016) 1
+  %doi:10.1016/j.physrep.2016.06.005
+  [arXiv:1510.07633 [astro-ph.CO]].
+
+\bibitem{Baumann:2009ds}
+  D.~Baumann,
+  ``Inflation,''
+  %doi:10.1142/9789814327183_0010
+  arXiv:0907.5424 [hep-th].
+  
+\bibitem{Martin:1997ns}
+  S.~P.~Martin,
+  ``A Supersymmetry primer,''
+  Adv.\ Ser.\ Direct.\ High Energy Phys.\  {\bf 21} (2010) 1
+   [Adv.\ Ser.\ Direct.\ High Energy Phys.\  {\bf 18} (1998) 1]
+  %doi:10.1142/9789812839657_0001, 10.1142/9789814307505_0001
+  [hep-ph/9709356].
+  
+\bibitem{Weinberg:2000cr}
+  S.~Weinberg,
+  ``The quantum theory of fields. Vol. 3: Supersymmetry,''
+  Cambridge University Press (2 giugno 2005).
+  
+\bibitem{Ibanez:2012zz}
+  L.~E.~Ibanez and A.~M.~Uranga,
+  ``String theory and particle physics: An introduction to string phenomenology,''
+  Cambridge University Press (9 febbraio 2012).
+
+\bibitem{Arvanitaki:2009fg}
+  A.~Arvanitaki, S.~Dimopoulos, S.~Dubovsky, N.~Kaloper and J.~March-Russell,
+  ``String Axiverse,''
+  Phys.\ Rev.\ D {\bf 81} (2010) 123530
+  %doi:10.1103/PhysRevD.81.123530
+  [arXiv:0905.4720 [hep-th]].
+  
+\bibitem{Cicoli:2012sz}
+  M.~Cicoli, M.~Goodsell and A.~Ringwald,
+  ``The type IIB string axiverse and its low-energy phenomenology,''
+  JHEP {\bf 1210} (2012) 146
+  %doi:10.1007/JHEP10(2012)146
+  [arXiv:1206.0819 [hep-th]].
+  
+\bibitem{Litim:2014uca}
+ D.~F.~Litim and F.~Sannino,
+``Asymptotic safety guaranteed,''
+ JHEP {\bf 1412} (2014) 178
+%doi:10.1007/JHEP12(2014)178
+ [arXiv:1406.2337 [hep-th]].
+  
+\bibitem{Weinberg:1996kr}
+  S.~Weinberg,
+  ``The quantum theory of fields. Vol. 2: Modern applications,''
+  Cambridge University Press (2 giugno 2005).
+  
+\bibitem{Rubakov:2002fi}
+  V.~A.~Rubakov,
+  ``Classical theory of gauge fields,''
+  Princeton, USA: Univ. Pr. (2002) 444 p.
+  
+\bibitem{Manton:2004tk}
+  N.~S.~Manton and P.~Sutcliffe,
+  ``Topological solitons,''
+  Cambridge University Press; 1 edizione (8 ottobre 2007).
+  %doi:10.1017/CBO9780511617034
+  
+\bibitem{Tong:2005un}
+  D.~Tong,
+  ``TASI lectures on solitons: Instantons, monopoles, vortices and kinks,''
+  hep-th/0509216.
+  
+\bibitem{Kusenko:2008zm}
+  A.~Kusenko and A.~Mazumdar,
+  ``Gravitational waves from fragmentation of a primordial scalar condensate into Q-balls,''
+  Phys.\ Rev.\ Lett.\  {\bf 101} (2008) 211301
+  %doi:10.1103/PhysRevLett.101.211301
+  [arXiv:0807.4554 [astro-ph]].
+  
+\bibitem{Amin:2010jq}
+  M.~A.~Amin and D.~Shirokoff,
+  ``Flat-top oscillons in an expanding universe,''
+  Phys.\ Rev.\ D {\bf 81} (2010) 085045
+  %doi:10.1103/PhysRevD.81.085045
+  [arXiv:1002.3380 [astro-ph.CO]].
+  
+\bibitem{Dolgov:2011cq}
+  A.~D.~Dolgov and D.~Ejlli,
+  ``Relic gravitational waves from light primordial black holes,''
+  Phys.\ Rev.\ D {\bf 84} (2011) 024028
+  %doi:10.1103/PhysRevD.84.024028
+  [arXiv:1105.2303 [astro-ph.CO]].
+  
+\bibitem{Amin:2011hj}
+  M.~A.~Amin, R.~Easther, H.~Finkel, R.~Flauger and M.~P.~Hertzberg,
+  ``Oscillons After Inflation,''
+  Phys.\ Rev.\ Lett.\  {\bf 108} (2012) 241302
+  %doi:10.1103/PhysRevLett.108.241302
+  [arXiv:1106.3335 [astro-ph.CO]].
+  
+\bibitem{Amin:2013ika}
+M.~A. Amin,
+``K-oscillons: Oscillons with noncanonical kinetic terms",
+ Phys. Rev. \textbf{D87} (2013) 123505, 1303.1102.
+ 
+\bibitem{Amin:2014eta}
+  M.~A.~Amin, M.~P.~Hertzberg, D.~I.~Kaiser and J.~Karouby,
+  ``Nonperturbative Dynamics Of Reheating After Inflation: A Review,''
+  Int.\ J.\ Mod.\ Phys.\ D {\bf 24} (2014) 1530003
+  %doi:10.1142/S0218271815300037
+  [arXiv:1410.3808 [hep-ph]].  
+  
+\bibitem{Antusch:2016con}
+  S.~Antusch, F.~Cefala and S.~Orani,
+  ``Gravitational waves from oscillons after inflation,''
+  Phys.\ Rev.\ Lett.\  {\bf 118} (2017) no.1,  011303
+   Erratum: [Phys.\ Rev.\ Lett.\  {\bf 120} (2018) no.21,  219901]
+  %doi:10.1103/PhysRevLett.120.219901, 10.1103/PhysRevLett.118.011303
+  [arXiv:1607.01314 [astro-ph.CO]].
+  
+\bibitem{Antusch:2017flz}
+  S.~Antusch, F.~Cefala, S.~Krippendorf, F.~Muia, S.~Orani and F.~Quevedo,
+  ``Oscillons from String Moduli,''
+  JHEP {\bf 1801} (2018) 083
+  %doi:10.1007/JHEP01(2018)083
+  [arXiv:1708.08922 [hep-th]].
+  
+\bibitem{Kusenko:1997ad}
+  A.~Kusenko,
+  ``Small Q-balls,''
+  Phys.\ Lett.\ B {\bf 404} (1997) 285
+  %doi:10.1016/S0370-2693(97)00582-0
+  [hep-th/9704073].
+  
+\bibitem{Kusenko:1997si}
+  A.~Kusenko and M.~E.~Shaposhnikov,
+  ``Supersymmetric Q balls as dark matter,''
+  Phys.\ Lett.\ B {\bf 418} (1998) 46
+  %doi:10.1016/S0370-2693(97)01375-0
+  [hep-ph/9709492].
+  
+\bibitem{Kusenko:2001vu}
+  A.~Kusenko and P.~J.~Steinhardt,
+  ``Q ball candidates for selfinteracting dark matter,''
+  Phys.\ Rev.\ Lett.\  {\bf 87} (2001) 141301
+  %doi:10.1103/PhysRevLett.87.141301
+  [astro-ph/0106008].
+  
+\bibitem{Olle:2019kbo}
+  J.~Olle, O.~Pujolas and F.~Rompineve,
+  ``Oscillons and Dark Matter,''
+  arXiv:1906.06352 [hep-ph].
+
+\bibitem{Bai:2016wpg}
+  Y.~Bai, V.~Barger and J.~Berger,
+  ``Hydrogen Axion Star: Metallic Hydrogen Bound to a QCD Axion BEC,''
+  JHEP {\bf 1612} (2016) 127
+  %doi:10.1007/JHEP12(2016)127
+  [arXiv:1612.00438 [hep-ph]].
+  
+\bibitem{Braaten:2016dlp}
+  E.~Braaten, A.~Mohapatra and H.~Zhang,
+  ``Emission of Photons and Relativistic Axions from Axion Stars,''
+  Phys.\ Rev.\ D {\bf 96} (2017) no.3,  031901
+  %doi:10.1103/PhysRevD.96.031901
+  [arXiv:1609.05182 [hep-ph]].
+  
+\bibitem{Levkov:2016rkk}
+  D.~G.~Levkov, A.~G.~Panin and I.~I.~Tkachev,
+  ``Relativistic axions from collapsing Bose stars,''
+  Phys.\ Rev.\ Lett.\  {\bf 118} (2017) no.1,  011301
+  %doi:10.1103/PhysRevLett.118.011301
+  [arXiv:1609.03611 [astro-ph.CO]].
+  
+\bibitem{Eby:2017xaw}
+  J.~Eby, M.~Leembruggen, J.~Leeney, P.~Suranyi and L.~C.~R.~Wijewardhana,
+  ``Collisions of Dark Matter Axion Stars with Astrophysical Sources,''
+  JHEP {\bf 1704} (2017) 099
+  %doi:10.1007/JHEP04(2017)099
+  [arXiv:1701.01476 [astro-ph.CO]].
+  
+\bibitem{Hui:2016ltb}
+  L.~Hui, J.~P.~Ostriker, S.~Tremaine and E.~Witten,
+  ``Ultralight scalars as cosmological dark matter,''
+  Phys.\ Rev.\ D {\bf 95} (2017) no.4,  043541
+  %doi:10.1103/PhysRevD.95.043541
+  [arXiv:1610.08297 [astro-ph.CO]].
+  
+\bibitem{Desjacques:2017fmf}
+  V.~Desjacques, A.~Kehagias and A.~Riotto,
+  ``Impact of ultralight axion self-interactions on the large scale structure of the Universe,''
+  Phys.\ Rev.\ D {\bf 97} (2018) no.2,  023529
+  %doi:10.1103/PhysRevD.97.023529
+  [arXiv:1709.07946 [astro-ph.CO]].
+  
+\bibitem{Krippendorf:2018tei}
+  S.~Krippendorf, F.~Muia and F.~Quevedo,
+  ``Moduli Stars,''
+  JHEP {\bf 1808} (2018) 070
+  %doi:10.1007/JHEP08(2018)070
+  [arXiv:1806.04690 [hep-th]].
+  
+\bibitem{Lee:1991ax}
+T.~D. Lee and Y.~Pang,
+``Nontopological solitons",
+  Phys. Rept. \textbf{221} (1992) 251--350.
+  
+\bibitem{Jetzer:1991jr}
+  P.~Jetzer,
+  ``Boson stars,''
+  Phys.\ Rept.\  {\bf 220} (1992) 163.
+  %doi:10.1016/0370-1573(92)90123-H  
+  
+\bibitem{Coleman:1985ki}
+  S.~R.~Coleman,
+  ``Q-Balls,''
+  Nucl.\ Phys.\ B {\bf 262} (1985) 263
+   Erratum: [Nucl.\ Phys.\ B {\bf 269} (1986) 744].
+
+\bibitem{Colpi:1986ye}
+  M.~Colpi, S.~L.~Shapiro and I.~Wasserman,
+  ``Boson Stars: Gravitational Equilibria of Selfinteracting Scalar Fields,''
+  Phys.\ Rev.\ Lett.\  {\bf 57} (1986) 2485.
+  %doi:10.1103/PhysRevLett.57.2485
+
+\bibitem{Mukaida:2016hwd}
+K.~Mukaida, M.~Takimoto and M.~Yamada, 
+``On Longevity of I-ball/Oscillon",
+JHEP \textbf{03} (2017) 122,
+1612.07750.
+  
+\bibitem{Seidel:1991zh}
+  E.~Seidel and W.~M.~Suen,
+  ``Oscillating soliton stars,''
+  Phys.\ Rev.\ Lett.\  {\bf 66} (1991) 1659.  
+  
+\bibitem{Kolb:1993hw}
+  E.~W.~Kolb and I.~I.~Tkachev,
+  ``Nonlinear axion dynamics and formation of cosmological pseudosolitons,''
+  Phys.\ Rev.\ D {\bf 49} (1994) 5040
+  %doi:10.1103/PhysRevD.49.5040
+  [astro-ph/9311037].
+  
+ \bibitem{Alcubierre:2003sx}
+  M.~Alcubierre, R.~Becerril, S.~F.~Guzman, T.~Matos, D.~Nunez and L.~A.~Urena-Lopez,
+  ``Numerical studies of Phi**2 oscillatons,''
+  Class.\ Quant.\ Grav.\  {\bf 20} (2003) 2883
+  %doi:10.1088/0264-9381/20/13/332
+  [gr-qc/0301105].
+  %%CITATION = doi:10.1088/0264-9381/20/13/332;%%  
+  
+\bibitem{UrenaLopez:2001tw}
+  L.~A.~Urena-Lopez,
+  ``Oscillatons revisited,''
+  Class.\ Quant.\ Grav.\  {\bf 19} (2002) 2617
+  %doi:10.1088/0264-9381/19/10/307
+  [gr-qc/0104093].
+  
+\bibitem{UrenaLopez:2002gx}
+  L.~A.~Urena-Lopez, T.~Matos and R.~Becerril,
+  ``Inside oscillatons,''
+  Class.\ Quant.\ Grav.\  {\bf 19} (2002) 6259.
+  %doi:10.1088/0264-9381/19/23/320
+  
+\bibitem{UrenaLopez:2012zz}
+  L.~A.~Urena-Lopez, S.~Valdez-Alvarado and R.~Becerril,
+  ``Evolution and stability phi**4 oscillatons,''
+  Class.\ Quant.\ Grav.\  {\bf 29} (2012) 065021.
+  %doi:10.1088/0264-9381/29/6/065021
+  
+\bibitem{Kolb:1993zz}
+  E.~W.~Kolb and I.~I.~Tkachev,
+  ``Axion miniclusters and Bose stars,''
+  Phys.\ Rev.\ Lett.\  {\bf 71} (1993) 3051
+  %doi:10.1103/PhysRevLett.71.3051
+  [hep-ph/9303313].
+
+\bibitem{Hogan:1988mp}
+  C.~J.~Hogan and M.~J.~Rees,
+  ``Axion Miniclusters.''
+  
+\bibitem{Visinelli:2017ooc}
+  L.~Visinelli, S.~Baum, J.~Redondo, K.~Freese and F.~Wilczek,
+  ``Dilute and dense axion stars,''
+  Phys.\ Lett.\ B {\bf 777} (2018) 64
+  %doi:10.1016/j.physletb.2017.12.010
+  [arXiv:1710.08910 [astro-ph.CO]].
+  
+\bibitem{Cotner:2018vug}
+  E.~Cotner, A.~Kusenko and V.~Takhistov,
+  ``Primordial Black Holes from Inflaton Fragmentation into Oscillons,''
+  Phys.\ Rev.\ D {\bf 98} (2018) no.8,  083513
+  %doi:10.1103/PhysRevD.98.083513
+  [arXiv:1801.03321 [astro-ph.CO]].  
+  
+\bibitem{Helfer:2016ljl}
+  T.~Helfer, D.~J.~E.~Marsh, K.~Clough, M.~Fairbairn, E.~A.~Lim and R.~Becerril,
+  ``Black hole formation from axion stars,''
+  JCAP {\bf 1703} (2017) no.03,  055
+  %doi:10.1088/1475-7516/2017/03/055
+  [arXiv:1609.04724 [astro-ph.CO]].
+  
+\bibitem{Coughlan:1983ci}
+  G.~D.~Coughlan, W.~Fischler, E.~W.~Kolb, S.~Raby and G.~G.~Ross,
+  ``Cosmological Problems for the Polonyi Potential,''
+  Phys.\ Lett.\  {\bf 131B} (1983) 59.
+  %doi:10.1016/0370-2693(83)91091-2
+  
+\bibitem{deCarlos:1993wie}
+  B.~de Carlos, J.~A.~Casas, F.~Quevedo and E.~Roulet,
+  ``Model independent properties and cosmological implications of the dilaton and moduli sectors of 4-d strings,''
+  Phys.\ Lett.\ B {\bf 318} (1993) 447
+  %doi:10.1016/0370-2693(93)91538-X
+  [hep-ph/9308325].  
+  
+\bibitem{Banks:1993en}
+  T.~Banks, D.~B.~Kaplan and A.~E.~Nelson,
+  ``Cosmological implications of dynamical supersymmetry breaking,''
+  Phys.\ Rev.\ D {\bf 49} (1994) 779
+  %doi:10.1103/PhysRevD.49.779
+  [hep-ph/9308292].
+  
+\bibitem{Kane:2015jia}
+  G.~Kane, K.~Sinha and S.~Watson,
+  ``Cosmological Moduli and the Post-Inflationary Universe: A Critical Review,''
+  Int.\ J.\ Mod.\ Phys.\ D {\bf 24} (2015) no.08,  1530022
+  %doi:10.1142/S0218271815300220
+  [arXiv:1502.07746 [hep-th]].
+  
+\bibitem{Akrami:2018odb}
+  Y.~Akrami {\it et al.} [Planck Collaboration],
+  ``Planck 2018 results. X. Constraints on inflation,''
+  arXiv:1807.06211 [astro-ph.CO].
+  
+\bibitem{Brax:2010ai}
+  P.~Brax, J.~F.~Dufaux and S.~Mariadassou,
+  ``Preheating after Small-Field Inflation,''
+  Phys.\ Rev.\ D {\bf 83} (2011) 103510
+  %doi:10.1103/PhysRevD.83.103510
+  [arXiv:1012.4656 [hep-th]].
+  
+  \bibitem{Kallosh:2013yoa}
+  R.~Kallosh, A.~Linde and D.~Roest,
+  ``Superconformal Inflationary $\alpha$-Attractors,''
+  JHEP {\bf 1311} (2013) 198
+  %doi:10.1007/JHEP11(2013)198
+  [arXiv:1311.0472 [hep-th]].
+  %%CITATION = doi:10.1007/JHEP11(2013)198;%%
+  %329 citations counted in INSPIRE as of 20 Jun 2019
+  
+\bibitem{Kallosh:2015lwa}
+  R.~Kallosh and A.~Linde,
+  ``Planck, LHC, and $\alpha$-attractors,''
+  Phys.\ Rev.\ D {\bf 91} (2015) 083528
+  %doi:10.1103/PhysRevD.91.083528
+  [arXiv:1502.07733 [astro-ph.CO]].
+  
+\bibitem{Kofman:1997yn}
+  L.~Kofman, A.~D.~Linde and A.~A.~Starobinsky,
+  ``Towards the theory of reheating after inflation,''
+  Phys.\ Rev.\ D {\bf 56} (1997) 3258
+  %doi:10.1103/PhysRevD.56.3258
+  [hep-ph/9704452].
+  
+\bibitem{Widdicombe:2018oeo}
+  J.~Y.~Widdicombe, T.~Helfer, D.~J.~E.~Marsh and E.~A.~Lim,
+  ``Formation of Relativistic Axion Stars,''
+  JCAP {\bf 1810} (2018) no.10,  005
+  %doi:10.1088/1475-7516/2018/10/005
+  [arXiv:1806.09367 [astro-ph.CO]].
+  
+\bibitem{Amin:2019ums}
+M.~A.~Amin and P.~Mocz,
+  ``Formation, Gravitational Clustering and Interactions of Non-relativistic Solitons in an Expanding Universe,''
+arXiv:1902.07261 [astro-ph.CO].
+
+\bibitem{Dufaux:2007pt}
+  J.~F.~Dufaux, A.~Bergman, G.~N.~Felder, L.~Kofman and J.~P.~Uzan,
+  ``Theory and Numerics of Gravitational Waves from Preheating after Inflation,''
+  Phys.\ Rev.\ D {\bf 76} (2007) 123517
+  %doi:10.1103/PhysRevD.76.123517
+  [arXiv:0707.0875 [astro-ph]].
+  
+\bibitem{Antusch:2017vga}
+  S.~Antusch, F.~Cefala and S.~Orani,
+  ``What can we learn from the stochastic gravitational wave background produced by oscillons?,''
+  JCAP {\bf 1803} (2018) no.03,  032
+  %doi:10.1088/1475-7516/2018/03/032
+  [arXiv:1712.03231 [astro-ph.CO]].
+  
+\bibitem{Helfer:2018vtq}
+  T.~Helfer, E.~A.~Lim, M.~A.~G.~Garcia and M.~A.~Amin,
+  ``Gravitational Wave Emission from Collisions of Compact Scalar Solitons,''
+  Phys.\ Rev.\ D {\bf 99} (2019) no.4,  044046
+  %doi:10.1103/PhysRevD.99.044046
+  [arXiv:1802.06733 [gr-qc]].
+
+\bibitem{Belotsky:2018wph}
+  K.~M.~Belotsky {\it et al.},
+  ``Clusters of primordial black holes,''
+  arXiv:1807.06590 [astro-ph.CO].
+
+\bibitem{Marsh:2015wka}
+  D.~J.~E.~Marsh and A.~R.~Pop,
+  ``Axion dark matter, solitons and the cusp–core problem,''
+  Mon.\ Not.\ Roy.\ Astron.\ Soc.\  {\bf 451} (2015) no.3,  2479
+  %doi:10.1093/mnras/stv1050
+  [arXiv:1502.03456 [astro-ph.CO]].
+  
+\bibitem{Lennon:2017tqq}
+  O.~Lennon, J.~March-Russell, R.~Petrossian-Byrne and H.~Tillim,
+  ``Black Hole Genesis of Dark Matter,''
+  JCAP {\bf 1804} (2018) no.04,  009
+  %doi:10.1088/1475-7516/2018/04/009
+  [arXiv:1712.07664 [hep-ph]].
+  
+\bibitem{Cicoli:2012aq}
+  M.~Cicoli, J.~P.~Conlon and F.~Quevedo,
+  ``Dark radiation in LARGE volume models,''
+  Phys.\ Rev.\ D {\bf 87} (2013) no.4,  043520
+  %doi:10.1103/PhysRevD.87.043520
+  [arXiv:1208.3562 [hep-ph]].
+  
+\bibitem{Cicoli:2015bpq}
+  M.~Cicoli and F.~Muia,
+  ``General Analysis of Dark Radiation in Sequestered String Models,''
+  JHEP {\bf 1512} (2015) 152
+  %doi:10.1007/JHEP12(2015)152
+  [arXiv:1511.05447 [hep-th]].
+  
+\bibitem{Acharya:2015zfk}
+  B.~S.~Acharya and C.~Pongkitivanichkul,
+  ``The Axiverse induced Dark Radiation Problem,''
+  JHEP {\bf 1604} (2016) 009
+  %doi:10.1007/JHEP04(2016)009
+  [arXiv:1512.07907 [hep-ph]].
+  
+\bibitem{Halverson:2018xge}
+  J.~Halverson and P.~Langacker,
+  ``TASI Lectures on Remnants from the String Landscape,''
+  PoS TASI {\bf 2017} (2018) 019
+  %doi:10.22323/1.305.0019
+  [arXiv:1801.03503 [hep-th]].
+  
+\bibitem{Cicoli:2018cgu}
+  M.~Cicoli and G.~A.~Piovano,
+  ``Reheating and Dark Radiation after Fibre Inflation,''
+  JCAP {\bf 1902} (2019) no.02,  048
+  %doi:10.1088/1475-7516/2019/02/048
+  [arXiv:1809.01159 [hep-th]].
+  
+\bibitem{Aghanim:2018eyx}
+  N.~Aghanim {\it et al.} [Planck Collaboration],
+  ``Planck 2018 results. VI. Cosmological parameters,''
+  arXiv:1807.06209 [astro-ph.CO].
+  
+\bibitem{Hertzberg:2010yz}
+  M.~P.~Hertzberg,
+  ``Quantum Radiation of Oscillons,''
+  Phys.\ Rev.\ D {\bf 82} (2010) 045022
+  %doi:10.1103/PhysRevD.82.045022
+  [arXiv:1003.3459 [hep-th]].
+  
+\bibitem{Conlon:2005jm}
+  J.~P.~Conlon and F.~Quevedo,
+  ``Kahler moduli inflation,''
+  JHEP {\bf 0601} (2006) 146
+  %doi:10.1088/1126-6708/2006/01/146
+  [hep-th/0509012].
+  
+\bibitem{Schiappacasse:2017ham}
+  E.~D.~Schiappacasse and M.~P.~Hertzberg,
+  ``Analysis of Dark Matter Axion Clumps with Spherical Symmetry,''
+  JCAP {\bf 1801} (2018) 037
+   Erratum: [JCAP {\bf 1803} (2018) no.03,  E01]
+  %doi:10.1088/1475-7516/2018/03/E01, 10.1088/1475-7516/2018/01/037
+  [arXiv:1710.04729 [hep-ph]].
+  
+\bibitem{Cunha:2017wao}
+  P.~V.~P.~Cunha, J.~A.~Font, C.~Herdeiro, E.~Radu, N.~Sanchis-Gual and M.~Zilhão,
+  ``Lensing and dynamics of ultracompact bosonic stars,''
+  Phys.\ Rev.\ D {\bf 96} (2017) no.10,  104040
+  %doi:10.1103/PhysRevD.96.104040
+  [arXiv:1709.06118 [gr-qc]].
+  
+\bibitem{Cicoli:2008gp}
+  M.~Cicoli, C.~P.~Burgess and F.~Quevedo,
+  ``Fibre Inflation: Observable Gravity Waves from IIB String Compactifications,''
+  JCAP {\bf 0903} (2009) 013
+  %doi:10.1088/1475-7516/2009/03/013
+  [arXiv:0808.0691 [hep-th]].
+  
+\bibitem{Gukov:1999ya}
+  S.~Gukov, C.~Vafa and E.~Witten,
+  ``CFT's from Calabi-Yau four folds,''
+  Nucl.\ Phys.\ B {\bf 584} (2000) 69
+   Erratum: [Nucl.\ Phys.\ B {\bf 608} (2001) 477]
+  %doi:10.1016/S0550-3213(01)00289-9, 10.1016/S0550-3213(00)00373-4
+  [hep-th/9906070].
+  
+\bibitem{Kachru:2003aw}
+  S.~Kachru, R.~Kallosh, A.~D.~Linde and S.~P.~Trivedi,
+  ``De Sitter vacua in string theory,''
+  Phys.\ Rev.\ D {\bf 68} (2003) 046005
+  %doi:10.1103/PhysRevD.68.046005
+  [hep-th/0301240].
+  
+\bibitem{Gleiser:1999tj}
+  M.~Gleiser and A.~Sornborger,
+  ``Longlived localized field configurations in small lattices: Application to oscillons,''
+  Phys.\ Rev.\ E {\bf 62} (2000) 1368
+  %doi:10.1103/PhysRevE.62.1368
+  [patt-sol/9909002].  
+  
+\bibitem{Salmi:2012ta}
+  P.~Salmi and M.~Hindmarsh,
+  ``Radiation and Relaxation of Oscillons,''
+  Phys.\ Rev.\ D {\bf 85} (2012) 085033
+  %doi:10.1103/PhysRevD.85.085033
+  [arXiv:1201.1934 [hep-th]].
+  
+\bibitem{Gleiser:2008ty} 
+  M.~Gleiser and D.~Sicilia,
+  ``Analytical Characterization of Oscillon Energy and Lifetime,''
+  Phys.\ Rev.\ Lett.\  {\bf 101}, 011602 (2008)
+  %doi:10.1103/PhysRevLett.101.011602
+  [arXiv:0804.0791 [hep-th]].
+  
+\bibitem{Saffin:2006yk}
+  P.~M.~Saffin and A.~Tranberg,
+  ``Oscillons and quasi-breathers in D+1 dimensions,''
+  JHEP {\bf 0701} (2007) 030
+  %doi:10.1088/1126-6708/2007/01/030
+  [hep-th/0610191].
+  
+\bibitem{Gleiser:2019rvw}
+  M.~Gleiser and M.~Krackow,
+  ``Resonant Configurations in Scalar Field Theories: Can (Some) Oscillons Live Forever?,''
+  arXiv:1906.04070 [hep-th].
+  
+\bibitem{Michel:2018nzt}
+  F.~Michel and I.~G.~Moss,
+  ``Relativistic collapse of axion stars,''
+  Phys.\ Lett.\ B {\bf 785} (2018) 9
+  %doi:10.1016/j.physletb.2018.07.063
+  [arXiv:1802.10085 [gr-qc]].
+  
+ \bibitem{Chombo}
+M.~Adams, P.~Colella, D.~T. Graves, J.~N. Johnson, N.~D. Keen, T.~J. Ligocki, D.~F. Martin, 
+P.~W. McCorquodale, D.~Modiano, P.~O. Schwartz, T.~D.~Sternberg, and B.~Straalen,     
+``Chombo Software Package for AMR Applications - Design Document,
+   Lawrence Berkeley National Laboratory Technical Report LBNL-6616E.''
+
+\bibitem{Clough:2015sqa}
+K.~Clough, P.~Figueras, H.~Finkel, M.~Kunesch, E.~A.~Lim and S.~Tunyasuvunakool,
+  ``GRChombo : Numerical Relativity with Adaptive Mesh Refinement,''
+  Class.\ Quant.\ Grav.\  {\bf 32} (2015) no.24,  245011
+  %doi:10.1088/0264-9381/32/24/245011
+  [arXiv:1503.03436 [gr-qc]].
+  %%CITATION = doi:10.1088/0264-9381/32/24/245011;%%
+  
+\bibitem{Nakamura:1987zz}
+  T.~Nakamura, K.~Oohara and Y.~Kojima,
+  ``General Relativistic Collapse to Black Holes and Gravitational Waves from Black Holes,''
+  Prog.\ Theor.\ Phys.\ Suppl.\  {\bf 90} (1987) 1.
+  %doi:10.1143/PTPS.90.1
+  %%CITATION = doi:10.1143/PTPS.90.1;%%
+  
+ \bibitem{Shibata:1995we}
+  M.~Shibata and T.~Nakamura,
+  ``Evolution of three-dimensional gravitational waves: Harmonic slicing case,''
+  Phys.\ Rev.\ D {\bf 52} (1995) 5428.
+  %doi:10.1103/PhysRevD.52.5428
+  %%CITATION = doi:10.1103/PhysRevD.52.5428;%%
+  
+ \bibitem{Baumgarte:1998te}
+  T.~W.~Baumgarte and S.~L.~Shapiro,
+  ``On the numerical integration of Einstein's field equations,''
+  Phys.\ Rev.\ D {\bf 59} (1999) 024007
+  %doi:10.1103/PhysRevD.59.024007
+  [gr-qc/9810065].
+  %%CITATION = doi:10.1103/PhysRevD.59.024007;%%
+  
+\bibitem{Arnowitt:1962hi}
+  R.~L.~Arnowitt, S.~Deser and C.~W.~Misner,
+  ``The Dynamics of general relativity,''
+  Gen.\ Rel.\ Grav.\  {\bf 40} (2008) 1997
+  %doi:10.1007/s10714-008-0661-1
+  [gr-qc/0405109].
+  %%CITATION = doi:10.1007/s10714-008-0661-1;%%
+  
+\bibitem{Alic:2011gg}
+  D.~Alic, C.~Bona-Casas, C.~Bona, L.~Rezzolla and C.~Palenzuela,
+  ``Conformal and covariant formulation of the Z4 system with constraint-violation damping,''
+  Phys.\ Rev.\ D {\bf 85} (2012) 064040
+  %doi:10.1103/PhysRevD.85.064040
+  [arXiv:1106.2254 [gr-qc]].
+  %%CITATION = doi:10.1103/PhysRevD.85.064040;%%
+  
+ \bibitem{Pretorius:2005gq}
+  F.~Pretorius,
+  ``Evolution of binary black hole spacetimes,''
+  Phys.\ Rev.\ Lett.\  {\bf 95} (2005) 121101
+  %doi:10.1103/PhysRevLett.95.121101
+  [gr-qc/0507014].
+  %%CITATION = doi:10.1103/PhysRevLett.95.121101;%%
+
+\bibitem{Baker:2005vv}
+  J.~G.~Baker, J.~Centrella, D.~I.~Choi, M.~Koppitz and J.~van Meter,
+  ``Gravitational wave extraction from an inspiraling configuration of merging black holes,''
+  Phys.\ Rev.\ Lett.\  {\bf 96} (2006) 111102
+  %doi:10.1103/PhysRevLett.96.111102
+  [gr-qc/0511103].
+  %%CITATION = doi:10.1103/PhysRevLett.96.111102;%%
+  
+\bibitem{Campanelli:2005dd}
+  M.~Campanelli, C.~O.~Lousto, P.~Marronetti and Y.~Zlochower,
+  ``Accurate evolutions of orbiting black-hole binaries without excision,''
+  Phys.\ Rev.\ Lett.\  {\bf 96} (2006) 111101
+  %doi:10.1103/PhysRevLett.96.111101
+  [gr-qc/0511048].
+  %%CITATION = doi:10.1103/PhysRevLett.96.111101;%%
+  
+\bibitem{Thornburg:2006zb}
+  J.~Thornburg,
+  ``Event and apparent horizon finders for 3+1 numerical relativity,''
+  Living Rev.\ Rel.\  {\bf 10} (2007) 3
+  [gr-qc/0512169].
+
+\end{thebibliography}
+
+\end{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+

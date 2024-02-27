@@ -1,0 +1,137 @@
+\documentclass[12pt,titlepage]{article}
+\usepackage[footnotesize]{caption}
+\pdfoutput =1
+\usepackage{geometry,amsmath,amsfonts}
+\usepackage{slashed}
+\usepackage{epsfig}
+\usepackage{hyperref}
+\usepackage{latexsym}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{verbatim}
+\usepackage{bm}
+\usepackage{dsfont}
+
+
+\usepackage{cancel}
+\usepackage{cite}
+
+
+\usepackage{multirow}
+\usepackage{tikz}
+
+\usepackage{subfig}
+\usepackage{color}
+
+
+\usepackage{rotating}
+\usepackage{ifthen}
+\usepackage[utf8]{inputenc}  
+
+
+
+\setcounter{section}{0}
+\numberwithin{equation}{section} 
+\numberwithin{figure}{section}
+\numberwithin{table}{section} 
+\setlength\parindent{0pt} 
+
+\definecolor{cred}{RGB}{180,50,40} 
+\newcommand{\val}[1]{{\color{cred}#1}}     
+\newcommand{\cval}[1]{\emph{\color{cred}[#1]}}  % Valerie's 
+
+
+
+\newcommand{\Kahler}{\ensuremath{\text{K}\ddot{\text{a}}\text{hler}\,}}
+
+
+\textwidth 15.55cm \textheight 22.5cm \hoffset -1cm \voffset -1cm
+
+
+\renewcommand{\baselinestretch}{1.3}
+
+
+\begin{document}
+
+\begin{titlepage}
+
+\thispagestyle{empty}
+\setcounter{page}{0}
+
+
+
+\vskip 1.5cm
+
+\begin{center}
+{\LARGE\bf PBH dark matter from axion inflation}
+
+\vskip 2cm
+
+
+{\large  Valerie~Domcke\footnote{valerie.domcke@apc.univ-paris7.fr},  Francesco Muia\footnote{francesco.muia@physics.ox.ac.uk}, Mauro Pieroni\footnote{mpieroni@apc.univ-paris7.fr}, \newline Lukas T.~Witkowski\footnote{lwitkow@apc.univ-paris7.fr}}\\[3mm]
+{\it{
+${}^{1,3,4}$ AstroParticule et Cosmologie (APC)/Paris Centre for Cosmological Physics, Universit\'e Paris Diderot, CNRS, CEA, Observatoire de Paris, Sorbonne Paris Cit\'e University.  \\
+${}^2$ Rudolf Peierls Centre for Theoretical Physics, University of Oxford,\\
+1 Keble Road, Oxford OX1 3NP, UK.
+}}
+\end{center}
+
+
+\vskip 1cm
+\centerline{ {\bf Abstract}}{
+Protected by an approximate shift symmetry, axions are well motivated candidates for driving cosmic inflation. Their generic coupling to the Chern-Simons term of any gauge theory gives rise to a wide range of potentially observable signatures, including equilateral non-Gaussianites in the CMB, chiral gravitational waves in the range of direct gravitational wave detectors and primordial black holes (PBHs). In this paper we revisit these predictions for axion inflation models non-minimally coupled to gravity. Contrary to the case of minimally coupled models which typically predict scale-invariant mass distributions for the generated PBHs at small scales, we demonstrate how broadly peaked PBH spectra naturally arises in this setup. For specific parameter values, all of dark matter can be accounted for by PBHs.}
+
+\vspace{1cm}
+
+\center
+\textit{Dedicated to the memory of Pierre Bin\'etruy}
+
+\end{titlepage}
+\tableofcontents
+
+\section{Introduction\label{sec:introduction}}
+\input{introduction}
+
+\section{A review of axion inflation\label{sec:review}}
+\input{review}
+
+\section{Non-minimal coupling to gravity\label{sec:non-minimal}}
+\input{non-minimal}
+
+
+\section{An example: attractor models\label{sec:attractors}}
+\input{attractors}
+
+\section{Primordial black holes \label{sec:PBHs}}
+\input{PBHs}
+
+\section{Conclusion and Outlook \label{sec:conclusions}}
+\input{conclusions}
+
+\vspace{1cm}
+\subsubsection*{Acknowledgements}
+
+We thank D.~Figueroa, E.~Kiritsis, A.~Kusenko, and L.~Sorbo for valuable comments and discussions at various stages of this work. We are especially indebted to Pierre Bin\'etruy who, to our great sorrow, unexpectedly passed away during the completion of this work. Pierre sparked our interest in this topic, and his advice and guidance was invaluable in the early stages of this work.
+
+We acknowledge the financial support of the UnivEarthS Labex program at Sorbonne Paris Cit\'e (ANR-10-LABX-0023 and ANR-11-IDEX-0005-02) and the Paris Centre for Cosmological Physics. L.\,W.\ is partially supported by the Advanced ERC grant SM-grav, No 669288. V.\,D.\ would like to thank the Berkeley Center for Theoretical Physics for kind hospitality during the final stages of this work. F.\,M.\ is supported by the European Research Council starting grant ‘Supersymmetry Breaking in String Theory’ (307605).
+
+
+\appendix
+
+\section{Axions in field theory, supergravity and string theory \label{sec:axions}}
+\input{axions}
+
+\section{Scalar power spectrum and consistency checks \label{sec:spectrum}}
+\input{spectrum}
+
+\section{Uncertainties in the PBH production}
+\input{PBH-uncertainties}
+
+
+
+
+
+\input{refs}
+
+
+\end{document}

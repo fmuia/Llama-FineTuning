@@ -1,0 +1,59 @@
+\label{app:PBH}
+PBH formation has been subject to many dedicated studies over the past decades and there are several effects which we did not take into account in the analysis of the main text. Here we list some of these effects and estimate their impact on our results, see also Ref.~\cite{Carr:2016drx} for a more detailed overview.
+
+\subsubsection*{Critical collapse}
+
+Primordial scalar fluctuations with a power spectrum $P(\zeta)$ form PBHs upon re-entry into the horizon if  $\zeta > \zeta_c$. A reference scale for  the mass of the resulting black hole is the horizon mass $M_H$ at the time of horizon re-entry $t_N$,
+\begin{equation}
+M_H(N) 
+ \simeq \frac{4 \pi m_p^2}{H_\text{inf}} e^{j N} \simeq 55 \, g \, \left( \frac{10^{-6} \, m_p}{H_\text{inf}}\right) \, e^{j N} \,,
+ \label{eq:horizonmass}
+\end{equation}
+More accurately the mass spectrum of PBHs (at the time of formation) follows a critical scaling relation~\cite{Choptuik:1992jv,Koike:1995jm,Niemeyer:1999ak,Gundlach:1999cu,Gundlach:2002sx},
+\begin{equation}
+M(\zeta, N) = \kappa M_H(N) (\zeta - \zeta_c)^y \,,
+\label{eq:critical}
+\end{equation}
+for $\zeta > \zeta_c$, where the dimensionless parameters $\kappa$, $\zeta_c$ and $y$ have been studied numerically for the case of spherical, Gaussian perturbations in a radiation dominated background. Following~\cite{Musco:2004ak,Musco:2008hv,Musco:2012au,Niemeyer:1997mt} we will use $\kappa = 3.3$, $\zeta_c = 0.45$ and $y = 0.36$ in the following -- subject to the caveat that these values have been obtained for the spherical collapse of Gaussian fluctuations. Employing Eq.~\eqref{eq:critical} instead of Eq.~\eqref{eq:MH}, the simple one-to-one correlation between a fluctuation sourced at a given e-fold $N$ and a PBH mass $M$ is lost, for any given $N$ there will be a tail of low-mass PBHs as $\zeta$ approaches the critical value $\zeta_c$.
+
+We can determine the fraction of space that collapses to form black holes at a given time (i.e.\ when the fluctuations corresponding to a given $N$ re-enter the horizon) as
+\begin{equation}
+\beta(N) = \int_{\zeta_c}^\infty  \frac{M(\zeta, N)}{M_H(N)} P_N(\zeta) \textrm{d}\zeta =  \int_{\zeta_c}^\infty  \kappa (\zeta - \zeta_c)^y P_N(\zeta) \textrm{d}\zeta\,.
+\label{eq:beta1}
+\end{equation}
+Here $P_N(\zeta)$ denotes the probability distribution of fluctuations sourced at $N$ e-folds before the end of inflation, which in our case is given by the non-Gaussian distribution~\eqref{eq:Pnongauss}. Using Eq.~\eqref{eq:beta1} and Eq.~\eqref{eq:critical} the fraction of space collapsing at a fixed $t_N$ in a given mass interval $[M, M + \textrm{d}M]$ is given as
+\begin{equation}
+\tilde \beta(N,M) \, \textrm{d}M = \frac{M}{M_H(N)} P_N(\zeta(M)) \frac{\textrm{d} \zeta(M)}{\textrm{d} M} \textrm{d}M \,,
+\end{equation}
+with $\zeta(M) = (M/(\kappa M_H))^{1/y} + \zeta_c$. One can easily confirm that $\int_0^\infty \tilde \beta(N,M) \textrm{d}M = \beta(N)$, i.e.\ the function $\tilde \beta(N,M)$ describes the mass distribution of PBHs formed at a given $t_N$, normalized to the total fraction of space collapsing at $t_N$. Note that $\tilde \beta(N,M)$ carries an inverse mass dimension. This function (with a somewhat different normalization) has been referred to as `initial mass function'~\cite{Niemeyer:1997mt,Carr:2016drx}. Finally integrating over $N$ we obtain the total fraction of space collapsing into PBHs in the mass range $[M, M + \textrm{d}M]$ as
+\begin{equation}
+\beta(M) = \int_0^{N_\text{max}} \tilde \beta(N,M) \, \frac{\textrm{d}M}{\textrm{d}N} \, \textrm{d}N \,,
+\label{eq:betaMc1}
+\end{equation}
+with $\textrm{d}M/\textrm{d}N = j M_H(N)$ and $N_\text{max} < 60$ denotes the largest $N$ which leads to significant PBH production (within the radiation dominated regime). 
+
+
+%
+\begin{figure}
+\centering
+\includegraphics[width=0.48\textwidth]{betaN_critical_collapse.pdf}\hfill
+\includegraphics[width=0.48\textwidth]{betaM_critical_collapse.pdf}
+%
+\caption{Critical collapse versus horizon mass collapse. The dashed blue curves show the results obtained with the procedure implemented in the main text, the solid black curves are obtained with the critical collapse calculation explained in this appendix.}
+\label{fig:betas}
+%
+\end{figure}
+
+In Fig.~\ref{fig:betas} we compare the amount of black holes formed in the horizon mass scenario and taking into account critical collapse, for a toy model with a scalar spectrum $\Delta_s^2(N)$ which features a Gaussian peak around $N = 25$ with a variance of $\Delta N = 2$. We use a non-Gaussian power spectrum as in Eq.~\eqref{eq:Pnongauss}. In both panels, the dashed blue curve shows the result obtained in the horizon mass collapse setup (as implemented in the main text), whereas the solid black curve denotes the results obtained with the critical collapse formalism reviewed in this appendix. As expected, the differences are larger in the right panel, where we consider the distribution in terms of PBH masses instead of in terms of formation time $t_N$. However, in most of the parameter space the effect is only about an ${\cal O}(1)$-factor in $\beta(M)$, which turns out to be essentially irrelevant compared to the variations in $\Delta_s^2$ (to which $\beta(N)$ is exponentially sensitive) which are induced by different choices of the non-minimal coupling $\varsigma$, the number of gauge fields ${\cal N}$ and the choice of functional form of the non-minimal coupling, $h(\phi)$, see Sec.~\ref{sec:attractors}.
+
+
+\subsubsection*{Non-spherical collapse}
+
+In general, the fluctuations entering the horizon will not be exactly spherical, which can significantly alter the predictions of PBH formation. As detailed in Ref.~\cite{Kuhnel:2016exn}, the shape of the mass function is expected to remain essentially the same, but there can be an overall decrease in the amplitude. We note that in our context this effect is essentially degenerate with the number of gauge fields in the model, i.e.\ we expect that taking into account the ellipticity of the fluctuations might allow us to reproduce the mass distributions discussed in the main text with a smaller number ${\cal N}$ of gauge fields.
+
+
+\subsubsection*{Mergers and accretion}
+
+So far, we have considered primordial black holes as essentially isolated objects. While this picture is quite appropriate in the radiation dominated regime (where most of the PBH formation takes place), things become more complicated with the onset of the matter dominated regime. Due to the slower expansion rate of the universe, clustering of matter becomes efficient and black holes begin to grow due to the accretion matter and due to mergers with other PBHs. These processes stabilize the PBHs against decay through Hawking radiation (an isolated PBH will have decayed by today if $M_* \lesssim 5 \cdot 10^{14}$~g, whereas the corresponding value at matter radiation equality is $M_*^\text{eq} \simeq 3 \cdot 10^{12}$~g). It has thus been argued~\cite{Garcia-Bellido:2017mdw}, that the overall effect of the merging process may be estimated by considering all PBHs with a mass heavier than $M_*^\text{eq}$ as stable and by applying an overall shift $M \rightarrow 10^3 \, M$ to obtain the mass function today from the mass function at matter radiation equality. This moreover implies that the fraction of dark matter consisting of PBHs remains unchanged after the onset of the matter dominated regime.
+
+In our analysis of the model determined by Eq.~\eqref{attractors:inv_definition} (which is the only model giving a significant PBH dark matter contribution), the total amount of PBH dark matter is rather insensitive to these uncertainties, since our mass distributions are only significant for $M \gg M_*$. Furthermore, we note that shifting the mass distribution even by three orders in magnitude in e.g.\ Fig.~\ref{fig:BH2}, will not significantly alter the compatibility of the spectrum with the existing bounds. This is simply due to the scale invariance of the bounds over wide ranges of the parameter space. Note however that this discussion does become relevant when comparing to the mass distribution of PBH observed e.g.\ by the LIGO/VIRGO collaboration. Given a peak-like structure in the BH distribution, extracting parameter values in the context of the scenario presented here will require a more careful study of this question.

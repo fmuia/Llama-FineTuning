@@ -4,23 +4,81 @@ import re
 from collections import Counter
 import pandas as pd
 import openai
+import tarfile
+import os
+from functools import reduce
 
-# Function to extract the LaTeX content between \begin{document} and \end{document}
-#def extract_latex_content(file_path):
-#    """Extract content from LaTeX source file between \begin{document} and \end{document}."""
-#    content = []
-#    copy = False
-#    with open(file_path, 'r') as file:
-#        for line in file:
-#            if '\\begin{document}' in line:
-#                copy = True
-#                continue  # Skip this line
-#            elif '\\end{document}' in line:
-#                copy = False
-#                continue  # Skip this line
-#            if copy:
-#                content.append(line)
-#    return ''.join(content)
+def extract_tex_files(tar_path, extract_to, arxiv_id):
+    """
+    Extracts .tex files from a tar.gz archive and appends _{arxiv_id} to avoid name duplication.
+    """
+    try:
+        with tarfile.open(tar_path, 'r:gz') as tar:
+            # Filter for .tex files
+            tex_files = [m for m in tar.getmembers() if m.name.endswith('.tex')]
+            for member in tex_files:
+                # Modify the member's name to include _{arxiv_id}
+                name_parts = os.path.splitext(os.path.basename(member.name))
+                member.name = f"{name_parts[0]}_{arxiv_id}{name_parts[1]}"
+                tar.extract(member, extract_to)
+        return True
+    except tarfile.TarError:
+        return False
+
+def extract_newcommands(latex_directory):
+    """
+    Extracts all \newcommand definitions from LaTeX files in the given directory.
+
+    Parameters:
+    - latex_directory: Path to the directory containing LaTeX files.
+
+    Returns:
+    - A dictionary where keys are the command names and values are their replacements.
+    """
+    newcommand_pattern = re.compile(r'\\newcommand\{\\(\w+)\}\{(.+?)\}')
+    newcommands = {}
+
+    for filename in os.listdir(latex_directory):
+        if filename.endswith('.tex'):
+            print(filename)
+            with open(os.path.join(latex_directory, filename), 'r') as file:
+                content = file.read()
+                matches = newcommand_pattern.findall(content)
+                for name, replacement in matches:
+                    newcommands[name] = replacement.replace(r'\mathrm', '').replace(r'\mathbf', '')  # Simplify commands
+
+    return newcommands
+
+def create_replacement_dictionary(latex_directory, all_matches):
+    
+    # Prepend a backslash to each key in the dictionary
+    replacement_dictionary = {'\\' + name: replacement for name, replacement in all_matches}
+    return replacement_dictionary
+
+def apply_replacement_to_files(latex_directory, replacement_dictionary, save_directory):
+    # Ensure the save_directory exists
+    os.makedirs(save_directory, exist_ok=True)
+
+    # Sort the replacement_dictionary by the length of keys, from longest to shortest
+    sorted_replacements = sorted(replacement_dictionary.items(), key=lambda x: len(x[0]), reverse=True)
+    
+    for filename in os.listdir(latex_directory):
+        if filename.endswith('.tex'):
+            original_file_path = os.path.join(latex_directory, filename)
+            with open(original_file_path, 'r', encoding='utf-8') as file:
+                content = file.read()
+
+            for key, val in sorted_replacements:
+                # Construct a pattern that matches the key followed by a space or a non-word character
+                # This ensures we do not accidentally match commands like \beta when we want to replace \be
+                pattern = re.compile(re.escape(key) + r'(?=\s|\W)')
+                # Ensure the replacement string handles LaTeX commands correctly
+                # The lambda function ensures that the replacement is treated as a raw string
+                content = pattern.sub(lambda m: val, content, count=0)
+
+            new_file_path = os.path.join(save_directory, f"modified_{filename}")
+            with open(new_file_path, 'w', encoding='utf-8') as file:
+                file.write(content)
 
 def extract_latex_content(file_path, start_command, end_command):
     """Extract content from LaTeX source file between start_command and end_command."""

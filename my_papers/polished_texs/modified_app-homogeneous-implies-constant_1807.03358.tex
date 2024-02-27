@@ -1,0 +1,537 @@
+
+\section{\label{app:gaugefields}Homogeneous gauge fields}
+
+Throughout this appendix, we investigate the properties of general $\mathrm{SU}(2)$ gauge fields $A=A_{\mu}^{a}(\tau,\vec{x})$ which are not subject to any particular equation of motion. We make use of the following notation: 
+\[
+A^{a}=(A_{0}^{a},\vec{A}^{a}),\ \implies\ A=(A_{0},\vec{A}).
+\]
+ Thus $\vec{A}=\vec{A}_{i}^{a}$ denotes a $3\times3$ matrix, while $A=A_{\mu}^{a}$ denotes a $3\times4$ matrix.
+
+In \prettyref{app:homo-gauge} we introduce definitions of homogeneity and isotropy for a gauge field. Then we prove that when $A$ is homogeneous, there is a gauge where $A_{0}=0$ and $\vec{A}(\tau,\vec{x})=\vec{A}(\tau)$. In \prettyref{app:iso-gauge} we prove that if $A$ is moreover isotropic, then there is a gauge in which the standard\footnote{This ansatz dates back at least to 1989 (see \cite{Verbin:1989sg}). A convincing justification of this ansatz appears in Section 5.1 of \cite{Maleknejad:2012fw}. Our mathematically rigorous proof extends this work, in the case of $\mathrm{SU}(2)$, by accounting for additional edge cases and explicitly constructing the necessary gauge transformations. } ansatz $A_{i}^{a}(\tau)=f(\tau)\,\delta_{i}^{a}$ holds. We describe in \prettyref{app:global-symmetries} the diagonal $\mathrm{SO}(3)$ subgroup which fixes a homogeneous and isotropic gauge-field background, and how this is useful for the decomposition of perturbations. In \prettyref{app:quant-aniso}, we introduce some observables for any homogeneous gauge field, and we prove that they are gauge-invariant (with a very minor caveat). We use these observables to quantify isotropy and anisotropy. These observables are also used in \prettyref{subsec:Anisotropic-background-fields} to plot the time-evolution of a non-isotropic background gauge field. Finally in \prettyref{app:isotrop-proof}, we use these observables to complete the proof of \prettyref{thm:isotropy} from \prettyref{app:iso-gauge}. 
+
+\subsection{\label{app:homo-gauge}Homogeneous and temporal gauge }
+
+In this subsection, we define homogeneity for gauge fields, and we construct a gauge suitable for studying such fields.
+
+A gauge field is homogeneous when every translation is equivalent to a gauge transformation, i.e.
+\begin{defn}
+\label{def:homogeneous}A gauge field $A$ is \emph{homogeneous} if for every spatial translation by $\Delta\vec{x}$, there exists a gauge transformation $g_{\Delta\vec{x}}(\tau,\vec{x})$ such that 
+\begin{equation}
+A(\tau,\vec{x}+\Delta\vec{x})=g_{\Delta\vec{x}}(\tau,\vec{x})\cdot A(\tau,\vec{x}),\label{eq:homogeneous-definition}
+\end{equation}
+where $\cdot$ denotes a gauge transformation: 
+\begin{equation}
+g(\tau,\vec{x})\cdot A_{\mu}(\tau,\vec{x})\equiv g(\tau,\vec{x})A_{\mu}(\tau,\vec{x})g(\tau,\vec{x})^{-1}+(i/e)\left(\partial_{\mu}g(\tau,\vec{x})\right)g(\tau,\vec{x})^{-1}.\label{eq:gauge-formula}
+\end{equation}
+\end{defn}
+
+Obvious examples of gauge fields which are homogeneous are those which satisfy the following condition.
+\begin{defn}
+\label{def:homogeneous-gauge}A gauge field $A(\tau,\vec{x})$ is said to be in \emph{homogeneous gauge} if $A(\tau,\vec{x})=A(\tau)$, i.e. $A(\tau,\vec{x})$ does not depend on $\vec{x}$.
+\end{defn}
+
+The following lemma is unsurprising yet not completely obvious:
+\begin{lem}
+\label{lem:homogeneous}If $A(\tau,\vec{x})$ is homogeneous in the sense of \prettyref{def:homogeneous}, then there exists some gauge transformation which puts it into homogeneous gauge.
+\end{lem}
+
+\begin{proof}
+The strategy will be to use the definition of homogeneity to construct a gauge transformation $h(\tau,\vec{x})$ such that the gauge-transformed field $h(\tau,\vec{x})\cdot A(\tau,\vec{x})$ is spatially constant. Equivalently, $h(\tau,\vec{x})$ should satisfy 
+\begin{equation}
+h(\tau,\vec{x}+\Delta\vec{x})\cdot A(\tau,\vec{x}+\Delta\vec{x})=h(\tau,\vec{x})\cdot A(\tau,\vec{x})\label{eq:const-gf}
+\end{equation}
+ for all $\Delta\vec{x}$. 
+
+By comparing a single translation by $\Delta\vec{x}_{1}+\Delta\vec{x}_{2}$ with two translations $\Delta\vec{x}_{1}$ followed by $\Delta\vec{x}_{2}$, we have 
+\begin{align*}
+g_{\Delta\vec{x}_{1}+\Delta\vec{x}_{2}}(\tau,\vec{x})\cdot A(\tau,\vec{x}) & =A(\tau,\vec{x}+\Delta\vec{x}_{1}+\Delta\vec{x}_{2})\\
+ & =g_{\Delta\vec{x}_{2}}(\tau,\vec{x}+\Delta\vec{x}_{1})\cdot A(\tau,\vec{x}+\Delta\vec{x}_{1})\\
+ & =g_{\Delta\vec{x}_{2}}(\tau,\vec{x}+\Delta\vec{x}_{1})\,g_{\Delta\vec{x}_{1}}(\tau,\vec{x})\cdot A(\tau,\vec{x}).
+\end{align*}
+ It follows that\footnote{Technically, we are assuming here that a gauge transformation is determined by its action on $A$. It is however possible that there exist global symmetries which fix $A$. In this case, the gauge transformation is determined only up to this subgroup. This issue is easily remedied by declaring that all equalities of gauge transformations are understood modulo this subgroup of symmetries. Then no further modifications to the proof are necessary.} 
+\[
+g_{\Delta\vec{x}_{1}+\Delta\vec{x}_{2}}(\tau,\vec{x})=g_{\Delta\vec{x}_{2}}(\tau,\vec{x}+\Delta\vec{x}_{1})\,g_{\Delta\vec{x}_{1}}(\tau,\vec{x}).
+\]
+ By making appropriate substitutions for $\Delta\vec{x}_{1}$, $\Delta\vec{x}_{2}$ and $\vec{x}$ in this identity, immediate consequences are 
+\begin{align}
+g_{0}(\vec{x}) & =\mathrm{Id},\nonumber \\
+g_{\Delta\vec{x}}(\vec{x})^{-1} & =g_{-\Delta\vec{x}}(\vec{x}+\Delta\vec{x}),\nonumber \\
+g_{\Delta\vec{x}}(\vec{x}) & =g_{\vec{x}-\vec{x}_{0}+\Delta\vec{x}}(\vec{x}_{0})\,g_{\vec{x}-\vec{x}_{0}}(\vec{x}_{0})^{-1},\label{eq:gauge-id3}
+\end{align}
+ for all values of $\vec{x}$, $\Delta\vec{x}$ and $\vec{x}_{0}$. 
+
+Now fix a basepoint $\vec{x}_{0}$ and define $h(\tau,\vec{x})\equiv g_{\vec{x}-\vec{x}_{0}}(\tau,\vec{x}_{0})^{-1}$. It follows from \prettyref{eq:gauge-id3} that 
+\[
+g_{\Delta\vec{x}}(\tau,\vec{x})=h(\tau,\vec{x}+\Delta\vec{x})^{-1}h(\tau,\vec{x})
+\]
+ for all values of $\vec{x}$ and $\Delta\vec{x}$. Substituting this identity into \prettyref{eq:homogeneous-definition} we obtain \prettyref{eq:const-gf} as desired.
+\end{proof}
+\begin{thm}
+\label{thm:hom-temp-gauge}If $A(\tau,\vec{x})$ is a homogeneous gauge field in the sense of \prettyref{def:homogeneous}, then it may be gauge-transformed simultaneously into homogeneous gauge and temporal gauge, so that $A_{0}(\tau,\vec{x})=0$ and $\vec{A}(\tau,\vec{x})=\vec{A}(\tau)$. 
+\end{thm}
+
+\begin{proof}
+By \prettyref{lem:homogeneous} we may assume that $A$ is in homogeneous gauge. To put $A(\tau)$ into temporal gauge, one solves for the gauge transformation $g(\tau)$ in 
+\[
+\tfrac{\mathrm{d}}{\mathrm{d}\tau}g(\tau)=-ieg(\tau)A_{0}(\tau).
+\]
+ Since $g(\tau)$ does not depend on $\vec{x}$, it preserves homogeneous gauge.
+\end{proof}
+We warn that sometimes homogeneous and temporal gauge is incomplete as gauge fixing: we shall see that local gauge freedom remains in the case of \prettyref{exa:local-gt}. 
+
+\subsection{\label{app:iso-gauge}Homogeneous and isotropic \texorpdfstring{$\mathrm{SU}(2)$}{SU(2)} gauge fields}
+
+Suppose that $A_{\mu}^{a}(\tau,\vec{x})$ is a homogeneous gauge field, as described in the previous subsection. If every rotation is equivalent to a gauge transformation, then we say that $A$ is isotropic:
+\begin{defn}
+\label{def:isotropic-gf}A homogeneous gauge field $A(\tau,\vec{x})$ is \emph{isotropic} if for every $R\in\mathrm{SO}(3)_{\mathrm{spatial}}\subset\mathrm{SO}(4)$ there exists a gauge transformation $g_{R}(\tau,\vec{x})$ such that 
+\begin{equation}
+A_{\nu}^{a}(\tau,\vec{x})\,R_{\mu}^{\nu}=\left(g_{R}(\tau,\vec{x})\cdot A(\tau,\vec{x})\right)_{\mu}^{a},\label{eq:iso-gt}
+\end{equation}
+ where again $\cdot$ denotes a gauge transformation as in \eqref{eq:gauge-formula}. 
+\end{defn}
+
+For the remainder of \prettyref{app:iso-gauge} we assume $A$ to be isotropic, and moreover given by $\vec{A}(\tau)$ in the homogeneous and temporal gauge of \prettyref{thm:hom-temp-gauge}. Our goal is to prove the following theorem. 
+\begin{thm}
+\label{thm:isotropy}Let $A_{\mu}^{a}(\tau,\vec{x})$ be a homogeneous and isotropic $\mathrm{SU}(2)$ gauge field (which is real-analytic\footnote{This technical condition is used to rule out the non-physical pathology described in \prettyref{exa:no-ansatz}. It is satisfied by the solutions of any well-behaved system of ODEs and constraint equations, and thus it applies to all solutions considered in this paper. }). Then up to a gauge transformation, $A$ is of the form 
+\begin{equation}
+A_{0}^{a}(\tau)=0,\quad A_{i}^{a}(\tau)=f(\tau)\,\delta_{i}^{a}\label{eq:iso-diag}
+\end{equation}
+ for some real-valued function $f(\tau)$. 
+\end{thm}
+
+\begin{proof}
+By \prettyref{thm:hom-temp-gauge} we may assume that $A$ is in homogeneous and temporal gauge. In \prettyref{lem:SVD-SOn} we introduce an $\mathrm{SO}(n)$-version of singular value decomposition (SVD) to be used with the $3\times3$ matrix $\vec{A}(\tau)=A_{i}^{a}(\tau)$. \prettyref{def:isotropic-matrix} introduces a notion of isotropy for $3\times3$ matrices, and \prettyref{lem:matrix-isotropy} characterizes such matrices. In \prettyref{exa:local-gt} we observe that despite $A$ being an isotropic gauge field, the matrix $\vec{A}(\tau)$ can be rank-one instead of isotropic. Later in \prettyref{app:quant-aniso} we develop the tools needed to deal with this subtlety, and in \prettyref{app:isotrop-proof} we prove \prettyref{thm:rk1-is-gauge-artifact}, that the rank-one case may be eliminated by a gauge transformation, and we may therefore assume that $\vec{A}(\tau)$ is always an isotropic matrix. \prettyref{lem:non-analytic} proves that $\vec{A}(\tau)=f(\tau)S$ for some $S\in\mathrm{SO}(n)$ along any interval where $f(\tau)\neq0$, but \prettyref{exa:no-ansatz} shows that different intervals may require different $S$. \prettyref{thm:analytic} proves that when $A$ is real-analytic, a single matrix $S$ suffices for all $\tau$. Finally, a global gauge transformation whose adjoint is $S^{-1}$ brings $A$ into the desired form.  
+\end{proof}
+To prove the supporting lemmas, we first introduce an $\mathrm{SO}(n)$-version of SVD.
+\begin{lem}
+\label{lem:SVD-SOn}Let $M$ be any real $n\times n$ matrix with $n$ odd. Then there exist real $n\times n$ matrices $G$, $\Sigma$, and $R$ such that $G,R\in\mathrm{SO}(n)$, $\Sigma$ is diagonal, and $M=G\Sigma R^{T}$. This decomposition is not unique. The diagonal entries $(\sigma_{1},\ldots,\sigma_{n})$ of $\Sigma$ are called the \emph{singular values} of $M$. The singular values can be chosen to be non-negative (resp. negative) when $\det M$ is non-negative (resp. negative). Moreover, they can be chosen to satisfy $\left|\sigma_{1}\right|\geq\cdots\geq\left|\sigma_{n}\right|$. When subject to these two constraints, the singular values are uniquely determined. 
+\end{lem}
+
+\begin{proof}
+The standard SVD for real $n\times n$ matrices produces matrices $G_{0}$, $\Sigma_{0}$, and $R_{0}$ with $G_{0},R_{0}\in\mathrm{O}(n)$ and $\Sigma_{0}$ diagonal. Moreover, we may choose the diagonal entries $\sigma_{1}^{0},\ldots,\sigma_{n}^{0}$ of $\Sigma_{0}$ to satisfy $\sigma_{1}^{0}\geq\cdots\geq\sigma_{n}^{0}\geq0$ in which case the singular values are uniquely determined. Upon setting 
+\[
+G=\begin{cases}
++G_{0} & \textrm{ if }\det G_{0}=1,\\
+-G_{0} & \textrm{ if }\det G_{0}=-1,
+\end{cases}\quad R=\begin{cases}
++R_{0} & \textrm{ if }\det R_{0}=1,\\
+-R_{0} & \textrm{ if }\det R_{0}=-1,
+\end{cases}\quad\Sigma=\begin{cases}
++\Sigma_{0} & \textrm{ if }\det M\geq0,\\
+-\Sigma_{0} & \textrm{ if }\det M\leq0,
+\end{cases}
+\]
+ the hypotheses of \prettyref{lem:SVD-SOn} are satisfied. 
+\end{proof}
+In analogy with \prettyref{def:isotropic-gf} of an isotropic gauge field, we make a similar definition for matrices:
+\begin{defn}
+\label{def:isotropic-matrix}A $3\times3$ matrix $M$ is said to be \emph{isotropic} if for each $R\in\mathrm{SO}(3)$ there exists some $G_{R}\in\mathrm{SO}(3)$ such that $MR=G_{R}M$.
+\end{defn}
+
+In the case $M=\vec{A}(\tau_{0})$, the matrix $M$ is isotropic if and only if every spatial rotation is equivalent to a \emph{global} gauge transformation for the restriction of $\vec{A}(\tau)$ to the time-slice $\tau_{0}$. 
+
+We have the following characterization of isotropic matrices:
+\begin{lem}
+\label{lem:matrix-isotropy}A $3\times3$ matrix $M$ is isotropic if and only if $M$ is a scalar multiple of an orthogonal matrix, or equivalently if the singular values of $M$ satisfy $\left|\sigma_{1}\right|=\left|\sigma_{2}\right|=\left|\sigma_{3}\right|$. 
+\end{lem}
+
+\begin{proof}
+We will demonstrate the following logical implications:
+\begin{align*}
+\left|\sigma_{1}\right|=\left|\sigma_{2}\right|=\left|\sigma_{3}\right| & \implies M\textrm{ is a scalar multiple of an orthogonal matrix}\\
+ & \implies M\textrm{ is isotropic}\\
+ & \implies\left|\sigma_{1}\right|=\left|\sigma_{2}\right|=\left|\sigma_{3}\right|.
+\end{align*}
+ Since these three conditions will form a loop of implications, they are logically equivalent. 
+
+If $\left|\sigma_{1}\right|=\left|\sigma_{2}\right|=\left|\sigma_{3}\right|$, then it is easy to express $\Sigma$ from \prettyref{lem:SVD-SOn} as $\lambda\equiv\sqrt[3]{\det M}$ times some diagonal matrix in $\mathrm{SO}(n)$. In this case, \prettyref{lem:SVD-SOn} expresses $M$ as $\lambda$ times a product of three elements of $\mathrm{SO}(n)$, establishing the first implication. 
+
+For the next implication, suppose that $M=\lambda S$ for $S\in\mathrm{SO}(n)$. Then for any $R\in\mathrm{SO}(n)$, we verify that $MR=\lambda SR=SRS^{T}(\lambda S)$, so that $M$ is isotropic by \prettyref{def:isotropic-matrix} with $G_{R}=SRS^{T}$. 
+
+For the final implication, suppose that $M$ is isotropic, and that $M=G_{1}\Sigma_{1}R_{1}^{T}$ is an SVD in the sense of \prettyref{lem:SVD-SOn}. By taking $R=R_{1}$ in the definition of isotropy, we conclude that $G_{R_{1}}M=MR_{1}=G_{1}\Sigma_{1}$. Since left-multiplication by orthogonal matrices (here $G_{R_{1}}$ and $G_{1}$) preserves the norms of matrix columns, we conclude that the columns of $M$ have norms $\left(\left|\sigma_{1}\right|,\left|\sigma_{2}\right|,\left|\sigma_{3}\right|\right)$. Next we consider the result of taking $R=R_{1}C$ where 
+\begin{gather*}
+C=\left(\begin{array}{ccc}
+0 & 0 & 1\\
+1 & 0 & 0\\
+0 & 1 & 0
+\end{array}\right).
+\end{gather*}
+ We similarly conclude that the columns of $M$ have norms $\left(\left|\sigma_{2}\right|,\left|\sigma_{3}\right|,\left|\sigma_{1}\right|\right)$. Therefore $\left|\sigma_{1}\right|=\left|\sigma_{2}\right|=\left|\sigma_{3}\right|$. 
+\end{proof}
+We note that if the uniqueness constraints of \prettyref{lem:SVD-SOn} are imposed, then $\left|\sigma_{1}\right|=\left|\sigma_{2}\right|=\left|\sigma_{3}\right|$ implies that $\sigma_{1}=\sigma_{2}=\sigma_{3}$. Thus if $M$ is isotropic, then it is possible to find an SVD of the type in \prettyref{lem:SVD-SOn} where $\Sigma$ is a scalar multiple of the identity matrix.
+
+At this stage, it is tempting to mistakenly claim that since $A(\tau)$ is an isotropic gauge field in the sense of \prettyref{def:isotropic-gf}, it follows that for each $\tau_{0}$ the matrix $\vec{A}(\tau_{0})$ must be isotropic in the sense of \prettyref{def:isotropic-matrix}. However, the following example demonstrates that an isotropic gauge field can indeed have a non-isotropic matrix.
+\begin{example}
+\label{exa:local-gt}For any real number $\sigma_{1}$, consider the gauge transformation $\exp\left(-ie\sigma_{1}\mathbf{T}_{1}x^{1}\right)$ applied to the zero gauge field $A_{\mu}^{a}=0$. The transformed gauge field has $A_{1}^{1}=\sigma_{1}$ with all other components zero. Thus a nonzero constant gauge field with singular values $(\sigma_{1},0,0)$ is gauge-equivalent to the zero gauge field.
+\end{example}
+
+The following definition is useful for characterizing \prettyref{exa:local-gt} in a coordinate-independent manner:
+\begin{defn}
+\label{def:rank-one}A $3\times3$ matrix $M$ is said to be \emph{rank-one} if exactly one of the singular values of $M$ is non-zero.
+\end{defn}
+
+Thus \prettyref{exa:local-gt} shows that if $\vec{A}(\tau)$ is any rank-one matrix which is constant in $\tau$, then $\vec{A}(\tau)$ is gauge-equivalent to zero. In \prettyref{app:isotrop-proof} we show that this is the only example in which a non-isotropic matrix can arise from an isotropic gauge field. Since the zero matrix is isotropic, we may assume, up to gauge, that the matrix $\vec{A}(\tau)$ is always isotropic (see \prettyref{thm:rk1-is-gauge-artifact}).
+
+In order to analyze $\vec{A}(\tau)$, it is useful to work with the electric field matrix 
+\[
+E_{i}^{b}(\tau,\vec{x})\equiv-a(\tau)^{-2}F_{0i}^{b}(\tau,\vec{x}).
+\]
+For convenience, we introduce the comoving quantity 
+\begin{align*}
+\vec{\mathcal{E}}(\tau,\vec{x}) & \equiv-a(\tau)^{2}\vec{E}(\tau,\vec{x})=F_{0i}^{b}(\tau,\vec{x}).
+\end{align*}
+ When $\vec{A}(\tau)$ is in homogeneous and temporal gauge, it follows that 
+\begin{equation}
+\vec{\mathcal{E}}(\tau)=\tfrac{\mathrm{d}}{\mathrm{d}\tau}\vec{A}(\tau).\label{eq:E-is-derivative}
+\end{equation}
+ Moreover, $\vec{\mathcal{E}}(\tau)$ is always an isotropic matrix when $A$ is homogeneous and isotropic:
+\begin{lem}
+\label{lem:elec-is-iso}If $\vec{A}(\tau)$ is a homogeneous and isotropic $\mathrm{SU}(2)$ gauge field in homogeneous and temporal gauge, then the electric field matrix $\vec{E}(\tau_{0})$ and the corresponding comoving quantity $\vec{\mathcal{E}}(\tau_{0})$ are isotropic matrices for all $\tau_{0}$. 
+\end{lem}
+
+\begin{proof}
+First note that $\vec{\mathcal{E}}(\tau,\vec{x})$ satisfies the tensorial transformation property $\vec{\mathcal{E}}(\tau,\vec{x})\mapsto G(\tau,\vec{x})\,\vec{\mathcal{E}}(\tau,\vec{x})$ under a gauge transformation $A\mapsto g(\tau,\vec{x})\cdot A$, where $G(\tau,\vec{x})$ denotes the adjoint $\mathrm{SO}(3)$ matrix corresponding to $g(\tau,\vec{x})$. Next we observe that $\vec{\mathcal{E}}(\tau_{0})$ is an isotropic matrix for each $\tau_{0}$, which follows from the isotropy of $A$ as follows. For any $R\in\mathrm{SO}(3)$ we have 
+\begin{equation}
+g_{R}(\tau_{0},\vec{x})\cdot\vec{A}(\tau_{0})=\vec{A}(\tau_{0})\,R^{T},\label{eq:isotropy-A_sp}
+\end{equation}
+ and consequently 
+\[
+G_{R}(\tau_{0},\vec{x})\,\vec{\mathcal{E}}(\tau_{0})=\vec{\mathcal{E}}(\tau_{0})\,R^{T}
+\]
+ for each $\vec{x}$. Choosing an arbitrary point $\vec{x}_{0}$, it follows that $G_{R}(\tau_{0},\vec{x}_{0})$ provides the necessary group element for matrix isotropy (\prettyref{def:isotropic-matrix}) to be satisfied. Since $\vec{E}(\tau_{0})$ and $\vec{\mathcal{E}}(\tau_{0})$ are proportional, the same $G_{R}(\tau_{0},\vec{x}_{0})$ applies also to $\vec{E}(\tau)$. 
+
+We note that this proof uses \prettyref{def:isotropic-gf} of an isotropic gauge field without assuming that $\vec{A}(\tau_{0})$ is an isotropic matrix. Thus this lemma will be useful in \prettyref{app:isotrop-proof} for understanding the rank one case. The same argument straightforwardly extends to prove that the magnetic field is isotropic.
+\end{proof}
+\begin{lem}
+\label{lem:non-analytic}Let $\vec{A}(\tau)$ be a homogeneous and isotropic $\mathrm{SU}(2)$ gauge field in homogeneous and temporal gauge such that $\vec{A}(\tau)$ is isotropic. For any interval along which $\vec{A}(\tau)\neq0$, there exists some $S\in\mathrm{SO}(n)$ such that 
+\[
+\vec{A}(\tau)=f(\tau)S.
+\]
+\end{lem}
+
+\begin{proof}
+From the characterization of \prettyref{lem:matrix-isotropy}, we know that $\vec{A}(\tau)=f(\tau)S(\tau)$, where $f(\tau)$ is nowhere zero along the interval in question. We wish to show that $S(\tau)$ is constant. Since $\vec{\mathcal{E}}(\tau)$ is an isotropic matrix and $S(\tau)\in\mathrm{SO}(3)$, we know from \prettyref{lem:matrix-isotropy} that $S(\tau)^{-1}\vec{\mathcal{E}}(\tau)$ is also an isotropic matrix, and 
+\[
+S(\tau)^{-1}\vec{\mathcal{E}}(\tau)=S(\tau)^{-1}\tfrac{\mathrm{d}}{\mathrm{d}\tau}\vec{A}(\tau)=f'(\tau)\,I+f(\tau)\,S^{-1}(\tau)\tfrac{\mathrm{d}}{\mathrm{d}\tau}S(\tau).
+\]
+ In particular, this must be a scalar multiple of an orthogonal matrix for each $\tau$. Recall that the eigenvalues of an orthogonal matrix all have absolute-value one. Thus the eigenvalues of $S(\tau)^{-1}\vec{\mathcal{E}}(\tau)$ must all have the same absolute value. The matrix $S^{-1}(\tau)\tfrac{\mathrm{d}}{\mathrm{d}\tau}S(\tau)$ is antisymmetric, and thus its components can be written as $\xi^{b}(\tau)\varepsilon_{aib}$ for some $\xi^{b}(\tau)$. The three eigenvalues of $S(\tau)^{-1}\vec{\mathcal{E}}(\tau)$ are 
+\[
+\left\{ f'(\tau),f'(\tau)\pm if(\tau)\sqrt{\xi^{b}(\tau)\xi^{b}(\tau)}\right\} .
+\]
+ For these to have the same absolute value, it must be that $\xi^{b}(\tau)=0$ since by assumption $f(\tau)\neq0$. Thus $S^{-1}(\tau)\tfrac{\mathrm{d}}{\mathrm{d}\tau}S(\tau)=0$ and hence $S(\tau)$ is constant.
+\end{proof}
+The following example shows that without some additional hypothesis, $S$ need not be constant where $f(\tau)=0$.
+\begin{example}
+\label{exa:no-ansatz}For any fixed time $\tau_{0}$, any $f(\tau)$ satisfying $f(\tau_{0})=0$, and any distinct $S_{+},S_{-}\in\mathrm{SO}(n)$, consider 
+\[
+A_{0}(\tau)=0,\quad\vec{A}(\tau)=\begin{cases}
+f(\tau)S_{+} & \textrm{if }\tau\geq\tau_{0},\\
+f(\tau)S_{-} & \textrm{if }\tau\leq\tau_{0}.
+\end{cases}
+\]
+ This gauge field is homogeneous, isotropic, and not gauge-equivalent to the ansatz of \prettyref{thm:isotropy}. 
+\end{example}
+
+Such examples are not expected to occur in practice. If $\vec{A}(\tau)$ solves some well-behaved system of ODEs and constraint equations, then $\vec{A}(\tau)$ is real-analytic, meaning that it has a locally-convergent power-series expansion. The following theorem sharpens \prettyref{lem:non-analytic} by excluding cases such as \prettyref{exa:no-ansatz}.
+\begin{thm}
+\label{thm:analytic}Let $\vec{A}(\tau)$ be a real-analytic, homogeneous and isotropic $\mathrm{SU}(2)$ gauge field in homogeneous and temporal gauge such that $\vec{A}(\tau)$ is isotropic. There exists some $S\in\mathrm{SO}(n)$ such that 
+\begin{equation}
+\vec{A}(\tau)=f(\tau)S\ \textrm{ for all }\tau.\label{eq:const-son}
+\end{equation}
+\end{thm}
+
+\begin{proof}
+According to the principle of unique continuation for real-analytic functions, if a real-analytic function $g(\tau)$ vanishes along any interval of positive width, then $g(\tau)$ is identically zero for all $\tau$. For any interval along which $f(\tau)\neq0$, \prettyref{lem:non-analytic} implies that $\vec{A}(\tau)$ is confined to a one-dimensional subspace of $3\times3$ matrices. Thus there are eight complementary linear combinations of components of $\vec{A}(\tau)$ which vanish along the interval. By the principle of unique continuation, these components vanish for all $\tau$, and thus \prettyref{eq:const-son} holds for all $\tau$. 
+\end{proof}
+Up to the proof of \prettyref{thm:rk1-is-gauge-artifact} given in \prettyref{app:isotrop-proof}, these results complete the proof of \prettyref{thm:isotropy}.
+
+\subsection{\label{app:global-symmetries}Global symmetries of homogeneous and isotropic \texorpdfstring{$\mathrm{SU}(2)$}{SU(2)} gauge fields}
+
+Understanding the global symmetries of a given field is important for perturbation theory. Namely, if some field is fixed by a global symmetry group, then linear perturbations around that field decompose into irreducible representations of that group. For example, suppose that $A(\tau)$ is any homogeneous $\mathrm{SU}(2)$ gauge field. Then $A(\tau)$ transforms under a pair of global $\mathrm{SO}(3)$ symmetries denoted by $\mathrm{SO}(3)_{\mathrm{gauge}}$ and $\mathrm{SO}(3)_{\mathrm{spatial}}$. The group of spatial rotations is $\mathrm{SO}(3)_{\mathrm{spatial}}$, while $\mathrm{SO}(3)_{\mathrm{gauge}}$ is the adjoint group of global $\mathrm{SU}(2)$ gauge transformations. If $(G,R)\in\mathrm{SO}(3)_{\mathrm{gauge}}\times\mathrm{SO}(3)_{\mathrm{spatial}}$, then the transformation is given by 
+\begin{align}
+A^{a}{}_{i}(\tau) & \mapsto G^{a}{}_{b}A^{b}{}_{j}(\tau)\left(R^{T}\right)^{j}{}_{i}\quad\left(\vec{A}(\tau)\mapsto G\vec{A}(\tau)R^{T}\right),\label{eq:diagonal-action-space}\\
+A^{a}{}_{0}(\tau) & \mapsto G^{a}{}_{b}A^{b}{}_{0}(\tau)\quad\left(A_{0}(\tau)\mapsto GA_{0}(\tau)\right).\label{eq:diagonal-action-time}
+\end{align}
+Suppose now that $A(\tau)$ is isotropic (and not gauge-equivalent to zero). By \prettyref{thm:isotropy} we can take $A(\tau)$ to be of the form $\vec{A}(\tau)=f(\tau)I$, $A_{0}(\tau)=0$. The subgroup of $\mathrm{SO}(3)_{\mathrm{gauge}}\times\mathrm{SO}(3)_{\mathrm{spatial}}$ which leaves $A(\tau)$ fixed is evidently the diagonal $\mathrm{SO}(3)$ subgroup consisting of pairs $(G,R)$ such that $G=R$. Thus for any homogeneous perturbation $\vec{A}(\tau)+\vec{P}(\tau)\epsilon+\mathcal{O}(\epsilon^{2})$ we may decompose 
+\begin{equation}
+P_{i}^{a}(\tau)=s(\tau)\delta_{i}^{a}+v^{j}(\tau)\varepsilon_{ija}+T_{i}^{a}(\tau)\label{eq:one-three-five}
+\end{equation}
+ where $v^{j}$ is a vector, $\varepsilon$ is the Levi-Civita symbol, and $T_{i}^{a}$ is a traceless symmetric tensor, corresponding to the decomposition $\mathbf{3}\otimes\mathbf{3}=\mathbf{1}\oplus\mathbf{3}\oplus\mathbf{5}$. Two remarks are in order:
+
+Firstly, although this decomposition contains a scalar, vector and tensor, it differs from the SVT/helicity decomposition described in \prettyref{sec:helbas}. The latter applies to inhomogeneous perturbations, and it is defined in terms of charges under the $\mathrm{SO}(2)$ subgroup of the diagonal $\mathrm{SO}(3)$ corresponding to rotations around the axis specified by a Fourier mode. In contrast, \prettyref{eq:one-three-five} is a decomposition into irreducible $\mathrm{SO}(3)$ representations. 
+
+Secondly, it's important to note that in the case where $A(\tau)$ is the zero gauge field (i.e. $f(\tau)=0$ for all~$\tau$), it is impossible to sensibly decompose perturbations (at least without some additional structure). This is because all of $\mathrm{SO}(3)_{\mathrm{gauge}}\times\mathrm{SO}(3)_{\mathrm{spatial}}$ acts trivially on the zero gauge field, and $\mathbf{3}_{\mathrm{gauge}}\otimes\mathbf{3}_{\mathrm{spatial}}$ is an irreducible representation of this full group. In contrast, when $f(\tau)\neq0$, $\vec{A}(\tau)$ determines an identification between spatial directions and Lie algebra directions, leading to a distinguished diagonal subgroup and enabling the previous decomposition to proceed.\footnote{For this reason, the analysis of non-abelian gauge theories is actually much easier when a non-zero background field is present. }
+
+\subsection{\label{app:quant-aniso}Quantifying anisotropy}
+
+The purpose of this subsection is to develop the tools used in \prettyref{subsec:Anisotropic-background-fields} to measure the anisotropy of a homogeneous $\mathrm{SU}(2)$ gauge-field background. These are the same tools needed to complete the proof of \prettyref{thm:isotropy}, which is carried out in \prettyref{app:isotrop-proof}. Throughout this subsection, we take $\vec{A}(\tau)$ to be an $\mathrm{SU}(2)$ gauge field in homogeneous and temporal gauge, but is not necessarily isotropic.
+
+Recall from \prettyref{lem:matrix-isotropy} that a $3\times3$ matrix $M$ is \emph{isotropic} when its singular values are all equal in absolute value. We wish to apply this to the case $M=\vec{A}(\tau)$. In this case, left-multiplication by an $\mathrm{SO}(3)$ matrix corresponds to the adjoint action of a spatially-constant $\mathrm{SU}(2)$ gauge transformation. Right-multiplication by (the transpose of) an $\mathrm{SO}(3)$ matrix corresponds to a spatial rotation. We seek scalars which are invariant under both left and right $\mathrm{SO}(3)$ transformations. Since $\dim(\mathrm{SO}(3))=3$, assuming that the two $\mathrm{SO}(3)$ symmetries are nondegenerate, we expect a total of $9-2\times3=3$ independent scalars. From \prettyref{lem:SVD-SOn}, such scalars must be functions of the three singular values. A convenient choice is the polynomials 
+\begin{align}
+I_{2}(M) & \equiv\left|M\right|^{2}\equiv M_{i}^{a}M_{i}^{a}=\sigma_{1}^{2}+\sigma_{2}^{2}+\sigma_{3}^{2},\label{eq:def-invariants}\\
+I_{3}(M) & \equiv\det M_{i}^{a}=\sigma_{1}\sigma_{2}\sigma_{3},\nonumber \\
+I_{4}(M) & \equiv\left(\tfrac{1}{2}\varepsilon_{ijk}\varepsilon^{abc}M_{i}^{a}M_{j}^{b}\right)^{2}=\left(\sigma_{2}\sigma_{3}\right)^{2}+\left(\sigma_{3}\sigma_{1}\right)^{2}+\left(\sigma_{1}\sigma_{2}\right)^{2}.\nonumber 
+\end{align}
+ As shown in \prettyref{thm:invariant-scalars}, any invariant scalar is determined as some function of these three quantities. (They also occur in Sec.~4.1.2 of \cite{mares2010}, where this problem occurs in a slightly different context.)
+
+In the isotropic case $\sigma_{1}=\sigma_{2}=\sigma_{3}=f$, we have 
+\begin{align*}
+I_{2}(M) & =3f^{2},\qquad I_{3}(M)=f^{3}\qquad I_{4}(M)=3f^{4}.
+\end{align*}
+
+In the general case, these scalars satisfy certain inequalities. The inequality of arithmetic and geometric means implies that 
+\[
+3\sqrt{3}\left|\det M\right|\leq\left|M\right|^{3},
+\]
+ where the inequality is saturated when $M$ is isotropic (i.e. $\left|\sigma_{1}\right|=\left|\sigma_{2}\right|=\left|\sigma_{3}\right|$). Thus 
+\[
+-1\leq3\sqrt{3}\frac{I_{3}(M)}{\left|M\right|^{3}}\leq1,
+\]
+ with isotropy when $3\sqrt{3}\frac{I_{3}(M)}{\left|M\right|^{3}}=\pm1$. 
+
+Note that $I_{4}(M)\geq0$ since it is a sum of squares, and $I_{4}(M)=0$ precisely when $M$ is rank-one or zero. Furthermore, note that 
+\[
+\left|M\right|^{4}-3I_{4}(M)=\tfrac{1}{6}(2\sigma_{1}^{2}-\sigma_{2}^{2}-\sigma_{3}^{2})^{2}+\textrm{cyclic permutations}\geq0,
+\]
+ where this inequality is saturated exactly when $M$ is isotropic. In summary,
+\begin{gather}
+0\leq\frac{3I_{4}(M)}{\left|M\right|^{4}}\leq1,\\
+I_{4}(M)=0\textrm{ if and only if \ensuremath{M} is rank one or zero,}\label{eq:two-sv-vanish}\\
+3I_{4}(M)-I_{2}(M)^{2}=0\textrm{ if and only if \ensuremath{M} is isotropic.}\label{eq:isotropy-characterization}
+\end{gather}
+
+As a sort of polar decomposition, we can consider the radial coordinate $\left|M\right|=\sqrt{I_{2}(M)}$ together with two other quantities which are invariant under scaling. As such, we define 
+\begin{equation}
+\left(D,E\right)\equiv\left(3\sqrt{3}\frac{I_{3}(M)}{\left|M\right|^{3}},\frac{3I_{4}(M)}{\left|M\right|^{4}}\right)\in\left[-1,1\right]\times\left[0,1\right].\label{eq:DE-def}
+\end{equation}
+ (Here $E$ is a scalar, and should not be confused with the electrical field $\vec{E}$ used in \prettyref{lem:rank-one-const}.) Not all points inside this rectangle can be realized. The points which are realized belong to the enclosed region in \prettyref{fig:DE-triangle} which resembles a triangle, but with curved edges. A nonzero matrix is isotropic precisely when it corresponds to either the left or right vertex, and the bottom vertex corresponds to rank-one matrices.
+
+In \prettyref{eq:F-norm-fn} of \prettyref{subsec:Anisotropic-background-fields} we introduce the radial quantity $F\equiv-\tau|M|/\sqrt{3}\xi$ in the context of $M=\vec{A}(\tau)$. In order to know whether the quantities $(D,E,F)$ are physically meaningful in this context, we must worry about gauge invariance. From \prettyref{exa:local-gt} \vpageref{exa:local-gt}, we note that $I_{2}(\vec{A}(\tau))$ can fail to be gauge-invariant at any time $\tau_{0}$ when $\vec{A}(\tau_{0})$ is rank-one or zero, i.e. when $I_{4}(\vec{A}(\tau_{0}))=0$. We show in \prettyref{thm:scalars-are-gauge-invt} that this is the only such case. Thus $I_{3}(\vec{A}(\tau))$ and $I_{4}(\vec{A}(\tau))$ are always gauge-invariant, while $I_{2}(\vec{A}(\tau))$ is gauge-invariant at all times $\tau_{0}$ for which $I_{4}(\vec{A}(\tau_{0}))\neq0$. In summary, for the case $M=\vec{A}(\tau)$, gauge-invariance of the quantities $(D,E,F)$ fails only at the rank-one point $(D,E)=(0,0)$ or when $F=0$. 
+
+In any case of physical interest, this slight lack of gauge invariance presents no difficulties: trajectories with generic non-isotropic initial conditions should never pass through these bad points. Even when a non-generic trajectory passes through a bad point, a unique meaningful value of $F$ is determined by continuity. 
+
+\begin{figure}
+\begin{centering}
+\includegraphics{empty-tri}
+\par\end{centering}
+\caption{\label{fig:DE-triangle}Only values inside the shaded region can be realized as pairs $(D,E)$ of an actual matrix. The left vertex corresponds to isotropy with $\sigma_{i}<0$. The right vertex corresponds to isotropy with $\sigma_{i}>0$. The bottom vertex corresponds to rank one. The boundary corresponds to when two or more singular values coincide. The upper edge corresponds to a coincidence in the larger two singular values, so it is traced out by $(1,1,\sigma_{3})$ for $\sigma_{3}\in\left[-1,1\right]$. The lower two edges correspond to a coincidence of the smaller singular values, i.e. ($\pm1$,$\sigma_{3}$,$\sigma_{3}$) for $\sigma_{3}\in\left[0,1\right]$. The defining equation of this region is $\zeta\protect\geq0$, where $\zeta$ is defined in \prettyref{eq:zeta-sv}.}
+\end{figure}
+
+
+\subsubsection*{Completeness of the scalars $I_{n}(M)$}
+\begin{thm}
+\label{thm:invariant-scalars}Any scalar function of a $3\times3$ matrix $M$ which is invariant under both left and right multiplication by $\mathrm{SO}(3)$ is a function of $I_{2}(M)$, $I_{3}(M)$ and $I_{4}(M)$. 
+\end{thm}
+
+\begin{proof}
+From the singular value decomposition of \prettyref{lem:SVD-SOn}, any function of $M$ which is invariant under both left and right multiplication by $\mathrm{SO}(3)$ must be expressible in terms of the singular values of $M$. When considering functions of the singular values $(\sigma_{1},\sigma_{2},\sigma_{3})$, there are two possible approaches. The first possibility is to impose a uniqueness condition on the singular values (such as the one stated in \prettyref{lem:SVD-SOn}), so that any possible function of the singular values makes sense. Thus $\sigma_{1}$ denotes the largest singular value of $M$ (in absolute value). This approach is awkward because there is no algebraic expression for $\sigma_{1}(M)$ in terms of the components of $M$, so it is difficult to compute. 
+
+The more natural approach is to consider only combinations of singular values which are invariant under rearrangements. The singular values are determined only up to permutation and flipping pairs of signs. Such freedom to rearrange the singular values may be seen explicitly by multiplying $\Sigma$ on the left and right by $\mathrm{SO}(3)$ matrices as follows:
+\begin{align}
+\left(\begin{array}{ccc}
+0 & 1 & 0\\
+-1 & 0 & 0\\
+0 & 0 & 1
+\end{array}\right)\left(\begin{array}{ccc}
+\sigma_{1}\\
+ & \sigma_{2}\\
+ &  & \sigma_{3}
+\end{array}\right)\left(\begin{array}{ccc}
+0 & -1 & 0\\
+1 & 0 & 0\\
+0 & 0 & 1
+\end{array}\right) & =\left(\begin{array}{ccc}
+\sigma_{2}\\
+ & \sigma_{1}\\
+ &  & \sigma_{3}
+\end{array}\right),\nonumber \\
+\left(\begin{array}{ccc}
+-1\\
+ & -1\\
+ &  & 1
+\end{array}\right)\left(\begin{array}{ccc}
+\sigma_{1}\\
+ & \sigma_{2}\\
+ &  & \sigma_{3}
+\end{array}\right)\left(\begin{array}{ccc}
+1\\
+ & 1\\
+ &  & 1
+\end{array}\right) & =\left(\begin{array}{ccc}
+-\sigma_{1}\\
+ & -\sigma_{2}\\
+ &  & \sigma_{3}
+\end{array}\right).\label{eq:SVD-signs}
+\end{align}
+Assuming no degeneracies, this gives a total of 24 possible ways that $\Sigma$ can be rearranged (6 permutations times 4 possibilities for signs). Correspondingly, these rearrangements are given by the action of a group with 24 elements.\footnote{This group is the symmetric group $S_{4}$ in disguise: our group action is isomorphic to the standard action of the Weyl group of $\mathfrak{so}(6)$ on a Cartan subalgebra, $\mathfrak{so}(6)$ is isomorphic to $\mathfrak{su}(4)$, and the Weyl group of $\mathfrak{su}(n)$ is the symmetric group $S_{n}$.} Since this group action can rearrange an arbitrary triple of singular values $(\sigma_{1},\sigma_{2},\sigma_{3})$ so that they satisfy the uniqueness constraints given in \prettyref{lem:SVD-SOn}, we conclude that this is the complete group of all possible rearrangements.
+
+Next we explain how the singular values of $M$ can be reconstructed from $I_{2}(M)$, $I_{3}(M)$ and $I_{4}(M)$. Equivalently, given some numbers $I_{2}$, $I_{3}$ and $I_{4}$, we wish to solve the algebraic system 
+\begin{align}
+\sigma_{1}^{2}+\sigma_{2}^{2}+\sigma_{3}^{2} & =I_{2},\nonumber \\
+\sigma_{1}\sigma_{2}\sigma_{3} & =I_{3},\nonumber \\
+\left(\sigma_{2}\sigma_{3}\right)^{2}+\left(\sigma_{3}\sigma_{1}\right)^{2}+\left(\sigma_{1}\sigma_{2}\right)^{2} & =I_{4}\label{eq:bezout-system}
+\end{align}
+ for $\sigma_{1}$, $\sigma_{2}$ and $\sigma_{3}$. It can happen that this system has no real solutions, for instance when $I_{2}<0$. However, we assume that the numbers $\left(I_{2},I_{3},I_{4}\right)$ arise from some matrix $M$, so that we are guaranteed that the system has at least one real solution. Since the $24$-element group acts on the solutions of this equation, there must be at \emph{least} 24 real solutions (when the solutions are counted with multiplicity). By B\'ezout's theorem (see for example \cite{shafarevich1994}), the number of real solutions is at \emph{most} $\deg I_{2}\cdot\deg I_{3}\cdot\deg I_{4}=2\cdot3\cdot4=24$ (counting multiplicities). Therefore, the number of real solutions to the system \eqref{eq:bezout-system} is \emph{exactly} 24 (counting multiplicities). Thus the information encoded in $I_{2}(M)$, $I_{3}(M)$ and $I_{4}(M)$ is precisely that of the 24 possible rearrangements of the singular values of the original matrix $M$. 
+
+Finally, any invariant scalar function of $M$ can be written as an invariant function of the singular values of $M$, and the above procedure gives a recipe to solve for those singular values of $M$ in terms of $I_{2}(M)$, $I_{3}(M)$ and $I_{4}(M)$. Therefore, any invariant scalar function can be written as a function of $I_{2}(M)$, $I_{3}(M)$ and $I_{4}(M)$.
+\end{proof}
+We also present the following short abstract proof of \prettyref{thm:invariant-scalars}. (Details about the relevant combinatorics and Molien's Theorem can be found in Chapter 1 of \cite{mukai2003}.)
+\begin{proof}
+The polynomials $I_{n}(M)$ are readily verified to be algebraically independent functions of the $\sigma_{i}$ by the Jacobian criterion. Thus the $I_{n}(M)$ freely generate a subring of polynomials which are invariant under the group action, and the number of linearly independent polynomials in each degree is given by the generating function $\prod_{p=2}^{4}(1-t^{p})^{-1}$. By Molien's Theorem, a tedious but completely straightforward computation shows that the generating function for the full ring of invariant polynomials is given by the same expression. Thus the subring of invariant polynomials generated by $I_{2}(M)$, $I_{3}(M)$ and $I_{4}(M)$ spans the whole ring of invariant polynomials. Since the problem of determining invariant quantities is algebraic, if there are no missing polynomials then there are no missing functions. Thus all invariant scalars of $M$ are functions of $I_{2}(M)$, $I_{3}(M)$ and $I_{4}(M)$. 
+\end{proof}
+
+\subsubsection*{Gauge invariance of the scalars $I_{n}(\vec{A}(\tau))$}
+
+We saw in \prettyref{exa:local-gt} that $I_{2}(\vec{A}(\tau))$ fails to be gauge-invariant, so the scalars $I_{n}(\vec{A}(\tau))$ are of potentially dubious physical significance. However, it turns out that $I_{n}(\vec{A}(\tau))$ is gauge-invariant most of the time:
+\begin{thm}
+\label{thm:scalars-are-gauge-invt}For any $\mathrm{SU}(2)$ gauge field $\vec{A}(\tau)$ in homogeneous and temporal gauge, the quantities $I_{3}(\vec{A})$ and $I_{4}(\vec{A})$ are always gauge-invariant. Furthermore, $I_{2}(\vec{A}(\tau_{0}))$ is gauge-invariant for all $\tau_{0}$ such that $I_{4}(\vec{A}(\tau_{0}))\neq0$.
+\end{thm}
+
+To prove this theorem, it suffices to show that each $I_{n}(\vec{A}(\tau_{0}))$ is expressible in terms of scalars which are known to be gauge-invariant. This can mostly be accomplished by considering the magnetic field matrix as in the following lemma:
+\begin{lem}
+\label{lem:scalars-gauge-invt}For any $\tau_{0}$, the quantities $\left|I_{3}(\vec{A}(\tau_{0}))\right|$ and $I_{4}(\vec{A}(\tau_{0}))$ are gauge-invariant. If $I_{3}(\vec{A}(\tau_{0}))\neq0$ then $I_{2}(\vec{A}(\tau_{0}))$ is also gauge-invariant.
+\end{lem}
+
+\begin{proof}
+We introduce the magnetic field matrix 
+\begin{equation}
+B_{i}^{b}(\tau_{0})\equiv\tfrac{1}{2}a(\tau_{0})^{-2}\varepsilon_{ijk}F_{jk}^{b}(\tau_{0}),\label{eq:B-def}
+\end{equation}
+ and the corresponding comoving quantity 
+\begin{equation}
+\vec{\mathcal{B}}(\tau)=a(\tau)^{2}\vec{B}(\tau)/e.\label{eq:cal-B}
+\end{equation}
+Since $\vec{\mathcal{B}}(\tau_{0})$ transforms as a tensor under gauge transformations (see the proof of \prettyref{lem:elec-is-iso}), each $I_{n}(\vec{\mathcal{B}}(\tau_{0}))$ is gauge-invariant. If the SVD of $\vec{A}(\tau)$ is $\vec{A}(\tau)=G_{1}(\tau)\Sigma^{A}(\tau)R_{1}(\tau)^{T}$ then
+\begin{gather}
+\vec{\mathcal{B}}(\tau)=G_{1}(\tau)\Sigma^{\mathcal{B}}(\tau)R_{1}(\tau)^{T},\quad\sigma_{1}^{\mathcal{B}}(\tau)=\sigma_{2}^{A}(\tau)\sigma_{3}^{A}(\tau)\ \textrm{ and cyclic permutations}.\label{eq:SV-AB}
+\end{gather}
+A short computation gives $\left|I_{3}(\vec{A})\right|=\sqrt{I_{3}(\vec{\mathcal{B}})}$ and $I_{4}(\vec{A})=I_{2}(\vec{\mathcal{B}})$. Since the expressions involving $I_{n}(\vec{\mathcal{B}})$ are gauge-invariant, so are the corresponding expressions involving $I_{n}(\vec{A})$. Finally, for all $\tau_{0}$ such that $I_{3}(\vec{A}(\tau_{0}))\neq0$, we have $I_{3}(\vec{\mathcal{B}}(\tau_{0}))\neq0$, and so 
+\[
+I_{2}(\vec{A}(\tau_{0}))=\frac{I_{2}(\vec{\mathcal{B}}(\tau_{0}))^{2}-I_{4}(\vec{\mathcal{B}}(\tau_{0}))}{3I_{3}(\vec{\mathcal{B}}(\tau_{0}))}.
+\]
+\end{proof}
+Because we are in the context of non-abelian gauge theory, it is impossible to fully reconstruct $\vec{A}(\tau_{0})$ from $\vec{\mathcal{B}}(\tau_{0})$ up to gauge. For instance, $\vec{\mathcal{B}}(\tau_{0})$ carries no information about the sign of $I_{3}(\vec{A}(\tau_{0}))$. To sharpen the result of \prettyref{lem:scalars-gauge-invt} in order to prove \prettyref{thm:scalars-are-gauge-invt}, it is necessary to introduce a new quantity: 
+\begin{proof}[Proof of \prettyref{thm:scalars-are-gauge-invt}]
+ We introduce the tensorial quantity 
+\[
+\vec{\mathcal{C}}\equiv e^{-1}\,\vec{\nabla}^{(A)}\!\times\vec{\mathcal{B}}\quad\left(\mathcal{C}_{i}=e^{-1}\varepsilon_{ijk}\mathbf{D}_{j}\left(\mathcal{B}_{k}^{b}\mathbf{T}_{b}\right),\quad\mathcal{C}_{i}^{a}=e^{-2}F_{ij;j}^{a}\right),
+\]
+ where $\vec{\nabla}^{(A)}\times$ denotes the gauge-covariant curl operator, and the subscript $_{;j}$ denotes components corresponding to the gauge-covariant derivative $\mathbf{D}_{j}\mathbf{F}$. If the SVD of $\vec{A}(\tau)$ is $\vec{A}(\tau)=G_{1}(\tau)\Sigma^{A}(\tau)R_{1}(\tau)^{T}$ then $\vec{\mathcal{C}}(\tau)=G_{1}(\tau)\Sigma^{\mathcal{C}}(\tau)R_{1}(\tau)^{T}$, where 
+\[
+\sigma_{1}^{\mathcal{C}}=\left(\left(\sigma_{2}^{A}\right)^{2}+\left(\sigma_{3}^{A}\right)^{2}\right)\sigma_{1}^{A}\ \textrm{ and cyclic permutations}.
+\]
+A quick computation shows that the gauge-invariant scalar $\mathcal{B}_{i}^{a}\mathcal{C}_{i}^{a}$ satisfies 
+\[
+\mathcal{B}_{i}^{a}\mathcal{C}_{i}^{a}=2I_{2}(\vec{A})I_{3}(\vec{A}),
+\]
+ and thus $I_{3}(\vec{A})$ is always given by the gauge-invariant expression 
+\[
+I_{3}(\vec{A})=\mathrm{sign}\left(\mathcal{B}_{i}^{a}\mathcal{C}_{i}^{a}\right)\,\sqrt{I_{3}(\vec{\mathcal{B}})}.
+\]
+ Finally, for all $\tau_{0}$ such that $I_{4}(\vec{A}(\tau_{0}))\neq0$, a quick computation shows that 
+\[
+I_{2}(\vec{A}(\tau_{0}))=\frac{I_{2}(\vec{\mathcal{C}}(\tau_{0}))-3I_{3}(\vec{A}(\tau_{0}))^{2}}{I_{4}(\vec{A}(\tau_{0}))},
+\]
+ and the right-hand side involves only quantities which have been shown to be gauge-invariant. 
+\end{proof}
+
+\subsection{\label{app:isotrop-proof}The case when $A$ is isotropic but the matrix $\vec{A}(\tau)$ is not }
+
+In this subsection we assume that $A$ is isotropic, and given by $\vec{A}(\tau)$ in homogeneous and temporal gauge (see \prettyref{app:homo-gauge}). Our goal is to prove \prettyref{thm:rk1-is-gauge-artifact}, that it is always possible to find a particular homogeneous and temporal gauge in which $\vec{A}(\tau)$ is an isotropic matrix for all $\tau$. We must deal with the case observed in \prettyref{exa:local-gt}, where $\vec{A}(\tau)$ can be a rank-one matrix. 
+
+In \prettyref{lem:isotropic-gf-relation} we derive a relation satisfied by $\vec{A}(\tau)$. \prettyref{lem:rewrite-isotropic-relation} then rewrites this relation so that in \prettyref{thm:iso-or-rank-one} we conclude for each $\tau_{0}$ that $\vec{A}(\tau_{0})$ is either isotropic or rank-one. In \prettyref{lem:iso-open} we prove that if $\vec{A}(\tau_{0})$ is rank-one, then it is rank-one for all nearby $\tau$. \prettyref{lem:rank-one-const} uses the electrical field to show that $\vec{A}(\tau)$ is constant where it is rank-one. Finally, the proof of \prettyref{thm:rk1-is-gauge-artifact} concludes that if $\vec{A}(\tau_{0})$ is rank one for any $\tau_{0}$, then $\vec{A}(\tau)$ is constant for all $\tau$. Thus it coincides with \prettyref{exa:local-gt} and can be made isotropic (and moreover zero) with a gauge transformation. 
+
+First we prove a relation which holds for $\vec{A}(\tau)$: 
+\begin{lem}
+\label{lem:isotropic-gf-relation}Let $\vec{A}(\tau)$ be a homogeneous and isotropic $\mathrm{SU}(2)$ gauge field in homogeneous and temporal gauge. Then $\vec{A}(\tau)$ satisfies 
+\[
+I_{4}(\vec{A}(\tau))^{2}-3I_{2}(\vec{A}(\tau))I_{3}(\vec{A}(\tau))^{2}=0
+\]
+ for all $\tau$. 
+\end{lem}
+
+\begin{proof}
+The matrix $\vec{{\cal B}}(\tau)$ is isotropic for all $\tau$ by the proof of \prettyref{lem:elec-is-iso}. From \prettyref{eq:isotropy-characterization} it follows that $I_{2}(\vec{\mathcal{B}}(\tau))^{2}-3I_{4}(\vec{\mathcal{B}}(\tau))=0$. From \prettyref{eq:SV-AB}, 
+\[
+I_{2}(\vec{\mathcal{B}}(\tau))^{2}-3I_{4}(\vec{\mathcal{B}}(\tau))=I_{4}(\vec{A}(\tau))^{2}-3I_{2}(\vec{A}(\tau))I_{3}(\vec{A}(\tau))^{2}.
+\]
+\end{proof}
+We rewrite the characterization given in \prettyref{lem:isotropic-gf-relation} into a form which more clearly implies that the matrix is either isotropic or rank-one:
+\begin{lem}
+\label{lem:rewrite-isotropic-relation}Suppose $M_{0}$ is a matrix which satisfies $I_{4}(M_{0})^{2}-3I_{2}(M_{0})I_{3}(M_{0})^{2}=0$. Then 
+\[
+I_{4}(M_{0})\left(I_{2}(M_{0})^{2}-3I_{4}(M_{0})\right)=0.
+\]
+\end{lem}
+
+\begin{proof}
+We will make use of the quantity 
+\[
+\zeta(I_{2},I_{3},I_{4})\equiv\left(I_{2}I_{4}\right)^{2}+18I_{2}I_{3}^{2}I_{4}-4\left(I_{4}^{3}+I_{2}^{3}I_{3}^{2}\right)-27I_{3}^{4}.
+\]
+ It is easily verified that for any matrix $M$, 
+\begin{equation}
+\zeta(M)\equiv\zeta(I_{2}(M),I_{3}(M),I_{4}(M))=\left(\left(\sigma_{1}^{2}-\sigma_{2}^{2}\right)\left(\sigma_{2}^{2}-\sigma_{3}^{2}\right)\left(\sigma_{3}^{2}-\sigma_{1}^{2}\right)\right)^{2}\geq0.\label{eq:zeta-sv}
+\end{equation}
+ As an aside, one can also show the converse: if $\zeta(I_{2},I_{3},I_{4})\geq0$ then there exists a matrix $M$ such that $I_{n}=I_{n}(M)$. Thus the triangular region shown in \prettyref{fig:DE-triangle} is characterized by $\zeta\geq0$. 
+
+Suppose now that $M_{0}$ is any matrix which satisfies 
+\begin{equation}
+I_{4}(M_{0})^{2}-3I_{2}(M_{0})I_{3}(M_{0})^{2}=0.\label{eq:A-iso-poly}
+\end{equation}
+ Consider the quantity $\zeta(M_{0})I_{2}(M_{0})^{2}$. From \prettyref{eq:zeta-sv} we know that $\zeta(M_{0})I_{2}(M_{0})^{2}\geq0$. However, using \prettyref{eq:A-iso-poly} to eliminate $I_{3}(M_{0})$, we obtain 
+\begin{equation}
+\zeta(M_{0})I_{2}(M_{0})^{2}=-\tfrac{1}{3}\left(\left(I_{2}(M_{0})^{2}-3I_{4}(M_{0})\right)I_{4}(M_{0})\right)^{2}\leq0.\label{eq:eliminate-I3}
+\end{equation}
+ Since $0\leq\zeta(M_{0})I_{2}(M_{0})^{2}\leq0$, we conclude that $\zeta(M_{0})I_{2}(M_{0})^{2}=0$, and thus by the equality in \prettyref{eq:eliminate-I3}, 
+\[
+\left(I_{2}(M_{0})^{2}-3I_{4}(M_{0})\right)I_{4}(M_{0})=0.
+\]
+\end{proof}
+We therefore have the following conclusion:
+\begin{thm}
+\label{thm:iso-or-rank-one}Let $\vec{A}(\tau)$ be a homogeneous and isotropic $\mathrm{SU}(2)$ gauge field in homogeneous and temporal gauge. Then for each time $\tau_{0}$, either $\vec{A}(\tau_{0})$ is isotropic or $\vec{A}(\tau_{0})$ is rank-one. 
+\end{thm}
+
+\begin{proof}
+By \prettyref{lem:isotropic-gf-relation} combined with \prettyref{lem:rewrite-isotropic-relation}, 
+\begin{equation}
+\left(I_{2}(\vec{A}(\tau))^{2}-3I_{4}(\vec{A}(\tau))\right)I_{4}(\vec{A}(\tau))=0.\label{eq:reduced-isotropy-A}
+\end{equation}
+ Thus for any $\tau_{0}$, either $I_{4}(\vec{A}(\tau_{0}))=0$ or $I_{2}(\vec{A}(\tau_{0}))^{2}-3I_{4}(\vec{A}(\tau_{0}))=0$, and the result follows from \eqref{eq:two-sv-vanish} and \eqref{eq:isotropy-characterization}.
+\end{proof}
+The following two lemmas will imply that if $\vec{A}(\tau_{0})$ is rank one for some $\tau_{0}$ then $\vec{A}(\tau)$ is constant. 
+\begin{lem}
+\label{lem:iso-open}Let $\vec{A}(\tau)$ be a homogeneous and isotropic $\mathrm{SU}(2)$ gauge field in homogeneous and temporal gauge. If there is some $\tau_{0}$ such that $\vec{A}(\tau_{0})$ is rank-one, then $\vec{A}(\tau)$ is rank-one along some interval containing $\tau_{0}$ in its interior. 
+\end{lem}
+
+\begin{proof}
+First, note that by solving \prettyref{eq:reduced-isotropy-A} for $I_{4}(\vec{A}(\tau_{1}))$ at any time $\tau_{1}$, the number $I_{4}(\vec{A}(\tau_{1}))$ may equal either $0$ or $\tfrac{1}{3}I_{2}(\vec{A}(\tau_{1}))^{2}$. Now suppose that there is some time $\tau_{0}$ for which the matrix $\vec{A}(\tau_{0})$ is not an isotropic matrix. By \prettyref{thm:iso-or-rank-one}, $\vec{A}(\tau_{0})$ must be rank-one. Thus from \prettyref{eq:two-sv-vanish}, $I_{4}(\vec{A}(\tau_{0}))=0$ but $I_{2}(\vec{A}(\tau_{0}))\neq0$. Assuming the continuity of $\vec{A}(\tau)$, it follows that there is some interval containing $\tau_{0}$ along which $I_{2}(\vec{A}(\tau))\neq0$. Also by continuity, $I_{4}(\vec{A}(\tau))$ along this same interval must be equal to either the positive branch $\tfrac{1}{3}I_{2}(\vec{A}(\tau))^{2}$ or the zero branch. Since $I_{4}(\vec{A}(\tau_{0}))=0$, we conclude that it must be the zero branch. Therefore, $\vec{A}(\tau)$ is rank-one for this whole interval along which $I_{2}(\vec{A}(\tau))\neq0$.
+\end{proof}
+\begin{lem}
+\label{lem:rank-one-const}Let $\vec{A}(\tau)$ be a homogeneous and isotropic $\mathrm{SU}(2)$ gauge field in homogeneous and temporal gauge. Along any interval where $\vec{A}(\tau)$ is rank-one, it is constant. 
+\end{lem}
+
+\begin{proof}
+Recall from \prettyref{eq:E-is-derivative} that $\tfrac{\mathrm{d}}{\mathrm{d}\tau}\vec{A}(\tau)=\vec{\mathcal{E}}(\tau)$. Thus in order to show that $\vec{A}(\tau)$ is constant along some interval, it suffices to show that $\vec{\mathcal{E}}(\tau)=0$ along the same interval. 
+
+From \prettyref{lem:elec-is-iso} it follows that $\vec{\mathcal{E}}(\tau)$ is always an isotropic matrix. By \prettyref{lem:matrix-isotropy}, $\vec{\mathcal{E}}(\tau_{0})$ is a scalar multiple of an orthogonal matrix for each $\tau_{0}$. Since orthogonal matrices are invertible, the only scalar multiple of an orthogonal matrix which has a nonzero nullspace is the zero matrix. Thus the lemma follows if we show that $\vec{\mathcal{E}}(\tau_{0})$ has a nonzero nullspace. 
+
+The singular value decomposition of $\vec{A}(\tau)$ in the rank-one case (see \prettyref{def:rank-one}) gives the $3\times3$ matrix equation 
+\[
+\vec{A}(\tau)=\vec{v}(\tau)\sigma_{1}(\tau)\vec{w}(\tau)^{T},
+\]
+ where $\vec{v}(\tau)$ denotes the first column of $G(\tau)$ and $\vec{w}(\tau)$ is the first column of $R(\tau)$. Thus 
+\begin{equation}
+\vec{\mathcal{E}}(\tau)=\vec{v}(\tau)\,\tfrac{\mathrm{d}}{\mathrm{d}\tau}\left(\sigma_{1}(\tau)\vec{w}(\tau)^{T}\right)+\left(\tfrac{\mathrm{d}}{\mathrm{d}\tau}\vec{v}(\tau)\right)\sigma_{1}(\tau)\vec{w}(\tau)^{T}.\label{eq:E-rk-1-as-derivative}
+\end{equation}
+ Choosing any nonzero vector $\vec{s}(\tau)$ in $\mathbb{R}^{3}$ which is orthogonal to both $\vec{v}(\tau)$ and $\tfrac{\mathrm{d}}{\mathrm{d}\tau}\vec{v}(\tau)$, it is clear from \prettyref{eq:E-rk-1-as-derivative} that $\vec{s}(\tau)^{T}\vec{\mathcal{E}}(\tau)$ vanishes. Thus $\vec{\mathcal{E}}(\tau)$ has a nonzero left-nullspace, proving the lemma.
+\end{proof}
+\begin{thm}
+\label{thm:rk1-is-gauge-artifact}Let $A$ be a homogeneous and isotropic $\mathrm{SU}(2)$ gauge field. There exists a homogeneous and temporal gauge for $A$ in which $\vec{A}(\tau)$ is an isotropic matrix for all $\tau$. 
+\end{thm}
+
+\begin{proof}
+By \prettyref{thm:hom-temp-gauge} we may assume that $A$ is in homogeneous and temporal gauge. If $\vec{A}(\tau)$ is isotropic for all $\tau$ then we are done. Alternatively, if $\vec{A}(\tau)$ is a constant rank-one matrix for all $\tau$ as in \prettyref{exa:local-gt} then we are done because \prettyref{exa:local-gt} is gauge-equivalent to zero, and zero is isotropic. By \prettyref{thm:iso-or-rank-one}, the only other possibility is that $\vec{A}(\tau_{0})$ is rank-one at some time $\tau_{0}$, but $\vec{A}(\tau)$ is non-constant. However, this cannot happen by \prettyref{lem:iso-open} and \prettyref{lem:rank-one-const}. 
+\end{proof}
+As a result of \prettyref{thm:rk1-is-gauge-artifact}, when $A$ is homogeneous and isotropic we may assume without loss of generality that $\vec{A}(\tau)$ is an isotropic matrix for all $\tau$. 

@@ -1,0 +1,76 @@
+\section{Basis vectors for the gauge fields in the helicity basis \label{app:basis} }
+
+
+In this appendix we collect the explicit forms of the basis vectors derived in Sec.~\ref{GaugeAndBasis}. The six physical degrees of freedom are spanned by the helicity states $\hat e_\lambda$,
+\begin{equation*}
+ (\hat e_{01})^{b}{}_{\mu} = \frac{1}{\sqrt{2}}
+ \begin{pmatrix}
+ 0 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 \\  0 &0 & 0 & 1
+ \end{pmatrix}  \,,  \quad 
+ (\hat e_{02})^{b}{}_{\mu} = \frac{1}{\sqrt{2 + 4 y_k(x)^2}}
+ \begin{pmatrix}
+  0 & 2 i y_k(x) & 0 & 0 \\  0 & 0 & 0 & -1 \\ 0 & 0 & 1 & 0 
+ \end{pmatrix} \,,\nonumber \\
+ \end{equation*}
+ 
+ \begin{align}
+ (\hat  e_{-1})^{b}{}_{\mu} & = \frac{1}{\sqrt{2 + 4 y_k(x) + 4 y_k(x)^2}}
+ \begin{pmatrix}
+  0 & 0 & i(1 + y_k(x)) & 1 + y_k(x) \\ 0 &  i y_k(x) & 0 & 0 \\ 0 &  y_k(x) & 0 & 0 
+ \end{pmatrix} \,,
+   \nonumber \\
+ (\hat e_{+1})^{b}{}_{\mu} &= \frac{1}{\sqrt{2 - 4 y_k(x) + 4 y_k(x)^2}}
+ \begin{pmatrix}
+0 &   0 & -i(1 - y_k(x))  & 1 - y_k(x) \\ 0 & i y_k(x) & 0 & 0 \\ 0 & - y_k(x) & 0 & 0
+ \end{pmatrix} \,, 
+ \nonumber \\
+ &(\hat e_{-2})^{b}{}_{\mu} = \frac{1}{2}
+ \begin{pmatrix}
+   0 & 0 & 0 & 0 \\ 0 &  0 & i & 1 \\ 0 & 0 & 1 & -i 
+ \end{pmatrix} \,,
+ \quad
+ (\hat e_{+2})^{b}{}_{\mu} = \frac{1}{2}\begin{pmatrix}
+  0 & 0 & 0 & 0 \\ 0 & 0 & -i & 1 \\ 0 & 0 & 1 & i 
+ \end{pmatrix}  \,,
+ \label{eq:basis}
+\end{align}
+with $y_k(x) \equiv e f(\tau)/k$. Note that in any background which is a fixed point of Eq.~\eqref{eq:symmetry3} (e.g.\ if the background follows the $c_2$-solution), we can drop the index $k$ on $y_k(x)$ as this quantity becomes a function of $(- k \tau)$ only: $y_k(x) = e k^{-1} f(- k^{-1} x) = e f(-x) \equiv y(x)$.
+
+The gauge degrees of freedom (simultaneously satisfying Eqs.~\eqref{eq:gaugebasis0} and \eqref{eq:helicity_operator}) read
+\begin{align*}
+\left(\hat g_{-1}\right)^{b}{}_{\mu} & =\left(\begin{array}{cccc}
+0 & 0 & -y_k(x) & i\,y_k(x)\\
+i\,\frac{\textrm{d}}{\textrm{d}x} & (1+y_k(x)) & 0 & 0\\
+\frac{\textrm{d}}{\textrm{d}x} & -i(1+y_k(x)) & 0 & 0
+\end{array}\right)\,,\\
+\left(\hat g_{0}\right)^{b}{}_{\mu} & =\left(\begin{array}{cccc}
+i\,\frac{\textrm{d}}{\textrm{d}x} & 1 & 0 & 0\\
+0 & 0 & 0 & -i\,y_k(x)\\
+0 & 0 & i\,y_k(x) & 0
+\end{array}\right)\,,\\
+\left(\hat g_{+1}\right)^{b}{}_{\mu} & =\left(\begin{array}{cccc}
+0 & 0 & y_k(x) & i\,y_k(x)\\
+i\,\frac{\textrm{d}}{\textrm{d}x} & (1-y_k(x)) & 0 & 0\\
+-\frac{\textrm{d}}{\textrm{d}x} & i(1-y_k(x) & 0 & 0
+\end{array}\right) \,,
+\end{align*}
+where the entry $\textrm{d}/\textrm{d}x$ indicates that the corresponding coefficient $w_\lambda^{(g)}(x)$ is replaced by $\frac{\textrm{d}}{\textrm{d}x} w_\lambda^{(g)}(x)$. 
+
+Finally the  basis vectors encoding the constraint equations (Gauss' law) are given by
+\begin{align*}
+\left(\hat f_{-1}\right)^{b}{}_{\mu} & =\frac{1}{\sqrt{2}}\left(\begin{array}{cccc}
+0 & 0 & 0 & 0\\
+1 & 0 & 0 & 0\\
+-i & 0 & 0 & 0
+\end{array}\right)\,,\\
+\left(\hat f_{0}\right)^{b}{}_{\mu} & =\frac{1}{\sqrt{2}}\left(\begin{array}{cccc}
+1 & 0 & 0 & 0\\
+0 & 0 & 0 & 0\\
+0 & 0 & 0 & 0
+\end{array}\right)\,,\\
+\left(\hat f_{+1}\right)^{b}{}_{\mu} & =\frac{1}{\sqrt{2}}\left(\begin{array}{cccc}
+0 & 0 & 0 & 0\\
+1 & 0 & 0 & 0\\
++i & 0 & 0 & 0
+\end{array}\right)\,.
+\end{align*}
